@@ -121,7 +121,7 @@ public partial class UsersClient
             ListWithBodyCursorPaginationAsync,
             (request, cursor) =>
             {
-                request.Pagination ??= new();
+                request.Pagination ??= Activator.CreateInstance<Pagination>();
                 request.Pagination.Cursor = cursor;
             },
             response => response?.Page?.Next?.StartingAfter,
@@ -250,7 +250,7 @@ public partial class UsersClient
             request => request?.Pagination?.Page ?? 0,
             (request, offset) =>
             {
-                request.Pagination ??= new();
+                request.Pagination ??= Activator.CreateInstance<Pagination>();
                 request.Pagination.Page = offset;
             },
             null,

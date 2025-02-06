@@ -49,7 +49,7 @@ public partial class ComplexClient
             SearchAsync,
             (request, cursor) =>
             {
-                request.Pagination ??= new();
+                request.Pagination ??= Activator.CreateInstance<StartingAfterPaging>();
                 request.Pagination.StartingAfter = cursor;
             },
             response => response?.Pages?.Next?.StartingAfter,

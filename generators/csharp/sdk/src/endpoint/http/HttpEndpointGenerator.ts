@@ -520,7 +520,8 @@ export class HttpEndpointGenerator extends AbstractEndpointGenerator {
         for (let i = 0; i < propertyPath.length; i++) {
             const propertyPathPart = propertyPath.slice(0, i + 1);
             writer.writeTextStatement(
-                `${variableName}.${propertyPathPart.map((val) => val.pascalCase.safeName).join(".")} ??= new ()`
+                `${variableName}.${propertyPathPart.map((val) => val.pascalCase.safeName).join(".")} ??= ` +
+                    `Activator.CreateInstance<${propertyPathPart[propertyPathPart.length - 1]?.pascalCase.safeName}>()`
             );
         }
     }
