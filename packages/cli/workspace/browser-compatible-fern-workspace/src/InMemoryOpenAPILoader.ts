@@ -30,7 +30,7 @@ export class InMemoryOpenAPILoader {
         }
         const v3 = openapi as OpenAPIV3.Document;
         if (overrides != null) {
-            return coreMergeWithOverrides({ data: v3, overrides });
+            return coreMergeWithOverrides({ data: v3, overrides, explicitNullIgnores: ["example", "examples"] });
         }
         return v3;
     }

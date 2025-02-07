@@ -25,5 +25,5 @@ export async function mergeWithOverrides<T extends object>({
     } catch (err) {
         return context.failAndThrow(`Failed to read overrides from file ${absoluteFilePathToOverrides}`);
     }
-    return coreMergeWithOverrides({ data, overrides: parsedOverrides });
+    return coreMergeWithOverrides({ data, overrides: parsedOverrides, explicitNullIgnores: ["example", "examples"] });
 }
