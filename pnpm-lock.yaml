@@ -5282,6 +5282,9 @@ importers:
       dayjs:
         specifier: ^1.11.11
         version: 1.11.11
+      find-up:
+        specifier: ^6.3.0
+        version: 6.3.0
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3

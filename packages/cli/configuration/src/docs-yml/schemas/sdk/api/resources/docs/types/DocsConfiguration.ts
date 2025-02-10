@@ -25,6 +25,7 @@ export interface DocsConfiguration {
     footerLinks?: FernDocsConfig.FooterLinksConfig;
     experimental?: FernDocsConfig.ExperimentalConfig;
     defaultLanguage?: FernDocsConfig.ProgrammingLanguage;
+    assetRootPath?: string;
     metadata?: FernDocsConfig.MetadataConfig;
     redirects?: FernDocsConfig.RedirectConfig[];
     logo?: FernDocsConfig.LogoConfiguration;

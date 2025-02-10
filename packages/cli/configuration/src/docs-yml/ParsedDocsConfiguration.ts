@@ -46,6 +46,7 @@ export interface ParsedDocsConfiguration {
     js: JavascriptConfig | undefined;
 
     experimental: ExperimentalConfig | undefined;
+    assetRootPath: string | undefined;
 }
 
 export interface AbsoluteJsFileConfig {

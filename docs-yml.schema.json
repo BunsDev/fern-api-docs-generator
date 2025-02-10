@@ -139,6 +139,16 @@
         }
       ]
     },
+    "assetRootPath": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
     "metadata": {
       "oneOf": [
         {

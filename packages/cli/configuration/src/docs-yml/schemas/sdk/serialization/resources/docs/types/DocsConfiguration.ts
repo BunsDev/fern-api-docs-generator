@@ -46,6 +46,7 @@ export const DocsConfiguration: core.serialization.ObjectSchema<
     footerLinks: core.serialization.property("footer-links", FooterLinksConfig.optional()),
     experimental: ExperimentalConfig.optional(),
     defaultLanguage: core.serialization.property("default-language", ProgrammingLanguage.optional()),
+    assetRootPath: core.serialization.string().optional(),
     metadata: MetadataConfig.optional(),
     redirects: core.serialization.list(RedirectConfig).optional(),
     logo: LogoConfiguration.optional(),
@@ -74,6 +75,7 @@ export declare namespace DocsConfiguration {
         "footer-links"?: FooterLinksConfig.Raw | null;
         experimental?: ExperimentalConfig.Raw | null;
         "default-language"?: ProgrammingLanguage.Raw | null;
+        assetRootPath?: string | null;
         metadata?: MetadataConfig.Raw | null;
         redirects?: RedirectConfig.Raw[] | null;
         logo?: LogoConfiguration.Raw | null;

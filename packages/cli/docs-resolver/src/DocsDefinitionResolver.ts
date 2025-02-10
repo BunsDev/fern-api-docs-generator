@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
+import { findUp } from "find-up";
 import { readFile, stat } from "fs/promises";
 import matter from "gray-matter";
 import { kebabCase } from "lodash-es";
@@ -164,11 +165,19 @@ export class DocsDefinitionResolver {
 
         const filesToUploadSet = collectFilesFromDocsConfig(this.parsedDocsConfig);
 
+        const overrideAssetRootPath =
+            this.parsedDocsConfig.assetRootPath != null
+                ? await findUp(this.parsedDocsConfig.assetRootPath, { type: "directory" })
+                : undefined;
+
         // preprocess markdown files to extract image paths
         for (const [relativePath, markdown] of Object.entries(this.parsedDocsConfig.pages)) {
             const { filepaths, markdown: newMarkdown } = parseImagePaths(markdown, {
                 absolutePathToMarkdownFile: this.resolveFilepath(relativePath),
-                absolutePathToFernFolder: this.docsWorkspace.absoluteFilePath
+                absolutePathToFernFolder:
+                    overrideAssetRootPath != null
+                        ? AbsoluteFilePath.of(overrideAssetRootPath)
+                        : this.docsWorkspace.absoluteFilePath
             });
 
             // store the updated markdown in pages
@@ -263,13 +272,17 @@ export class DocsDefinitionResolver {
         return { config, pages, jsFiles };
     }
 
-    private resolveFilepath(unresolvedFilepath: string): AbsoluteFilePath;
-    private resolveFilepath(unresolvedFilepath: string | undefined): AbsoluteFilePath | undefined;
-    private resolveFilepath(unresolvedFilepath: string | undefined): AbsoluteFilePath | undefined {
+    private resolveFilepath(unresolvedFilepath: string, assetPath?: string): AbsoluteFilePath;
+    private resolveFilepath(unresolvedFilepath: string | undefined, assetPath?: string): AbsoluteFilePath | undefined;
+    private resolveFilepath(unresolvedFilepath: string | undefined, assetPath?: string): AbsoluteFilePath | undefined {
         if (unresolvedFilepath == null) {
             return undefined;
         }
-        return resolve(this.docsWorkspace.absoluteFilePath, unresolvedFilepath);
+
+        return resolve(
+            assetPath != null ? AbsoluteFilePath.of(assetPath) : this.docsWorkspace.absoluteFilePath,
+            unresolvedFilepath
+        );
     }
 
     private toRelativeFilepath(filepath: AbsoluteFilePath): RelativeFilePath;

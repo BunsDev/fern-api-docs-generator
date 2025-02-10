@@ -54,7 +54,8 @@ export async function parseDocsConfiguration({
         css: rawCssConfig,
         js: rawJsConfig,
 
-        experimental
+        experimental,
+        assetRootPath
     } = rawDocsConfiguration;
 
     const landingPage = parsePageConfig(rawDocsConfiguration.landingPage, absoluteFilepathToDocsConfig);
@@ -176,7 +177,8 @@ export async function parseDocsConfiguration({
         css,
         js,
 
-        experimental
+        experimental,
+        assetRootPath
     };
 }
 

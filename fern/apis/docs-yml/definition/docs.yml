@@ -136,6 +136,7 @@ types:
       "footer-links": optional<FooterLinksConfig>
       experimental: optional<ExperimentalConfig>
       "default-language": optional<ProgrammingLanguage>
+      assetRootPath: optional<string>
 
       # seo
       metadata: optional<MetadataConfig>
