@@ -7,6 +7,16 @@
 #         Set `enable-forward-compatible-enums` to `false` in the configuration to generate the old enums.
 #   irVersion: 53
 
+- version: 1.9.24
+  createdAt: "2025-02-14"
+  irVersion: 53
+  changelogEntry:
+    - type: fix
+      summary: |
+        Fix gRPC client references to always use the original service name from the protobuf definition 
+        without any casing transformations. Previously, the service name was being transformed to pascal 
+        case which could cause issues with service discovery.
+
 - version: 1.9.23
   createdAt: "2025-02-14"
   irVersion: 53
