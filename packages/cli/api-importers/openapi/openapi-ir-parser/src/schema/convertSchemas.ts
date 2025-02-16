@@ -168,6 +168,7 @@ export function convertSchemaObject(
     if (typeof schema === "string") {
         schema = { type: schema } as OpenAPIV3.SchemaObject;
     }
+    // TODO: Add support for a configuration option to preserve the original name.
     const nameOverride =
         getExtension<string>(schema, FernOpenAPIExtension.TYPE_NAME) ??
         (context.options.useTitlesAsName ? getTitleAsName(schema.title) : undefined);
@@ -930,6 +931,7 @@ export function convertToReferencedSchema(
     source: Source,
     preserveSchemaIds: boolean
 ): ReferencedSchema {
+    // TODO: Add support for a configuration option to preserve the original name.
     const nameOverride = getExtension<string>(schema, FernOpenAPIExtension.TYPE_NAME);
     const generatedName = getGeneratedTypeName(breadcrumbs, preserveSchemaIds);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
