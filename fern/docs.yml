@@ -490,6 +490,25 @@ navigation:
             icon: fa-regular fa-wand-sparkles
             path: ./pages/docs/api-references/generate-api-ref.mdx
             slug: generate-api-ref
+          - section: Protocols
+            icon: fa-regular fa-arrow-right-arrow-left
+            path: ./pages/docs/api-references/protocols.mdx
+            contents:
+              - page: gRPC
+                icon: fa-regular fa-arrow-right-arrow-left
+                path: ./pages/docs/api-references/protocols/grpc.mdx
+              - page: REST
+                icon: fa-regular fa-arrow-right-arrow-left
+                path: ./pages/docs/api-references/protocols/rest.mdx
+              - page: Server-sent events
+                icon: fa-regular fa-arrow-right-arrow-left
+                path: ./pages/docs/api-references/protocols/server-sent-events.mdx
+              - page: Webhooks
+                icon: fa-regular fa-arrow-right-arrow-left
+                path: ./pages/docs/api-references/protocols/webhooks.mdx
+              - page: WebSockets
+                icon: fa-regular fa-arrow-right-arrow-left
+                path: ./pages/docs/api-references/protocols/websockets.mdx
           - page: SDK Snippets
             icon: fa-regular fa-brackets-curly
             path: ./pages/docs/api-references/sdk-snippets.mdx
