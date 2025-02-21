@@ -492,23 +492,23 @@ navigation:
             slug: generate-api-ref
           - section: Protocols
             icon: fa-regular fa-arrow-right-arrow-left
-            path: ./pages/docs/api-references/protocols.mdx
+            path: ./pages/docs/api-references/protocols/protocols.mdx
             contents:
               - page: gRPC
-                icon: fa-regular fa-arrow-right-arrow-left
-                path: ./pages/docs/api-references/protocols/grpc.mdx
+                icon: fa-solid fa-arrows-turn-to-dots
+                path: ./pages/docs/api-references/protocols/gen-grpc-ref.mdx
               - page: REST
-                icon: fa-regular fa-arrow-right-arrow-left
-                path: ./pages/docs/api-references/protocols/rest.mdx
+                icon: fa-solid fa-bed
+                path: ./pages/docs/api-references/protocols/gen-rest-ref.mdx
               - page: Server-sent events
-                icon: fa-regular fa-arrow-right-arrow-left
-                path: ./pages/docs/api-references/protocols/server-sent-events.mdx
+                icon: fa-solid fa-server
+                path: ./pages/docs/api-references/protocols/gen-server-sent-events-ref.mdx
               - page: Webhooks
-                icon: fa-regular fa-arrow-right-arrow-left
-                path: ./pages/docs/api-references/protocols/webhooks.mdx
+                icon: fa-regular fa-webhook
+                path: ./pages/docs/api-references/protocols/gen-webhooks-ref.mdx
               - page: WebSockets
-                icon: fa-regular fa-arrow-right-arrow-left
-                path: ./pages/docs/api-references/protocols/websockets.mdx
+                icon: fa-regular fa-plug
+                path: ./pages/docs/api-references/protocols/gen-websockets-ref.mdx
           - page: SDK Snippets
             icon: fa-regular fa-brackets-curly
             path: ./pages/docs/api-references/sdk-snippets.mdx
@@ -538,13 +538,6 @@ navigation:
           - page: Write Markdown in API Reference
             icon: fa-regular fa-pencil
             path: ./pages/docs/api-references/api-ref-content.mdx
-          - page: Generate Webhook Reference
-            icon: fa-regular fa-webhook
-            path: ./pages/docs/api-references/generate-webhook-ref.mdx
-          - page: Generate WebSocket Reference
-            icon: fa-regular fa-plug
-            path: ./pages/docs/api-references/generate-websocket-ref.mdx
-            slug: generate-websocket-ref
 
       - section: Integrations
         slug: integrations
