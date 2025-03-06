@@ -396,7 +396,7 @@ navigation:
           - page: Edit This Page and User Feedback
             icon: fa-regular fa-comment-dots
             path: ./pages/docs/building-your-docs/user-feedback.mdx
-          - page: Role based access control (RBAC)
+          - page: Role-Based Access Control (RBAC)
             icon: fa-regular fa-lock
             path: ./pages/docs/building-your-docs/rbac.mdx
             slug: rbac

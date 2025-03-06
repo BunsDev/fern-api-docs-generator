@@ -1,33 +1,38 @@
 ---
-title: Role-based access control
+title: Role-Based Access Control (RBAC)
 subtitle: Control who can view your documentation
-description: Learn how to restrict access to your documentation using role-based access control (RBAC)
+description: Learn how to restrict access to your documentation using Role-Based Access Control (RBAC)
 ---
 
-<Note>Configuring RBAC is part of the pro plan.</Note>
+<Note>RBAC is available with the Pro plan.</Note>
 
-Fern allows you to restrict parts of your navigation to individuals with specific roles. Below, we walk through each of the steps
-required to configure RBAC.
+Fern allows role-based access restrictions for specific docs pages.
 
 <Steps>
-### Define all the `roles` in your docs.yml
 
-Start by defining all the different roles in your `docs.yml`. You can simply specify thise under a `roles` key:
+### Define roles
+
+Define different roles in `docs.yml` by listing them under a `roles` key at the top level of indentation.
 
 ```yml docs.yml
 roles:
   - everyone # every user is given this role
   - partners
-  - beta-users
   - admins
 ```
 
-<Info>The `everyone` role is a special role. Every user has this role.</Info>
+<Info>Every user is granted the `everyone` role.</Info>
 
-### Define viewers on parts of the navigation
+{/* Waiting for confirmation from Deep. <Info>Every user is granted the `everyone` role, even if that role isn't explicitly defined under the `roles` key.</Info> */}
 
-Every navigation item (`sections`, `pages`, `api references`) can have a set of designated viewers. If you don't
-specify viewers, then it defaults to `everyone` and the page is public.
+
+### Define viewers for documentation items
+
+Every documentation item (including `section`, `page`, and `api references` components) can have a set of designated viewers.
+
+Nested components inherit view permissions from their parent components. For example, if a section can only be viewed by users with the `admin` role, any child pages can also only be viewed by users with the `admin` role.
+
+Navigation items without defined or inherited viewers are viewable by everyone.
 
 ```yml docs.yml {7-8} {14-16}
 navigation:
@@ -42,32 +47,28 @@ navigation:
     layout:
       - page: Overview
         path: pages/overview.mdx
-      - section: Beta Release
+      - section: Administration
         viewers:
           - partners
           - admin
 ```
 
-The viewers are inherited by nested pieces of content. For example, if a section can only be viewed by `admins`, then all its
-pages and nested sections can also only be viewed by admins.
 
-### Configure authentication via a `FERN_TOKEN`
+### Assign roles to users with `FERN_TOKEN` cookies
 
-In this step, we will configure authentication so that Fern can understand what roles a particular user has. Fern expects the user's
-browser session to have a cookie called `FERN_TOKEN`. If the cookie is not present, the user will be redirected to your company's
-login page.
+Users are assigned roles via a cookie called `FERN_TOKEN`. The cookie must contain a JWT that is created for each user when they log in, using a secret key that Fern provides. The JWT must have a `fern` claim with a key called `roles` that holds an array of the user's roles.
 
-Upon login, you must set a JWT for the user using a secret key that we will provide you with. The JWT must have a `fern` claim
-with a key called roles.
 
-```json
+```json Sample JWT claim
 {
   "fern": {
-    "roles": ["partners"]
+    "roles": ["partners", "admins"]
   }
 }
 ```
 
-<Note>Please reach out to support@buildwithfern.com when you are on this step so we can provide you with a secret key.</Note>
+When the a user tries to view a page with defined `viewers`, if the `FERN_TOKEN` cookie isn't present or doesn't contain a JWT with the appropriate role, the user is redirected to the company's login page.
+
+<Note>Contact support@buildwithfern.com to be assigned a secret key.</Note>
 
 </Steps>
