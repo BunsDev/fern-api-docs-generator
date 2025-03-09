@@ -1,5 +1,6 @@
 export * from "./AsIs";
 export * as dependencies from "./ast/dependencies";
+export { ast } from "./ast/ast";
 export * from "./cli";
 export * as csharp from "./csharp";
 export { convertReadOnlyPrimitiveTypes } from "./csharp";

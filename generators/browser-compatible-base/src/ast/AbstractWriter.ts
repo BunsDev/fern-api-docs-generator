@@ -82,8 +82,9 @@ export class AbstractWriter {
      * @param node
      */
     public writeTextStatement(text: string): void {
-        const codeBlock = new CodeBlock(text);
-        codeBlock.write(this);
+        if (typeof text === "string") {
+            this.write(text);
+        }
         this.write(";");
         this.writeNewLineIfLastLineNot();
     }
@@ -174,6 +175,12 @@ export class AbstractWriter {
     /* Only writes a newline if last line in the buffer is not a newline */
     public writeLine(text = ""): void {
         this.write(text);
+        this.writeNewLineIfLastLineNot();
+    }
+
+    /* Only writes a newline if last line in the buffer is not a newline */
+    public writeNodeLine(node: AbstractAstNode): void {
+        node.write(this);
         this.writeNewLineIfLastLineNot();
     }
 

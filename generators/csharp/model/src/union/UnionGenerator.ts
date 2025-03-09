@@ -1,5 +1,5 @@
 import { assertNever } from "@fern-api/core-utils";
-import { CSharpFile, FileGenerator, csharp } from "@fern-api/csharp-codegen";
+import { CSharpFile, FileGenerator, ast, csharp } from "@fern-api/csharp-codegen";
 import { RelativeFilePath, join } from "@fern-api/fs-utils";
 
 import { FernIr } from "@fern-fern/ir-sdk";
@@ -51,10 +51,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                 csharp.annotation({
                     reference: this.context.getJsonConverterAttributeReference(),
                     argument: csharp.codeblock((writer) => {
-                        writer.write("typeof(");
-                        writer.writeNode(this.classReference);
-                        writer.write(".JsonConverter");
-                        writer.write(")");
+                        writer.writeNode(ast`typeof(${this.classReference}.JsonConverter)`);
                     })
                 })
             ],
@@ -136,11 +133,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                 const innerClassType = this.getUnionTypeClassReferenceType(type);
                 const ctor: csharp.Class.Constructor = {
                     doc: {
-                        summary: (writer) => {
-                            writer.write(`Create an instance of ${this.classReference.name} with <see cref="`);
-                            writer.writeNode(innerClassType);
-                            writer.write('"/>.');
-                        }
+                        summary: ast`Create an instance of ${this.classReference.name} with <see cref="${innerClassType}"/>.`
                     },
                     access: csharp.Access.Public,
                     parameters: [
@@ -182,21 +175,11 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                 const memberType = this.getCsharpType(type);
                 return csharp.method({
                     doc: {
-                        summary: (writer) => {
-                            writer.write('Returns the value as a <see cref="');
-                            writer.writeNode(memberType);
-                            writer.write(
-                                `"/> if <see cref="${this.discriminantPropertyName}"/> is '${type.discriminantValue.wireValue}', otherwise throws an exception.`
-                            );
-                        },
+                        summary: ast`Returns the value as a <see cref="${memberType}"/> if <see cref="${this.discriminantPropertyName}"/> is '${type.discriminantValue.wireValue}', otherwise throws an exception.`,
                         exceptions: new Map([
                             [
                                 "Exception",
-                                (writer) => {
-                                    writer.write(
-                                        `Thrown when <see cref="${this.discriminantPropertyName}"/> is not '${type.discriminantValue.wireValue}'.`
-                                    );
-                                }
+                                `Thrown when <see cref="${this.discriminantPropertyName}"/> is not '${type.discriminantValue.wireValue}'.`
                             ]
                         ])
                     },
@@ -207,14 +190,10 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                     body: csharp.codeblock((writer) => {
                         writer.write(`Is${type.discriminantValue.name.pascalCase.unsafeName} ? `);
                         if (memberType.unwrapIfOptional().internalType.type !== "object") {
-                            writer.write("(");
-                            writer.writeNode(memberType);
-                            writer.write(")");
+                            writer.writeNode(ast`(${memberType})`);
                         }
-                        writer.write(`${this.valuePropertyName}! : throw new Exception("`);
-                        writer.writeNode(this.classReference);
-                        writer.write(
-                            `.${this.discriminantPropertyName} is not '${type.discriminantValue.wireValue}'")`
+                        writer.writeNode(
+                            ast`${this.valuePropertyName}! : throw new Exception("${this.classReference}.${this.discriminantPropertyName} is not '${type.discriminantValue.wireValue}'")`
                         );
                     }),
                     parameters: []
@@ -337,11 +316,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                 const memberType = this.getCsharpType(type);
                 return csharp.method({
                     doc: {
-                        summary: (writer) => {
-                            writer.write('Attempts to cast the value to a <see cref="');
-                            writer.writeNode(memberType);
-                            writer.write('"/> and returns true if successful.');
-                        }
+                        summary: ast`Attempts to cast the value to a <see cref="${memberType}"/> and returns true if successful.`
                     },
                     access: csharp.Access.Public,
                     return_: csharp.Type.boolean(),
@@ -354,9 +329,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                         writer.indent();
                         writer.write("value = ");
                         if (memberType.unwrapIfOptional().internalType.type !== "object") {
-                            writer.write("(");
-                            writer.writeNode(memberType);
-                            writer.write(")");
+                            writer.writeNode(ast`(${memberType})`);
                         }
                         writer.writeTextStatement(`${this.valuePropertyName}!`);
                         writer.writeTextStatement("return true");
@@ -550,9 +523,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                 ],
                 bodyType: csharp.Method.BodyType.Expression,
                 body: csharp.codeblock((writer) => {
-                    writer.write("typeof(");
-                    writer.writeNode(this.classReference);
-                    writer.write(").IsAssignableFrom(typeToConvert)");
+                    writer.writeNode(ast`typeof(${this.classReference}).IsAssignableFrom(typeToConvert)`);
                 })
             })
         );
@@ -646,9 +617,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                                 default:
                                     assertNever(type.shape);
                             }
-                            writer.write(".Deserialize<");
-                            writer.writeNode(csharpType);
-                            writer.write(">(options)");
+                            writer.writeNode(ast`.Deserialize<${csharpType}>(options)`);
                             if (csharpType.isOptional()) {
                                 writer.writeLine(",");
                             } else {
@@ -658,9 +627,9 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                                     csharpType.internalType.type === "reference" ||
                                     csharpType.internalType.type === "coreReference"
                                 ) {
-                                    writer.write(' ?? throw new JsonException("Failed to deserialize ');
-                                    writer.writeNode(csharpType);
-                                    writer.writeLine('"),');
+                                    writer.writeNodeLine(
+                                        ast` ?? throw new JsonException("Failed to deserialize ${csharpType}"),`
+                                    );
                                 } else {
                                     writer.writeLine(",");
                                 }
@@ -686,15 +655,14 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                     writer.writeTextStatement("}");
 
                     if (baseProperties.length > 0) {
-                        writer.write("var baseProperties = json.Deserialize<");
-                        writer.writeNode(this.classReference);
-                        writer.write('.BaseProperties>(options) ?? throw new JsonException("Failed to deserialize ');
-                        writer.writeNode(this.classReference);
-                        writer.writeLine('.BaseProperties");');
+                        writer.writeNodeLine(
+                            ast`var baseProperties = json.Deserialize<${this.classReference}.BaseProperties>(options) `
+                        );
+                        writer.writeNodeStatement(
+                            ast`?? throw new JsonException("Failed to deserialize ${this.classReference}.BaseProperties")`
+                        );
                     }
-                    writer.write("return new ");
-                    writer.writeNode(unionReference);
-                    writer.writeLine("(discriminator, value)");
+                    writer.writeNodeLine(ast`return new ${unionReference}(discriminator, value)`);
                     if (baseProperties.length > 0) {
                         writer.writeLine("{");
                         writer.indent();
@@ -741,8 +709,9 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                 ],
                 body: csharp.codeblock((writer) => {
                     const jsonObjReference = this.context.getJsonObjClassReference();
-                    writer.writeNode(this.context.getJsonNodeClassReference());
-                    writer.writeLine(` json = value.${this.discriminantPropertyName} switch`);
+                    writer.writeNodeLine(
+                        ast`${this.context.getJsonNodeClassReference()} json = value.${this.discriminantPropertyName} switch`
+                    );
                     writer.writeLine("{");
                     writer.indent();
                     this.unionDeclaration.types.forEach((type) => {
@@ -752,9 +721,7 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                                 writer.write("JsonSerializer.SerializeToNode(value.Value, options),");
                                 break;
                             case "singleProperty":
-                                writer.write("new ");
-                                writer.writeNode(jsonObjReference);
-                                writer.writeLine();
+                                writer.writeNodeLine(ast`new ${jsonObjReference}`);
                                 writer.writeLine("{");
                                 writer.indent();
                                 writer.writeLine(
@@ -770,25 +737,23 @@ export class UnionGenerator extends FileGenerator<CSharpFile, ModelCustomConfigS
                     });
                     writer.write("_ => JsonSerializer.SerializeToNode(value.Value, options)");
                     writer.dedent();
-                    writer.write("} ?? new ");
-                    writer.writeNode(jsonObjReference);
-                    writer.writeTextStatement("()");
+                    writer.writeNodeStatement(ast`} ?? new ${jsonObjReference}()`);
                     writer.writeTextStatement(
                         `json["${this.unionDeclaration.discriminant.wireValue}"] = value.${this.discriminantPropertyName}`
                     );
                     if (baseProperties.length > 0) {
-                        writer.write("var basePropertiesJson = JsonSerializer.SerializeToNode(new ");
-                        writer.writeNode(this.classReference);
-                        writer.writeLine(".BaseProperties");
+                        writer.writeNodeLine(
+                            ast`var basePropertiesJson = JsonSerializer.SerializeToNode(new ${this.classReference}.BaseProperties`
+                        );
                         writer.writeLine("{");
                         writer.indent();
                         baseProperties.forEach((property) => {
                             writer.writeLine(`${property.name} = value.${property.name},`);
                         });
                         writer.dedent();
-                        writer.write('}, options) ?? throw new JsonException("Failed to serialize ');
-                        writer.writeNode(this.classReference);
-                        writer.writeLine('.BaseProperties");');
+                        writer.writeNodeStatement(
+                            ast`}, options) ?? throw new JsonException("Failed to serialize ${this.classReference}.BaseProperties")`
+                        );
                         writer.writeLine("foreach (var property in basePropertiesJson.AsObject())");
                         writer.writeLine("{");
                         writer.indent();

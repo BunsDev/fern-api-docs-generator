@@ -1,3 +1,5 @@
+import { AbstractAstNode } from "@fern-api/base-generator";
+
 import { AstNode, Writer } from "../csharp";
 import { XmlDocWriter } from "./core/XmlDocWriter";
 
@@ -7,10 +9,10 @@ export declare namespace XmlDocBlock {
         | {
               summary?: XmlDocNode;
               codeExample?: XmlDocNode;
-              exceptions?: Map<string | AstNode, XmlDocNode>;
+              exceptions?: Map<string | AbstractAstNode, XmlDocNode>;
           }
         | XmlDocNode;
-    type XmlDocNode = string | ((writer: XmlDocWriter) => void) | null | undefined;
+    type XmlDocNode = string | AbstractAstNode | ((writer: XmlDocWriter) => void) | null | undefined;
 }
 
 export class XmlDocBlock extends AstNode {
@@ -37,9 +39,13 @@ export class XmlDocBlock extends AstNode {
             this.arg(docWriter);
             docWriter.writeNewLineIfLastLineNot();
             return;
-        }
-        if (typeof this.arg === "string") {
+        } else if (typeof this.arg === "string") {
             docWriter.writeMultilineWithEscaping(this.arg);
+            docWriter.writeNewLineIfLastLineNot();
+            return;
+        } else if (this.arg instanceof AbstractAstNode) {
+            docWriter.writePrefix();
+            docWriter.writeNode(this.arg);
             docWriter.writeNewLineIfLastLineNot();
             return;
         }
@@ -82,14 +88,15 @@ export class XmlDocBlock extends AstNode {
         if (node == null) {
             return;
         }
+        writer.writePrefix();
         if (typeof node === "function") {
-            writer.writePrefix();
             node(writer);
-            return;
-        }
-        if (typeof node === "string") {
-            writer.writePrefix();
+        } else if (typeof node === "string") {
             writer.writeMultiline(node);
+        } else if (node instanceof AbstractAstNode) {
+            writer.writeNode(node);
+        } else {
+            throw new Error(`Unexpected node type: ${typeof node}`);
         }
     }
 
@@ -97,14 +104,15 @@ export class XmlDocBlock extends AstNode {
         if (node == null) {
             return;
         }
+        writer.writePrefix();
         if (typeof node === "function") {
-            writer.writePrefix();
             node(writer);
-            return;
-        }
-        if (typeof node === "string") {
-            writer.writePrefix();
+        } else if (typeof node === "string") {
             writer.writeMultilineWithEscaping(node);
+        } else if (node instanceof AbstractAstNode) {
+            writer.writeNode(node);
+        } else {
+            throw new Error(`Unexpected node type: ${typeof node}`);
         }
     }
 }

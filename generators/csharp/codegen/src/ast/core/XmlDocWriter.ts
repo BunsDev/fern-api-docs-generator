@@ -2,7 +2,6 @@ import { AbstractAstNode } from "@fern-api/base-generator";
 
 import { Writer } from "..";
 import { XmlDocBlock } from "../XmlDocBlock";
-import { AstNode } from "./AstNode";
 
 export class XmlDocWriter {
     private writer: Writer;
@@ -65,7 +64,7 @@ export class XmlDocWriter {
         this.write(`</${nodeName}>`);
     }
 
-    public writeNode(node: AstNode): void {
+    public writeNode(node: AbstractAstNode): void {
         this.writer.writeNode(node);
     }
 
@@ -104,8 +103,13 @@ export class XmlDocWriter {
     public writeMultiline(text: string): void {
         text.trim()
             .split("\n")
-            .forEach((line) => {
-                this.writeLine(line);
+            .forEach((line, index, lines) => {
+                if (index < lines.length - 1) {
+                    this.writeLine(line);
+                } else {
+                    this.writePrefix();
+                    this.write(line);
+                }
             });
     }
 

@@ -11,3 +11,4 @@ export {
     isNamedArgument
 } from "./Argument";
 export { Ternary } from "./Ternary";
+export { ast } from "./ast";
