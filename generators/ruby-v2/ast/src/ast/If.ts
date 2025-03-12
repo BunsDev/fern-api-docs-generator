@@ -19,14 +19,17 @@ export class If extends ControlStructure {
         this.conditionalChain = { conditions: [{ conditional, consequent }] };
     }
 
-    public elsif_({ conditional, consequent }: If.Args): void {
+    public elsif_({ conditional, consequent }: If.Args): this {
         this.conditionalChain.conditions.push({ conditional, consequent });
+        return this;
     }
 
-    public else_({ consequent }: Pick<If.Args, "consequent">): void {
+    public else_({ consequent }: Pick<If.Args, "consequent">): this {
         this.conditionalChain.otherwise = consequent;
+        return this;
     }
 
+    // TODO: Whew, this is gnarly. Abstract out for other conditionals (unless, case, while, until)
     write(writer: Writer): void {
         const queue = this.conditionalChain.conditions;
 
@@ -42,20 +45,26 @@ export class If extends ControlStructure {
                 if (i === 0) {
                     writer.write("if ");
                     conditional.write(writer);
+                } else {
+                    writer.newLine();
+                    writer.write("elsif ");
+                    conditional.write(writer);
+                }
 
-                    if (consequent) {
+                if (consequent) {
+                    if (i === 0) {
                         appendEnd = true;
-
-                        writer.newLine();
-                        writer.indent();
-                        consequent.forEach((node, index) => {
-                            node.write(writer);
-                            if (index !== consequent.length - 1) {
-                                writer.newLine();
-                            }
-                        });
-                        writer.dedent();
                     }
+
+                    writer.newLine();
+                    writer.indent();
+                    consequent.forEach((node, index) => {
+                        node.write(writer);
+                        if (index !== consequent.length - 1) {
+                            writer.newLine();
+                        }
+                    });
+                    writer.dedent();
                 }
 
                 i++;
@@ -67,7 +76,9 @@ export class If extends ControlStructure {
         if (otherwise) {
             appendEnd = true;
 
+            writer.newLine();
             writer.write("else");
+            writer.newLine();
             writer.indent();
             otherwise.forEach((node, index) => {
                 node.write(writer);
@@ -80,7 +91,6 @@ export class If extends ControlStructure {
 
         if (appendEnd) {
             writer.newLine();
-            writer.dedent();
             writer.write("end");
         }
     }

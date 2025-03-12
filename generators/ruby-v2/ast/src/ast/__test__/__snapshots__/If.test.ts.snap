@@ -1,3 +1,27 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`If > writes trailing if 1`] = `"if true"`;
+exports[`If > write > writes if 1`] = `
+"if true
+    "It works!"
+end"
+`;
+
+exports[`If > write > writes if/else 1`] = `
+"if true
+    "It works!"
+else
+    "It doesn't work"
+end"
+`;
+
+exports[`If > write > writes if/elsif/else 1`] = `
+"if true
+    "in the if"
+elsif 1
+    "in the elsif"
+else
+    "in the else"
+end"
+`;
+
+exports[`If > write > writes trailing if 1`] = `"if true"`;
