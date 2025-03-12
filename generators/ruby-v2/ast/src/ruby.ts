@@ -2,14 +2,17 @@ import {
     Class_,
     CodeBlock,
     Comment,
+    If,
     KeywordParameter,
     KeywordSplatParameter,
     Method,
     Module,
     PositionalParameter,
     PositionalSplatParameter,
+    VariableAssignment,
     YieldParameter
 } from "./ast";
+import { ControlStructure } from "./ast/ControlStructure";
 import { TypeParameter } from "./ast/TypeParameter";
 
 export { AstNode } from "./ast/core/AstNode";
@@ -55,6 +58,14 @@ export function method(args: Method.Args): Method {
 
 export function comment(args: Comment.Args): Comment {
     return new Comment(args);
+}
+
+export function if_(args: ControlStructure.ConditionalConsequencePair): If {
+    return new If(args);
+}
+
+export function variableAssignment(args: VariableAssignment.Args): VariableAssignment {
+    return new VariableAssignment(args);
 }
 
 export function typeParameter(args: TypeParameter.Args): TypeParameter {
