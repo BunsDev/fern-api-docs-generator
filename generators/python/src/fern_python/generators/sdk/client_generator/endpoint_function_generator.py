@@ -87,6 +87,7 @@ class EndpointFunctionGenerator:
         generated_root_client: GeneratedRootClient,
         snippet_writer: SnippetWriter,
         endpoint_metadata_collector: Optional[EndpointMetadataCollector],
+        is_raw_client: bool = False,
     ):
         self._context = context
         self._package = package
@@ -98,6 +99,7 @@ class EndpointFunctionGenerator:
         self._generated_root_client = generated_root_client
         self.snippet_writer = snippet_writer
         self.endpoint_metadata_collector = endpoint_metadata_collector
+        self._is_raw_client = is_raw_client
 
         self.is_paginated = (
             self._endpoint.pagination is not None and self._context.generator_config.generate_paginated_clients
@@ -580,6 +582,7 @@ class EndpointFunctionGenerator:
                             parameters=parameters,
                             named_parameters=named_parameters,
                         ),
+                        is_raw_client=self._is_raw_client,
                     )
                     streaming_request = get_httpx_request(
                         is_streaming=True, response_code_writer=streaming_response_code_writer
@@ -615,6 +618,7 @@ class EndpointFunctionGenerator:
                         parameters=parameters,
                         named_parameters=named_parameters,
                     ),
+                    is_raw_client=self._is_raw_client,
                 )
                 non_streaming_request = get_httpx_request(
                     is_streaming=False, response_code_writer=non_streaming_response_code_writer
@@ -636,6 +640,7 @@ class EndpointFunctionGenerator:
                         parameters=parameters,
                         named_parameters=named_parameters,
                     ),
+                    is_raw_client=self._is_raw_client,
                 )
                 is_streaming = (
                     True
@@ -1008,7 +1013,7 @@ class EndpointFunctionGenerator:
         streaming_parameter: Optional[StreamingParameterType] = None,
     ) -> AST.TypeHint:
         response_type = response_body.visit(
-            file_download=lambda _: self._get_file_download_response_body_type(is_async=is_async),
+            file_download=lambda _: self._get_file_download_response_body_type(is_async),
             json=lambda json_response: self._get_json_response_body_type(json_response),
             streaming=lambda stream_response: self._get_streaming_response_body_type(
                 stream_response=stream_response, is_async=is_async
@@ -1023,7 +1028,53 @@ class EndpointFunctionGenerator:
         if response_type is None:
             return AST.TypeHint.none()
 
-        return response_type if not self.is_paginated else self._get_pagination_results_type(response_type)
+        # Only wrap in HttpResponse/AsyncHttpResponse/StreamResponseManager when generating raw client
+        if not self._is_raw_client:
+            # For non-raw clients, return the response type directly
+            return response_type if not self.is_paginated else self._get_pagination_results_type(response_type)
+
+        # Determine if this is a streaming response
+        is_streaming = (
+            response_body.get_as_union().type == "streaming"
+            or response_body.get_as_union().type == "fileDownload"
+            or (
+                response_body.get_as_union().type == "stream_parameter"
+                and streaming_parameter == "streaming"
+            )
+        )
+            
+        # For streaming responses
+        if is_streaming:
+            # For streaming, file download, or stream_parameter + streaming, wrap in StreamResponseManager/AsyncStreamResponseManager
+            stream_manager_class = "AsyncStreamResponseManager" if is_async else "StreamResponseManager"
+            inner_type = response_type if not self.is_paginated else self._get_pagination_results_type(response_type)
+            
+            # Create a type hint for StreamResponseManager[inner_type]
+            return AST.TypeHint(
+                type=AST.ClassReference(
+                    qualified_name_excluding_import=(),
+                    import_=AST.ReferenceImport(
+                        module=AST.Module.local(*self._context.core_utilities._module_path, "stream_response_manager"),
+                        named_import=stream_manager_class
+                    ),
+                ),
+                type_parameters=[AST.TypeParameter(inner_type)],
+            )
+        
+        # For non-streaming responses, wrap in HttpResponse or AsyncHttpResponse
+        response_class = "AsyncHttpResponse" if is_async else "HttpResponse"
+        wrapped_type = AST.TypeHint(
+            type=AST.ClassReference(
+                qualified_name_excluding_import=(),
+                import_=AST.ReferenceImport(
+                    module=AST.Module.local(*self._context.core_utilities._module_path, "http_response"),
+                    named_import=response_class
+                ),
+            ),
+            type_parameters=[AST.TypeParameter(response_type)],
+        )
+
+        return wrapped_type if not self.is_paginated else self._get_pagination_results_type(wrapped_type)
 
     def _write_yielding_return(self, writer: NodeWriter, response_hint: AST.TypeHint, docs: Optional[str]) -> None:
         writer.write_line("Yields")

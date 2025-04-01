@@ -3,6 +3,7 @@
 import typing
 from ..core.client_wrapper import SyncClientWrapper
 from ..core.request_options import RequestOptions
+from ..core.http_response import HttpResponse
 from .types.movie_id import MovieId
 from ..core.pydantic_utilities import parse_obj_as
 from json.decoder import JSONDecodeError
@@ -11,20 +12,51 @@ from .types.movie import Movie
 from ..core.jsonable_encoder import jsonable_encoder
 from .errors.movie_does_not_exist_error import MovieDoesNotExistError
 from ..core.client_wrapper import AsyncClientWrapper
-from ..core.http_response import HttpResponse, AsyncHttpResponse
+from ..core.http_response import AsyncHttpResponse
 
 # this is used as the default value for optional parameters
 OMIT = typing.cast(typing.Any, ...)
 
+
 class RawImdbClient:
     def __init__(self, *, client_wrapper: SyncClientWrapper):
         self._client_wrapper = client_wrapper
-    
+
     def create_movie(
-        self, *, title: str, rating: float, request_options: typing.Optional[RequestOptions] = None
+        self,
+        *,
+        title: str,
+        rating: float,
+        request_options: typing.Optional[RequestOptions] = None,
     ) -> HttpResponse[MovieId]:
         """
-        Equivalent to the `create_movie` method on the `ImdbClient` class, but returns the raw HttpResponse.
+        Add a movie to the database using the movies/* /... path.
+
+        Parameters
+        ----------
+        title : str
+
+        rating : float
+
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+
+        Returns
+        -------
+        HttpResponse[MovieId]
+
+        Examples
+        --------
+        from seed import SeedApi
+
+        client = SeedApi(
+            token="YOUR_TOKEN",
+            base_url="https://yourhost.com/path/to/api",
+        )
+        client.imdb.create_movie(
+            title="title",
+            rating=1.1,
+        )
         """
         _response = self._client_wrapper.httpx_client.request(
             "movies/create-movie",
@@ -36,7 +68,6 @@ class RawImdbClient:
             request_options=request_options,
             omit=OMIT,
         )
-        
         try:
             if 200 <= _response.status_code < 300:
                 data = typing.cast(
@@ -46,16 +77,42 @@ class RawImdbClient:
                         object_=_response.json(),
                     ),
                 )
-                return HttpResponse(
-                    response=_response,
-                    data=data,
-                )
+                return HttpResponse(response=_response, data=data)
             _response_json = _response.json()
         except JSONDecodeError:
             raise ApiError(status_code=_response.status_code, body=_response.text)
         raise ApiError(status_code=_response.status_code, body=_response_json)
-    
-    def get_movie(self, movie_id: MovieId, *, request_options: typing.Optional[RequestOptions] = None) -> HttpResponse[Movie]:
+
+    def get_movie(
+        self,
+        movie_id: MovieId,
+        *,
+        request_options: typing.Optional[RequestOptions] = None,
+    ) -> HttpResponse[Movie]:
+        """
+        Parameters
+        ----------
+        movie_id : MovieId
+
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+
+        Returns
+        -------
+        HttpResponse[Movie]
+
+        Examples
+        --------
+        from seed import SeedApi
+
+        client = SeedApi(
+            token="YOUR_TOKEN",
+            base_url="https://yourhost.com/path/to/api",
+        )
+        client.imdb.get_movie(
+            movie_id="movieId",
+        )
+        """
         _response = self._client_wrapper.httpx_client.request(
             f"movies/{jsonable_encoder(movie_id)}",
             method="GET",
@@ -70,10 +127,7 @@ class RawImdbClient:
                         object_=_response.json(),
                     ),
                 )
-                return HttpResponse(
-                    response=_response,
-                    data=data,
-                )
+                return HttpResponse(response=_response, data=data)
             if _response.status_code == 404:
                 raise MovieDoesNotExistError(
                     typing.cast(
@@ -95,10 +149,48 @@ class AsyncRawImdbClient:
         self._client_wrapper = client_wrapper
 
     async def create_movie(
-        self, *, title: str, rating: float, request_options: typing.Optional[RequestOptions] = None
+        self,
+        *,
+        title: str,
+        rating: float,
+        request_options: typing.Optional[RequestOptions] = None,
     ) -> AsyncHttpResponse[MovieId]:
         """
-        Equivalent to the `create_movie` method on the `ImdbClient` class, but returns the raw HttpResponse.
+        Add a movie to the database using the movies/* /... path.
+
+        Parameters
+        ----------
+        title : str
+
+        rating : float
+
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+
+        Returns
+        -------
+        AsyncHttpResponse[MovieId]
+
+        Examples
+        --------
+        import asyncio
+
+        from seed import AsyncSeedApi
+
+        client = AsyncSeedApi(
+            token="YOUR_TOKEN",
+            base_url="https://yourhost.com/path/to/api",
+        )
+
+
+        async def main() -> None:
+            await client.imdb.create_movie(
+                title="title",
+                rating=1.1,
+            )
+
+
+        asyncio.run(main())
         """
         _response = await self._client_wrapper.httpx_client.request(
             "movies/create-movie",
@@ -110,7 +202,6 @@ class AsyncRawImdbClient:
             request_options=request_options,
             omit=OMIT,
         )
-        
         try:
             if 200 <= _response.status_code < 300:
                 data = typing.cast(
@@ -120,16 +211,50 @@ class AsyncRawImdbClient:
                         object_=_response.json(),
                     ),
                 )
-                return AsyncHttpResponse(
-                    response=_response,
-                    data=data,
-                )
+                return AsyncHttpResponse(response=_response, data=data)
             _response_json = _response.json()
         except JSONDecodeError:
             raise ApiError(status_code=_response.status_code, body=_response.text)
         raise ApiError(status_code=_response.status_code, body=_response_json)
-    
-    async def get_movie(self, movie_id: MovieId, *, request_options: typing.Optional[RequestOptions] = None) -> AsyncHttpResponse[Movie]:
+
+    async def get_movie(
+        self,
+        movie_id: MovieId,
+        *,
+        request_options: typing.Optional[RequestOptions] = None,
+    ) -> AsyncHttpResponse[Movie]:
+        """
+        Parameters
+        ----------
+        movie_id : MovieId
+
+        request_options : typing.Optional[RequestOptions]
+            Request-specific configuration.
+
+        Returns
+        -------
+        AsyncHttpResponse[Movie]
+
+        Examples
+        --------
+        import asyncio
+
+        from seed import AsyncSeedApi
+
+        client = AsyncSeedApi(
+            token="YOUR_TOKEN",
+            base_url="https://yourhost.com/path/to/api",
+        )
+
+
+        async def main() -> None:
+            await client.imdb.get_movie(
+                movie_id="movieId",
+            )
+
+
+        asyncio.run(main())
+        """
         _response = await self._client_wrapper.httpx_client.request(
             f"movies/{jsonable_encoder(movie_id)}",
             method="GET",
@@ -144,10 +269,7 @@ class AsyncRawImdbClient:
                         object_=_response.json(),
                     ),
                 )
-                return AsyncHttpResponse(
-                    response=_response,
-                    data=data,
-                )
+                return AsyncHttpResponse(response=_response, data=data)
             if _response.status_code == 404:
                 raise MovieDoesNotExistError(
                     typing.cast(

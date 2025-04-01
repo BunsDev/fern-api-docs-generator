@@ -9,7 +9,7 @@ import json
 from json.decoder import JSONDecodeError
 from ..core.api_error import ApiError
 from ..core.http_response import HttpResponse
-from ..core.pydantic_utilities import parse_obj_as
+from ..core.unchecked_base_model import construct_type
 from ..core.client_wrapper import AsyncClientWrapper
 from ..core.stream_response_manager import AsyncStreamResponseManager
 from ..core.http_response import AsyncHttpResponse
@@ -156,7 +156,7 @@ class RawDummyClient:
             if 200 <= _response.status_code < 300:
                 data = typing.cast(
                     StreamResponse,
-                    parse_obj_as(
+                    construct_type(
                         type_=StreamResponse,  # type: ignore
                         object_=_response.json(),
                     ),
@@ -325,7 +325,7 @@ class AsyncRawDummyClient:
             if 200 <= _response.status_code < 300:
                 data = typing.cast(
                     StreamResponse,
-                    parse_obj_as(
+                    construct_type(
                         type_=StreamResponse,  # type: ignore
                         object_=_response.json(),
                     ),

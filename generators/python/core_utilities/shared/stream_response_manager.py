@@ -1,0 +1,70 @@
+from types import TracebackType
+from typing import (
+    AsyncIterator,
+    Awaitable,
+    Callable,
+    Generic,
+    Iterator,
+    Optional,
+    Type,
+    TypeVar,
+)
+
+from .http_response import HttpResponse, AsyncHttpResponse
+
+T = TypeVar("T")
+
+class StreamResponseManager(Generic[T]):
+    """
+    A context manager for streaming responses.
+
+    This class is used to manage the lifecycle of a streaming response.
+    It provides a context manager interface for iterating over the response data.
+    """
+    _stream_func: Callable[[], HttpResponse[Iterator[T]]]
+    _response: Optional[HttpResponse[Iterator[T]]]
+
+    def __init__(self, stream_func: Callable[[], HttpResponse[Iterator[T]]]) -> None:
+        self._stream_func = stream_func
+        self._response = None
+
+    def __enter__(self) -> HttpResponse[Iterator[T]]:
+        self._response = self._stream_func()
+        return self._response
+
+    def __exit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc: Optional[BaseException],
+        exc_tb: Optional[TracebackType],
+    ) -> None:
+        if self._response is not None:
+            self._response.close()
+
+
+class AsyncStreamResponseManager(Generic[T]):
+    """
+    A context manager for streaming responses.
+
+    This class is used to manage the lifecycle of a streaming response.
+    It provides a context manager interface for iterating over the response data.
+    """
+    _stream_func: Callable[[], Awaitable[AsyncHttpResponse[AsyncIterator[T]]]]
+    _response: Optional[AsyncHttpResponse[AsyncIterator[T]]]
+
+    def __init__(self, stream_func: Callable[[], Awaitable[AsyncHttpResponse[AsyncIterator[T]]]]) -> None:
+        self._stream_func = stream_func
+        self._response = None
+
+    async def __aenter__(self) -> AsyncHttpResponse[AsyncIterator[T]]:
+        self._response = await self._stream_func()
+        return self._response
+
+    async def __aexit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc: Optional[BaseException],
+        exc_tb: Optional[TracebackType],
+    ) -> None:
+        if self._response is not None:
+            await self._response.close()

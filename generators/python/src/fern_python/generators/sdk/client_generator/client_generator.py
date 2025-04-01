@@ -68,14 +68,21 @@ class ClientGenerator:
         self._generated_root_client = generated_root_client
         self._snippet_registry = snippet_registry
         self._snippet_writer = snippet_writer
-        self._is_default_body_parameter_used = False
         self._endpoint_metadata_collector = endpoint_metadata_collector
         self._websocket = websocket
 
     def generate(self, source_file: SourceFile) -> None:
+        # Add imports for raw client classes first (at the top of the file)
+        raw_client_class_name = self._context.get_raw_client_class_name_for_subpackage_service(self._subpackage_id)
+        async_raw_client_class_name = self._context.get_async_raw_client_class_name_for_subpackage_service(self._subpackage_id)
+        
+        def write_imports(writer: AST.NodeWriter) -> None:
+            writer.write_line(f"from .raw_client import {raw_client_class_name}, {async_raw_client_class_name}")
+            
+        source_file.add_arbitrary_code(AST.CodeWriter(write_imports))
+        
+        # Then add class declarations
         class_declaration = self._create_class_declaration(is_async=False)
-        if self._is_default_body_parameter_used:
-            source_file.add_arbitrary_code(AST.CodeWriter(self._write_default_param))
         source_file.add_class_declaration(
             declaration=class_declaration,
             should_export=False,
@@ -106,6 +113,9 @@ class ClientGenerator:
                 body=AST.CodeWriter(self._get_write_constructor_body(is_async=is_async)),
             ),
         )
+        
+        # Add with_raw_response property (method with @property decorator)
+        class_declaration.add_method(self._create_with_raw_response_method(is_async=is_async))
 
         if self._package.service is not None:
             service = self._context.ir.services[self._package.service]
@@ -121,25 +131,20 @@ class ClientGenerator:
                     generated_root_client=self._generated_root_client,
                     snippet_writer=self._snippet_writer,
                     endpoint_metadata_collector=self._endpoint_metadata_collector,
+                    is_raw_client=False,
                 )
                 generated_endpoint_functions = endpoint_function_generator.generate()
                 for generated_endpoint_function in generated_endpoint_functions:
-                    class_declaration.add_method(generated_endpoint_function.function)
-                    if (
-                        not self._is_default_body_parameter_used
-                        and generated_endpoint_function.is_default_body_parameter_used
-                    ):
-                        self._is_default_body_parameter_used = True
+                    # Instead of using the generated function directly, we'll create a wrapper
+                    # that delegates to the raw client and extracts the data
+                    function_name = generated_endpoint_function.function.name
+                    endpoint_method = self._create_endpoint_wrapper_method(
+                        endpoint=endpoint,
+                        is_async=is_async,
+                        raw_function=generated_endpoint_function.function
+                    )
+                    class_declaration.add_method(endpoint_method)
 
-                    for snippet in generated_endpoint_function.snippets or []:
-                        if is_async:
-                            self._snippet_registry.register_async_client_endpoint_snippet(
-                                endpoint=endpoint, expr=snippet.snippet, example_id=snippet.example_id
-                            )
-                        else:
-                            self._snippet_registry.register_sync_client_endpoint_snippet(
-                                endpoint=endpoint, expr=snippet.snippet, example_id=snippet.example_id
-                            )
         if self._websocket is not None and self._context.custom_config.should_generate_websocket_clients:
             websocket_connect_method_generator = WebsocketConnectMethodGenerator(
                 context=self._context,
@@ -151,23 +156,196 @@ class ClientGenerator:
             )
             generated_connect_method = websocket_connect_method_generator.generate()
             class_declaration.add_method(generated_connect_method.function)
+            
         return class_declaration
+
+    def _create_with_raw_response_method(self, *, is_async: bool) -> AST.FunctionDeclaration:
+        """Create a method that returns the raw client for more control over the response."""
+        # Create a reference to the appropriate raw client class
+        raw_client_class_name = self._context.get_async_raw_client_class_name_for_subpackage_service(self._subpackage_id) if is_async else self._context.get_raw_client_class_name_for_subpackage_service(self._subpackage_id)
+        
+        raw_client_type = AST.ClassReference(
+            qualified_name_excluding_import=(raw_client_class_name,),
+        )
+        
+        def write_method_body(writer: AST.NodeWriter) -> None:
+            writer.write_line('"""')
+            writer.write_line("Retrieves a raw implementation of this client that returns raw responses.")
+            writer.write_line("")
+            writer.write_line("Returns")
+            writer.write_line("-------")
+            writer.write(f"{raw_client_class_name}")
+            writer.write_line("")
+            writer.write_line('"""')
+            writer.write_line("return self._raw_client")
+            
+        return AST.FunctionDeclaration(
+            name="with_raw_response",
+            is_async=False,
+            signature=AST.FunctionSignature(
+                parameters=[],
+                return_type=AST.TypeHint(raw_client_type)
+            ),
+            body=AST.CodeWriter(write_method_body),
+            decorators=[
+                AST.Expression(
+                    AST.Reference(
+                        qualified_name_excluding_import=("property",),
+                        import_=None
+                    )
+                )
+            ]
+        )
+
+    def _create_endpoint_wrapper_method(
+        self, 
+        endpoint: ir_types.HttpEndpoint, 
+        is_async: bool,
+        raw_function: AST.FunctionDeclaration
+    ) -> AST.FunctionDeclaration:
+        """Create a method that delegates to the raw client and extracts the data property."""
+        
+        # Build parameters string for the function call
+        parameters = []
+        for param in raw_function.signature.parameters:
+            if isinstance(param, AST.FunctionParameter):
+                parameters.append(param.name)
+                
+        for param in raw_function.signature.named_parameters:
+            if param.name != "self":
+                parameters.append(f"{param.name}={param.name}")
+        
+        parameters_str = ", ".join(parameters)
+        
+        # Extract return type for docstring - we want the inner type from HttpResponse[T]
+        return_type_str = "None"
+        if raw_function.signature.return_type:
+            # Safe way to get the return type string without accessing type_parameters directly
+            try:
+                return_type_str = str(raw_function.signature.return_type)
+                # If this looks like HttpResponse[SomeType] or AsyncHttpResponse[SomeType], extract SomeType
+                if "HttpResponse[" in return_type_str:
+                    start_idx = return_type_str.find("[") + 1
+                    end_idx = return_type_str.rfind("]")
+                    if start_idx > 0 and end_idx > start_idx:
+                        return_type_str = return_type_str[start_idx:end_idx]
+            except Exception:
+                return_type_str = str(raw_function.signature.return_type)
+        
+        # For docstring, create our own clean version rather than copying from raw client
+        def write_docstring(writer: AST.NodeWriter) -> None:
+            writer.write_line('"""')
+            # Add description if available
+            if endpoint.docs is not None:
+                writer.write_line(endpoint.docs)
+                writer.write_line("")
+                
+            # Add parameter documentation
+            writer.write_line("Parameters")
+            writer.write_line("----------")
+            for param in raw_function.signature.parameters:
+                if isinstance(param, AST.FunctionParameter):
+                    writer.write(f"{param.name} : ")
+                    if param.type_hint:
+                        # Use write_node to properly render TypeHint objects
+                        writer.write_node(param.type_hint)
+                    else:
+                        writer.write("Any")
+                    writer.write_line("")
+                    writer.write_line("")
+                    
+            for param in raw_function.signature.named_parameters:
+                if param.name != "self":
+                    writer.write(f"{param.name} : ")
+                    if param.type_hint:
+                        # Use write_node to properly render TypeHint objects
+                        writer.write_node(param.type_hint)
+                    else:
+                        writer.write("Any")
+                    writer.write_line("")
+                    if param.docs:
+                        writer.write_line(f"    {param.docs}")
+                    writer.write_line("")
+            
+            # Add return type documentation
+            writer.write_line("Returns")
+            writer.write_line("-------")
+            
+            # Use write_node for the return type if it's an AST.TypeHint object
+            if isinstance(raw_function.signature.return_type, AST.TypeHint):
+                try:
+                    # Try to extract the inner type from HttpResponse[T]
+                    type_str = str(raw_function.signature.return_type)
+                    if "HttpResponse[" in type_str:
+                        # This is likely HttpResponse[T], so let's try to get T
+                        start_idx = type_str.find("[") + 1
+                        end_idx = type_str.rfind("]")
+                        if start_idx > 0 and end_idx > start_idx:
+                            inner_type_str = type_str[start_idx:end_idx]
+                            writer.write(inner_type_str)
+                        else:
+                            writer.write_node(raw_function.signature.return_type)
+                    else:
+                        writer.write_node(raw_function.signature.return_type)
+                except Exception:
+                    # Fallback to just showing whatever string we have
+                    writer.write(str(raw_function.signature.return_type))
+            else:
+                # Use our pre-extracted string if the return type isn't a TypeHint
+                writer.write(return_type_str)
+                
+            writer.write_line("")
+            writer.write_line('"""')
+        
+        def write_method_body(writer: AST.NodeWriter) -> None:
+            # Use our clean docstring instead of copying from raw function
+            write_docstring(writer)
+            
+            # Call raw client method and extract data
+            if is_async:
+                writer.write_line(f"response = await self._raw_client.{endpoint.name.snake_case.safe_name}(")
+                with writer.indent():
+                    for param in parameters_str.split(", "):
+                        if param:
+                            writer.write_line(f"{param},")
+                writer.write_line(")")
+                writer.write_line("return response.data")
+            else:
+                # Alternative approach for the non-async case to avoid potential formatting issues
+                writer.write_line(f"response = self._raw_client.{endpoint.name.snake_case.safe_name}(")
+                with writer.indent():
+                    for param in parameters_str.split(", "):
+                        if param:
+                            writer.write_line(f"{param},")
+                writer.write_line(")")
+                writer.write_line("return response.data")
+                
+        return AST.FunctionDeclaration(
+            name=endpoint.name.snake_case.safe_name,
+            is_async=is_async,
+            signature=raw_function.signature,
+            body=AST.CodeWriter(write_method_body)
+        )
 
     def _get_constructor_parameters(self, *, is_async: bool) -> List[ConstructorParameter]:
         parameters: List[ConstructorParameter] = []
-
+        
+        # Instead of client_wrapper, now we take a raw client
+        raw_client_class_name = self._context.get_async_raw_client_class_name_for_subpackage_service(self._subpackage_id) if is_async else self._context.get_raw_client_class_name_for_subpackage_service(self._subpackage_id)
+        
+        raw_client_type = AST.ClassReference(
+            qualified_name_excluding_import=(raw_client_class_name,),
+        )
+        
         parameters.append(
             ConstructorParameter(
-                constructor_parameter_name=self._get_client_wrapper_constructor_parameter_name(),
-                private_member_name=self._get_client_wrapper_member_name(),
-                type_hint=AST.TypeHint(self._context.core_utilities.get_reference_to_client_wrapper(is_async=is_async)),
+                constructor_parameter_name="raw_client",
+                private_member_name="_raw_client",
+                type_hint=AST.TypeHint(raw_client_type),
             )
         )
 
         return parameters
-
-    def _environment_is_enum(self) -> bool:
-        return self._context.ir.environments is not None
 
     def _get_write_constructor_body(self, *, is_async: bool) -> CodeWriterFunction:
         def _write_constructor_body(writer: AST.NodeWriter) -> None:
@@ -175,36 +353,8 @@ class ClientGenerator:
             for param in constructor_parameters:
                 if param.private_member_name is not None:
                     writer.write_line(f"self.{param.private_member_name} = {param.constructor_parameter_name}")
-            for subpackage_id in self._package.subpackages:
-                subpackage = self._context.ir.subpackages[subpackage_id]
-                if subpackage.has_endpoints_in_tree:
-                    writer.write_node(AST.Expression(f"self.{subpackage.name.snake_case.safe_name} = "))
-                    kwargs = [
-                        (param.constructor_parameter_name, AST.Expression(f"self.{param.private_member_name}"))
-                        for param in self._get_constructor_parameters(is_async=is_async)
-                    ]
-                    writer.write_node(
-                        AST.ClassInstantiation(
-                            class_=(
-                                self._context.get_reference_to_async_subpackage_service(subpackage_id)
-                                if is_async
-                                else self._context.get_reference_to_subpackage_service(subpackage_id)
-                            ),
-                            kwargs=kwargs,
-                        )
-                    )
-                    writer.write_line()
 
         return _write_constructor_body
-
-    def _write_default_param(self, writer: AST.NodeWriter) -> None:
-        writer.write_line("# this is used as the default value for optional parameters")
-        writer.write(f"{DEFAULT_BODY_PARAMETER_VALUE} = ")
-        writer.write_node(AST.TypeHint.cast(AST.TypeHint.any(), AST.Expression("...")))
-        writer.write_newline_if_last_line_not()
-
-    def _get_client_wrapper_constructor_parameter_name(self) -> str:
-        return "client_wrapper"
 
     def _get_client_wrapper_member_name(self) -> str:
         return "_client_wrapper"
