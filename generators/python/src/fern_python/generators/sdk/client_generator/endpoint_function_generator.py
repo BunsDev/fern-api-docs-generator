@@ -586,22 +586,6 @@ class EndpointFunctionGenerator:
 
                     writer.write_node(streaming_request)
 
-                writer.write("if ")
-                writer.write_node(AST.Expression(streaming_parameter_name))
-                writer.write_line(":")
-                with writer.indent():
-                    stream_generator_func_name = "stream_generator"
-                    writer.write_node(
-                        AST.FunctionDeclaration(
-                            name=stream_generator_func_name,
-                            signature=AST.FunctionSignature(),
-                            body=AST.CodeWriter(write_stream_generator),
-                            is_async=True,
-                        )
-                    )
-                    writer.write_newline_if_last_line_not()
-                    writer.write(f"return {stream_generator_func_name}()")
-
                 non_streaming_response_code_writer = EndpointResponseCodeWriter(
                     context=self._context,
                     errors=endpoint.errors,
@@ -618,11 +602,33 @@ class EndpointFunctionGenerator:
                 non_streaming_request = get_httpx_request(
                     is_streaming=False, response_code_writer=non_streaming_response_code_writer
                 )
-                writer.write_newline_if_last_line_not()
-                writer.write_line("else:")
-                with writer.indent():
-                    writer.write_node(non_streaming_request)
 
+                stream_generator_func_name = "stream_generator"
+                writer.write_node(
+                    AST.ConditionalTree(
+                        conditions=[
+                            AST.IfConditionLeaf(
+                                condition=AST.Expression(streaming_parameter_name),
+                                code=[
+                                    AST.FunctionDeclaration(
+                                        name=stream_generator_func_name,
+                                        signature=AST.FunctionSignature(),
+                                        body=AST.CodeWriter(write_stream_generator),
+                                        is_async=True,
+                                    ),
+                                    AST.FunctionDeclaration(
+                                        name=stream_generator_func_name,
+                                        signature=AST.FunctionSignature(),
+                                        body=AST.CodeWriter(write_stream_generator),
+                                        is_async=True,
+                                    ),
+                                    AST.Expression(f'return {stream_generator_func_name}()')
+                                ]
+                            )
+                        ],
+                        else_code=[non_streaming_request]
+                    )
+                )
             else:
                 response_code_writer = EndpointResponseCodeWriter(
                     context=self._context,
@@ -1596,19 +1602,32 @@ class EndpointFunctionSnippetGenerator:
         ):
 
             def snippet_writer(writer: AST.NodeWriter) -> None:
-                if is_async:
-                    writer.write("async ")
-                writer.write_line(f"for {chunk_name} in {response_name}:")
-                with writer.indent():
-                    writer.write_line(f"yield {chunk_name}")
-
+                for_body: list[AST.AstNode] = [
+                    AST.YieldStatement(chunk_name)
+                ]
                 if is_paginated:
-                    writer.write_line("# alternatively, you can paginate page-by-page")
-                    if is_async:
-                        writer.write("async ")
-                    writer.write_line(f"for page in {response_name}.iter_pages():")
-                    with writer.indent():
-                        writer.write_line("yield page")
+                    for_body.extend(
+                        [
+                            AST.Expression("# alternatively, you can paginate page-by-page"),
+                            AST.ForStatement(
+                                target="page",
+                                iterable=AST.Expression(f"{response_name}.iter_pages()"),
+                                body=[
+                                    AST.YieldStatement("page")
+                                ],
+                                is_async=is_async
+                            ),
+                        ]
+                    )
+                
+                writer.write_node(
+                    AST.ForStatement(
+                        target=chunk_name,
+                        iterable=response_name,
+                        body=for_body,
+                        is_async=is_async
+                    )
+                )
 
             return AST.Expression(AST.CodeWriter(snippet_writer))
         return None

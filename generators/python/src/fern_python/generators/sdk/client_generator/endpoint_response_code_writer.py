@@ -1,5 +1,6 @@
 from typing import Callable, Optional
 
+import fern.ir.resources as ir_types
 from ..context.sdk_generator_context import SdkGeneratorContext
 from fern_python.codegen import AST
 from fern_python.external_dependencies.httpx_sse import HttpxSSE
@@ -16,8 +17,6 @@ from fern_python.generators.sdk.client_generator.pagination.offset import (
 from fern_python.generators.sdk.client_generator.streaming.utilities import (
     StreamingParameterType,
 )
-
-import fern.ir.resources as ir_types
 
 
 class EndpointResponseCodeWriter:
@@ -66,74 +65,110 @@ class EndpointResponseCodeWriter:
     def _handle_success_stream(self, *, writer: AST.NodeWriter, stream_response: ir_types.StreamingResponse) -> None:
         stream_response_union = stream_response.get_as_union()
         if stream_response_union.type == "sse":
-            writer.write(f"{EndpointResponseCodeWriter.EVENT_SOURCE_VARIABLE} = ")
             writer.write_node(
-                AST.ClassInstantiation(
-                    HttpxSSE.EVENT_SOURCE, [AST.Expression(EndpointResponseCodeWriter.RESPONSE_VARIABLE)]
+                AST.VariableDeclaration(
+                    name=EndpointResponseCodeWriter.EVENT_SOURCE_VARIABLE,
+                    initializer=AST.Expression(
+                        AST.ClassInstantiation(
+                            HttpxSSE.EVENT_SOURCE, [AST.Expression(EndpointResponseCodeWriter.RESPONSE_VARIABLE)]
+                        )
+                    ),
                 )
             )
-            writer.write_newline_if_last_line_not()
-            if self._is_async:
-                writer.write("async ")
-            writer.write_line(
-                f"for {EndpointResponseCodeWriter.SSE_VARIABLE} in {EndpointResponseCodeWriter.EVENT_SOURCE_VARIABLE}.{self._get_iter_sse_method(is_async=self._is_async)}():"
-            )
-            with writer.indent():
-                if stream_response_union.terminator is not None:
-                    writer.write_line(
-                        f'if {EndpointResponseCodeWriter.SSE_VARIABLE}.data == "{stream_response_union.terminator}":'
+            for_body = []
+            if stream_response_union.terminator is not None:
+                for_body.append(
+                    AST.ConditionalTree(
+                        conditions=[
+                            AST.IfConditionLeaf(
+                                condition=AST.Expression(
+                                    f'{EndpointResponseCodeWriter.SSE_VARIABLE}.data == "{stream_response_union.terminator}"'
+                                ),
+                                code=[AST.ReturnStatement()],
+                            )
+                        ],
+                        else_code=None,
                     )
-                    with writer.indent():
-                        writer.write_line("return")
-                writer.write_line("try:")
-                with writer.indent():
-                    writer.write("yield ")
-                    writer.write_node(
-                        self._context.core_utilities.get_construct(
-                            self._get_streaming_response_data_type(stream_response),
-                            AST.Expression(
-                                Json.loads(AST.Expression(f"{EndpointResponseCodeWriter.SSE_VARIABLE}.data"))
+                )
+            for_body.append(
+                AST.TryExceptStatement(
+                    try_body=[
+                        AST.YieldStatement(
+                            self._context.core_utilities.get_construct(
+                                self._get_streaming_response_data_type(stream_response),
+                                AST.Expression(
+                                    Json.loads(AST.Expression(f"{EndpointResponseCodeWriter.SSE_VARIABLE}.data"))
+                                ),
                             ),
-                        ),
-                    )
-                    writer.write_newline_if_last_line_not()
-                writer.write_line("except:")
-                with writer.indent():
-                    writer.write_line("pass")
-        else:
-            if self._is_async:
-                writer.write("async ")
-            writer.write_line(
-                f"for {EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE} in {EndpointResponseCodeWriter.RESPONSE_VARIABLE}.{self._get_iter_lines_method(is_async=self._is_async)}(): "
-            )
-            with writer.indent():
-                writer.write_line("try:")
-                with writer.indent():
-                    # handle stream termination
-                    if stream_response_union.type == "json" and stream_response_union.terminator is not None:
-                        writer.write_line(
-                            f'if {EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE} == "{stream_response_union.terminator}":'
                         )
-                        with writer.indent():
-                            writer.write_line("return")
+                    ],
+                    except_clauses=[AST.ExceptClause(exception_type="Exception", body=[AST.PassStatement()])],
+                )
+            )
+            writer.write_node(
+                AST.ForStatement(
+                    target=EndpointResponseCodeWriter.SSE_VARIABLE,
+                    iterable=AST.Expression(
+                        f"{EndpointResponseCodeWriter.EVENT_SOURCE_VARIABLE}.{self._get_iter_sse_method(is_async=self._is_async)}()"
+                    ),
+                    body=for_body,
+                    is_async=self._is_async,
+                )
+            )
+        else:
+            try_body = []
+            if stream_response_union.type == "json" and stream_response_union.terminator is not None:
+                try_body.append(
+                    AST.ConditionalTree(
+                        conditions=[
+                            AST.IfConditionLeaf(
+                                condition=AST.Expression(
+                                    f'{EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE} == "{stream_response_union.terminator}"'
+                                ),
+                                code=[AST.ReturnStatement()],
+                            )
+                        ],
+                        else_code=None,
+                    )
+                )
+            try_body.extend(
+                [
                     # handle stream message that is empty
-                    writer.write_line(f"if len({EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE}) == 0:")
-                    with writer.indent():
-                        writer.write_line("continue")
+                    AST.ConditionalTree(
+                        conditions=[
+                            AST.IfConditionLeaf(
+                                condition=AST.Expression(
+                                    f"len({EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE}) == 0"
+                                ),
+                                code=[AST.ContinueStatement()],
+                            )
+                        ],
+                        else_code=None,
+                    ),
                     # handle message
-                    writer.write("yield ")
-                    writer.write_node(
+                    AST.YieldStatement(
                         self._context.core_utilities.get_construct(
                             self._get_streaming_response_data_type(stream_response),
                             AST.Expression(Json.loads(AST.Expression(EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE))),
-                        ),
-                    )
-                    writer.write_newline_if_last_line_not()
-                writer.write_line("except Exception:")
-                with writer.indent():
-                    writer.write_line("pass")
+                        )
+                    ),
+                ]
+            )
+            writer.write_node(
+                AST.ForStatement(
+                    target=EndpointResponseCodeWriter.STREAM_TEXT_VARIABLE,
+                    iterable=f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.{self._get_iter_lines_method(is_async=self._is_async)}()",
+                    body=[
+                        AST.TryExceptStatement(
+                            try_body=try_body,
+                            except_clauses=[AST.ExceptClause(exception_type="Exception", body=[AST.PassStatement()])],
+                        )
+                    ],
+                    is_async=self._is_async,
+                )
+            )
 
-        writer.write_line("return")
+        writer.write_node(AST.ReturnStatement())
 
     def _get_iter_lines_method(self, *, is_async: bool) -> str:
         if is_async:
@@ -225,8 +260,7 @@ class EndpointResponseCodeWriter:
             if paginator is not None:
                 paginator.write(writer=writer)
         else:
-            writer.write("return ")
-            writer.write_node(pydantic_parse_expression)
+            writer.write_node(AST.ReturnStatement(pydantic_parse_expression))
         writer.write_newline_if_last_line_not()
 
     def _handle_success_bytes(
@@ -234,9 +268,11 @@ class EndpointResponseCodeWriter:
         *,
         writer: AST.NodeWriter,
     ) -> None:
-        writer.write("return ")
-        writer.write_node(AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.read()"))
-        writer.write("  # type: ignore ")
+        writer.write_node(
+            AST.ReturnStatement(
+                AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.read()  # type: ignore")
+            )
+        )
         writer.write_newline_if_last_line_not()
 
     def _handle_success_text(
@@ -244,27 +280,39 @@ class EndpointResponseCodeWriter:
         *,
         writer: AST.NodeWriter,
     ) -> None:
-        writer.write("return ")
-        writer.write_node(AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.text"))
-        writer.write("  # type: ignore ")
+        writer.write_node(
+            AST.ReturnStatement(AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.text  # type: ignore"))
+        )
         writer.write_newline_if_last_line_not()
 
     def _handle_success_file_download(self, *, writer: AST.NodeWriter) -> None:
         maybe_chunk_size_default = self._context.custom_config.default_bytes_stream_chunk_size
         defaulted_chunk_size_default = maybe_chunk_size_default if maybe_chunk_size_default is not None else "None"
         chunk_size_variable = "_chunk_size"
-        writer.write_line(
-            f'{chunk_size_variable} = request_options.get("chunk_size", {defaulted_chunk_size_default}) if request_options is not None else {defaulted_chunk_size_default}'
+        writer.write_node(
+            AST.VariableDeclaration(
+                name=chunk_size_variable,
+                initializer=AST.Expression(
+                    AST.ConditionalExpression(
+                        test=AST.Expression("request_options is not None"),
+                        left=AST.Expression(f'request_options.get("chunk_size", {defaulted_chunk_size_default})'),
+                        right=AST.Expression(f"{defaulted_chunk_size_default}"),
+                    )
+                ),
+            )
         )
-        if self._is_async:
-            writer.write("async ")
-        writer.write_line(
-            f"for {EndpointResponseCodeWriter.FILE_CHUNK_VARIABLE} in {EndpointResponseCodeWriter.RESPONSE_VARIABLE}.{self._get_iter_bytes_method(is_async=self._is_async)}(chunk_size={chunk_size_variable}):"
+        writer.write_node(
+            AST.ForStatement(
+                target=EndpointResponseCodeWriter.FILE_CHUNK_VARIABLE,
+                iterable=AST.Expression(
+                    f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.{self._get_iter_bytes_method(is_async=self._is_async)}(chunk_size={chunk_size_variable})"
+                ),
+                body=[AST.YieldStatement(EndpointResponseCodeWriter.FILE_CHUNK_VARIABLE)],
+                is_async=self._is_async,
+            )
         )
-        with writer.indent():
-            writer.write(f"yield {EndpointResponseCodeWriter.FILE_CHUNK_VARIABLE}")
         writer.write_newline_if_last_line_not()
-        writer.write_line("return")
+        writer.write_node(AST.ReturnStatement())
 
     def _get_iter_bytes_method(self, *, is_async: bool) -> str:
         if is_async:
@@ -277,7 +325,7 @@ class EndpointResponseCodeWriter:
             writer.write_line(f"if 200 <= {EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code < 300:")
             with writer.indent():
                 if self._response is None or self._response.body is None:
-                    writer.write_line("return")
+                    writer.write_node(AST.ReturnStatement())
                 else:
                     self._response.body.visit(
                         json=lambda json_response: self._handle_success_json(
@@ -323,38 +371,48 @@ class EndpointResponseCodeWriter:
             for error in self._errors:
                 error_declaration = self._context.ir.errors[error.error.error_id]
 
-                writer.write_line(
-                    f"if {EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code == {error_declaration.status_code}:"
-                )
-                with writer.indent():
-                    writer.write("raise ")
-                    writer.write_node(
-                        AST.ClassInstantiation(
-                            class_=self._context.get_reference_to_error(error.error),
-                            args=[
-                                self._context.core_utilities.get_construct(
-                                    self._context.pydantic_generator_context.get_type_hint_for_type_reference(
-                                        error_declaration.type
-                                    ),
-                                    AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.json()"),
-                                )
-                            ]
-                            if error_declaration.type is not None
-                            else [],
-                        )
+                writer.write_node(
+                    AST.ConditionalTree(
+                        conditions=[
+                            AST.IfConditionLeaf(
+                                condition=AST.Expression(
+                                    f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code == {error_declaration.status_code}"
+                                ),
+                                code=[
+                                    AST.RaiseStatement(
+                                        AST.ClassInstantiation(
+                                            class_=self._context.get_reference_to_error(error.error),
+                                            args=[
+                                                self._context.core_utilities.get_construct(
+                                                    self._context.pydantic_generator_context.get_type_hint_for_type_reference(
+                                                        error_declaration.type
+                                                    ),
+                                                    AST.Expression(
+                                                        f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.json()"
+                                                    ),
+                                                )
+                                            ]
+                                            if error_declaration.type is not None
+                                            else [],
+                                        )
+                                    )
+                                ],
+                            )
+                        ],
+                        else_code=None,
                     )
-                    writer.write_newline_if_last_line_not()
+                )
 
         self._try_deserialize_json_response(writer=writer, response_handler=handle_endpoint_response)
 
-        writer.write("raise ")
         writer.write_node(
-            self._context.core_utilities.instantiate_api_error(
-                body=AST.Expression(EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE),
-                status_code=AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code"),
+            AST.RaiseStatement(
+                self._context.core_utilities.instantiate_api_error(
+                    body=AST.Expression(EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE),
+                    status_code=AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code"),
+                )
             )
         )
-        writer.write_newline_if_last_line_not()
 
     def _write_property_discriminated_response_handler(
         self,
@@ -368,7 +426,7 @@ class EndpointResponseCodeWriter:
         writer.write_line(f"if 200 <= {EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code < 300:")
         with writer.indent():
             if self._response is None or self._response.body is None:
-                writer.write_line("return")
+                writer.write_node(AST.ReturnStatement())
             else:
                 self._response.body.visit(
                     json=lambda json_response: self._handle_success_json(
@@ -405,38 +463,46 @@ class EndpointResponseCodeWriter:
                 for error in self._errors:
                     error_declaration = self._context.ir.errors[error.error.error_id]
 
-                    writer.write_line(
-                        f'if {EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE}["{strategy.discriminant.wire_value}"] == "{error_declaration.discriminant_value.wire_value}":'
-                    )
-                    with writer.indent():
-                        writer.write("raise ")
-                        writer.write_node(
-                            AST.ClassInstantiation(
-                                class_=self._context.get_reference_to_error(error.error),
-                                args=[
-                                    self._context.core_utilities.get_construct(
-                                        self._context.pydantic_generator_context.get_type_hint_for_type_reference(
-                                            error_declaration.type
-                                        ),
-                                        AST.Expression(
-                                            f'{EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE}["{strategy.content_property.wire_value}"]'
-                                        ),
-                                    )
-                                ]
-                                if error_declaration.type is not None
-                                else [],
-                            )
+                    writer.write_node(
+                        AST.ConditionalTree(
+                            conditions=[
+                                AST.IfConditionLeaf(
+                                    condition=AST.Expression(
+                                        f'{EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE}["{strategy.discriminant.wire_value}"] == "{error_declaration.discriminant_value.wire_value}"'
+                                    ),
+                                    code=[
+                                        AST.RaiseStatement(
+                                            AST.ClassInstantiation(
+                                                class_=self._context.get_reference_to_error(error.error),
+                                                args=[
+                                                    self._context.core_utilities.get_construct(
+                                                        self._context.pydantic_generator_context.get_type_hint_for_type_reference(
+                                                            error_declaration.type
+                                                        ),
+                                                        AST.Expression(
+                                                            f'{EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE}["{strategy.content_property.wire_value}"]'
+                                                        ),
+                                                    )
+                                                ]
+                                                if error_declaration.type is not None
+                                                else [],
+                                            )
+                                        )
+                                    ],
+                                )
+                            ],
+                            else_code=None,
                         )
-                        writer.write_newline_if_last_line_not()
+                    )
 
-        writer.write("raise ")
         writer.write_node(
-            self._context.core_utilities.instantiate_api_error(
-                body=AST.Expression(EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE),
-                status_code=AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code"),
+            AST.RaiseStatement(
+                self._context.core_utilities.instantiate_api_error(
+                    body=AST.Expression(EndpointResponseCodeWriter.RESPONSE_JSON_VARIABLE),
+                    status_code=AST.Expression(f"{EndpointResponseCodeWriter.RESPONSE_VARIABLE}.status_code"),
+                )
             )
         )
-        writer.write_newline_if_last_line_not()
 
     def _deserialize_json_response(self, *, writer: AST.NodeWriter) -> None:
         writer.write_line(
