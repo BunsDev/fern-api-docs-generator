@@ -2,8 +2,7 @@
 
 module IMDB
   module Types
-    class Movie < IMDB::Common::Types::Struct
-      attribute :id, IMDB::Types::MovieID
+    class CreateMovieRequest < IMDB::Common::Types::Struct
       attribute :title, IMDB::Common::Types::String
       attribute :rating, IMDB::Common::Types::Float
     end

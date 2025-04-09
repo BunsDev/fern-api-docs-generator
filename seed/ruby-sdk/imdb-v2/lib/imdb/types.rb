@@ -2,6 +2,6 @@
 
 module IMDB
   module Types
-    MovieID = null
+    MovieID = IMDB::Common::Types::String
   end
 end

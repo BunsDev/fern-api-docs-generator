@@ -20,6 +20,10 @@ module IMDB
       connection.post(path, params)
     end
 
+    def imdb
+      Groups::IMDB.new(client: self)
+    end
+
     def connection
       @connection ||= Faraday.new do |f|
         f.url "https://example.com"
