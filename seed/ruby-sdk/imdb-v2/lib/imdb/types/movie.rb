@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module IMDB
-  module Resources
-    class Movie < IMDB::Common::Resource
+  module Types
+    class Movie < IMDB::Common::Types::Object
       field :title, type: :string
       field :synopsis, type: :string
     end
