@@ -7,7 +7,7 @@ module Imdb
       #
       # An abstract model that all data objects will inherit from
       class Model
-        extend Types
+        extend Type
 
         class << self
           def fields

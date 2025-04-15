@@ -3,7 +3,7 @@
 module Imdb
   module Framework
     module Errors
-      class TypeError < Error
+      class TypeError < StandardError
       end
     end
   end
