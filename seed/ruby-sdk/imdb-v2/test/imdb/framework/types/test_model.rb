@@ -5,7 +5,7 @@ require "test_helper"
 module Imdb
   module Test
     class TestModel < Minitest::Test
-      class ExampleModel < Imdb::Framework::Types::Model
+      class ExampleModel < Framework::Types::Model
         field :name, String, required: true
         field :rating, Float
       end

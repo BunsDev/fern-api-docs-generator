@@ -2,6 +2,7 @@
 
 require_relative "imdb/framework/types/model/field"
 require_relative "imdb/framework/types/model"
+require_relative "imdb/framework/types/enum"
 
 require_relative "imdb/models/movie"
 
