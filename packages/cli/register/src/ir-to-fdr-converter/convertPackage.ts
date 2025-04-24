@@ -141,7 +141,15 @@ function convertService(
                 }
             }
         }
+
+        // If the endpoint has openrpc source, create a slug by replacing underscores with hyphens
+        let slug: string | undefined;
+        if (irEndpoint.source?.type === "openrpc") {
+            slug = irEndpoint.name.originalName.replace(/_/g, "-");
+        }
+
         const endpoint: FdrCjsSdk.api.v1.register.EndpointDefinition = {
+            slug,
             availability: convertIrAvailability(irEndpoint.availability ?? irService.availability),
             auth: irEndpoint.auth,
             description: irEndpoint.docs ?? undefined,
