@@ -188,6 +188,10 @@ export async function runAppPreviewServer({
         wrapWithHttps(initialProject.docsWorkspaces?.config.instances[0]?.url ?? `http://localhost:${port}`)
     );
 
+    if (initialProject.docsWorkspaces?.config.js) {
+        context.logger.info("Custom JavaScript + React are not available in local development mode");
+    }
+
     let project = initialProject;
     let docsDefinition: DocsV1Read.DocsDefinition | undefined;
 
@@ -209,6 +213,11 @@ export async function runAppPreviewServer({
                 previousDocsDefinition: docsDefinition,
                 editedAbsoluteFilepaths
             });
+
+            if (newDocsDefinition.jsFiles && !initialProject.docsWorkspaces?.config.js) {
+                context.logger.info("Custom JavaScript + React are not available in local development mode");
+            }
+
             context.logger.info(`Reload completed in ${Date.now() - startTime}ms`);
             return newDocsDefinition;
         } catch (err) {
