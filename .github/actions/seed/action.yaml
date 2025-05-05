@@ -1,0 +1,64 @@
+name: Seed Generation
+description: Run seed generation without caching for a specific generator.
+
+inputs:
+  generator-name:
+    description: Generator to use (e.g., go-sdk, ruby-sdk)
+    required: true
+  generator-path:
+    description: The path to the source code of the generator (e.g., generators/go, generators/ruby)
+    required: true
+  validate-git-diff:
+    description: Whether to validate that no git-tracked files were changed
+    required: false
+    default: 'true'
+  skip-scripts:
+    description: Whether to skip running scripts during seed generation
+    required: false
+    default: 'false'
+  allow-unexpected-failures:
+    description: Whether to allow unexpected failures during seed generation
+    required: false
+    default: 'false'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install
+      uses: ./.github/actions/install
+      
+    - uses: bufbuild/buf-setup-action@v1.34.0
+      with:
+        github_token: ${{ github.token }}
+
+    - uses: actions/setup-go@v5
+      with:
+        go-version: "stable"
+
+    - name: Install protoc-gen-openapi
+      shell: bash
+      run: go install github.com/fern-api/protoc-gen-openapi/cmd/protoc-gen-openapi@latest
+
+    - name: Seed Test
+      shell: bash
+      env:
+        FORCE_COLOR: "2"
+      run: |
+        pnpm seed:local test \
+          --generator ${{ inputs.generator-name }} \
+          --parallel 16 \
+          ${{ inputs.skip-scripts == 'true' && '--skip-scripts' || '' }} \
+          ${{ inputs.allow-unexpected-failures == 'true' && '--allow-unexpected-failures' || '' }}
+
+    - name: Validate results
+      id: validate
+      shell: bash
+      run: |
+        if git --no-pager diff --exit-code -- ":(exclude)seed/*/.mock/*"; then
+          echo "Results are valid, saving to cache if not already."
+          echo "valid=true" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected in git-tracked files."
+          exit 1
+        fi
+

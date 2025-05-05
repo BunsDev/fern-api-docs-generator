@@ -1,0 +1,236 @@
+name: Force Seed Snapshot Tests
+
+on:
+  push:
+    branches:
+      - dak/ci/force-seed-tests
+
+
+jobs:
+  ruby-model:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: ruby-model
+          generator-path: generators/ruby
+
+  ruby-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: ruby-sdk
+          generator-path: generators/ruby
+
+  pydantic-model:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: pydantic
+          generator-path: generators/python
+
+  python-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: python-sdk
+          generator-path: generators/python
+
+  fastapi:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: fastapi
+          generator-path: generators/python
+
+  openapi:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: openapi
+          generator-path: generators/openapi
+
+  postman:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: postman
+          generator-path: generators/postman
+
+  java-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: java-sdk
+          generator-path: generators/java generators/java-v2
+
+  java-model:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: java-model
+          generator-path: generators/java
+
+  java-spring:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: java-spring
+          generator-path: generators/java
+
+  typescript-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: ts-sdk
+          generator-path: generators/typescript
+
+  typescript-express:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: ts-express
+          generator-path: generators/typescript
+
+  go-fiber:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: go-fiber
+          generator-path: generators/go
+
+  go-model:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: go-model
+          generator-path: generators/go
+
+  go-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: go-sdk
+          generator-path: generators/go
+
+  csharp-model:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: csharp-model
+          generator-path: generators/csharp
+
+  csharp-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: csharp-sdk
+          generator-path: generators/csharp
+
+  php-model:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: php-model
+          generator-path: generators/php
+
+  php-sdk:
+    runs-on: Seed
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Run seed
+        uses: ./.github/actions/seed
+        with:
+          generator-name: php-sdk
+          generator-path: generators/php
