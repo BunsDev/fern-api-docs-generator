@@ -6,23 +6,28 @@ import { Logger } from "@fern-api/logger";
 
 import { FernGeneratorCli } from "@fern-fern/generator-cli-sdk";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
+import { PublishingConfig } from "@fern-fern/ir-sdk/api";
 
 import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder";
 
 export class TypeScriptGeneratorAgent extends AbstractGeneratorAgent<SdkContext> {
     private readmeConfigBuilder: ReadmeConfigBuilder;
+    private publishingConfig: PublishingConfig | undefined;
 
     public constructor({
         logger,
         config,
-        readmeConfigBuilder
+        readmeConfigBuilder,
+        publishingConfig
     }: {
         logger: Logger;
         config: FernGeneratorExec.GeneratorConfig;
         readmeConfigBuilder: ReadmeConfigBuilder;
+        publishingConfig: PublishingConfig | undefined;
     }) {
         super({ logger, config });
         this.readmeConfigBuilder = readmeConfigBuilder;
+        this.publishingConfig = publishingConfig;
     }
 
     public getReadmeConfig(args: AbstractGeneratorAgent.ReadmeConfigArgs<SdkContext>): FernGeneratorCli.ReadmeConfig {
