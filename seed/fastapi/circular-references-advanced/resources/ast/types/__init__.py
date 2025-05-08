@@ -4,6 +4,7 @@
 
 from .acai import Acai
 from .animal import Animal
+from .berry import Berry
 from .cat import Cat
 from .container_value import ContainerValue
 from .dog import Dog
@@ -18,6 +19,7 @@ from .primitive_value import PrimitiveValue
 __all__ = [
     "Acai",
     "Animal",
+    "Berry",
     "Cat",
     "ContainerValue",
     "Dog",

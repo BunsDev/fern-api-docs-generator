@@ -5,6 +5,7 @@
 from .types import (
     Acai,
     Animal,
+    Berry,
     Cat,
     ContainerValue,
     ContainerValue_List,
@@ -25,6 +26,7 @@ from .types import (
 __all__ = [
     "Acai",
     "Animal",
+    "Berry",
     "Cat",
     "ContainerValue",
     "ContainerValue_List",

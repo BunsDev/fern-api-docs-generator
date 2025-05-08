@@ -7,6 +7,7 @@ from .a import A
 from .ast import (
     Acai,
     Animal,
+    Berry,
     Cat,
     ContainerValue,
     ContainerValue_List,
@@ -28,6 +29,7 @@ __all__ = [
     "A",
     "Acai",
     "Animal",
+    "Berry",
     "Cat",
     "ContainerValue",
     "ContainerValue_List",

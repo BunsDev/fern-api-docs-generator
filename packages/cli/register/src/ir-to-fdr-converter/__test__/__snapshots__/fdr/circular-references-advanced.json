@@ -127,6 +127,16 @@
       "name": "Acai",
       "shape": {
         "type": "object",
+        "extends": [
+          "type_ast:Berry"
+        ],
+        "properties": []
+      }
+    },
+    "type_ast:Fig": {
+      "name": "Fig",
+      "shape": {
+        "type": "object",
         "extends": [],
         "properties": [
           {
@@ -139,8 +149,8 @@
         ]
       }
     },
-    "type_ast:Fig": {
-      "name": "Fig",
+    "type_ast:Berry": {
+      "name": "Berry",
       "shape": {
         "type": "object",
         "extends": [],
@@ -332,6 +342,7 @@
         "type_ast:Dog",
         "type_ast:Acai",
         "type_ast:Fig",
+        "type_ast:Berry",
         "type_ast:ContainerValue",
         "type_ast:PrimitiveValue",
         "type_ast:ObjectValue",
