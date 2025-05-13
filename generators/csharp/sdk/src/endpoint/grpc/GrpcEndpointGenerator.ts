@@ -8,6 +8,7 @@ import { AbstractEndpointGenerator } from "../AbstractEndpointGenerator";
 import { EndpointSignatureInfo } from "../EndpointSignatureInfo";
 import { EndpointRequest } from "../request/EndpointRequest";
 import { RESPONSE_VARIABLE_NAME } from "../utils/constants";
+import { CsharpProtobufMethodParamsMapper } from "@fern-api/csharp-base/src/proto/CsharpProtobufTypeMapper";
 
 export declare namespace GrpcEndpointGenerator {
     export interface Args {
@@ -19,8 +20,11 @@ export declare namespace GrpcEndpointGenerator {
 }
 
 export class GrpcEndpointGenerator extends AbstractEndpointGenerator {
+    private protobufMethodParamsMapper: CsharpProtobufMethodParamsMapper;
+
     public constructor({ context }: { context: SdkGeneratorContext }) {
         super({ context });
+        this.protobufMethodParamsMapper = new CsharpProtobufMethodParamsMapper(context)
     }
 
     public generate({
@@ -52,7 +56,8 @@ export class GrpcEndpointGenerator extends AbstractEndpointGenerator {
             rawGrpcClientReference,
             grpcClientInfo,
             request: endpointSignatureInfo.request,
-            return_: endpointSignatureInfo.returnType
+            return_: endpointSignatureInfo.returnType,
+            parameters
         });
         return csharp.method({
             name: this.context.getEndpointMethodName(endpoint),
@@ -97,13 +102,15 @@ export class GrpcEndpointGenerator extends AbstractEndpointGenerator {
         rawGrpcClientReference,
         grpcClientInfo,
         request,
-        return_
+        return_,
+        parameters
     }: {
         endpoint: HttpEndpoint;
         rawGrpcClientReference: string;
         grpcClientInfo: GrpcClientInfo;
         request: EndpointRequest | undefined;
         return_: csharp.Type | undefined;
+        parameters: csharp.Parameter[];
     }): csharp.CodeBlock {
         return csharp.codeblock((writer) => {
             writer.writeLine("try");
@@ -114,6 +121,7 @@ export class GrpcEndpointGenerator extends AbstractEndpointGenerator {
                 this.createCall({
                     endpoint,
                     request,
+                    parameters,
                     grpcClientInfo
                 })
             );
@@ -168,15 +176,16 @@ export class GrpcEndpointGenerator extends AbstractEndpointGenerator {
     private createCall({
         endpoint,
         request,
+        parameters,
         grpcClientInfo
     }: {
         endpoint: HttpEndpoint;
         request: EndpointRequest | undefined;
+        parameters: csharp.Parameter[];
         grpcClientInfo: GrpcClientInfo;
     }): csharp.CodeBlock {
-        const mapToProtoRequest =
-            request != null ? this.getToProtoMethodInvocation({ request }) : csharp.codeblock("null");
         return csharp.codeblock((writer) => {
+            this.createProtoRequest({ parameters, request, grpcClientInfo });
             writer.write("var call = ");
             writer.writeNode(
                 csharp.invokeMethod({
@@ -228,16 +237,38 @@ export class GrpcEndpointGenerator extends AbstractEndpointGenerator {
         });
     }
 
-    private getToProtoMethodInvocation({ request }: { request: EndpointRequest }): csharp.CodeBlock {
-        return csharp.codeblock((writer) => {
-            writer.writeNode(
-                csharp.invokeMethod({
-                    on: csharp.codeblock(request.getParameterName()),
-                    method: "ToProto",
-                    arguments_: []
+    private createProtoRequest({
+        request,
+        parameters,
+        grpcClientInfo
+    }: {
+        request: EndpointRequest | undefined;
+        parameters: csharp.Parameter[];
+        grpcClientInfo: GrpcClientInfo;
+    }): csharp.CodeBlock {
+        const protoRequestVar = "protoRequest";
+        if (request != null) {
+            return csharp.codeblock((writer) => {
+                writer.write(`var ${protoRequestVar} = `);
+                writer.writeNode(
+                    csharp.invokeMethod({
+                        on: csharp.codeblock(request.getParameterName()),
+                        method: "ToProto",
+                        arguments_: []
+                    })
+                );
+            });
+        } else {
+            return csharp.codeblock((writer) => {
+                this.protobufMethodParamsMapper.toProto({
+                    requestVarName: protoRequestVar,
+                    protobufClassReference: grpcClientInfo.classReference,
+                    params: parameters.map(p => ({
+                        paramName: p.
+                    }))
                 })
-            );
-        });
+            });
+        }
     }
 
     private getFromProtoMethodInvocation({ return_ }: { return_: csharp.Type }): csharp.CodeBlock {
