@@ -72,7 +72,8 @@ export class SdkGeneratorCli extends AbstractGeneratorCli<SdkCustomConfig> {
             generateWireTests: parsed?.generateWireTests ?? false,
             noScripts: parsed?.noScripts ?? false,
             useBigInt: parsed?.useBigInt ?? false,
-            useLegacyExports: parsed?.useLegacyExports ?? false
+            useLegacyExports: parsed?.useLegacyExports ?? false,
+            includeNodeFetch: parsed?.includeNodeFetch ?? true
         };
     }
 
@@ -154,7 +155,8 @@ export class SdkGeneratorCli extends AbstractGeneratorCli<SdkCustomConfig> {
                 omitUndefined: customConfig.omitUndefined ?? true,
                 useBigInt: customConfig.useBigInt ?? false,
                 enableInlineTypes: customConfig.enableInlineTypes ?? true,
-                useLegacyExports
+                useLegacyExports,
+                includeNodeFetch: customConfig.includeNodeFetch ?? true,
             }
         });
         const typescriptProject = await sdkGenerator.generate();

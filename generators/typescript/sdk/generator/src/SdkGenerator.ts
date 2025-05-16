@@ -140,6 +140,7 @@ export declare namespace SdkGenerator {
         packageJson: Record<string, unknown> | undefined;
         useBigInt: boolean;
         useLegacyExports: boolean;
+        includeNodeFetch: boolean;
     }
 }
 

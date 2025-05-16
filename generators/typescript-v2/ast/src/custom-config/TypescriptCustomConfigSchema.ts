@@ -22,6 +22,7 @@ export const TypescriptCustomConfigSchema = z.strictObject({
     publishToJsr: z.optional(z.boolean()),
     omitUndefined: z.optional(z.boolean()),
     useLegacyExports: z.optional(z.boolean()),
+    includeNodeFetch: z.optional(z.boolean()),
 
     // relevant to dynamic snippets
     allowExtraFields: z.optional(z.boolean()),
