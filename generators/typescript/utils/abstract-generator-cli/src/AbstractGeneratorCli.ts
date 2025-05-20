@@ -13,8 +13,8 @@ import { CONSOLE_LOGGER, LogLevel, Logger, createLogger } from "@fern-api/logger
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 import * as serializers from "@fern-fern/ir-sdk/serialization";
 
-import { publishPackage } from "./publishPackage";
-import { writeGitHubWorkflows } from "./writeGitHubWorkflows";
+import { publishPackage } from "./publishPackage.js";
+import { writeGitHubWorkflows } from "./writeGitHubWorkflows.js";
 
 const OUTPUT_ZIP_FILENAME = "output.zip";
 

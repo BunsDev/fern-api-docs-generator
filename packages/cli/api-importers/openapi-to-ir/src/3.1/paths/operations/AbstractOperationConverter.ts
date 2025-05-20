@@ -5,13 +5,13 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { HttpHeader, HttpMethod, HttpRequestBody, HttpResponse, PathParameter, QueryParameter } from "@fern-api/ir-sdk";
 import { AbstractConverter, Converters, Extensions } from "@fern-api/v2-importer-commons";
 
-import { FernStreamingExtension } from "../../../extensions/x-fern-streaming";
-import { GroupNameAndLocation } from "../../../types/GroupNameAndLocation";
-import { OpenAPIConverterContext3_1 } from "../../OpenAPIConverterContext3_1";
-import { ParameterConverter } from "../ParameterConverter";
-import { RequestBodyConverter } from "../RequestBodyConverter";
-import { ResponseBodyConverter } from "../ResponseBodyConverter";
-import { ResponseErrorConverter } from "../ResponseErrorConverter";
+import { FernStreamingExtension } from "../../../extensions/x-fern-streaming.js";
+import { GroupNameAndLocation } from "../../../types/GroupNameAndLocation.js";
+import { OpenAPIConverterContext3_1 } from "../../OpenAPIConverterContext3_1.js";
+import { ParameterConverter } from "../ParameterConverter.js";
+import { RequestBodyConverter } from "../RequestBodyConverter.js";
+import { ResponseBodyConverter } from "../ResponseBodyConverter.js";
+import { ResponseErrorConverter } from "../ResponseErrorConverter.js";
 
 const PATH_PARAM_REGEX = /{([^}]+)}/g;
 

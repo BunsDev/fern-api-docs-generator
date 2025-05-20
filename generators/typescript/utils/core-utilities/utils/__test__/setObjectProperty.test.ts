@@ -1,4 +1,4 @@
-import { setObjectProperty } from "../src/setObjectProperty";
+import { setObjectProperty } from "../src/setObjectProperty.js";
 
 interface TestCase {
     description: string;

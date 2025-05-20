@@ -1,8 +1,8 @@
-import { Argument } from "./Argument";
-import { Import } from "./Import";
-import { Variable, VariableType } from "./Variable";
-import { ClassReference, NilValue, OmittedValue } from "./classes/ClassReference";
-import { AstNode } from "./core/AstNode";
+import { Argument } from "./Argument.js";
+import { Import } from "./Import.js";
+import { Variable, VariableType } from "./Variable.js";
+import { ClassReference, NilValue, OmittedValue } from "./classes/ClassReference.js";
+import { AstNode } from "./core/AstNode.js";
 
 export declare namespace Parameter {
     export interface Init extends AstNode.Init {

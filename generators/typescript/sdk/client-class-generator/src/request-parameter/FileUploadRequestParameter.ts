@@ -4,7 +4,7 @@ import { ts } from "ts-morph";
 
 import { ExampleEndpointCall, HttpHeader, InlinedRequestBodyProperty, QueryParameter } from "@fern-fern/ir-sdk/api";
 
-import { AbstractRequestParameter } from "./AbstractRequestParameter";
+import { AbstractRequestParameter } from "./AbstractRequestParameter.js";
 
 export class FileUploadRequestParameter extends AbstractRequestParameter {
     protected getParameterType(context: SdkContext): {

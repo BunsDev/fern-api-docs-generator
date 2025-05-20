@@ -2,8 +2,8 @@ import { OpenAPIV3 } from "openapi-types";
 
 import { Availability } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../../getExtension";
-import { FernOpenAPIExtension } from "./fernExtensions";
+import { getExtension } from "../../../getExtension.js";
+import { FernOpenAPIExtension } from "./fernExtensions.js";
 
 export interface BasicSecuritySchemeNames {
     usernameVariable?: string;

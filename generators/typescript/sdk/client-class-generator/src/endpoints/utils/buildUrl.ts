@@ -6,7 +6,7 @@ import { assertNever } from "@fern-api/core-utils";
 
 import { HttpEndpoint, PathParameter, PathParameterLocation } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "../../GeneratedSdkClientClassImpl";
+import { GeneratedSdkClientClassImpl } from "../../GeneratedSdkClientClassImpl.js";
 
 export type GetReferenceToPathParameterVariableFromRequest = (pathParameter: PathParameter) => ts.Expression;
 

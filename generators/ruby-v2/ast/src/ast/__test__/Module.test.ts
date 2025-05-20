@@ -1,8 +1,8 @@
-import { ruby } from "../..";
-import { BaseRubyCustomConfigSchema } from "../../custom-config/BaseRubyCustomConfigSchema";
-import { MethodKind } from "../Method";
-import { Type } from "../Type";
-import { Writer } from "../core/Writer";
+import { BaseRubyCustomConfigSchema } from "../../custom-config/BaseRubyCustomConfigSchema.js";
+import { ruby } from "../../index.js";
+import { MethodKind } from "../Method.js";
+import { Type } from "../Type.js";
+import { Writer } from "../core/Writer.js";
 
 describe("Module", () => {
     let writerConfig: Writer.Args;

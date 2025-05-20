@@ -1,8 +1,6 @@
-import { Config } from "jest";
+import defaultConfig from "./shared/jest.config.shared.mjs";
 
-import defaultConfig from "./shared/jest.config.shared";
-
-export default async (): Promise<Config> => {
+export default async () => {
     return {
         ...defaultConfig
         // if there are no packages, then jest will run all tests by default.

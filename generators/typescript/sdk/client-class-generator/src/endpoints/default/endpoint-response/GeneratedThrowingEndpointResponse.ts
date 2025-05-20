@@ -18,17 +18,17 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "../../../GeneratedSdkClientClassImpl";
-import { GeneratedStreamingEndpointImplementation } from "../../GeneratedStreamingEndpointImplementation";
-import { getAbortSignalExpression } from "../../utils/requestOptionsParameter";
-import { GeneratedEndpointResponse, PaginationResponseInfo } from "./GeneratedEndpointResponse";
+import { GeneratedSdkClientClassImpl } from "../../../GeneratedSdkClientClassImpl.js";
+import { GeneratedStreamingEndpointImplementation } from "../../GeneratedStreamingEndpointImplementation.js";
+import { getAbortSignalExpression } from "../../utils/requestOptionsParameter.js";
+import { GeneratedEndpointResponse, PaginationResponseInfo } from "./GeneratedEndpointResponse.js";
 import {
     CONTENT_LENGTH_RESPONSE_KEY,
     CONTENT_LENGTH_VARIABLE_NAME,
     CONTENT_TYPE_RESPONSE_KEY,
     READABLE_RESPONSE_KEY,
     getSuccessReturnType
-} from "./getSuccessReturnType";
+} from "./getSuccessReturnType.js";
 
 export declare namespace GeneratedThrowingEndpointResponse {
     export interface Init {

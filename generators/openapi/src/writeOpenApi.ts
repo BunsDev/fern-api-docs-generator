@@ -15,8 +15,8 @@ import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 import * as IrSerialization from "@fern-fern/ir-sdk/serialization";
 
-import { convertToOpenApi } from "./convertToOpenApi";
-import { getCustomConfig } from "./customConfig";
+import { convertToOpenApi } from "./convertToOpenApi.js";
+import { getCustomConfig } from "./customConfig.js";
 
 export type Mode = "stoplight" | "openapi";
 

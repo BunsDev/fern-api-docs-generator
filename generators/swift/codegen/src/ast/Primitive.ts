@@ -1,6 +1,6 @@
 import { assertNever } from "@fern-api/core-utils";
 
-import { Type } from "./Type";
+import { Type } from "./Type.js";
 
 /*
 

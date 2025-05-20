@@ -9,7 +9,7 @@ import {
     join
 } from "@fern-api/fs-utils";
 
-import { runFernCli } from "../../utils/runFernCli";
+import { runFernCli } from "../../utils/runFernCli.js";
 
 describe("fern generate with settings", () => {
     it("single api", async () => {

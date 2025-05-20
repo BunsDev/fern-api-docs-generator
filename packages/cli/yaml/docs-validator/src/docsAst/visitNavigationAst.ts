@@ -8,8 +8,8 @@ import { AbsoluteFilePath, dirname, doesPathExist, relative, resolve } from "@fe
 import { TaskContext } from "@fern-api/task-context";
 import { AbstractAPIWorkspace, FernWorkspace } from "@fern-api/workspace-loader";
 
-import { DocsConfigFileAstVisitor } from "./DocsConfigFileAstVisitor";
-import { visitFilepath } from "./visitFilepath";
+import { DocsConfigFileAstVisitor } from "./DocsConfigFileAstVisitor.js";
+import { visitFilepath } from "./visitFilepath.js";
 
 export declare namespace visitNavigationAst {
     interface Args {

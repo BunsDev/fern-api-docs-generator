@@ -4,7 +4,7 @@ import { isOpenAPIV2, isOpenAPIV3_1 } from "@fern-api/api-workspace-commons";
 import { mergeWithOverrides as coreMergeWithOverrides } from "@fern-api/core-utils";
 import { OpenAPIDocument, getParseOptions } from "@fern-api/openapi-ir-parser";
 
-import { OpenAPIWorkspace } from "./OpenAPIWorkspace";
+import { OpenAPIWorkspace } from "./OpenAPIWorkspace.js";
 
 export class InMemoryOpenAPILoader {
     public loadDocument(spec: OpenAPIWorkspace.Spec): OpenAPIDocument {

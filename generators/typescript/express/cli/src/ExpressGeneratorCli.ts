@@ -7,8 +7,8 @@ import { camelCase, upperFirst } from "lodash-es";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { ExpressCustomConfig } from "./custom-config/ExpressCustomConfig";
-import { ExpressCustomConfigSchema } from "./custom-config/schema/ExpressCustomConfigSchema";
+import { ExpressCustomConfig } from "./custom-config/ExpressCustomConfig.js";
+import { ExpressCustomConfigSchema } from "./custom-config/schema/ExpressCustomConfigSchema.js";
 
 export class ExpressGeneratorCli extends AbstractGeneratorCli<ExpressCustomConfig> {
     protected parseCustomConfig(customConfig: unknown): ExpressCustomConfig {

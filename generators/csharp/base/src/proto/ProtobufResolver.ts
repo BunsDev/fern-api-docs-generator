@@ -11,9 +11,9 @@ import {
     WellKnownProtobufType
 } from "@fern-fern/ir-sdk/api";
 
-import { ResolvedWellKnownProtobufType } from "../ResolvedWellKnownProtobufType";
-import { AbstractCsharpGeneratorContext } from "../context/AbstractCsharpGeneratorContext";
-import { CsharpTypeMapper } from "../context/CsharpTypeMapper";
+import { ResolvedWellKnownProtobufType } from "../ResolvedWellKnownProtobufType.js";
+import { AbstractCsharpGeneratorContext } from "../context/AbstractCsharpGeneratorContext.js";
+import { CsharpTypeMapper } from "../context/CsharpTypeMapper.js";
 
 export class ProtobufResolver {
     private context: AbstractCsharpGeneratorContext<BaseCsharpCustomConfigSchema>;

@@ -1,7 +1,7 @@
-export { AbstractAstNode } from "./AbstractAstNode";
-export { AbstractWriter } from "./AbstractWriter";
-export { AbstractFormatter, NopFormatter } from "./AbstractFormatter";
-export { CodeBlock } from "./CodeBlock";
+export { AbstractAstNode } from "./AbstractAstNode.js";
+export { AbstractWriter } from "./AbstractWriter.js";
+export { AbstractFormatter, NopFormatter } from "./AbstractFormatter.js";
+export { CodeBlock } from "./CodeBlock.js";
 export {
     type Argument,
     type Arguments,
@@ -9,5 +9,5 @@ export {
     type UnnamedArgument,
     hasNamedArgument,
     isNamedArgument
-} from "./Argument";
-export { Ternary } from "./Ternary";
+} from "./Argument.js";
+export { Ternary } from "./Ternary.js";

@@ -5,7 +5,7 @@ import { ModuleDeclaration, ts } from "ts-morph";
 
 import { ObjectTypeDeclaration } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema";
+import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema.js";
 
 export class GeneratedObjectTypeSchemaImpl<Context extends ModelContext>
     extends AbstractGeneratedTypeSchema<ObjectTypeDeclaration, Context>

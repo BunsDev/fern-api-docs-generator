@@ -5,14 +5,14 @@ import { GENERATORS_CONFIGURATION_FILENAME } from "@fern-api/configuration-loade
 
 import { FernRegistry } from "@fern-fern/generators-sdk";
 
-import { CliContext } from "./cli-context/CliContext";
-import { getGeneratorUpgradeMessage } from "./cli-context/upgrade-utils/getFernUpgradeMessage";
-import { getProjectGeneratorUpgrades } from "./cli-context/upgrade-utils/getGeneratorVersions";
-import { GlobalCliOptions, loadProjectAndRegisterWorkspacesWithContext } from "./cliCommons";
-import { GenerationModeFilter, getGeneratorList } from "./commands/generator-list/getGeneratorList";
-import { getGeneratorMetadata } from "./commands/generator-metadata/getGeneratorMetadata";
-import { getOrganization } from "./commands/organization/getOrganization";
-import { upgradeGenerator } from "./commands/upgrade/upgradeGenerator";
+import { CliContext } from "./cli-context/CliContext.js";
+import { getGeneratorUpgradeMessage } from "./cli-context/upgrade-utils/getFernUpgradeMessage.js";
+import { getProjectGeneratorUpgrades } from "./cli-context/upgrade-utils/getGeneratorVersions.js";
+import { GlobalCliOptions, loadProjectAndRegisterWorkspacesWithContext } from "./cliCommons.js";
+import { GenerationModeFilter, getGeneratorList } from "./commands/generator-list/getGeneratorList.js";
+import { getGeneratorMetadata } from "./commands/generator-metadata/getGeneratorMetadata.js";
+import { getOrganization } from "./commands/organization/getOrganization.js";
+import { upgradeGenerator } from "./commands/upgrade/upgradeGenerator.js";
 
 export function addGetOrganizationCommand(cli: Argv<GlobalCliOptions>, cliContext: CliContext): void {
     cli.command(

@@ -1,5 +1,5 @@
-import { boolean, object, property, string, stringLiteral } from "../../builders";
-import { itSchema, itSchemaIdentity } from "../utils/itSchema";
+import { boolean, object, property, string, stringLiteral } from "../../builders/index.js";
+import { itSchema, itSchemaIdentity } from "../utils/itSchema.js";
 
 describe("extend", () => {
     itSchemaIdentity(

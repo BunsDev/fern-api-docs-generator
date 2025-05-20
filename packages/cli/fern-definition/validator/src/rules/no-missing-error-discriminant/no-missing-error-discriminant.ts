@@ -2,7 +2,7 @@ import { isEmpty } from "lodash-es";
 
 import { FernWorkspace, getAllNamedDefinitionFiles } from "@fern-api/api-workspace-commons";
 
-import { Rule } from "../../Rule";
+import { Rule } from "../../Rule.js";
 
 export const NoMissingErrorDiscriminantRule: Rule = {
     name: "no-missing-error-discriminant",

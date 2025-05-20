@@ -3,9 +3,9 @@ import { ts } from "ts-morph";
 
 import { assertNever } from "@fern-api/core-utils";
 
-import { GeneratedUnionImpl } from "../GeneratedUnionImpl";
-import { AbstractParsedSingleUnionType } from "../parsed-single-union-type/AbstractParsedSingleUnionType";
-import { KnownSingleUnionType } from "./KnownSingleUnionType";
+import { GeneratedUnionImpl } from "../GeneratedUnionImpl.js";
+import { AbstractParsedSingleUnionType } from "../parsed-single-union-type/AbstractParsedSingleUnionType.js";
+import { KnownSingleUnionType } from "./KnownSingleUnionType.js";
 
 export abstract class AbstractKnownSingleUnionType<Context extends ModelContext>
     extends AbstractParsedSingleUnionType<Context>

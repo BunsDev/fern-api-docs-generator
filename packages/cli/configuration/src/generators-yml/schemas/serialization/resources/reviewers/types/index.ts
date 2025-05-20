@@ -1,2 +1,2 @@
-export * from "./ReviewersSchema";
-export * from "./ReviewerSchema";
+export * from "./ReviewersSchema.js";
+export * from "./ReviewerSchema.js";

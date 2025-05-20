@@ -3,7 +3,7 @@ import { GeneratedSdkInlinedRequestBodySchema } from "@fern-typescript/contexts"
 
 import { HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkInlinedRequestBodySchemaImpl } from "./GeneratedSdkInlinedRequestBodySchemaImpl";
+import { GeneratedSdkInlinedRequestBodySchemaImpl } from "./GeneratedSdkInlinedRequestBodySchemaImpl.js";
 
 export declare namespace SdkInlinedRequestBodySchemaGenerator {
     export interface Init {

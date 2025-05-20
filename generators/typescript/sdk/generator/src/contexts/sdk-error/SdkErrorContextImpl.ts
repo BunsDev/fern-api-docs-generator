@@ -6,7 +6,7 @@ import { SourceFile } from "ts-morph";
 
 import { DeclaredErrorName, ErrorDeclaration } from "@fern-fern/ir-sdk/api";
 
-import { SdkErrorDeclarationReferencer } from "../../declaration-referencers/SdkErrorDeclarationReferencer";
+import { SdkErrorDeclarationReferencer } from "../../declaration-referencers/SdkErrorDeclarationReferencer.js";
 
 export declare namespace SdkErrorContextImpl {
     export interface Init {

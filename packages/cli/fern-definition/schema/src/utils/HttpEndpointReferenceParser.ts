@@ -1,4 +1,4 @@
-import { HttpMethodSchema } from "../schemas";
+import { HttpMethodSchema } from "../schemas/index.js";
 
 export declare namespace HttpEndpointReferenceParser {
     interface Parsed {

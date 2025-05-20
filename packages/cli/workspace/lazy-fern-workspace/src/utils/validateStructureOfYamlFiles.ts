@@ -6,10 +6,10 @@ import { entries, validateAgainstJsonSchema } from "@fern-api/core-utils";
 import { PackageMarkerFileSchema, RawSchemas, RootApiFileSchema } from "@fern-api/fern-definition-schema";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import * as RootApiFileJsonSchema from "../api-yml.schema.json";
-import * as DefinitionFileJsonSchema from "../fern.schema.json";
-import * as PackageMarkerFileJsonSchema from "../package-yml.schema.json";
-import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result";
+import RootApiFileJsonSchema from "../api-yml.schema.json" with { type: "json" };
+import DefinitionFileJsonSchema from "../fern.schema.json" with { type: "json" };
+import PackageMarkerFileJsonSchema from "../package-yml.schema.json" with { type: "json" };
+import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result.js";
 
 export declare namespace validateStructureOfYamlFiles {
     export type Return = SuccessfulResult | FailedResult;

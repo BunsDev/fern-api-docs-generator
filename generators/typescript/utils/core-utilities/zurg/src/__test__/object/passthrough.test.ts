@@ -1,6 +1,6 @@
-import { object, string, stringLiteral } from "../../builders";
-import { itJson, itParse, itSchema } from "../utils/itSchema";
-import { itValidate } from "../utils/itValidate";
+import { object, string, stringLiteral } from "../../builders/index.js";
+import { itJson, itParse, itSchema } from "../utils/itSchema.js";
+import { itValidate } from "../utils/itValidate.js";
 
 describe("passthrough", () => {
     const baseSchema = object({

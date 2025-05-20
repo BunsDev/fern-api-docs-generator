@@ -13,12 +13,12 @@ import {
     HttpEndpoint
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedFile } from "../utils/GeneratedFile";
-import { generateEnumNameFromValues } from "../utils/NamingUtilities";
-import { Argument } from "./Argument";
-import { ExampleNode } from "./ExampleNode";
-import { Import } from "./Import";
-import { Property } from "./Property";
+import { GeneratedFile } from "../utils/GeneratedFile.js";
+import { generateEnumNameFromValues } from "../utils/NamingUtilities.js";
+import { Argument } from "./Argument.js";
+import { ExampleNode } from "./ExampleNode.js";
+import { Import } from "./Import.js";
+import { Property } from "./Property.js";
 import {
     ArrayInstance,
     ClassReferenceFactory,
@@ -26,12 +26,12 @@ import {
     EnumReference,
     HashInstance,
     SetInstance
-} from "./classes/ClassReference";
-import { Class_ } from "./classes/Class_";
-import { AstNode } from "./core/AstNode";
-import { Expression } from "./expressions/Expression";
-import { FunctionInvocation } from "./functions/FunctionInvocation";
-import { Function_ } from "./functions/Function_";
+} from "./classes/ClassReference.js";
+import { Class_ } from "./classes/Class_.js";
+import { AstNode } from "./core/AstNode.js";
+import { Expression } from "./expressions/Expression.js";
+import { FunctionInvocation } from "./functions/FunctionInvocation.js";
+import { Function_ } from "./functions/Function_.js";
 
 export declare namespace ExampleGenerator {
     export interface Init {

@@ -21,7 +21,7 @@ import {
     DOCKER_PATH_TO_IR,
     DOCKER_PATH_TO_SNIPPET,
     DOCKER_PATH_TO_SNIPPET_TEMPLATES
-} from "./constants";
+} from "./constants.js";
 
 const DEFAULT_OUTPUT_VERSION = "0.0.1";
 

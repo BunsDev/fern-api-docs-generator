@@ -4,10 +4,10 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { Header } from "@fern-api/openapi-ir";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
-import { buildTypeReference } from "./buildTypeReference";
-import { convertAvailability } from "./utils/convertAvailability";
-import { getTypeFromTypeReference } from "./utils/getTypeFromTypeReference";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
+import { buildTypeReference } from "./buildTypeReference.js";
+import { convertAvailability } from "./utils/convertAvailability.js";
+import { getTypeFromTypeReference } from "./utils/getTypeFromTypeReference.js";
 
 export function buildHeader({
     header,

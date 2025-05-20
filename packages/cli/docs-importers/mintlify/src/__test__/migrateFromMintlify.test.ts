@@ -5,7 +5,7 @@ import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-a
 import { CONSOLE_LOGGER } from "@fern-api/logger";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { runMintlifyMigration } from "../runMintlifyMigration";
+import { runMintlifyMigration } from "../runMintlifyMigration.js";
 
 const FIXTURES_PATH = AbsoluteFilePath.of(path.join(__dirname, "fixtures"));
 const OUTPUTS_PATH = AbsoluteFilePath.of(path.join(__dirname, "outputs"));

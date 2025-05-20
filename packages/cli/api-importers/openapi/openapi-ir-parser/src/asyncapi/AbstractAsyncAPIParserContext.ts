@@ -4,13 +4,13 @@ import { Logger } from "@fern-api/logger";
 import { Namespace, SdkGroup, SdkGroupName } from "@fern-api/openapi-ir";
 import { TaskContext } from "@fern-api/task-context";
 
-import { ParseOpenAPIOptions } from "../options";
-import { SchemaParserContext } from "../schema/SchemaParserContext";
-import { SCHEMA_REFERENCE_PREFIX } from "../schema/convertSchemas";
-import { isReferenceObject } from "../schema/utils/isReferenceObject";
-import { WebsocketSessionExampleMessage } from "./getFernExamples";
-import { AsyncAPIV2 } from "./v2";
-import { AsyncAPIV3 } from "./v3";
+import { ParseOpenAPIOptions } from "../options.js";
+import { SchemaParserContext } from "../schema/SchemaParserContext.js";
+import { SCHEMA_REFERENCE_PREFIX } from "../schema/convertSchemas.js";
+import { isReferenceObject } from "../schema/utils/isReferenceObject.js";
+import { WebsocketSessionExampleMessage } from "./getFernExamples.js";
+import { AsyncAPIV2 } from "./v2/index.js";
+import { AsyncAPIV3 } from "./v3/index.js";
 
 export abstract class AbstractAsyncAPIParserContext<TDocument extends object> implements SchemaParserContext {
     public readonly document: AsyncAPIV2.DocumentV2 | AsyncAPIV3.DocumentV3;

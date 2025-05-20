@@ -5,7 +5,7 @@ import { WriteablePythonFile, core, dt, pydantic } from "@fern-api/python-base";
 
 import { AliasTypeDeclaration, PrimitiveTypeV1, TypeDeclaration, TypeId, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { PydanticModelGeneratorContext } from "../ModelGeneratorContext";
+import { PydanticModelGeneratorContext } from "../ModelGeneratorContext.js";
 
 export class WrappedAliasGenerator {
     private readonly className: string;

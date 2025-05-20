@@ -1,9 +1,9 @@
 import { NodePath, RootApiFileSchema } from "@fern-api/fern-definition-schema";
 import { RelativeFilePath } from "@fern-api/fs-utils";
 
-import { RuleVisitors } from "./Rule";
-import { ValidationViolation } from "./ValidationViolation";
-import { RootApiFileAstNodeTypes, RootApiFileAstNodeVisitor, RootApiFileAstVisitor } from "./ast";
+import { RuleVisitors } from "./Rule.js";
+import { ValidationViolation } from "./ValidationViolation.js";
+import { RootApiFileAstNodeTypes, RootApiFileAstNodeVisitor, RootApiFileAstVisitor } from "./ast/index.js";
 
 export function createRootApiFileAstVisitorForRules({
     relativeFilepath,

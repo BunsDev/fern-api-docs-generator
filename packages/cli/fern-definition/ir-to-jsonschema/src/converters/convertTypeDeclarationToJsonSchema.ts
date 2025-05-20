@@ -3,12 +3,12 @@ import { JSONSchema4 } from "json-schema";
 import { assertNever } from "@fern-api/core-utils";
 import { TypeDeclaration } from "@fern-api/ir-sdk";
 
-import { JsonSchemaConverterContext } from "../JsonSchemaConverterContext";
-import { convertEnumToJsonSchema } from "./enumToJsonSchema";
-import { convertObjectToJsonSchema } from "./objectToJsonSchema";
-import { convertTypeReferenceToJsonSchema } from "./typeReferenceToJsonSchema";
-import { convertUndiscriminatedUnionToJsonSchema } from "./undiscriminatedUnionToJsonSchema";
-import { convertUnionToJsonSchema } from "./unionToJsonSchema";
+import { JsonSchemaConverterContext } from "../JsonSchemaConverterContext.js";
+import { convertEnumToJsonSchema } from "./enumToJsonSchema.js";
+import { convertObjectToJsonSchema } from "./objectToJsonSchema.js";
+import { convertTypeReferenceToJsonSchema } from "./typeReferenceToJsonSchema.js";
+import { convertUndiscriminatedUnionToJsonSchema } from "./undiscriminatedUnionToJsonSchema.js";
+import { convertUnionToJsonSchema } from "./unionToJsonSchema.js";
 
 export declare namespace convertTypeDeclarationToJsonSchema {
     interface Args {

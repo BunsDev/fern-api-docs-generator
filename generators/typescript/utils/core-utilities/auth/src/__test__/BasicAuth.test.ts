@@ -1,4 +1,4 @@
-import { BasicAuth } from "../BasicAuth";
+import { BasicAuth } from "../BasicAuth.js";
 
 describe("BasicAuth", () => {
     describe("toAuthorizationHeader", () => {

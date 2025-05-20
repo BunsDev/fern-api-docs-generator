@@ -1,11 +1,11 @@
-import { Access } from "./Access";
-import { Annotation } from "./Annotation";
-import { Class } from "./Class";
-import { ClassReference } from "./ClassReference";
-import { CodeBlock } from "./CodeBlock";
-import { Method } from "./Method";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Access } from "./Access.js";
+import { Annotation } from "./Annotation.js";
+import { Class } from "./Class.js";
+import { ClassReference } from "./ClassReference.js";
+import { CodeBlock } from "./CodeBlock.js";
+import { Method } from "./Method.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace TestClass {
     interface Args {

@@ -3,7 +3,7 @@ import path from "path";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { diff } from "./diff";
+import { diff } from "./diff.js";
 
 const BREAKING_FIXTURES_DIR = join(
     AbsoluteFilePath.of(__dirname),

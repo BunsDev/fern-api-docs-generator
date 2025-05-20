@@ -4,8 +4,8 @@ import { AbsoluteFilePath, RelativeFilePath, dirname, join } from "@fern-api/fs-
 import { FernOpenAPIExtension, OpenAPIExtension } from "@fern-api/openapi-ir-parser";
 import { TaskContext } from "@fern-api/task-context";
 
-import { mergeWithOverrides } from "../loaders/mergeWithOverrides";
-import { parseOpenAPI } from "./parseOpenAPI";
+import { mergeWithOverrides } from "../loaders/mergeWithOverrides.js";
+import { parseOpenAPI } from "./parseOpenAPI.js";
 
 // NOTE: This will affect any property that is explicitly named with this. This will preserve null values underneath
 // the key or any descendants. This is an extreme edge case, but if we want to strip these, we will have to change

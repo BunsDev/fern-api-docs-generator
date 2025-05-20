@@ -6,7 +6,7 @@ import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { Logger } from "@fern-api/logger";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { convertGeneratorsConfiguration } from "../convertGeneratorsConfiguration";
+import { convertGeneratorsConfiguration } from "../convertGeneratorsConfiguration.js";
 
 describe("convertGeneratorsConfiguration", () => {
     it("local-file-system allows absolute download path", async () => {

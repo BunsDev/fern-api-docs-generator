@@ -9,8 +9,8 @@ import { SourceFile } from "ts-morph";
 
 import { Name } from "@fern-fern/ir-sdk/api";
 
-import { ExpressInlinedRequestBodyDeclarationReferencer } from "../../declaration-referencers/ExpressInlinedRequestBodyDeclarationReferencer";
-import { getSchemaImportStrategy } from "../getSchemaImportStrategy";
+import { ExpressInlinedRequestBodyDeclarationReferencer } from "../../declaration-referencers/ExpressInlinedRequestBodyDeclarationReferencer.js";
+import { getSchemaImportStrategy } from "../getSchemaImportStrategy.js";
 
 export declare namespace ExpressInlinedRequestBodySchemaContextImpl {
     export interface Init {

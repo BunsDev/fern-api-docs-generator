@@ -1,8 +1,8 @@
 import { AbstractWriter } from "@fern-api/browser-compatible-base-generator";
 
-import { AstNode } from "../ruby";
-import { Parameter } from "./Parameter";
-import { Writer } from "./core/Writer";
+import { AstNode } from "../ruby.js";
+import { Parameter } from "./Parameter.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace KeywordSplatParameter {
     interface Args extends Parameter.Args {}

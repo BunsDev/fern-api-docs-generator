@@ -3,7 +3,7 @@ import { PackageResolver } from "@fern-typescript/resolvers";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedExpressRegisterImpl } from "./GeneratedExpressRegisterImpl";
+import { GeneratedExpressRegisterImpl } from "./GeneratedExpressRegisterImpl.js";
 
 export declare namespace ExpressRegisterGenerator {
     export interface Init {

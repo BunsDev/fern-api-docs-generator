@@ -4,10 +4,10 @@ import { Mock, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { CliContext } from "../cli-context/CliContext";
-import { checkOutputDirectory } from "../commands/generate/checkOutputDirectory";
-import { getOutputDirectories } from "../persistence/output-directories/getOutputDirectories";
-import { storeOutputDirectories } from "../persistence/output-directories/storeOutputDirectories";
+import { CliContext } from "../cli-context/CliContext.js";
+import { checkOutputDirectory } from "../commands/generate/checkOutputDirectory.js";
+import { getOutputDirectories } from "../persistence/output-directories/getOutputDirectories.js";
+import { storeOutputDirectories } from "../persistence/output-directories/storeOutputDirectories.js";
 
 vi.mock("../utils/isCI", () => ({
     isCI: vi.fn().mockReturnValue(false)

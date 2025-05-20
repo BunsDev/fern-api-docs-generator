@@ -12,8 +12,8 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { AbstractCsharpGeneratorContext } from "../context/AbstractCsharpGeneratorContext";
-import { EXTERNAL_PROTO_TIMESTAMP_CLASS_REFERENCE } from "./constants";
+import { AbstractCsharpGeneratorContext } from "../context/AbstractCsharpGeneratorContext.js";
+import { EXTERNAL_PROTO_TIMESTAMP_CLASS_REFERENCE } from "./constants.js";
 
 type WrapperType = "optional" | "list" | "map";
 

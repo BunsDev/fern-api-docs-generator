@@ -2,7 +2,7 @@ import { format } from "util";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { Import } from "../Import";
+import { Import } from "../Import.js";
 
 export enum NewLinePlacement {
     BEFORE,

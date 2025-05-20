@@ -4,12 +4,12 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { TaskContext } from "@fern-api/task-context";
 import { AbstractAPIWorkspace, DocsWorkspace, FernWorkspace } from "@fern-api/workspace-loader";
 
-import { Rule } from "./Rule";
-import { ValidationViolation } from "./ValidationViolation";
-import { createDocsConfigFileAstVisitorForRules } from "./createDocsConfigFileAstVisitorForRules";
-import { visitDocsConfigFileYamlAst } from "./docsAst/visitDocsConfigFileYamlAst";
-import { getAllRules } from "./getAllRules";
-import { ValidMarkdownLinks } from "./rules/valid-markdown-link";
+import { Rule } from "./Rule.js";
+import { ValidationViolation } from "./ValidationViolation.js";
+import { createDocsConfigFileAstVisitorForRules } from "./createDocsConfigFileAstVisitorForRules.js";
+import { visitDocsConfigFileYamlAst } from "./docsAst/visitDocsConfigFileYamlAst.js";
+import { getAllRules } from "./getAllRules.js";
+import { ValidMarkdownLinks } from "./rules/valid-markdown-link/index.js";
 
 export async function validateDocsWorkspace(
     workspace: DocsWorkspace,

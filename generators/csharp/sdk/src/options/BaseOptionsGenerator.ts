@@ -3,7 +3,7 @@ import { csharp } from "@fern-api/csharp-codegen";
 
 import { HttpHeader, Literal } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
 
 export const BASE_URL_FIELD_NAME = "BaseUrl";
 export const BASE_URL_SUMMARY = "The Base URL for the API.";

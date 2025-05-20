@@ -6,7 +6,7 @@ import { SourceFile } from "ts-morph";
 
 import { SubpackageId, WebSocketChannel, WebSocketChannelId } from "@fern-fern/ir-sdk/api";
 
-import { WebsocketSocketDeclarationReferencer } from "../../declaration-referencers/WebsocketSocketDeclarationReferencer";
+import { WebsocketSocketDeclarationReferencer } from "../../declaration-referencers/WebsocketSocketDeclarationReferencer.js";
 
 export declare namespace WebsocketContextImpl {
     export interface Init {

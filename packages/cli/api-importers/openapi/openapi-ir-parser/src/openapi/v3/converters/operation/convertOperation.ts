@@ -9,17 +9,17 @@ import {
     WebhookWithExample
 } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../../../getExtension";
-import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext";
-import { FernOpenAPIExtension } from "../../extensions/fernExtensions";
-import { getFernAsyncExtension } from "../../extensions/getFernAsyncExtension";
-import { getFernStreamingExtension } from "../../extensions/getFernStreamingExtension";
-import { getFernPaginationExtension } from "../../extensions/getPaginationExtension";
-import { OperationContext, PathItemContext } from "../contexts";
-import { convertAsyncSyncOperation } from "./convertAsyncSyncOperation";
-import { convertHttpOperation } from "./convertHttpOperation";
-import { convertStreamingOperation } from "./convertStreamingOperation";
-import { convertWebhookOperation } from "./convertWebhookOperation";
+import { getExtension } from "../../../../getExtension.js";
+import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext.js";
+import { FernOpenAPIExtension } from "../../extensions/fernExtensions.js";
+import { getFernAsyncExtension } from "../../extensions/getFernAsyncExtension.js";
+import { getFernStreamingExtension } from "../../extensions/getFernStreamingExtension.js";
+import { getFernPaginationExtension } from "../../extensions/getPaginationExtension.js";
+import { OperationContext, PathItemContext } from "../contexts.js";
+import { convertAsyncSyncOperation } from "./convertAsyncSyncOperation.js";
+import { convertHttpOperation } from "./convertHttpOperation.js";
+import { convertStreamingOperation } from "./convertStreamingOperation.js";
+import { convertWebhookOperation } from "./convertWebhookOperation.js";
 
 export type ConvertedOperation =
     | ConvertedAsyncAndSyncOperation

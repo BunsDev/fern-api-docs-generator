@@ -30,10 +30,10 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { getDeclaredTypeNameKey, getErrorTypeNameKey } from "../convertToOpenApi";
-import { Mode } from "../writeOpenApi";
-import { convertObject } from "./convertObject";
-import { OpenApiComponentSchema, convertTypeReference } from "./typeConverter";
+import { getDeclaredTypeNameKey, getErrorTypeNameKey } from "../convertToOpenApi.js";
+import { Mode } from "../writeOpenApi.js";
+import { convertObject } from "./convertObject.js";
+import { OpenApiComponentSchema, convertTypeReference } from "./typeConverter.js";
 
 export function convertServices({
     ir,

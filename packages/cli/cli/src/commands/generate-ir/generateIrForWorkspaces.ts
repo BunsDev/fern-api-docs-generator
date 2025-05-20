@@ -10,8 +10,8 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { Project } from "@fern-api/project-loader";
 import { TaskContext } from "@fern-api/task-context";
 
-import { CliContext } from "../../cli-context/CliContext";
-import { generateIrForFernWorkspace } from "./generateIrForFernWorkspace";
+import { CliContext } from "../../cli-context/CliContext.js";
+import { generateIrForFernWorkspace } from "./generateIrForFernWorkspace.js";
 
 export async function generateIrForWorkspaces({
     project,

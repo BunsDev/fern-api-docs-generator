@@ -1,4 +1,4 @@
-import { makeRequest } from "../makeRequest";
+import { makeRequest } from "../makeRequest.js";
 
 describe("Test makeRequest", () => {
     const mockPostUrl = "https://httpbin.org/post";

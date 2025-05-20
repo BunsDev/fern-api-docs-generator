@@ -18,7 +18,7 @@ import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-a
 import { TaskContext } from "@fern-api/task-context";
 import { handleFailedWorkspaceParserResult, loadAPIWorkspace, loadDocsWorkspace } from "@fern-api/workspace-loader";
 
-import { Project } from "./Project";
+import { Project } from "./Project.js";
 
 export declare namespace loadProject {
     export interface Args {

@@ -3,8 +3,8 @@ import { OpenAPIV3, OpenAPIV3_1 } from "openapi-types";
 import { TypeReference } from "@fern-api/ir-sdk";
 import { AbstractConverterContext } from "@fern-api/v2-importer-commons";
 
-import { AsyncAPIV2 } from "./2.x";
-import { AsyncAPIV3 } from "./3.0";
+import { AsyncAPIV2 } from "./2.x/index.js";
+import { AsyncAPIV3 } from "./3.0/index.js";
 
 /**
  * Context class for converting OpenAPI 3.1 specifications

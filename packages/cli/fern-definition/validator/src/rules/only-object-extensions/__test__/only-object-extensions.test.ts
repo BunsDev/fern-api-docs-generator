@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { OnlyObjectExtensionsRule } from "../only-object-extensions";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { OnlyObjectExtensionsRule } from "../only-object-extensions.js";
 
 describe("only-object-extensions", () => {
     it("simple", async () => {

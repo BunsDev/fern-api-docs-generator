@@ -13,7 +13,7 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { AbstractCsharpGeneratorContext } from "./AbstractCsharpGeneratorContext";
+import { AbstractCsharpGeneratorContext } from "./AbstractCsharpGeneratorContext.js";
 
 export declare namespace CsharpTypeMapper {
     interface Args {

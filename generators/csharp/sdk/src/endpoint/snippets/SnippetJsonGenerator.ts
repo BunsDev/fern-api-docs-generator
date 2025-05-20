@@ -4,9 +4,9 @@ import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { Endpoint } from "@fern-fern/generator-exec-sdk/api";
 import { HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../../SdkGeneratorContext";
-import { RootClientGenerator } from "../../root-client/RootClientGenerator";
-import { SingleEndpointSnippet } from "./EndpointSnippetsGenerator";
+import { SdkGeneratorContext } from "../../SdkGeneratorContext.js";
+import { RootClientGenerator } from "../../root-client/RootClientGenerator.js";
+import { SingleEndpointSnippet } from "./EndpointSnippetsGenerator.js";
 
 export class SnippetJsonGenerator {
     private readonly context: SdkGeneratorContext;

@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 
-import { Fetcher, fetcherImpl } from "../Fetcher";
+import { Fetcher, fetcherImpl } from "../Fetcher.js";
 
 describe("Test fetcherImpl", () => {
     it("should handle successful request", async () => {

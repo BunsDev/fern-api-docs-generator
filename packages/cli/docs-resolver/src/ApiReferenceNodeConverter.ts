@@ -9,17 +9,20 @@ import { TaskContext } from "@fern-api/task-context";
 import { titleCase, visitDiscriminatedUnion } from "@fern-api/ui-core-utils";
 import { DocsWorkspace, FernWorkspace } from "@fern-api/workspace-loader";
 
-import { ApiDefinitionHolder } from "./ApiDefinitionHolder";
-import { ChangelogNodeConverter } from "./ChangelogNodeConverter";
-import { NodeIdGenerator } from "./NodeIdGenerator";
-import { convertPlaygroundSettings } from "./utils/convertPlaygroundSettings";
-import { enrichApiPackageChild } from "./utils/enrichApiPackageChild";
-import { isSubpackage } from "./utils/isSubpackage";
-import { mergeAndFilterChildren } from "./utils/mergeAndFilterChildren";
-import { mergeEndpointPairs } from "./utils/mergeEndpointPairs";
-import { stringifyEndpointPathParts, stringifyEndpointPathPartsWithMethod } from "./utils/stringifyEndpointPathParts";
-import { toPageNode } from "./utils/toPageNode";
-import { toRelativeFilepath } from "./utils/toRelativeFilepath";
+import { ApiDefinitionHolder } from "./ApiDefinitionHolder.js";
+import { ChangelogNodeConverter } from "./ChangelogNodeConverter.js";
+import { NodeIdGenerator } from "./NodeIdGenerator.js";
+import { convertPlaygroundSettings } from "./utils/convertPlaygroundSettings.js";
+import { enrichApiPackageChild } from "./utils/enrichApiPackageChild.js";
+import { isSubpackage } from "./utils/isSubpackage.js";
+import { mergeAndFilterChildren } from "./utils/mergeAndFilterChildren.js";
+import { mergeEndpointPairs } from "./utils/mergeEndpointPairs.js";
+import {
+    stringifyEndpointPathParts,
+    stringifyEndpointPathPartsWithMethod
+} from "./utils/stringifyEndpointPathParts.js";
+import { toPageNode } from "./utils/toPageNode.js";
+import { toRelativeFilepath } from "./utils/toRelativeFilepath.js";
 
 export class ApiReferenceNodeConverter {
     apiDefinitionId: FernNavigation.V1.ApiDefinitionId;

@@ -4,7 +4,7 @@ import { FernToken } from "@fern-api/auth";
 import { Project } from "@fern-api/project-loader";
 import { registerApi } from "@fern-api/register";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export async function registerWorkspacesV2({
     project,

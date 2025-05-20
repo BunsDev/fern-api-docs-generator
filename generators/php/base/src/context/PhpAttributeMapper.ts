@@ -5,7 +5,7 @@ import { BasePhpCustomConfigSchema, php } from "@fern-api/php-codegen";
 
 import { ObjectProperty } from "@fern-fern/ir-sdk/api";
 
-import { AbstractPhpGeneratorContext } from "./AbstractPhpGeneratorContext";
+import { AbstractPhpGeneratorContext } from "./AbstractPhpGeneratorContext.js";
 
 export declare namespace PhpAttributeMapper {
     interface Args {

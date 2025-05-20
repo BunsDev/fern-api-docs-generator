@@ -1,5 +1,5 @@
-import Swift, { FileHeader, Import } from "../";
-import { AstNode, Writer } from "./core";
+import Swift, { FileHeader, Import } from "..//index.js";
+import { AstNode, Writer } from "./core/index.js";
 
 export declare namespace File {
     interface Args {

@@ -4,8 +4,8 @@ import { Audiences, generatorsYml } from "@fern-api/configuration-loader";
 import { AbsoluteFilePath, streamObjectToFile, stringifyLargeObject } from "@fern-api/fs-utils";
 import { Project } from "@fern-api/project-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
-import { generateIrForFernWorkspace } from "../generate-ir/generateIrForFernWorkspace";
+import { CliContext } from "../../cli-context/CliContext.js";
+import { generateIrForFernWorkspace } from "../generate-ir/generateIrForFernWorkspace.js";
 
 export async function generateDynamicIrForWorkspaces({
     project,

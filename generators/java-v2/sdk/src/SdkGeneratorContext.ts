@@ -15,10 +15,10 @@ import {
     TypeId
 } from "@fern-fern/ir-sdk/api";
 
-import { JavaGeneratorAgent } from "./JavaGeneratorAgent";
-import { SdkCustomConfigSchema } from "./SdkCustomConfig";
-import { TYPES_DIRECTORY } from "./constants";
-import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder";
+import { JavaGeneratorAgent } from "./JavaGeneratorAgent.js";
+import { SdkCustomConfigSchema } from "./SdkCustomConfig.js";
+import { TYPES_DIRECTORY } from "./constants.js";
+import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder.js";
 
 export class SdkGeneratorContext extends AbstractJavaGeneratorContext<SdkCustomConfigSchema> {
     public readonly generatorAgent: JavaGeneratorAgent;

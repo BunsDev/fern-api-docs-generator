@@ -1,6 +1,6 @@
-import { bigint } from "../../builders/bigint";
-import { itJson, itParse, itSchema } from "../utils/itSchema";
-import { itValidateJson, itValidateParse } from "../utils/itValidate";
+import { bigint } from "../../builders/bigint/index.js";
+import { itJson, itParse, itSchema } from "../utils/itSchema.js";
+import { itValidateJson, itValidateParse } from "../utils/itValidate.js";
 
 describe("bigint", () => {
     itSchema("converts between raw bigint and parsed bigint", bigint(), {

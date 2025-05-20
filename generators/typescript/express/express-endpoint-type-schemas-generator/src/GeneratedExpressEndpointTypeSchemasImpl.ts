@@ -6,8 +6,8 @@ import { assertNever } from "@fern-api/core-utils";
 
 import { HttpEndpoint, HttpService } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedEndpointTypeSchema } from "./GeneratedEndpointTypeSchema";
-import { GeneratedEndpointTypeSchemaImpl } from "./GeneratedEndpointTypeSchemaImpl";
+import { GeneratedEndpointTypeSchema } from "./GeneratedEndpointTypeSchema.js";
+import { GeneratedEndpointTypeSchemaImpl } from "./GeneratedEndpointTypeSchemaImpl.js";
 
 export declare namespace GeneratedExpressEndpointTypeSchemasImpl {
     export interface Init {

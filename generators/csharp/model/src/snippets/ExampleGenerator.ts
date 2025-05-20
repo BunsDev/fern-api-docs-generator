@@ -10,9 +10,9 @@ import {
     ExampleUnionType
 } from "@fern-fern/ir-sdk/api";
 
-import { ModelGeneratorContext } from "../ModelGeneratorContext";
-import { ObjectGenerator } from "../object/ObjectGenerator";
-import { UnionGenerator } from "../union/UnionGenerator";
+import { ModelGeneratorContext } from "../ModelGeneratorContext.js";
+import { ObjectGenerator } from "../object/ObjectGenerator.js";
+import { UnionGenerator } from "../union/UnionGenerator.js";
 
 export class ExampleGenerator {
     private context: ModelGeneratorContext;

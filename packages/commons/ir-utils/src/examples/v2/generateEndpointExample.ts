@@ -10,8 +10,8 @@ import {
     V2HttpEndpointResponse
 } from "@fern-api/ir-sdk";
 
-import { getRequestBodyExamples } from "./getRequestBodyExamples";
-import { getResponseExamples } from "./getResponseExamples";
+import { getRequestBodyExamples } from "./getRequestBodyExamples.js";
+import { getResponseExamples } from "./getResponseExamples.js";
 
 export declare namespace generateEndpointExample {
     interface Args {

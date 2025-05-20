@@ -13,8 +13,8 @@ import {
 import { RelativeFilePath } from "@fern-api/fs-utils";
 import { parseReferenceToTypeName } from "@fern-api/ir-generator";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { TypeReferenceLocation, visitDefinitionFileYamlAst } from "../../ast";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { TypeReferenceLocation, visitDefinitionFileYamlAst } from "../../ast/index.js";
 
 type TypeName = string;
 

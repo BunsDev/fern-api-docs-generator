@@ -2,7 +2,7 @@ import { DescField, DescMessage } from "@bufbuild/protobuf";
 import { CodeGeneratorRequest } from "@bufbuild/protobuf/wkt";
 import { FileInfo, Printable } from "@bufbuild/protoplugin";
 
-import { Options } from "./parseOptions";
+import { Options } from "./parseOptions.js";
 
 export function generateIr({ req, options }: { req: CodeGeneratorRequest; options: Options }): FileInfo {
     // TODO: Implement me!

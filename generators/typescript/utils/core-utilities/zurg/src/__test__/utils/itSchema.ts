@@ -1,5 +1,5 @@
 /* eslint-disable jest/no-export */
-import { Schema, SchemaOptions } from "../../Schema";
+import { Schema, SchemaOptions } from "../../Schema.js";
 
 export function itSchemaIdentity<T>(
     schema: Schema<T, T>,

@@ -1,4 +1,4 @@
-import { object, property, string, stringLiteral } from "../../builders";
+import { object, property, string, stringLiteral } from "../../builders/index.js";
 
 describe("withParsedProperties", () => {
     it("Added properties included on parsed object", async () => {

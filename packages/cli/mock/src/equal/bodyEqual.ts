@@ -3,7 +3,7 @@ import { isEqual, isEqualWith } from "lodash-es";
 
 import { ExampleEndpointCall } from "@fern-api/ir-sdk";
 
-import { EqualResponse } from "./EqualRequestResponse";
+import { EqualResponse } from "./EqualRequestResponse.js";
 
 export declare namespace bodyEqual {
     interface Args {

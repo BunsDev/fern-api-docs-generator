@@ -12,15 +12,15 @@ import { FernWorkspace, IdentifiableSource } from "@fern-api/workspace-loader";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import * as FernGeneratorExecParsing from "@fern-fern/generator-exec-sdk/serialization";
 
-import { LocalTaskHandler } from "./LocalTaskHandler";
+import { LocalTaskHandler } from "./LocalTaskHandler.js";
 import {
     DOCKER_CODEGEN_OUTPUT_DIRECTORY,
     DOCKER_GENERATOR_CONFIG_PATH,
     DOCKER_PATH_TO_IR,
     DOCKER_SOURCES_DIRECTORY
-} from "./constants";
-import { getGeneratorConfig } from "./getGeneratorConfig";
-import { getIntermediateRepresentation } from "./getIntermediateRepresentation";
+} from "./constants.js";
+import { getGeneratorConfig } from "./getGeneratorConfig.js";
+import { getIntermediateRepresentation } from "./getIntermediateRepresentation.js";
 
 export interface GeneratorRunResponse {
     ir: IntermediateRepresentation;

@@ -1,6 +1,6 @@
-import { set, string } from "../../builders";
-import { itSchema } from "../utils/itSchema";
-import { itValidateJson, itValidateParse } from "../utils/itValidate";
+import { set, string } from "../../builders/index.js";
+import { itSchema } from "../utils/itSchema.js";
+import { itValidateJson, itValidateParse } from "../utils/itValidate.js";
 
 describe("set", () => {
     itSchema("converts between raw list and parsed Set", set(string()), {

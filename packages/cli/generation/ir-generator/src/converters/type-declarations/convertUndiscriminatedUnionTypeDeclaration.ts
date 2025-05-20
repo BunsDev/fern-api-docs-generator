@@ -1,7 +1,7 @@
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { Type } from "@fern-api/ir-sdk";
 
-import { FernFileContext } from "../../FernFileContext";
+import { FernFileContext } from "../../FernFileContext.js";
 
 export function convertUndiscriminatedUnionTypeDeclaration({
     union,

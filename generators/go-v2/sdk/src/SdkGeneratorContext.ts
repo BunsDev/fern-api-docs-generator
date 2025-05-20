@@ -5,9 +5,9 @@ import { GoProject } from "@fern-api/go-base";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { GoGeneratorAgent } from "./GoGeneratorAgent";
-import { SdkCustomConfigSchema } from "./SdkCustomConfig";
-import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder";
+import { GoGeneratorAgent } from "./GoGeneratorAgent.js";
+import { SdkCustomConfigSchema } from "./SdkCustomConfig.js";
+import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder.js";
 
 export class SdkGeneratorContext extends AbstractGoGeneratorContext<SdkCustomConfigSchema> {
     public readonly generatorAgent: GoGeneratorAgent;

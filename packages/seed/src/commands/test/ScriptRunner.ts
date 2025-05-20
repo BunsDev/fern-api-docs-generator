@@ -5,9 +5,9 @@ import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { loggingExeca } from "@fern-api/logging-execa";
 import { TaskContext } from "@fern-api/task-context";
 
-import { Semaphore } from "../../Semaphore";
-import { DockerScriptConfig } from "../../config/api";
-import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces";
+import { Semaphore } from "../../Semaphore.js";
+import { DockerScriptConfig } from "../../config/api/index.js";
+import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces.js";
 
 export declare namespace ScriptRunner {
     interface RunArgs {

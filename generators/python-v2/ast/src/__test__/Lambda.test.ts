@@ -1,7 +1,7 @@
-import { python } from "..";
-import { ClassMethodType } from "../Method";
-import { OperatorType } from "../OperatorType";
-import { Writer } from "../core/Writer";
+import { ClassMethodType } from "../Method.js";
+import { OperatorType } from "../OperatorType.js";
+import { Writer } from "../core/Writer.js";
+import { python } from "../index.js";
 
 describe("Lambda", () => {
     let writer: Writer;

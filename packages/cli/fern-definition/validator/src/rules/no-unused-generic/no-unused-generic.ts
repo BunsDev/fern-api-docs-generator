@@ -2,8 +2,8 @@
 import { visitAllDefinitionFiles } from "@fern-api/api-workspace-commons";
 import { parseGeneric, visitRawTypeDeclaration } from "@fern-api/fern-definition-schema";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { visitDefinitionFileYamlAst } from "../../ast";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { visitDefinitionFileYamlAst } from "../../ast/index.js";
 
 export const NoUnusedGenericRule: Rule = {
     name: "no-unused-generic",

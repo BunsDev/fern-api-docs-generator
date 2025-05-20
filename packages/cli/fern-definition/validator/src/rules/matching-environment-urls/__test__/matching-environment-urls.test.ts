@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { MatchingEnvironmentUrlsRule } from "../matching-environment-urls";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { MatchingEnvironmentUrlsRule } from "../matching-environment-urls.js";
 
 describe("matching-environment-urls", () => {
     it("matching-urls", async () => {

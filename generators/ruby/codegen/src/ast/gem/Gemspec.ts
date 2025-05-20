@@ -1,11 +1,11 @@
 // Note a gemspec for us is just a Ruby class and we configure
-import { MINIMUM_RUBY_VERSION } from "../../utils/RubyUtilities";
-import { ExternalDependency } from "../ExternalDependency";
-import { Import } from "../Import";
-import { ClassReference } from "../classes/ClassReference";
-import { Expression } from "../expressions/Expression";
-import { FunctionInvocation } from "../functions/FunctionInvocation";
-import { Function_ } from "../functions/Function_";
+import { MINIMUM_RUBY_VERSION } from "../../utils/RubyUtilities.js";
+import { ExternalDependency } from "../ExternalDependency.js";
+import { Import } from "../Import.js";
+import { ClassReference } from "../classes/ClassReference.js";
+import { Expression } from "../expressions/Expression.js";
+import { FunctionInvocation } from "../functions/FunctionInvocation.js";
+import { Function_ } from "../functions/Function_.js";
 
 export declare namespace Gemspec {
     export interface Init {

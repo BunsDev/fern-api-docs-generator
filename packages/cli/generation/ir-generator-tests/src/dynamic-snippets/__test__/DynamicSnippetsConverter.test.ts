@@ -4,7 +4,7 @@ import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { loadApis } from "@fern-api/project-loader";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { generateAndSnapshotDynamicIR } from "./generateAndSnapshotDynamicIR";
+import { generateAndSnapshotDynamicIR } from "./generateAndSnapshotDynamicIR.js";
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
 describe("test definitions", async () => {

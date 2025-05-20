@@ -19,7 +19,7 @@ import {
     getBaseOpenAPIWorkspaceSettingsFromGeneratorInvocation
 } from "@fern-api/workspace-loader";
 
-import { writeFilesToDiskAndRunGenerator } from "./runGenerator";
+import { writeFilesToDiskAndRunGenerator } from "./runGenerator.js";
 
 export async function runLocalGenerationForWorkspace({
     token,

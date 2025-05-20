@@ -1,7 +1,7 @@
 import { RawSchemas, isRawObjectDefinition } from "@fern-api/fern-definition-schema";
 import { FernFileContext, ResolvedType, TypeResolver } from "@fern-api/ir-generator";
 
-import { RuleViolation } from "../../Rule";
+import { RuleViolation } from "../../Rule.js";
 
 export declare namespace ValidatePropertyInType {
     interface Args {

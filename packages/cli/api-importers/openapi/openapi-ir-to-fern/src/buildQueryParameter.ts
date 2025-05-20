@@ -3,10 +3,10 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { QueryParameter, Schema, VALID_ENUM_NAME_REGEX, generateEnumNameFromValue } from "@fern-api/openapi-ir";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
-import { buildTypeReference } from "./buildTypeReference";
-import { convertAvailability } from "./utils/convertAvailability";
-import { getDefaultFromTypeReference, getTypeFromTypeReference } from "./utils/getTypeFromTypeReference";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
+import { buildTypeReference } from "./buildTypeReference.js";
+import { convertAvailability } from "./utils/convertAvailability.js";
+import { getDefaultFromTypeReference, getTypeFromTypeReference } from "./utils/getTypeFromTypeReference.js";
 
 export function buildQueryParameter({
     queryParameter,

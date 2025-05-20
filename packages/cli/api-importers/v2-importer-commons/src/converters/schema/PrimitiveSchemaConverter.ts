@@ -9,7 +9,7 @@ import {
     TypeReference
 } from "@fern-api/ir-sdk";
 
-import { AbstractConverter, AbstractConverterContext } from "../..";
+import { AbstractConverter, AbstractConverterContext } from "../../index.js";
 
 export declare namespace PrimitiveSchemaConverter {
     export interface Args extends AbstractConverter.AbstractArgs {

@@ -1,5 +1,5 @@
-import Swift from "..";
-import { AstNode, Writer } from "./core";
+import Swift from "../index.js";
+import { AstNode, Writer } from "./core/index.js";
 
 export declare namespace Import {
     interface Args {

@@ -9,11 +9,11 @@ import {
     OneOfBaseClassReference,
     OneOfClassReference,
     StringEnumClassReference
-} from "./ClassReference";
-import { CoreClassReference } from "./CoreClassReference";
-import { TypeParameter } from "./TypeParameter";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+} from "./ClassReference.js";
+import { CoreClassReference } from "./CoreClassReference.js";
+import { TypeParameter } from "./TypeParameter.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 type InternalType =
     | Integer

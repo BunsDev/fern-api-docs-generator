@@ -1,4 +1,4 @@
-import { ClassReference } from "../";
+import { ClassReference } from "..//index.js";
 
 const NUNIT_FRAMEWORK_NAMESPACE = "NUnit.Framework";
 

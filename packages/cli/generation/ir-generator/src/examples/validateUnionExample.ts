@@ -2,14 +2,14 @@ import { FernWorkspace } from "@fern-api/api-workspace-commons";
 import { isPlainObject } from "@fern-api/core-utils";
 import { RawSchemas, isRawObjectDefinition } from "@fern-api/fern-definition-schema";
 
-import { FernFileContext } from "../FernFileContext";
-import { getUnionDiscriminant } from "../converters/type-declarations/convertDiscriminatedUnionTypeDeclaration";
-import { ExampleResolver } from "../resolvers/ExampleResolver";
-import { TypeResolver } from "../resolvers/TypeResolver";
-import { ExampleViolation } from "./exampleViolation";
-import { getViolationsForMisshapenExample } from "./getViolationsForMisshapenExample";
-import { validateObjectExample } from "./validateObjectExample";
-import { validateTypeReferenceExample } from "./validateTypeReferenceExample";
+import { FernFileContext } from "../FernFileContext.js";
+import { getUnionDiscriminant } from "../converters/type-declarations/convertDiscriminatedUnionTypeDeclaration.js";
+import { ExampleResolver } from "../resolvers/ExampleResolver.js";
+import { TypeResolver } from "../resolvers/TypeResolver.js";
+import { ExampleViolation } from "./exampleViolation.js";
+import { getViolationsForMisshapenExample } from "./getViolationsForMisshapenExample.js";
+import { validateObjectExample } from "./validateObjectExample.js";
+import { validateTypeReferenceExample } from "./validateTypeReferenceExample.js";
 
 export function validateUnionExample({
     typeName,

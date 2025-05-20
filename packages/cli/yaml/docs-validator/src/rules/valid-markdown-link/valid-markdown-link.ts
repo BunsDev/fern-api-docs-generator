@@ -10,11 +10,11 @@ import { generateIntermediateRepresentation } from "@fern-api/ir-generator";
 import { createLogger } from "@fern-api/logger";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { SourceResolverImpl } from "../../../../../cli-source-resolver/src/SourceResolverImpl";
-import { Rule, RuleViolation } from "../../Rule";
-import { checkIfPathnameExists } from "./check-if-pathname-exists";
-import { PathnameToCheck, collectPathnamesToCheck } from "./collect-pathnames";
-import { getInstanceUrls, removeLeadingSlash, toBaseUrl } from "./url-utils";
+import { SourceResolverImpl } from "../../../../../cli-source-resolver/src/SourceResolverImpl.js";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { checkIfPathnameExists } from "./check-if-pathname-exists.js";
+import { PathnameToCheck, collectPathnamesToCheck } from "./collect-pathnames.js";
+import { getInstanceUrls, removeLeadingSlash, toBaseUrl } from "./url-utils.js";
 
 const NOOP_CONTEXT = createMockTaskContext({ logger: createLogger(noop) });
 

@@ -1,6 +1,6 @@
-import Swift, { AccessLevel, Type } from "..";
-import { Field } from "./Field";
-import { AstNode, Writer } from "./core";
+import Swift, { AccessLevel, Type } from "../index.js";
+import { Field } from "./Field.js";
+import { AstNode, Writer } from "./core/index.js";
 
 /*
 

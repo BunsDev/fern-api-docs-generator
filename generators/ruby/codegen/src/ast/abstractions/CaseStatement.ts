@@ -1,8 +1,8 @@
-import { BLOCK_END } from "../../utils/RubyConstants";
-import { Import } from "../Import";
-import { AstNode } from "../core/AstNode";
-import { Expression } from "../expressions/Expression";
-import { FunctionInvocation } from "../functions/FunctionInvocation";
+import { BLOCK_END } from "../../utils/RubyConstants.js";
+import { Import } from "../Import.js";
+import { AstNode } from "../core/AstNode.js";
+import { Expression } from "../expressions/Expression.js";
+import { FunctionInvocation } from "../functions/FunctionInvocation.js";
 
 export declare namespace CaseStatement {
     export interface Init extends AstNode.Init {

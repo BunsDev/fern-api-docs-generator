@@ -9,12 +9,12 @@ import {
     join
 } from "@fern-api/fs-utils";
 
-import { Migration } from "../../../types/Migration";
-import { getAbsolutePathToDocsYaml } from "./docs-config";
-import { migrateDocsAndMultipleAPIs } from "./migrateDocsAndMultipleAPIs";
-import { migrateDocsAndSingleAPI } from "./migrateDocsAndSingleAPI";
-import { migrateOnlyMultipleAPIs } from "./migrateOnlyMultipleAPIs";
-import { migrateOnlySingleAPI } from "./migrateOnlySingleAPI";
+import { Migration } from "../../../types/Migration.js";
+import { getAbsolutePathToDocsYaml } from "./docs-config/index.js";
+import { migrateDocsAndMultipleAPIs } from "./migrateDocsAndMultipleAPIs.js";
+import { migrateDocsAndSingleAPI } from "./migrateDocsAndSingleAPI.js";
+import { migrateOnlyMultipleAPIs } from "./migrateOnlyMultipleAPIs.js";
+import { migrateOnlySingleAPI } from "./migrateOnlySingleAPI.js";
 
 export const migration: Migration = {
     name: "flatten-fern-directory-structure",

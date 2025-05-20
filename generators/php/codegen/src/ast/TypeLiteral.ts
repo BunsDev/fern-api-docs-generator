@@ -1,10 +1,10 @@
 import { assertNever } from "@fern-api/core-utils";
 
-import { ClassInstantiation } from "./ClassInstantiation";
-import { ClassReference } from "./ClassReference";
-import { CodeBlock } from "./CodeBlock";
-import { MethodInvocation } from "./MethodInvocation";
-import { AstNode, Writer } from "./core";
+import { ClassInstantiation } from "./ClassInstantiation.js";
+import { ClassReference } from "./ClassReference.js";
+import { CodeBlock } from "./CodeBlock.js";
+import { MethodInvocation } from "./MethodInvocation.js";
+import { AstNode, Writer } from "./core/index.js";
 
 type InternalTypeLiteral =
     | Boolean_

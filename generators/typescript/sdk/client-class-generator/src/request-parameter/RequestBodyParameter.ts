@@ -4,7 +4,7 @@ import { ts } from "ts-morph";
 
 import { ExampleEndpointCall, HttpRequestBodyReference, QueryParameter } from "@fern-fern/ir-sdk/api";
 
-import { AbstractRequestParameter } from "./AbstractRequestParameter";
+import { AbstractRequestParameter } from "./AbstractRequestParameter.js";
 
 export declare namespace RequestBodyParameter {
     export interface Init extends AbstractRequestParameter.Init {

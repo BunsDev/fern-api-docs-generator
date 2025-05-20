@@ -2,7 +2,7 @@ import { csharp } from "@fern-api/csharp-codegen";
 
 import { FernIr } from "@fern-fern/ir-sdk";
 
-import { ModelGeneratorContext } from "./ModelGeneratorContext";
+import { ModelGeneratorContext } from "./ModelGeneratorContext.js";
 
 export function generateFields({
     properties,

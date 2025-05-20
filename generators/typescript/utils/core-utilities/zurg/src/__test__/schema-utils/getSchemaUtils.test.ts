@@ -1,5 +1,5 @@
-import { object, string } from "../../builders";
-import { itSchema } from "../utils/itSchema";
+import { object, string } from "../../builders/index.js";
+import { itSchema } from "../utils/itSchema.js";
 
 describe("getSchemaUtils", () => {
     describe("optional()", () => {

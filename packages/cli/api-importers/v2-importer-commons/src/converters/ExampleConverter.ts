@@ -1,6 +1,6 @@
 import { OpenAPIV3_1 } from "openapi-types";
 
-import { APIError, AbstractConverter, AbstractConverterContext } from "..";
+import { APIError, AbstractConverter, AbstractConverterContext } from "../index.js";
 
 export declare namespace ExampleConverter {
     export interface Args extends AbstractConverter.Args<AbstractConverterContext<object>> {

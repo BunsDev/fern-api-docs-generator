@@ -1,12 +1,12 @@
-export { validateSchema } from "./commons/validateSchema";
-export * from "./commons/WithoutQuestionMarks";
-export { GeneratorName } from "./generators-yml/GeneratorName";
-export * from "./getFernDirectory";
+export { validateSchema } from "./commons/validateSchema.js";
+export * from "./commons/WithoutQuestionMarks.js";
+export { GeneratorName } from "./generators-yml/GeneratorName.js";
+export * from "./getFernDirectory.js";
 
-export * from "./dependencies-yml";
-export * from "./docs-yml";
-export * from "./fern-config-json";
-export * from "./generators-yml";
+export * from "./dependencies-yml/index.js";
+export * from "./docs-yml/index.js";
+export * from "./fern-config-json/index.js";
+export * from "./generators-yml/index.js";
 
 // Export everything from @fern-api/configuration so that consumers
 // can simply use @fern-api/configuration-loader on its own.

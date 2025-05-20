@@ -15,7 +15,7 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernRegistry } from "@fern-fern/generators-sdk";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export async function loadAndUpdateGenerators({
     absolutePathToWorkspace,

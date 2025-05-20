@@ -2,8 +2,8 @@ import { RelativeFilePath } from "@fern-api/fs-utils";
 
 import { FernFilepath, Name } from "@fern-fern/ir-sdk/api";
 
-import { ExportDeclaration } from "../exports-manager";
-import { ExportedDirectory } from "../exports-manager/ExportedFilePath";
+import { ExportedDirectory } from "../exports-manager/ExportedFilePath.js";
+import { ExportDeclaration } from "../exports-manager/index.js";
 
 export function getExportedDirectoriesForFernFilepath({
     fernFilepath,

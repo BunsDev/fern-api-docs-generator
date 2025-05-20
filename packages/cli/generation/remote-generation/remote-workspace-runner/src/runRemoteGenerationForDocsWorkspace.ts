@@ -3,8 +3,8 @@ import { replaceEnvVariables } from "@fern-api/core-utils";
 import { TaskContext } from "@fern-api/task-context";
 import { AbstractAPIWorkspace, DocsWorkspace, FernWorkspace } from "@fern-api/workspace-loader";
 
-import { OSSWorkspace } from "../../../../workspace/lazy-fern-workspace/src";
-import { publishDocs } from "./publishDocs";
+import { OSSWorkspace } from "../../../../workspace/lazy-fern-workspace/src/index.js";
+import { publishDocs } from "./publishDocs.js";
 
 export async function runRemoteGenerationForDocsWorkspace({
     organization,

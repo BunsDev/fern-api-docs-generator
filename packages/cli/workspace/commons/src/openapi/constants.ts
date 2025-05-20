@@ -1,5 +1,5 @@
 import { Config } from "@redocly/openapi-core";
-import { BundleOptions } from "@redocly/openapi-core/lib/bundle";
+import { BundleOptions } from "@redocly/openapi-core/lib/bundle.js";
 
 import { FERN_TYPE_EXTENSIONS } from "@fern-api/openapi-ir-parser";
 

@@ -5,8 +5,8 @@ import { FernNavigation } from "@fern-api/fdr-sdk";
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { DocsWorkspace } from "@fern-api/workspace-loader";
 
-import { NodeIdGenerator } from "../NodeIdGenerator";
-import { toRelativeFilepath } from "./toRelativeFilepath";
+import { NodeIdGenerator } from "../NodeIdGenerator.js";
+import { toRelativeFilepath } from "./toRelativeFilepath.js";
 
 export function toPageNode({
     docsWorkspace,

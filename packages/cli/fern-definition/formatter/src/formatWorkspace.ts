@@ -5,7 +5,7 @@ import { FernWorkspace } from "@fern-api/api-workspace-commons";
 import { entries } from "@fern-api/core-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { formatDefinitionFile } from "./formatDefinitionFile";
+import { formatDefinitionFile } from "./formatDefinitionFile.js";
 
 export async function formatFernWorkspace({
     workspace,

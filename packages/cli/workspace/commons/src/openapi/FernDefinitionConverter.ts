@@ -7,8 +7,8 @@ import { convert, getConvertOptions } from "@fern-api/openapi-ir-to-fern";
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/path-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { FernDefinition } from "..";
-import { BaseOpenAPIWorkspace } from "./BaseOpenAPIWorkspace";
+import { FernDefinition } from "../index.js";
+import { BaseOpenAPIWorkspace } from "./BaseOpenAPIWorkspace.js";
 
 export class FernDefinitionConverter {
     constructor(private readonly args: BaseOpenAPIWorkspace.Args) {}

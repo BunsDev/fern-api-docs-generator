@@ -2,8 +2,8 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { CoreUtility } from "../CoreUtility";
-import { CallbackQueue } from "./CallbackQueue";
+import { CoreUtility } from "../CoreUtility.js";
+import { CallbackQueue } from "./CallbackQueue.js";
 
 export class CallbackQueueImpl extends CoreUtility implements CallbackQueue {
     public readonly MANIFEST = {

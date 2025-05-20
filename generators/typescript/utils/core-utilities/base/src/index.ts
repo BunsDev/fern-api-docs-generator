@@ -1,1 +1,1 @@
-export { addNonEnumerableProperty } from "./addNonEnumerableProperty";
+export { addNonEnumerableProperty } from "./addNonEnumerableProperty.js";

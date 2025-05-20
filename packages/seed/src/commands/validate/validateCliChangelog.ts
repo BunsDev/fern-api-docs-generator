@@ -8,7 +8,7 @@ import { TaskContext } from "@fern-api/task-context";
 
 import * as serializers from "@fern-fern/generators-sdk/serialization";
 
-import { loadCliWorkspace } from "../../loadGeneratorWorkspaces";
+import { loadCliWorkspace } from "../../loadGeneratorWorkspaces.js";
 
 export async function validateCliRelease({ context }: { context: TaskContext }): Promise<void> {
     const cliWorkspace = await loadCliWorkspace();

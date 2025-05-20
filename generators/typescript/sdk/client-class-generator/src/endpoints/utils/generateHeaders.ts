@@ -3,11 +3,11 @@ import { ts } from "ts-morph";
 
 import { HttpEndpoint, HttpHeader, HttpService } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedHeader } from "../../GeneratedHeader";
-import { GeneratedSdkClientClassImpl } from "../../GeneratedSdkClientClassImpl";
-import { RequestParameter } from "../../request-parameter/RequestParameter";
-import { getLiteralValueForHeader } from "./isLiteralHeader";
-import { REQUEST_OPTIONS_PARAMETER_NAME } from "./requestOptionsParameter";
+import { GeneratedHeader } from "../../GeneratedHeader.js";
+import { GeneratedSdkClientClassImpl } from "../../GeneratedSdkClientClassImpl.js";
+import { RequestParameter } from "../../request-parameter/RequestParameter.js";
+import { getLiteralValueForHeader } from "./isLiteralHeader.js";
+import { REQUEST_OPTIONS_PARAMETER_NAME } from "./requestOptionsParameter.js";
 
 export function generateHeaders({
     context,

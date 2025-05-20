@@ -5,9 +5,9 @@ import {
     HttpInlineRequestBodySchema,
     HttpRequestSchema,
     ObjectPropertySchema
-} from "../schemas";
-import { isInlineRequestBody } from "./isInlineRequestBody";
-import { parseRawFileType } from "./parseRawFileType";
+} from "../schemas/index.js";
+import { isInlineRequestBody } from "./isInlineRequestBody.js";
+import { parseRawFileType } from "./parseRawFileType.js";
 
 export interface RawFileUploadRequest {
     name: string;

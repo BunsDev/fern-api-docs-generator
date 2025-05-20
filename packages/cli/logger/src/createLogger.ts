@@ -1,5 +1,5 @@
-import { LogLevel } from "./LogLevel";
-import { Logger } from "./Logger";
+import { LogLevel } from "./LogLevel.js";
+import { Logger } from "./Logger.js";
 
 class LoggerImpl implements Logger {
     constructor(

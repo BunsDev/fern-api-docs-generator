@@ -1,4 +1,4 @@
-import Ajv, { ErrorObject } from "ajv";
+import { Ajv, ErrorObject } from "ajv";
 import { JSONSchema4 } from "json-schema";
 
 export declare namespace validateAgainstJsonSchema {

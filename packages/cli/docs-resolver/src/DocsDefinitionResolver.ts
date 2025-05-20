@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
+import utc from "dayjs/plugin/utc.js";
 import { readFile, stat } from "fs/promises";
 import matter from "gray-matter";
 import { kebabCase } from "lodash-es";
@@ -30,17 +30,17 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { TaskContext } from "@fern-api/task-context";
 import { AbstractAPIWorkspace, DocsWorkspace, FernWorkspace } from "@fern-api/workspace-loader";
 
-import { ApiReferenceNodeConverter } from "./ApiReferenceNodeConverter";
-import { ApiReferenceNodeConverterLatest } from "./ApiReferenceNodeConverterLatest";
-import { ChangelogNodeConverter } from "./ChangelogNodeConverter";
-import { NodeIdGenerator } from "./NodeIdGenerator";
-import { convertDocsSnippetsConfigToFdr } from "./utils/convertDocsSnippetsConfigToFdr";
-import { convertIrToApiDefinition } from "./utils/convertIrToApiDefinition";
-import { generateFdrFromOpenApiWorkspace } from "./utils/generateFdrFromOpenApiWorkspace";
-import { generateFdrFromOpenrpc } from "./utils/generateFdrFromOpenrpc";
-import { collectFilesFromDocsConfig } from "./utils/getImageFilepathsToUpload";
-import { visitNavigationAst } from "./visitNavigationAst";
-import { wrapWithHttps } from "./wrapWithHttps";
+import { ApiReferenceNodeConverter } from "./ApiReferenceNodeConverter.js";
+import { ApiReferenceNodeConverterLatest } from "./ApiReferenceNodeConverterLatest.js";
+import { ChangelogNodeConverter } from "./ChangelogNodeConverter.js";
+import { NodeIdGenerator } from "./NodeIdGenerator.js";
+import { convertDocsSnippetsConfigToFdr } from "./utils/convertDocsSnippetsConfigToFdr.js";
+import { convertIrToApiDefinition } from "./utils/convertIrToApiDefinition.js";
+import { generateFdrFromOpenApiWorkspace } from "./utils/generateFdrFromOpenApiWorkspace.js";
+import { generateFdrFromOpenrpc } from "./utils/generateFdrFromOpenrpc.js";
+import { collectFilesFromDocsConfig } from "./utils/getImageFilepathsToUpload.js";
+import { visitNavigationAst } from "./visitNavigationAst.js";
+import { wrapWithHttps } from "./wrapWithHttps.js";
 
 dayjs.extend(utc);
 

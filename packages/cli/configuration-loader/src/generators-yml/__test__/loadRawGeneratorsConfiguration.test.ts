@@ -7,7 +7,7 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { loadRawGeneratorsConfiguration } from "../loadGeneratorsConfiguration";
+import { loadRawGeneratorsConfiguration } from "../loadGeneratorsConfiguration.js";
 
 describe("loadRawGeneratorsConfiguration", () => {
     const mockContext = createMockTaskContext();

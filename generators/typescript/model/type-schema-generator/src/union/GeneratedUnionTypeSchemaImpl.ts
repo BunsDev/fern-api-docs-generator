@@ -9,9 +9,9 @@ import { ModuleDeclaration, ts } from "ts-morph";
 
 import { SingleUnionTypeProperties, UnionTypeDeclaration } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema";
-import { RawSamePropertiesAsObjectSingleUnionType } from "./RawSamePropertiesAsObjectSingleUnionType";
-import { RawSinglePropertySingleUnionType } from "./RawSinglePropertySingleUnionType";
+import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema.js";
+import { RawSamePropertiesAsObjectSingleUnionType } from "./RawSamePropertiesAsObjectSingleUnionType.js";
+import { RawSinglePropertySingleUnionType } from "./RawSinglePropertySingleUnionType.js";
 
 export declare namespace GeneratedUnionTypeSchemaImpl {
     export interface Init<Context extends ModelContext>

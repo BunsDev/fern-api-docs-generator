@@ -1,7 +1,7 @@
 import { ts } from "ts-morph";
 
-import { ExportedDirectory } from "../exports-manager/ExportedFilePath";
-import { getQualifiedNameOfDirectory } from "./getQualifiedNameOfDirectory";
+import { ExportedDirectory } from "../exports-manager/ExportedFilePath.js";
+import { getQualifiedNameOfDirectory } from "./getQualifiedNameOfDirectory.js";
 
 export declare namespace getEntityNameOfDirectory {
     export interface Args {

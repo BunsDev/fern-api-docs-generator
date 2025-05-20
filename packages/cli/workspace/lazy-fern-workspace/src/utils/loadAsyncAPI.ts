@@ -5,7 +5,7 @@ import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { AsyncAPIV2, AsyncAPIV3 } from "@fern-api/openapi-ir-parser";
 import { TaskContext } from "@fern-api/task-context";
 
-import { mergeWithOverrides } from "../loaders/mergeWithOverrides";
+import { mergeWithOverrides } from "../loaders/mergeWithOverrides.js";
 
 export async function loadAsyncAPI({
     context,

@@ -21,18 +21,18 @@ import {
 } from "@fern-api/ir-sdk";
 import { IdGenerator } from "@fern-api/ir-utils";
 
-import { FernFileContext } from "../../FernFileContext";
-import { validateTypeReferenceExample } from "../../examples/validateTypeReferenceExample";
-import { ExampleResolver } from "../../resolvers/ExampleResolver";
-import { TypeResolver } from "../../resolvers/TypeResolver";
+import { FernFileContext } from "../../FernFileContext.js";
+import { validateTypeReferenceExample } from "../../examples/validateTypeReferenceExample.js";
+import { ExampleResolver } from "../../resolvers/ExampleResolver.js";
+import { TypeResolver } from "../../resolvers/TypeResolver.js";
 import {
     getSingleUnionTypeName,
     getSingleUnionTypeProperties,
     getUnionDiscriminant,
     getUnionDiscriminantName
-} from "./convertDiscriminatedUnionTypeDeclaration";
-import { getEnumNameFromEnumValue } from "./convertEnumTypeDeclaration";
-import { getPropertyName } from "./convertObjectTypeDeclaration";
+} from "./convertDiscriminatedUnionTypeDeclaration.js";
+import { getEnumNameFromEnumValue } from "./convertEnumTypeDeclaration.js";
+import { getPropertyName } from "./convertObjectTypeDeclaration.js";
 
 export function convertTypeExample({
     typeName,

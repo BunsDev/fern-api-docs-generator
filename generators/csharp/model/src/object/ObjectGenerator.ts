@@ -10,10 +10,10 @@ import {
     TypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { ModelCustomConfigSchema } from "../ModelCustomConfig";
-import { ModelGeneratorContext } from "../ModelGeneratorContext";
-import { generateFields } from "../generateFields";
-import { ExampleGenerator } from "../snippets/ExampleGenerator";
+import { ModelCustomConfigSchema } from "../ModelCustomConfig.js";
+import { ModelGeneratorContext } from "../ModelGeneratorContext.js";
+import { generateFields } from "../generateFields.js";
+import { ExampleGenerator } from "../snippets/ExampleGenerator.js";
 
 export class ObjectGenerator extends FileGenerator<CSharpFile, ModelCustomConfigSchema, ModelGeneratorContext> {
     private readonly typeDeclaration: TypeDeclaration;

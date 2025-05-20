@@ -8,7 +8,7 @@ import {
 
 import { assertNever } from "@fern-api/core-utils";
 
-import { DeclarationReferencer } from "./DeclarationReferencer";
+import { DeclarationReferencer } from "./DeclarationReferencer.js";
 
 export declare namespace AbstractDeclarationReferencer {
     export interface Init {

@@ -5,9 +5,9 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernRegistryClient } from "@fern-fern/generators-sdk";
 
-import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces";
-import { parseGeneratorReleasesFile } from "../../utils/convertVersionsFileToReleases";
-import { writeChangelogEntries, writeChangelogsToFile } from "./writeChangelogEntries";
+import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces.js";
+import { parseGeneratorReleasesFile } from "../../utils/convertVersionsFileToReleases.js";
+import { writeChangelogEntries, writeChangelogsToFile } from "./writeChangelogEntries.js";
 
 export async function generateGeneratorChangelog({
     context,

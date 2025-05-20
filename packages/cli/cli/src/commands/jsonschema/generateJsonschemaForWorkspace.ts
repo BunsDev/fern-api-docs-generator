@@ -10,7 +10,7 @@ import { convertIRtoJsonSchema } from "@fern-api/ir-to-jsonschema";
 import { IdGenerator } from "@fern-api/ir-utils";
 import { Project } from "@fern-api/project-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export async function generateJsonschemaForWorkspaces({
     typeLocator,

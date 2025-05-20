@@ -9,8 +9,8 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 
-import { convertDynamicEndpointSnippetRequest } from "../utils/convertEndpointSnippetRequest";
-import { convertIr } from "../utils/convertIr";
+import { convertDynamicEndpointSnippetRequest } from "../utils/convertEndpointSnippetRequest.js";
+import { convertIr } from "../utils/convertIr.js";
 
 const PROJECT_FILE_CONTENT = `
 <Project Sdk="Microsoft.NET.Sdk">

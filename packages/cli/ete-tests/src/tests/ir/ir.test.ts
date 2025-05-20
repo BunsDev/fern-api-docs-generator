@@ -1,8 +1,8 @@
 import { generatorsYml } from "@fern-api/configuration";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { runFernCli } from "../../utils/runFernCli";
-import { generateIrAsString } from "./generateIrAsString";
+import { runFernCli } from "../../utils/runFernCli.js";
+import { generateIrAsString } from "./generateIrAsString.js";
 
 const FIXTURES_DIR = join(AbsoluteFilePath.of(__dirname), RelativeFilePath.of("fixtures"));
 

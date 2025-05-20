@@ -1,4 +1,4 @@
-export { AstNode } from "./AstNode";
-export { GLOBAL_NAMESPACE } from "./Constant";
-export { SELF, STATIC } from "./Constant";
-export { Writer } from "./Writer";
+export { AstNode } from "./AstNode.js";
+export { GLOBAL_NAMESPACE } from "./Constant.js";
+export { SELF, STATIC } from "./Constant.js";
+export { Writer } from "./Writer.js";

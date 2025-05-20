@@ -1,6 +1,6 @@
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 
-import { type NpmPackage } from "../NpmPackage";
+import { type NpmPackage } from "../NpmPackage.js";
 
 export function constructNpmPackage({
     generatorConfig,

@@ -2,13 +2,13 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { WebsocketChannel } from "@fern-api/openapi-ir";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
-import { buildHeader } from "./buildHeader";
-import { buildPathParameter } from "./buildPathParameter";
-import { buildQueryParameter } from "./buildQueryParameter";
-import { buildTypeReference } from "./buildTypeReference";
-import { buildWebsocketSessionExample } from "./buildWebsocketSessionExample";
-import { getNamespaceFromGroup } from "./utils/getNamespaceFromGroup";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
+import { buildHeader } from "./buildHeader.js";
+import { buildPathParameter } from "./buildPathParameter.js";
+import { buildQueryParameter } from "./buildQueryParameter.js";
+import { buildTypeReference } from "./buildTypeReference.js";
+import { buildWebsocketSessionExample } from "./buildWebsocketSessionExample.js";
+import { getNamespaceFromGroup } from "./utils/getNamespaceFromGroup.js";
 
 export function buildChannel({
     channel,

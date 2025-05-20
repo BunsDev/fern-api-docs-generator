@@ -3,7 +3,7 @@ import { readFile, rm } from "fs/promises";
 import { generatorsYml } from "@fern-api/configuration";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { runFernCli } from "../../utils/runFernCli";
+import { runFernCli } from "../../utils/runFernCli.js";
 
 export async function generateDynamicIrAsString({
     fixturePath,

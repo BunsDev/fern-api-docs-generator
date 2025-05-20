@@ -7,11 +7,11 @@ import { PackageMarkerFileSchema } from "@fern-api/fern-definition-schema";
 import { RelativeFilePath, dirname } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { OSSWorkspace } from "../OSSWorkspace";
-import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result";
-import { LoadAPIWorkspace } from "./loadAPIWorkspace";
-import { loadDependency } from "./loadDependency";
-import { validateStructureOfYamlFiles } from "./validateStructureOfYamlFiles";
+import { OSSWorkspace } from "../OSSWorkspace.js";
+import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result.js";
+import { LoadAPIWorkspace } from "./loadAPIWorkspace.js";
+import { loadDependency } from "./loadDependency.js";
+import { validateStructureOfYamlFiles } from "./validateStructureOfYamlFiles.js";
 
 export declare namespace processPackageMarkers {
     export type Return = SuccessfulResult | FailedResult;

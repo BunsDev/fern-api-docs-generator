@@ -6,11 +6,11 @@ import { RelativeFilePath, join } from "@fern-api/fs-utils";
 import { FernIr } from "@fern-fern/ir-sdk";
 import { ExampleUnionType, TypeDeclaration, UnionTypeDeclaration } from "@fern-fern/ir-sdk/api";
 
-import { ModelCustomConfigSchema } from "../ModelCustomConfig";
-import { ModelGeneratorContext } from "../ModelGeneratorContext";
-import { generateFields } from "../generateFields";
-import { ObjectGenerator } from "../object/ObjectGenerator";
-import { ExampleGenerator } from "../snippets/ExampleGenerator";
+import { ModelCustomConfigSchema } from "../ModelCustomConfig.js";
+import { ModelGeneratorContext } from "../ModelGeneratorContext.js";
+import { generateFields } from "../generateFields.js";
+import { ObjectGenerator } from "../object/ObjectGenerator.js";
+import { ExampleGenerator } from "../snippets/ExampleGenerator.js";
 
 const basePropertiesClassName = "BaseProperties";
 

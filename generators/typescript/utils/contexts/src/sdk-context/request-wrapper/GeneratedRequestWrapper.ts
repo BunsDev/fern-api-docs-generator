@@ -11,10 +11,10 @@ import {
     QueryParameter
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedFile } from "../../commons/GeneratedFile";
-import { SdkContext } from "../SdkContext";
-import { GeneratedRequestWrapperExample } from "./GeneratedRequestWrapperExample";
-import { RequestWrapperNonBodyProperty } from "./types";
+import { GeneratedFile } from "../../commons/GeneratedFile.js";
+import { SdkContext } from "../SdkContext.js";
+import { GeneratedRequestWrapperExample } from "./GeneratedRequestWrapperExample.js";
+import { RequestWrapperNonBodyProperty } from "./types.js";
 
 export interface GeneratedRequestWrapper extends GeneratedFile<SdkContext> {
     areAllPropertiesOptional: (context: SdkContext) => boolean;

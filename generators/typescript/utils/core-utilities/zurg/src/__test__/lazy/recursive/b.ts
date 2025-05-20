@@ -1,6 +1,6 @@
-import { object } from "../../../builders/object";
-import { optional } from "../../../builders/schema-utils";
-import { schemaA } from "./a";
+import { object } from "../../../builders/object/index.js";
+import { optional } from "../../../builders/schema-utils/index.js";
+import { schemaA } from "./a.js";
 
 // @ts-expect-error
 export const schemaB = object({

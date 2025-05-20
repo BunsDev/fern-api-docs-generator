@@ -4,8 +4,8 @@ import { isOpenAPIV2 } from "@fern-api/api-workspace-commons";
 import { relative } from "@fern-api/fs-utils";
 import { convertOpenAPIV2ToV3, loadOpenAPI } from "@fern-api/lazy-fern-workspace";
 
-import { Rule } from "../../Rule";
-import { ValidationViolation } from "../../ValidationViolation";
+import { Rule } from "../../Rule.js";
+import { ValidationViolation } from "../../ValidationViolation.js";
 
 export const NoDuplicateOverridesRule: Rule = {
     name: "no-duplicate-overrides",

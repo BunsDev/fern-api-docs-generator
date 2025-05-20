@@ -1,5 +1,5 @@
-import Swift, { AccessLevel, FunctionModifier, Param, Type } from "..";
-import { AstNode, Writer } from "./core";
+import Swift, { AccessLevel, FunctionModifier, Param, Type } from "../index.js";
+import { AstNode, Writer } from "./core/index.js";
 
 /*
 

@@ -13,7 +13,7 @@ import { generateEndpointV1Example as generateEndpointExample } from "@fern-api/
 
 import { FernRegistry as FdrCjsSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { convertTypeReference } from "./convertTypeShape";
+import { convertTypeReference } from "./convertTypeShape.js";
 
 export function convertPackage(
     irPackage: Ir.ir.Package,

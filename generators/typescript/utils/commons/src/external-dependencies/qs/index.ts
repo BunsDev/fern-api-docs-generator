@@ -1,1 +1,1 @@
-export { type qs } from "./qs";
+export { type qs } from "./qs.js";

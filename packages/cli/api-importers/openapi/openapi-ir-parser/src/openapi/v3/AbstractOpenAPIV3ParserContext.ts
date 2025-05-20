@@ -4,11 +4,11 @@ import { Logger } from "@fern-api/logger";
 import { Namespace, SchemaId, SdkGroup, SdkGroupName, Source } from "@fern-api/openapi-ir";
 import { TaskContext } from "@fern-api/task-context";
 
-import { ParseOpenAPIOptions } from "../../options";
-import { SchemaParserContext } from "../../schema/SchemaParserContext";
-import { getReferenceOccurrences } from "../../schema/utils/getReferenceOccurrences";
-import { isReferenceObject } from "../../schema/utils/isReferenceObject";
-import { OpenAPIFilter } from "./OpenAPIFilter";
+import { ParseOpenAPIOptions } from "../../options.js";
+import { SchemaParserContext } from "../../schema/SchemaParserContext.js";
+import { getReferenceOccurrences } from "../../schema/utils/getReferenceOccurrences.js";
+import { isReferenceObject } from "../../schema/utils/isReferenceObject.js";
+import { OpenAPIFilter } from "./OpenAPIFilter.js";
 
 export const PARAMETER_REFERENCE_PREFIX = "#/components/parameters/";
 export const RESPONSE_REFERENCE_PREFIX = "#/components/responses/";

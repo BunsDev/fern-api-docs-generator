@@ -4,7 +4,7 @@ import { ErrorResolver } from "@fern-typescript/resolvers";
 
 import { HttpEndpoint, IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedEndpointErrorUnionImpl } from "./GeneratedEndpointErrorUnionImpl";
+import { GeneratedEndpointErrorUnionImpl } from "./GeneratedEndpointErrorUnionImpl.js";
 
 export declare namespace EndpointErrorUnionGenerator {
     export interface Init {

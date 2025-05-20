@@ -4,7 +4,7 @@ import tmp from "tmp-promise";
 
 import { createLogger } from "@fern-api/logger";
 
-import { loggingExeca } from "../loggingExeca";
+import { loggingExeca } from "../loggingExeca.js";
 
 describe("loggingExeca", () => {
     it("runs command", async () => {

@@ -21,11 +21,11 @@ import {
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 import { ErrorDeclaration, ErrorId } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "./SdkCustomConfig";
-import { EXCEPTIONS_DIRECTORY, REQUESTS_DIRECTORY, RESERVED_METHOD_NAMES, TYPES_DIRECTORY } from "./constants";
-import { RawClient } from "./core/RawClient";
-import { EndpointGenerator } from "./endpoint/EndpointGenerator";
-import { GuzzleClient } from "./external/GuzzleClient";
+import { SdkCustomConfigSchema } from "./SdkCustomConfig.js";
+import { EXCEPTIONS_DIRECTORY, REQUESTS_DIRECTORY, RESERVED_METHOD_NAMES, TYPES_DIRECTORY } from "./constants.js";
+import { RawClient } from "./core/RawClient.js";
+import { EndpointGenerator } from "./endpoint/EndpointGenerator.js";
+import { GuzzleClient } from "./external/GuzzleClient.js";
 
 export class SdkGeneratorContext extends AbstractPhpGeneratorContext<SdkCustomConfigSchema> {
     public endpointGenerator: EndpointGenerator;

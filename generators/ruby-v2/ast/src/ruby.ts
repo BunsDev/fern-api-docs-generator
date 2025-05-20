@@ -1,3 +1,4 @@
+import { TypeParameter } from "./ast/TypeParameter.js";
 import {
     Class_,
     CodeBlock,
@@ -9,11 +10,10 @@ import {
     PositionalParameter,
     PositionalSplatParameter,
     YieldParameter
-} from "./ast";
-import { TypeParameter } from "./ast/TypeParameter";
+} from "./ast/index.js";
 
-export { AstNode } from "./ast/core/AstNode";
-export { CodeBlock, Parameter, Method } from "./ast";
+export { AstNode } from "./ast/core/AstNode.js";
+export { CodeBlock, Parameter, Method } from "./ast/index.js";
 
 export function codeblock(arg: CodeBlock.Arg): CodeBlock {
     return new CodeBlock(arg);

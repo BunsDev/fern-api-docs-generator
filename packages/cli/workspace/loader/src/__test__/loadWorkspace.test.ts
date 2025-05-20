@@ -4,7 +4,7 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { loadAPIWorkspace } from "../loadAPIWorkspace";
+import { loadAPIWorkspace } from "../loadAPIWorkspace.js";
 
 describe("loadWorkspace", () => {
     it("fern definition", async () => {

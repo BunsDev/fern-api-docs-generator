@@ -18,8 +18,8 @@ import {
 } from "@fern-api/openapi-ir";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
-import { State } from "./State";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
+import { State } from "./State.js";
 import {
     buildArrayTypeReference,
     buildLiteralTypeReference,
@@ -30,11 +30,11 @@ import {
     buildReferenceTypeReference,
     buildTypeReference,
     buildUnknownTypeReference
-} from "./buildTypeReference";
-import { convertAvailability } from "./utils/convertAvailability";
-import { convertToEncodingSchema } from "./utils/convertToEncodingSchema";
-import { convertToSourceSchema } from "./utils/convertToSourceSchema";
-import { getTypeFromTypeReference } from "./utils/getTypeFromTypeReference";
+} from "./buildTypeReference.js";
+import { convertAvailability } from "./utils/convertAvailability.js";
+import { convertToEncodingSchema } from "./utils/convertToEncodingSchema.js";
+import { convertToSourceSchema } from "./utils/convertToSourceSchema.js";
+import { getTypeFromTypeReference } from "./utils/getTypeFromTypeReference.js";
 
 export interface ConvertedTypeDeclaration {
     name: string | undefined;

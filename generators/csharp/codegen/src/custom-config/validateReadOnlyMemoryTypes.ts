@@ -1,5 +1,5 @@
-import { VALID_READ_ONLY_MEMORY_TYPES } from "../ast";
-import { BaseCsharpCustomConfigSchema } from "./BaseCsharpCustomConfigSchema";
+import { VALID_READ_ONLY_MEMORY_TYPES } from "../ast/index.js";
+import { BaseCsharpCustomConfigSchema } from "./BaseCsharpCustomConfigSchema.js";
 
 export function validateReadOnlyMemoryTypes(customConfig: BaseCsharpCustomConfigSchema): void {
     const readOnlyMemoryTypes = customConfig["read-only-memory-types"];

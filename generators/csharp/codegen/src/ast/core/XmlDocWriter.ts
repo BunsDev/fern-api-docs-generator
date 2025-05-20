@@ -1,8 +1,8 @@
 import { AbstractAstNode } from "@fern-api/browser-compatible-base-generator";
 
-import { Writer } from "..";
-import { XmlDocBlock } from "../XmlDocBlock";
-import { AstNode } from "./AstNode";
+import { XmlDocBlock } from "../XmlDocBlock.js";
+import { Writer } from "../index.js";
+import { AstNode } from "./AstNode.js";
 
 export class XmlDocWriter {
     private writer: Writer;

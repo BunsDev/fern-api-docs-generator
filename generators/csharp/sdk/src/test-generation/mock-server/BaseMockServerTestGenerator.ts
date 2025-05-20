@@ -5,11 +5,11 @@ import { RelativeFilePath, join } from "@fern-api/fs-utils";
 
 import { ExampleEndpointCall, Name, OAuthScheme } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "../../SdkCustomConfig";
-import { MOCK_SERVER_TEST_FOLDER, SdkGeneratorContext } from "../../SdkGeneratorContext";
-import { MultiUrlEnvironmentGenerator } from "../../environment/MultiUrlEnvironmentGenerator";
-import { RootClientGenerator } from "../../root-client/RootClientGenerator";
-import { MockEndpointGenerator } from "./MockEndpointGenerator";
+import { SdkCustomConfigSchema } from "../../SdkCustomConfig.js";
+import { MOCK_SERVER_TEST_FOLDER, SdkGeneratorContext } from "../../SdkGeneratorContext.js";
+import { MultiUrlEnvironmentGenerator } from "../../environment/MultiUrlEnvironmentGenerator.js";
+import { RootClientGenerator } from "../../root-client/RootClientGenerator.js";
+import { MockEndpointGenerator } from "./MockEndpointGenerator.js";
 
 const MOCK_OAUTH_METHOD_NAME = "MockOAuthEndpoint";
 

@@ -1,7 +1,7 @@
 import { ExportedFilePath, ImportsManager, Reference, getReferenceToExportFromRoot } from "@fern-typescript/commons";
 import { SourceFile } from "ts-morph";
 
-import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer";
+import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer.js";
 
 export declare namespace JsonDeclarationReferencer {
     export interface Init extends AbstractDeclarationReferencer.Init {}
@@ -25,7 +25,7 @@ export class JsonDeclarationReferencer extends AbstractDeclarationReferencer {
     }
 
     public getFilename(): string {
-        return "json.ts";
+        return "json.js";
     }
 
     public getReferenceToFromJson({

@@ -4,7 +4,7 @@ import { vi } from "vitest";
 import { AbsoluteFilePath, cwd, resolve } from "@fern-api/fs-utils";
 import { runMintlifyMigration } from "@fern-api/mintlify-importer";
 
-import { initializeWithMintlify } from "../initializeWithMintlify";
+import { initializeWithMintlify } from "../initializeWithMintlify.js";
 
 // We'll mock calling runMintlifyMigration instead of actually calling it
 vi.mock("@fern-api/mintlify-importer", () => ({

@@ -5,7 +5,7 @@ import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
 import { FernRegistry as CjsFdrSdk, FernRegistry } from "@fern-fern/fdr-cjs-sdk";
 
-import { ParsedFrontmatter } from "../types/parsedFrontmatter";
+import { ParsedFrontmatter } from "../types/parsedFrontmatter.js";
 
 export declare namespace convertMarkdown {
     interface Args {

@@ -15,11 +15,11 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "../SdkCustomConfig";
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
-import { RawClient } from "../endpoint/http/RawClient";
-import { GrpcClientInfo } from "../grpc/GrpcClientInfo";
-import { OauthTokenProviderGenerator } from "../oauth/OauthTokenProviderGenerator";
+import { SdkCustomConfigSchema } from "../SdkCustomConfig.js";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
+import { RawClient } from "../endpoint/http/RawClient.js";
+import { GrpcClientInfo } from "../grpc/GrpcClientInfo.js";
+import { OauthTokenProviderGenerator } from "../oauth/OauthTokenProviderGenerator.js";
 
 export const CLIENT_MEMBER_NAME = "_client";
 export const GRPC_CLIENT_MEMBER_NAME = "_grpc";

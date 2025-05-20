@@ -8,7 +8,7 @@ import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { loadApis } from "@fern-api/project-loader";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { generateAndSnapshotIR, generateAndSnapshotIRFromPath } from "./generateAndSnapshotIR";
+import { generateAndSnapshotIR, generateAndSnapshotIRFromPath } from "./generateAndSnapshotIR.js";
 
 const IR_DIR = path.join(__dirname, "irs");
 

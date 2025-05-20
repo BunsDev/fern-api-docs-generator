@@ -12,8 +12,8 @@ import {
 import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { createFernDirectoryAndWorkspace } from "./createFernDirectoryAndOrganization";
-import { createFernWorkspace, createOpenAPIWorkspace } from "./createWorkspace";
+import { createFernDirectoryAndWorkspace } from "./createFernDirectoryAndOrganization.js";
+import { createFernWorkspace, createOpenAPIWorkspace } from "./createWorkspace.js";
 
 export async function initializeAPI({
     organization,

@@ -3,8 +3,8 @@ import urlJoin from "url-join";
 
 import { FdrAPI } from "@fern-api/fdr-sdk";
 
-import { getBasePath } from "./ApiDefinitionHolder";
-import { stringifyEndpointPathParts, stringifyEndpointPathParts2 } from "./utils/stringifyEndpointPathParts";
+import { getBasePath } from "./ApiDefinitionHolder.js";
+import { stringifyEndpointPathParts, stringifyEndpointPathParts2 } from "./utils/stringifyEndpointPathParts.js";
 
 export class ApiDefinitionHolderLatest {
     #subpackagesByLocator: Record<string, FdrAPI.api.latest.SubpackageMetadata> = {};

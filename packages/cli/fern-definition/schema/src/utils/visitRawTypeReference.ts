@@ -1,9 +1,9 @@
 import { Literal, PrimitiveType, PrimitiveTypeV1, PrimitiveTypeV2 } from "@fern-api/ir-sdk";
 
-import { NumberValidationSchema } from "../schemas";
-import { StringValidationSchema } from "../schemas";
-import { ValidationSchema } from "../schemas";
-import { RawPrimitiveType } from "./RawPrimitiveType";
+import { NumberValidationSchema } from "../schemas/index.js";
+import { StringValidationSchema } from "../schemas/index.js";
+import { ValidationSchema } from "../schemas/index.js";
+import { RawPrimitiveType } from "./RawPrimitiveType.js";
 
 export const FernContainerRegex = {
     MAP: /^map<\s*([^,]*)\s*,\s*(.*)\s*>$/,

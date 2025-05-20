@@ -6,8 +6,8 @@ import { ts } from "ts-morph";
 
 import { ErrorDiscriminationByPropertyStrategy, HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedEndpointErrorSchema } from "./GeneratedEndpointErrorSchema";
-import { RawSinglePropertyErrorSingleUnionType } from "./RawSinglePropertyErrorSingleUnionType";
+import { GeneratedEndpointErrorSchema } from "./GeneratedEndpointErrorSchema.js";
+import { RawSinglePropertyErrorSingleUnionType } from "./RawSinglePropertyErrorSingleUnionType.js";
 
 export declare namespace GeneratedEndpointErrorSchemaImpl {
     export interface Init {

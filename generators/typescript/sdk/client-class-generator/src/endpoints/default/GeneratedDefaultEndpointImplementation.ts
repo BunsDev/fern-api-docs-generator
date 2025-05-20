@@ -4,17 +4,17 @@ import { ts } from "ts-morph";
 
 import { ExampleEndpointCall, HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "../../GeneratedSdkClientClassImpl";
-import { GeneratedEndpointRequest } from "../../endpoint-request/GeneratedEndpointRequest";
-import { buildUrl } from "../utils/buildUrl";
+import { GeneratedSdkClientClassImpl } from "../../GeneratedSdkClientClassImpl.js";
+import { GeneratedEndpointRequest } from "../../endpoint-request/GeneratedEndpointRequest.js";
+import { buildUrl } from "../utils/buildUrl.js";
 import {
     REQUEST_OPTIONS_PARAMETER_NAME,
     getAbortSignalExpression,
     getMaxRetriesExpression,
     getRequestOptionsParameter,
     getTimeoutExpression
-} from "../utils/requestOptionsParameter";
-import { GeneratedEndpointResponse } from "./endpoint-response/GeneratedEndpointResponse";
+} from "../utils/requestOptionsParameter.js";
+import { GeneratedEndpointResponse } from "./endpoint-response/GeneratedEndpointResponse.js";
 
 export declare namespace GeneratedDefaultEndpointImplementation {
     export interface Init {

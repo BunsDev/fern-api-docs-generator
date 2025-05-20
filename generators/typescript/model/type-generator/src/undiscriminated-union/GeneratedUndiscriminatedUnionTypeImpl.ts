@@ -20,7 +20,7 @@ import {
     UndiscriminatedUnionTypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedType } from "../AbstractGeneratedType";
+import { AbstractGeneratedType } from "../AbstractGeneratedType.js";
 
 export class GeneratedUndiscriminatedUnionTypeImpl<Context extends BaseContext>
     extends AbstractGeneratedType<UndiscriminatedUnionTypeDeclaration, Context>

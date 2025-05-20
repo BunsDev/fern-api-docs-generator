@@ -2,9 +2,9 @@ import { filterOssWorkspaces } from "@fern-api/docs-resolver";
 import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { Project } from "@fern-api/project-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
-import { validateAPIWorkspaceAndLogIssues } from "./validateAPIWorkspaceAndLogIssues";
-import { validateDocsWorkspaceAndLogIssues } from "./validateDocsWorkspaceAndLogIssues";
+import { CliContext } from "../../cli-context/CliContext.js";
+import { validateAPIWorkspaceAndLogIssues } from "./validateAPIWorkspaceAndLogIssues.js";
+import { validateDocsWorkspaceAndLogIssues } from "./validateDocsWorkspaceAndLogIssues.js";
 
 export async function validateWorkspaces({
     project,

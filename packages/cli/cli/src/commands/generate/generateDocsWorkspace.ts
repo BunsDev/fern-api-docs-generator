@@ -5,8 +5,8 @@ import { Project } from "@fern-api/project-loader";
 import { runRemoteGenerationForDocsWorkspace } from "@fern-api/remote-workspace-runner";
 import { FernWorkspace } from "@fern-api/workspace-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
-import { validateDocsWorkspaceAndLogIssues } from "../validate/validateDocsWorkspaceAndLogIssues";
+import { CliContext } from "../../cli-context/CliContext.js";
+import { validateDocsWorkspaceAndLogIssues } from "../validate/validateDocsWorkspaceAndLogIssues.js";
 
 export async function generateDocsWorkspace({
     project,

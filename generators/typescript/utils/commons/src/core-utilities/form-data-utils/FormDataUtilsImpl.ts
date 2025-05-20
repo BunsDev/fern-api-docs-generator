@@ -2,10 +2,10 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { DependencyManager } from "../../dependency-manager/DependencyManager";
-import { CoreUtility } from "../CoreUtility";
-import { MANIFEST as RuntimeManifest } from "../runtime/RuntimeImpl";
-import { FormDataUtils } from "./FormDataUtils";
+import { DependencyManager } from "../../dependency-manager/DependencyManager.js";
+import { CoreUtility } from "../CoreUtility.js";
+import { MANIFEST as RuntimeManifest } from "../runtime/RuntimeImpl.js";
+import { FormDataUtils } from "./FormDataUtils.js";
 
 export class FormDataUtilsImpl extends CoreUtility implements FormDataUtils {
     public readonly MANIFEST = {

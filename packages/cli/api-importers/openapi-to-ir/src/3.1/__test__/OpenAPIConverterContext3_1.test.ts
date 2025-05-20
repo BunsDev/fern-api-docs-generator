@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { ErrorCollector } from "@fern-api/v2-importer-commons";
 
-import { OpenAPIConverterContext3_1 } from "../OpenAPIConverterContext3_1";
+import { OpenAPIConverterContext3_1 } from "../OpenAPIConverterContext3_1.js";
 
 describe("OpenAPIConverterContext3_1", async () => {
     it("resolves URL references", async () => {

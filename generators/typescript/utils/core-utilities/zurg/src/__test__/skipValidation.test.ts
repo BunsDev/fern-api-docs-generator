@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { boolean, number, object, property, string, undiscriminatedUnion } from "../builders";
+import { boolean, number, object, property, string, undiscriminatedUnion } from "../builders/index.js";
 
 describe("skipValidation", () => {
     it("allows data that doesn't conform to the schema", async () => {

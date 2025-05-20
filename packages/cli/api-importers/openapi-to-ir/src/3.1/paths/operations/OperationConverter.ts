@@ -4,9 +4,9 @@ import { FernIr, HttpEndpoint, HttpEndpointSource, HttpPath } from "@fern-api/ir
 import { constructHttpPath } from "@fern-api/ir-utils";
 import { AbstractConverter, ServersConverter } from "@fern-api/v2-importer-commons";
 
-import { FernExamplesExtension } from "../../../extensions/x-fern-examples";
-import { FernStreamingExtension } from "../../../extensions/x-fern-streaming";
-import { AbstractOperationConverter } from "./AbstractOperationConverter";
+import { FernExamplesExtension } from "../../../extensions/x-fern-examples.js";
+import { FernStreamingExtension } from "../../../extensions/x-fern-streaming.js";
+import { AbstractOperationConverter } from "./AbstractOperationConverter.js";
 
 export declare namespace OperationConverter {
     export interface Args extends AbstractOperationConverter.Args {

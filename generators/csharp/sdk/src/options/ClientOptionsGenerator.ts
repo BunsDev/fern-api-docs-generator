@@ -4,9 +4,9 @@ import { RelativeFilePath, join } from "@fern-api/fs-utils";
 
 import { Name } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "../SdkCustomConfig";
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
-import { BASE_URL_FIELD_NAME, BASE_URL_SUMMARY, BaseOptionsGenerator, OptionArgs } from "./BaseOptionsGenerator";
+import { SdkCustomConfigSchema } from "../SdkCustomConfig.js";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
+import { BASE_URL_FIELD_NAME, BASE_URL_SUMMARY, BaseOptionsGenerator, OptionArgs } from "./BaseOptionsGenerator.js";
 
 export const CLIENT_OPTIONS_CLASS_NAME = "ClientOptions";
 export const GLOBAL_TEST_SETUP_NAME = "GlobalTestSetup";

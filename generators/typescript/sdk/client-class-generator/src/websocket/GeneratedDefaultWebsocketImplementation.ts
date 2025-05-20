@@ -13,7 +13,7 @@ import { SetRequired } from "@fern-api/core-utils";
 
 import { IntermediateRepresentation, WebSocketChannel, WebSocketChannelId } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "../GeneratedSdkClientClassImpl";
+import { GeneratedSdkClientClassImpl } from "../GeneratedSdkClientClassImpl.js";
 
 export declare namespace GeneratedDefaultWebsocketImplementation {
     export interface Init {

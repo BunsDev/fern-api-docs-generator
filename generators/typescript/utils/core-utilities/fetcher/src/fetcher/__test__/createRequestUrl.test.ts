@@ -1,4 +1,4 @@
-import { createRequestUrl } from "../createRequestUrl";
+import { createRequestUrl } from "../createRequestUrl.js";
 
 describe("Test createRequestUrl", () => {
     it("should return the base URL when no query parameters are provided", () => {

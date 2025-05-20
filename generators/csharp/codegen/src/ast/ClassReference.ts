@@ -1,6 +1,6 @@
-import { csharp } from "..";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { csharp } from "../index.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace ClassReference {
     interface Args {

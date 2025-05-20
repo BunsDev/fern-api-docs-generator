@@ -1,12 +1,12 @@
-import { Field } from "../Field";
-import { File } from "../File";
-import { Func } from "../Func";
-import { GoTypeReference } from "../GoTypeReference";
-import { Struct } from "../Struct";
-import { Type } from "../Type";
-import { TypeInstantiation } from "../TypeInstantiation";
-import { AstNode } from "../core/AstNode";
-import { GoFile } from "../core/GoFile";
+import { Field } from "../Field.js";
+import { File } from "../File.js";
+import { Func } from "../Func.js";
+import { GoTypeReference } from "../GoTypeReference.js";
+import { Struct } from "../Struct.js";
+import { Type } from "../Type.js";
+import { TypeInstantiation } from "../TypeInstantiation.js";
+import { AstNode } from "../core/AstNode.js";
+import { GoFile } from "../core/GoFile.js";
 
 interface TestCase {
     description: string;

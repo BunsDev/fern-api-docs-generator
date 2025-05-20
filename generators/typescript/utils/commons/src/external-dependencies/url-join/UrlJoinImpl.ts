@@ -1,7 +1,7 @@
 import { ts } from "ts-morph";
 
-import { ExternalDependency } from "../ExternalDependency";
-import { UrlJoin } from "./UrlJoin";
+import { ExternalDependency } from "../ExternalDependency.js";
+import { UrlJoin } from "./UrlJoin.js";
 
 export class UrlJoinImpl extends ExternalDependency implements UrlJoin {
     protected override PACKAGE = { name: "url-join", version: "4.0.1" };

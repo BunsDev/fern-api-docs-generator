@@ -5,7 +5,7 @@ import { FERN_PACKAGE_MARKER_FILENAME } from "@fern-api/configuration-loader";
 import { keys } from "@fern-api/core-utils";
 import { RelativeFilePath, dirname, join, relative } from "@fern-api/fs-utils";
 
-import { Rule, RuleViolation } from "../../Rule";
+import { Rule, RuleViolation } from "../../Rule.js";
 
 export const ValidNavigationRule: Rule = {
     name: "valid-navigation",

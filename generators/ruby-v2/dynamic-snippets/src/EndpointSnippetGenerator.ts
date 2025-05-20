@@ -1,7 +1,7 @@
 import { AbstractFormatter } from "@fern-api/browser-compatible-base-generator";
 import { FernIr } from "@fern-api/dynamic-ir-sdk";
 
-import { DynamicSnippetsGeneratorContext } from "./context/DynamicSnippetsGeneratorContext";
+import { DynamicSnippetsGeneratorContext } from "./context/DynamicSnippetsGeneratorContext.js";
 
 export class EndpointSnippetGenerator {
     private context: DynamicSnippetsGeneratorContext;

@@ -4,7 +4,7 @@ import tmp from "tmp-promise";
 import { AbsoluteFilePath, RelativeFilePath, getDirectoryContentsForSnapshot, join } from "@fern-api/fs-utils";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { migration } from "../migration";
+import { migration } from "../migration.js";
 
 const FIXTURES_PATH = join(AbsoluteFilePath.of(__dirname), RelativeFilePath.of("fixtures"));
 

@@ -3,7 +3,7 @@ import { InterfaceDeclarationStructure, OptionalKind, PropertySignatureStructure
 
 import { NameAndWireValue } from "@fern-fern/ir-sdk/api";
 
-import { RawSingleUnionType } from "./RawSingleUnionType";
+import { RawSingleUnionType } from "./RawSingleUnionType.js";
 
 export declare namespace AbstractRawSingleUnionType {
     export interface Init {

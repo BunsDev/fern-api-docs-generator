@@ -6,7 +6,7 @@ import { SourceFile } from "ts-morph";
 
 import { Name } from "@fern-fern/ir-sdk/api";
 
-import { ExpressInlinedRequestBodyDeclarationReferencer } from "../../declaration-referencers/ExpressInlinedRequestBodyDeclarationReferencer";
+import { ExpressInlinedRequestBodyDeclarationReferencer } from "../../declaration-referencers/ExpressInlinedRequestBodyDeclarationReferencer.js";
 
 export declare namespace ExpressInlinedRequestBodyContextImpl {
     export interface Init {

@@ -11,8 +11,8 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedType } from "./GeneratedType";
-import { GeneratedTypeReferenceExample } from "./GeneratedTypeReferenceExample";
+import { GeneratedType } from "./GeneratedType.js";
+import { GeneratedTypeReferenceExample } from "./GeneratedTypeReferenceExample.js";
 
 export interface TypeContext {
     getReferenceToType: (typeReference: TypeReference) => TypeReferenceNode;

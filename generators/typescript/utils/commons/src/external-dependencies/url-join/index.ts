@@ -1,1 +1,1 @@
-export { type UrlJoin } from "./UrlJoin";
+export { type UrlJoin } from "./UrlJoin.js";

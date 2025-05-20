@@ -1,9 +1,9 @@
 import { assertNever } from "@fern-api/core-utils";
 
-import { python } from ".";
-import { Reference } from "./Reference";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Reference } from "./Reference.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
+import { python } from "./index.js";
 
 type InternalType =
     | Int

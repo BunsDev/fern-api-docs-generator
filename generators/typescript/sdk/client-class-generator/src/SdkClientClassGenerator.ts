@@ -4,8 +4,8 @@ import { ErrorResolver, PackageResolver } from "@fern-typescript/resolvers";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "./GeneratedSdkClientClassImpl";
-import { OAuthTokenProviderGenerator } from "./oauth-generator/OAuthTokenProviderGenerator";
+import { GeneratedSdkClientClassImpl } from "./GeneratedSdkClientClassImpl.js";
+import { OAuthTokenProviderGenerator } from "./oauth-generator/OAuthTokenProviderGenerator.js";
 
 export declare namespace SdkClientClassGenerator {
     export interface Init {

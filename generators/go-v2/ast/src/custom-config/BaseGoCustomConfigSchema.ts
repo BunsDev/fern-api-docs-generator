@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { ModuleConfigSchema } from "./ModuleConfigSchema";
+import { ModuleConfigSchema } from "./ModuleConfigSchema.js";
 
 export const BaseGoCustomConfigSchema = z.object({
     module: ModuleConfigSchema.optional(),

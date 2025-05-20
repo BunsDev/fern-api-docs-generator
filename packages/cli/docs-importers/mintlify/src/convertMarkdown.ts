@@ -6,7 +6,7 @@ import { AbsoluteFilePath, RelativeFilePath, dirname, join } from "@fern-api/fs-
 
 import { FernRegistry as CjsFdrSdk, FernRegistry } from "@fern-fern/fdr-cjs-sdk";
 
-import { MintlifyFrontmatter } from "./mintlify";
+import { MintlifyFrontmatter } from "./mintlify.js";
 
 export declare namespace convertMarkdown {
     interface Args {

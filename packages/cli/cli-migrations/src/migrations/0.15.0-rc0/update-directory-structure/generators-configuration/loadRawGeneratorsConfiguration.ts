@@ -3,7 +3,7 @@ import yaml from "js-yaml";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { LegacyGenerators } from ".";
+import { LegacyGenerators } from "./index.js";
 
 export async function loadRawGeneratorsConfiguration({
     absolutePathToWorkspace

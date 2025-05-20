@@ -4,7 +4,7 @@ import yaml from "js-yaml";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { FernSeedConfig } from "./config";
+import { FernSeedConfig } from "./config/index.js";
 
 export interface GeneratorWorkspace {
     workspaceName: string;

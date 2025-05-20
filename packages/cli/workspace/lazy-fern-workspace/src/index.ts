@@ -1,5 +1,5 @@
-export { OpenAPILoader } from "./loaders/OpenAPILoader";
-export * from "./utils";
-export * from "./LazyFernWorkspace";
-export * from "./OSSWorkspace";
-export * from "./ConjureWorkspace";
+export { OpenAPILoader } from "./loaders/OpenAPILoader.js";
+export * from "./utils/index.js";
+export * from "./LazyFernWorkspace.js";
+export * from "./OSSWorkspace.js";
+export * from "./ConjureWorkspace.js";

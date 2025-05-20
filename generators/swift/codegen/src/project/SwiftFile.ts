@@ -1,8 +1,8 @@
 import { File } from "@fern-api/base-generator";
 import { RelativeFilePath } from "@fern-api/fs-utils";
 
-import { Enum } from "../ast/Enum";
-import { Struct } from "../ast/Struct";
+import { Enum } from "../ast/Enum.js";
+import { Struct } from "../ast/Struct.js";
 
 export declare namespace SwiftFile {
     interface Args {

@@ -11,11 +11,11 @@ import {
     ServiceId
 } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "../../SdkCustomConfig";
-import { MOCK_SERVER_TEST_FOLDER, SdkGeneratorContext } from "../../SdkGeneratorContext";
-import { HttpEndpointGenerator } from "../../endpoint/http/HttpEndpointGenerator";
-import { getContentTypeFromRequestBody } from "../../endpoint/utils/getContentTypeFromRequestBody";
-import { MockEndpointGenerator } from "./MockEndpointGenerator";
+import { SdkCustomConfigSchema } from "../../SdkCustomConfig.js";
+import { MOCK_SERVER_TEST_FOLDER, SdkGeneratorContext } from "../../SdkGeneratorContext.js";
+import { HttpEndpointGenerator } from "../../endpoint/http/HttpEndpointGenerator.js";
+import { getContentTypeFromRequestBody } from "../../endpoint/utils/getContentTypeFromRequestBody.js";
+import { MockEndpointGenerator } from "./MockEndpointGenerator.js";
 
 export declare namespace TestClass {
     interface TestInput {

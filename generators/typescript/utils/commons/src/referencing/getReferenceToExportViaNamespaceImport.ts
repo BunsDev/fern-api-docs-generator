@@ -4,12 +4,12 @@ import {
     ExportedDirectory,
     ExportedFilePath,
     convertExportedFilePathToFilePath
-} from "../exports-manager/ExportedFilePath";
-import { ImportsManager } from "../imports-manager/ImportsManager";
-import { GetReferenceOpts, Reference } from "./Reference";
-import { getEntityNameOfDirectory } from "./getEntityNameOfDirectory";
-import { getExpressionToDirectory } from "./getExpressionToDirectory";
-import { getRelativePathAsModuleSpecifierTo } from "./getRelativePathAsModuleSpecifierTo";
+} from "../exports-manager/ExportedFilePath.js";
+import { ImportsManager } from "../imports-manager/ImportsManager.js";
+import { GetReferenceOpts, Reference } from "./Reference.js";
+import { getEntityNameOfDirectory } from "./getEntityNameOfDirectory.js";
+import { getExpressionToDirectory } from "./getExpressionToDirectory.js";
+import { getRelativePathAsModuleSpecifierTo } from "./getRelativePathAsModuleSpecifierTo.js";
 
 export function getReferenceToExportViaNamespaceImport({
     exportedName,

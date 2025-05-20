@@ -1,7 +1,7 @@
-import { ruby } from "../..";
-import { BaseRubyCustomConfigSchema } from "../../custom-config/BaseRubyCustomConfigSchema";
-import { MethodKind, MethodVisibility } from "../Method";
-import { Writer } from "../core/Writer";
+import { BaseRubyCustomConfigSchema } from "../../custom-config/BaseRubyCustomConfigSchema.js";
+import { ruby } from "../../index.js";
+import { MethodKind, MethodVisibility } from "../Method.js";
+import { Writer } from "../core/Writer.js";
 
 describe("Comment", () => {
     let writerConfig: Writer.Args;

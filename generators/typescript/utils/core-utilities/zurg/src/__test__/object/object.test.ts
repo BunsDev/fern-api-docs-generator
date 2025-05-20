@@ -1,6 +1,6 @@
-import { any, number, object, property, string, stringLiteral, unknown } from "../../builders";
-import { itJson, itParse, itSchema, itSchemaIdentity } from "../utils/itSchema";
-import { itValidate } from "../utils/itValidate";
+import { any, number, object, property, string, stringLiteral, unknown } from "../../builders/index.js";
+import { itJson, itParse, itSchema, itSchemaIdentity } from "../utils/itSchema.js";
+import { itValidate } from "../utils/itValidate.js";
 
 describe("object", () => {
     itSchemaIdentity(

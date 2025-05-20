@@ -1,5 +1,8 @@
 import { Ternary } from "@fern-api/browser-compatible-base-generator";
 
+import { DataClass } from "./ast/DataClass.js";
+import { MergeArrays } from "./ast/MergeArrays.js";
+import { AstNode } from "./ast/core/AstNode.js";
 import {
     Array as Array_,
     Attribute,
@@ -14,11 +17,8 @@ import {
     MethodInvocation,
     Parameter,
     Trait
-} from "./ast";
-import { DataClass } from "./ast/DataClass";
-import { MergeArrays } from "./ast/MergeArrays";
-import { AstNode } from "./ast/core/AstNode";
-import { convertToPhpVariableName } from "./ast/utils/convertToPhpVariableName";
+} from "./ast/index.js";
+import { convertToPhpVariableName } from "./ast/utils/convertToPhpVariableName.js";
 
 export function array(args: Array_.Args): Array_ {
     return new Array_(args);
@@ -113,7 +113,7 @@ export function this_(): AstNode {
     });
 }
 
-export { AstNode } from "./ast/core/AstNode";
+export { AstNode } from "./ast/core/AstNode.js";
 export {
     Access,
     Array,
@@ -134,4 +134,4 @@ export {
     Type,
     TypeLiteral,
     Writer
-} from "./ast";
+} from "./ast/index.js";

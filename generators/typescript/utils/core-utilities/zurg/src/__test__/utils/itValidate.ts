@@ -1,5 +1,5 @@
 /* eslint-disable jest/no-export */
-import { Schema, SchemaOptions, ValidationError } from "../../Schema";
+import { Schema, SchemaOptions, ValidationError } from "../../Schema.js";
 
 export function itValidate<Raw, Parsed>(
     title: string,

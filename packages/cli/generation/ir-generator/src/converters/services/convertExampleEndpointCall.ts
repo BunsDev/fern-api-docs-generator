@@ -22,20 +22,20 @@ import {
 } from "@fern-api/ir-sdk";
 import { hashJSON } from "@fern-api/ir-utils";
 
-import { FernFileContext } from "../../FernFileContext";
-import { ErrorResolver } from "../../resolvers/ErrorResolver";
-import { ExampleResolver } from "../../resolvers/ExampleResolver";
-import { TypeResolver } from "../../resolvers/TypeResolver";
-import { VariableResolver } from "../../resolvers/VariableResolver";
-import { getEndpointPathParameters } from "../../utils/getEndpointPathParameters";
-import { parseErrorName } from "../../utils/parseErrorName";
+import { FernFileContext } from "../../FernFileContext.js";
+import { ErrorResolver } from "../../resolvers/ErrorResolver.js";
+import { ExampleResolver } from "../../resolvers/ExampleResolver.js";
+import { TypeResolver } from "../../resolvers/TypeResolver.js";
+import { VariableResolver } from "../../resolvers/VariableResolver.js";
+import { getEndpointPathParameters } from "../../utils/getEndpointPathParameters.js";
+import { parseErrorName } from "../../utils/parseErrorName.js";
 import {
     convertTypeReferenceExample,
     getOriginalTypeDeclarationForPropertyFromExtensions
-} from "../type-declarations/convertExampleType";
-import { getPropertyName } from "../type-declarations/convertObjectTypeDeclaration";
-import { getHeaderName, resolvePathParameterOrThrow } from "./convertHttpService";
-import { getQueryParameterName } from "./convertQueryParameter";
+} from "../type-declarations/convertExampleType.js";
+import { getPropertyName } from "../type-declarations/convertObjectTypeDeclaration.js";
+import { getHeaderName, resolvePathParameterOrThrow } from "./convertHttpService.js";
+import { getQueryParameterName } from "./convertQueryParameter.js";
 
 export function convertExampleEndpointCall({
     service,

@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { NoDuplicateOverridesRule } from "../no-duplicate-overrides";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { NoDuplicateOverridesRule } from "../no-duplicate-overrides.js";
 
 describe("no-duplicate-overrides", () => {
     it("simple failure", async () => {

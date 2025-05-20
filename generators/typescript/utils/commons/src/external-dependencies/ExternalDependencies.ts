@@ -1,9 +1,9 @@
-import { Blob_ } from "./blob";
-import { Express } from "./express/Express";
-import { Fs } from "./fs";
-import { qs } from "./qs";
-import { Stream } from "./stream";
-import { UrlJoin } from "./url-join/UrlJoin";
+import { Blob_ } from "./blob/index.js";
+import { Express } from "./express/Express.js";
+import { Fs } from "./fs/index.js";
+import { qs } from "./qs/index.js";
+import { Stream } from "./stream/index.js";
+import { UrlJoin } from "./url-join/UrlJoin.js";
 
 export interface ExternalDependencies {
     urlJoin: UrlJoin;

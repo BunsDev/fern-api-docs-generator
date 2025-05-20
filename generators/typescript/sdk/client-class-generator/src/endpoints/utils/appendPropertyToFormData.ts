@@ -3,8 +3,8 @@ import { ts } from "ts-morph";
 
 import { ContainerType, FileUploadRequestProperty, Type, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { FileUploadRequestParameter } from "../../request-parameter/FileUploadRequestParameter";
-import { getParameterNameForFile } from "./getParameterNameForFile";
+import { FileUploadRequestParameter } from "../../request-parameter/FileUploadRequestParameter.js";
+import { getParameterNameForFile } from "./getParameterNameForFile.js";
 
 export function appendPropertyToFormData({
     property,

@@ -11,10 +11,10 @@ import {
     Source
 } from "@fern-api/openapi-ir";
 
-import { ParseOpenAPIOptions } from "../options";
-import { SchemaParserContext } from "./SchemaParserContext";
-import { convertSchema } from "./convertSchemas";
-import { isReferenceObject } from "./utils/isReferenceObject";
+import { ParseOpenAPIOptions } from "../options.js";
+import { SchemaParserContext } from "./SchemaParserContext.js";
+import { convertSchema } from "./convertSchemas.js";
+import { isReferenceObject } from "./utils/isReferenceObject.js";
 
 export function convertAdditionalProperties({
     nameOverride,

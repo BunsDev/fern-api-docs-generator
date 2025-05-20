@@ -12,12 +12,12 @@ import {
     ServiceId
 } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../../SdkGeneratorContext";
-import { AbstractEndpointGenerator } from "../AbstractEndpointGenerator";
-import { EndpointSignatureInfo } from "../EndpointSignatureInfo";
-import { SingleEndpointSnippet } from "../snippets/EndpointSnippetsGenerator";
-import { getEndpointReturnType } from "../utils/getEndpointReturnType";
-import { RawClient } from "./RawClient";
+import { SdkGeneratorContext } from "../../SdkGeneratorContext.js";
+import { AbstractEndpointGenerator } from "../AbstractEndpointGenerator.js";
+import { EndpointSignatureInfo } from "../EndpointSignatureInfo.js";
+import { SingleEndpointSnippet } from "../snippets/EndpointSnippetsGenerator.js";
+import { getEndpointReturnType } from "../utils/getEndpointReturnType.js";
+import { RawClient } from "./RawClient.js";
 
 export declare namespace EndpointGenerator {
     export interface Args {

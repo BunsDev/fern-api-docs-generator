@@ -4,11 +4,11 @@ import { validateReadOnlyMemoryTypes } from "@fern-api/csharp-codegen";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { ModelCustomConfigSchema } from "./ModelCustomConfig";
-import { ModelGeneratorContext } from "./ModelGeneratorContext";
-import { generateModels } from "./generateModels";
-import { generateVersion } from "./generateVersion";
-import { generateWellKnownProtobufFiles } from "./generateWellKnownProtobufFiles";
+import { ModelCustomConfigSchema } from "./ModelCustomConfig.js";
+import { ModelGeneratorContext } from "./ModelGeneratorContext.js";
+import { generateModels } from "./generateModels.js";
+import { generateVersion } from "./generateVersion.js";
+import { generateWellKnownProtobufFiles } from "./generateWellKnownProtobufFiles.js";
 
 export class ModelGeneratorCLI extends AbstractCsharpGeneratorCli<ModelCustomConfigSchema, ModelGeneratorContext> {
     protected constructContext({

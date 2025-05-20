@@ -4,8 +4,8 @@ import { RelativeFilePath } from "@fern-api/fs-utils";
 
 import { HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { AbstractExpressServiceDeclarationReferencer } from "./AbstractExpressServiceDeclarationReferencer";
-import { DeclarationReferencer } from "./DeclarationReferencer";
+import { AbstractExpressServiceDeclarationReferencer } from "./AbstractExpressServiceDeclarationReferencer.js";
+import { DeclarationReferencer } from "./DeclarationReferencer.js";
 
 export declare namespace ExpressInlinedRequestBodyDeclarationReferencer {
     export interface Name {

@@ -4,8 +4,8 @@ import YAML from "yaml";
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { Migration } from "../../../types/Migration";
-import { getAllYamlFiles } from "./getAllYamlFiles";
+import { Migration } from "../../../types/Migration.js";
+import { getAllYamlFiles } from "./getAllYamlFiles.js";
 
 export const migration: Migration = {
     name: "change-services-key-to-service",

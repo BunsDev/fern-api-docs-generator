@@ -1,5 +1,5 @@
-import { AbstractAstNode } from "./AbstractAstNode";
-import { CodeBlock } from "./CodeBlock";
+import { AbstractAstNode } from "./AbstractAstNode.js";
+import { CodeBlock } from "./CodeBlock.js";
 
 const TAB_SIZE = 4;
 

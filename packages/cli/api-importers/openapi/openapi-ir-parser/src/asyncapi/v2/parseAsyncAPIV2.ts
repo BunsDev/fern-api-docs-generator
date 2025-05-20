@@ -13,24 +13,24 @@ import {
     WebsocketSessionExample
 } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../getExtension";
-import { FernOpenAPIExtension } from "../../openapi/v3/extensions/fernExtensions";
-import { ParseOpenAPIOptions } from "../../options";
-import { convertAvailability } from "../../schema/convertAvailability";
-import { convertReferenceObject, convertSchema } from "../../schema/convertSchemas";
-import { UndiscriminatedOneOfPrefix, convertUndiscriminatedOneOf } from "../../schema/convertUndiscriminatedOneOf";
-import { convertSchemaWithExampleToSchema } from "../../schema/utils/convertSchemaWithExampleToSchema";
-import { isReferenceObject } from "../../schema/utils/isReferenceObject";
-import { getSchemas } from "../../utils/getSchemas";
-import { ExampleWebsocketSessionFactory, SessionExampleBuilderInput } from "../ExampleWebsocketSessionFactory";
-import { FernAsyncAPIExtension } from "../fernExtensions";
-import { WebsocketSessionExampleExtension, getFernExamples } from "../getFernExamples";
-import { ParseAsyncAPIOptions } from "../options";
-import { AsyncAPIIntermediateRepresentation } from "../parse";
-import { ServerContext } from "../sharedTypes";
-import { constructServerUrl, transformToValidPath } from "../sharedUtils";
-import { AsyncAPIV2 } from "../v2";
-import { AsyncAPIV2ParserContext } from "./AsyncAPIV2ParserContext";
+import { getExtension } from "../../getExtension.js";
+import { FernOpenAPIExtension } from "../../openapi/v3/extensions/fernExtensions.js";
+import { ParseOpenAPIOptions } from "../../options.js";
+import { convertAvailability } from "../../schema/convertAvailability.js";
+import { convertReferenceObject, convertSchema } from "../../schema/convertSchemas.js";
+import { UndiscriminatedOneOfPrefix, convertUndiscriminatedOneOf } from "../../schema/convertUndiscriminatedOneOf.js";
+import { convertSchemaWithExampleToSchema } from "../../schema/utils/convertSchemaWithExampleToSchema.js";
+import { isReferenceObject } from "../../schema/utils/isReferenceObject.js";
+import { getSchemas } from "../../utils/getSchemas.js";
+import { ExampleWebsocketSessionFactory, SessionExampleBuilderInput } from "../ExampleWebsocketSessionFactory.js";
+import { FernAsyncAPIExtension } from "../fernExtensions.js";
+import { WebsocketSessionExampleExtension, getFernExamples } from "../getFernExamples.js";
+import { ParseAsyncAPIOptions } from "../options.js";
+import { AsyncAPIIntermediateRepresentation } from "../parse.js";
+import { ServerContext } from "../sharedTypes.js";
+import { constructServerUrl, transformToValidPath } from "../sharedUtils.js";
+import { AsyncAPIV2 } from "../v2/index.js";
+import { AsyncAPIV2ParserContext } from "./AsyncAPIV2ParserContext.js";
 
 export function parseAsyncAPIV2({
     context,

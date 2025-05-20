@@ -2,10 +2,16 @@ import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/path-utils";
 
 import { FernRegistry as CjsFdrSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { Audiences } from "../commons";
-import { AiChatConfig, DocsInstance, ExperimentalConfig, PlaygroundSettings, VersionAvailability } from "./schemas";
+import { Audiences } from "../commons/index.js";
+import {
+    AiChatConfig,
+    DocsInstance,
+    ExperimentalConfig,
+    PlaygroundSettings,
+    VersionAvailability
+} from "./schemas/index.js";
 // TODO: Update this import
-import { AnnouncementConfig } from "./schemas/sdk/api/resources/docs/types/AnnouncementConfig";
+import { AnnouncementConfig } from "./schemas/sdk/api/resources/docs/types/AnnouncementConfig.js";
 
 export interface ParsedDocsConfiguration {
     instances: DocsInstance[];

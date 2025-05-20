@@ -10,10 +10,10 @@ import {
     UndiscriminatedUnionMember
 } from "@fern-api/ir-sdk";
 
-import { AbstractConverter, AbstractConverterContext } from "../..";
-import { convertProperties } from "../../utils/ConvertProperties";
-import { SchemaConverter } from "./SchemaConverter";
-import { SchemaOrReferenceConverter } from "./SchemaOrReferenceConverter";
+import { AbstractConverter, AbstractConverterContext } from "../../index.js";
+import { convertProperties } from "../../utils/ConvertProperties.js";
+import { SchemaConverter } from "./SchemaConverter.js";
+import { SchemaOrReferenceConverter } from "./SchemaOrReferenceConverter.js";
 
 export declare namespace OneOfSchemaConverter {
     export interface Args extends AbstractConverter.AbstractArgs {

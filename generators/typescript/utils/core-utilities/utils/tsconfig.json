@@ -1,5 +1,5 @@
 {
   "extends": "@fern-api/configs/tsconfig/main.json",
-  "compilerOptions": { "composite": true, "outDir": "lib", "rootDir": "src", "module": "CommonJS" },
+  "compilerOptions": { "composite": true, "outDir": "lib", "rootDir": "src", "module": "NodeNext" },
   "include": ["./src/**/*"]
 }

@@ -1,13 +1,13 @@
 import { NamedFullExample, Source, Webhook, WebhookExampleCall, WebhookWithExample } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../../../getExtension";
-import { convertToFullExample } from "../../../../schema/examples/convertToFullExample";
-import { getGeneratedTypeName } from "../../../../schema/utils/getSchemaName";
-import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext";
-import { FernOpenAPIExtension } from "../../extensions/fernExtensions";
-import { OperationContext } from "../contexts";
-import { convertParameters } from "../endpoint/convertParameters";
-import { convertRequest } from "../endpoint/convertRequest";
+import { getExtension } from "../../../../getExtension.js";
+import { convertToFullExample } from "../../../../schema/examples/convertToFullExample.js";
+import { getGeneratedTypeName } from "../../../../schema/utils/getSchemaName.js";
+import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext.js";
+import { FernOpenAPIExtension } from "../../extensions/fernExtensions.js";
+import { OperationContext } from "../contexts.js";
+import { convertParameters } from "../endpoint/convertParameters.js";
+import { convertRequest } from "../endpoint/convertRequest.js";
 
 export function convertWebhookOperation({
     context,

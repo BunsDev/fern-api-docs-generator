@@ -19,9 +19,9 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernFiddle } from "@fern-fern/fiddle-sdk";
 
-import { OSSWorkspace } from "../OSSWorkspace";
-import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result";
-import { LoadAPIWorkspace } from "./loadAPIWorkspace";
+import { OSSWorkspace } from "../OSSWorkspace.js";
+import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result.js";
+import { LoadAPIWorkspace } from "./loadAPIWorkspace.js";
 
 const FIDDLE = createFiddleService();
 

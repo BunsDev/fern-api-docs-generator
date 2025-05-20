@@ -7,7 +7,7 @@ import {
     NpmPackage,
     createExternalDependencies
 } from "@fern-typescript/commons";
-import { CoreUtilities } from "@fern-typescript/commons/src/core-utilities/CoreUtilities";
+import { CoreUtilities } from "@fern-typescript/commons/src/core-utilities";
 import {
     EnvironmentsContext,
     GenericAPISdkErrorContext,
@@ -40,36 +40,36 @@ import { Logger } from "@fern-api/logger";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { Constants, IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { EndpointDeclarationReferencer } from "../declaration-referencers/EndpointDeclarationReferencer";
-import { EnvironmentsDeclarationReferencer } from "../declaration-referencers/EnvironmentsDeclarationReferencer";
-import { GenericAPISdkErrorDeclarationReferencer } from "../declaration-referencers/GenericAPISdkErrorDeclarationReferencer";
-import { JsonDeclarationReferencer } from "../declaration-referencers/JsonDeclarationReferencer";
-import { RequestWrapperDeclarationReferencer } from "../declaration-referencers/RequestWrapperDeclarationReferencer";
-import { SdkClientClassDeclarationReferencer } from "../declaration-referencers/SdkClientClassDeclarationReferencer";
-import { SdkErrorDeclarationReferencer } from "../declaration-referencers/SdkErrorDeclarationReferencer";
-import { SdkInlinedRequestBodyDeclarationReferencer } from "../declaration-referencers/SdkInlinedRequestBodyDeclarationReferencer";
-import { TimeoutSdkErrorDeclarationReferencer } from "../declaration-referencers/TimeoutSdkErrorDeclarationReferencer";
-import { TypeDeclarationReferencer } from "../declaration-referencers/TypeDeclarationReferencer";
-import { VersionDeclarationReferencer } from "../declaration-referencers/VersionDeclarationReferencer";
-import { WebsocketSocketDeclarationReferencer } from "../declaration-referencers/WebsocketSocketDeclarationReferencer";
-import { WebsocketTypeSchemaDeclarationReferencer } from "../declaration-referencers/WebsocketTypeSchemaDeclarationReferencer";
-import { VersionGenerator } from "../version/VersionGenerator";
-import { EndpointErrorUnionContextImpl } from "./endpoint-error-union/EndpointErrorUnionContextImpl";
-import { EnvironmentsContextImpl } from "./environments/EnvironmentsContextImpl";
-import { GenericAPISdkErrorContextImpl } from "./generic-api-sdk-error/GenericAPISdkErrorContextImpl";
-import { JsonContextImpl } from "./json/JsonContextImpl";
-import { RequestWrapperContextImpl } from "./request-wrapper/RequestWrapperContextImpl";
-import { SdkClientClassContextImpl } from "./sdk-client-class/SdkClientClassContextImpl";
-import { SdkEndpointTypeSchemasContextImpl } from "./sdk-endpoint-type-schemas/SdkEndpointTypeSchemasContextImpl";
-import { SdkErrorSchemaContextImpl } from "./sdk-error-schema/SdkErrorSchemaContextImpl";
-import { SdkErrorContextImpl } from "./sdk-error/SdkErrorContextImpl";
-import { SdkInlinedRequestBodySchemaContextImpl } from "./sdk-inlined-request-body-schema/SdkInlinedRequestBodySchemaContextImpl";
-import { TimeoutSdkErrorContextImpl } from "./timeout-sdk-error/TimeoutSdkErrorContextImpl";
-import { TypeSchemaContextImpl } from "./type-schema/TypeSchemaContextImpl";
-import { TypeContextImpl } from "./type/TypeContextImpl";
-import { VersionContextImpl } from "./version/VersionContextImpl";
-import { WebsocketTypeSchemaContextImpl } from "./websocket-type-schema/WebsocketTypeSchemaImpl";
-import { WebsocketContextImpl } from "./websocket/WebsocketContextImpl";
+import { EndpointDeclarationReferencer } from "../declaration-referencers/EndpointDeclarationReferencer.js";
+import { EnvironmentsDeclarationReferencer } from "../declaration-referencers/EnvironmentsDeclarationReferencer.js";
+import { GenericAPISdkErrorDeclarationReferencer } from "../declaration-referencers/GenericAPISdkErrorDeclarationReferencer.js";
+import { JsonDeclarationReferencer } from "../declaration-referencers/JsonDeclarationReferencer.js";
+import { RequestWrapperDeclarationReferencer } from "../declaration-referencers/RequestWrapperDeclarationReferencer.js";
+import { SdkClientClassDeclarationReferencer } from "../declaration-referencers/SdkClientClassDeclarationReferencer.js";
+import { SdkErrorDeclarationReferencer } from "../declaration-referencers/SdkErrorDeclarationReferencer.js";
+import { SdkInlinedRequestBodyDeclarationReferencer } from "../declaration-referencers/SdkInlinedRequestBodyDeclarationReferencer.js";
+import { TimeoutSdkErrorDeclarationReferencer } from "../declaration-referencers/TimeoutSdkErrorDeclarationReferencer.js";
+import { TypeDeclarationReferencer } from "../declaration-referencers/TypeDeclarationReferencer.js";
+import { VersionDeclarationReferencer } from "../declaration-referencers/VersionDeclarationReferencer.js";
+import { WebsocketSocketDeclarationReferencer } from "../declaration-referencers/WebsocketSocketDeclarationReferencer.js";
+import { WebsocketTypeSchemaDeclarationReferencer } from "../declaration-referencers/WebsocketTypeSchemaDeclarationReferencer.js";
+import { VersionGenerator } from "../version/VersionGenerator.js";
+import { EndpointErrorUnionContextImpl } from "./endpoint-error-union/EndpointErrorUnionContextImpl.js";
+import { EnvironmentsContextImpl } from "./environments/EnvironmentsContextImpl.js";
+import { GenericAPISdkErrorContextImpl } from "./generic-api-sdk-error/GenericAPISdkErrorContextImpl.js";
+import { JsonContextImpl } from "./json/JsonContextImpl.js";
+import { RequestWrapperContextImpl } from "./request-wrapper/RequestWrapperContextImpl.js";
+import { SdkClientClassContextImpl } from "./sdk-client-class/SdkClientClassContextImpl.js";
+import { SdkEndpointTypeSchemasContextImpl } from "./sdk-endpoint-type-schemas/SdkEndpointTypeSchemasContextImpl.js";
+import { SdkErrorSchemaContextImpl } from "./sdk-error-schema/SdkErrorSchemaContextImpl.js";
+import { SdkErrorContextImpl } from "./sdk-error/SdkErrorContextImpl.js";
+import { SdkInlinedRequestBodySchemaContextImpl } from "./sdk-inlined-request-body-schema/SdkInlinedRequestBodySchemaContextImpl.js";
+import { TimeoutSdkErrorContextImpl } from "./timeout-sdk-error/TimeoutSdkErrorContextImpl.js";
+import { TypeSchemaContextImpl } from "./type-schema/TypeSchemaContextImpl.js";
+import { TypeContextImpl } from "./type/TypeContextImpl.js";
+import { VersionContextImpl } from "./version/VersionContextImpl.js";
+import { WebsocketTypeSchemaContextImpl } from "./websocket-type-schema/WebsocketTypeSchemaImpl.js";
+import { WebsocketContextImpl } from "./websocket/WebsocketContextImpl.js";
 
 const ROOT_CLIENT_VARIABLE_NAME = "client";
 

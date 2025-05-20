@@ -11,7 +11,7 @@ import { RelativeFilePath, join } from "@fern-api/fs-utils";
 
 import { FernFilepath } from "@fern-fern/ir-sdk/api";
 
-import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer";
+import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer.js";
 
 const CLIENT_DIRECTORY = "client";
 

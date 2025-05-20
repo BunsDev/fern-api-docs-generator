@@ -1,5 +1,5 @@
-import { any } from "../../builders";
-import { itSchemaIdentity } from "../utils/itSchema";
+import { any } from "../../builders/index.js";
+import { itSchemaIdentity } from "../utils/itSchema.js";
 
 describe("any", () => {
     itSchemaIdentity(any(), true);

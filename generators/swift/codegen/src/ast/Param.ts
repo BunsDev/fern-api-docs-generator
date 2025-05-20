@@ -1,5 +1,5 @@
-import Swift, { Type } from "..";
-import { AstNode, Writer } from "./core";
+import Swift, { Type } from "../index.js";
+import { AstNode, Writer } from "./core/index.js";
 
 /*
 

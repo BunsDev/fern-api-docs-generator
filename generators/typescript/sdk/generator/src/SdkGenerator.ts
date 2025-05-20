@@ -1,4 +1,5 @@
 import {
+    AsIsManager,
     BundledTypescriptProject,
     CoreUtilitiesManager,
     DependencyManager,
@@ -15,7 +16,6 @@ import {
     getFullPathForEndpoint,
     getTextOfTsNode
 } from "@fern-typescript/commons";
-import { AsIsManager } from "@fern-typescript/commons/src/asIs/AsIsManager";
 import { GeneratorContext } from "@fern-typescript/contexts";
 import { EndpointErrorUnionGenerator } from "@fern-typescript/endpoint-error-union-generator";
 import { EnvironmentsGenerator } from "@fern-typescript/environments-generator";
@@ -23,7 +23,7 @@ import { GenericAPISdkErrorGenerator, TimeoutSdkErrorGenerator } from "@fern-typ
 import { RequestWrapperGenerator } from "@fern-typescript/request-wrapper-generator";
 import { ErrorResolver, PackageResolver, TypeResolver } from "@fern-typescript/resolvers";
 import { SdkClientClassGenerator, WebsocketClassGenerator } from "@fern-typescript/sdk-client-class-generator";
-import { OAuthTokenProviderGenerator } from "@fern-typescript/sdk-client-class-generator/src/oauth-generator/OAuthTokenProviderGenerator";
+import { OAuthTokenProviderGenerator } from "@fern-typescript/sdk-client-class-generator/src/oauth-generator/OAuthTokenProviderGenerator.js";
 import { SdkEndpointTypeSchemasGenerator } from "@fern-typescript/sdk-endpoint-type-schemas-generator";
 import { SdkErrorGenerator } from "@fern-typescript/sdk-error-generator";
 import { SdkErrorSchemaGenerator } from "@fern-typescript/sdk-error-schema-generator";
@@ -54,26 +54,26 @@ import {
 } from "@fern-fern/ir-sdk/api";
 import { FdrSnippetTemplate, FdrSnippetTemplateClient, FdrSnippetTemplateEnvironment } from "@fern-fern/snippet-sdk";
 
-import { TemplateGenerator } from "./TemplateGenerator";
-import { TypeScriptGeneratorAgent } from "./TypeScriptGeneratorAgent";
-import { SdkContextImpl } from "./contexts/SdkContextImpl";
-import { EndpointDeclarationReferencer } from "./declaration-referencers/EndpointDeclarationReferencer";
-import { EnvironmentsDeclarationReferencer } from "./declaration-referencers/EnvironmentsDeclarationReferencer";
-import { GenericAPISdkErrorDeclarationReferencer } from "./declaration-referencers/GenericAPISdkErrorDeclarationReferencer";
-import { JsonDeclarationReferencer } from "./declaration-referencers/JsonDeclarationReferencer";
-import { RequestWrapperDeclarationReferencer } from "./declaration-referencers/RequestWrapperDeclarationReferencer";
-import { SdkClientClassDeclarationReferencer } from "./declaration-referencers/SdkClientClassDeclarationReferencer";
-import { SdkErrorDeclarationReferencer } from "./declaration-referencers/SdkErrorDeclarationReferencer";
-import { SdkInlinedRequestBodyDeclarationReferencer } from "./declaration-referencers/SdkInlinedRequestBodyDeclarationReferencer";
-import { TimeoutSdkErrorDeclarationReferencer } from "./declaration-referencers/TimeoutSdkErrorDeclarationReferencer";
-import { TypeDeclarationReferencer } from "./declaration-referencers/TypeDeclarationReferencer";
-import { VersionDeclarationReferencer } from "./declaration-referencers/VersionDeclarationReferencer";
-import { WebsocketSocketDeclarationReferencer } from "./declaration-referencers/WebsocketSocketDeclarationReferencer";
-import { WebsocketTypeSchemaDeclarationReferencer } from "./declaration-referencers/WebsocketTypeSchemaDeclarationReferencer";
-import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder";
-import { JestTestGenerator } from "./test-generator/JestTestGenerator";
-import { VersionFileGenerator } from "./version/VersionFileGenerator";
-import { VersionGenerator } from "./version/VersionGenerator";
+import { TemplateGenerator } from "./TemplateGenerator.js";
+import { TypeScriptGeneratorAgent } from "./TypeScriptGeneratorAgent.js";
+import { SdkContextImpl } from "./contexts/SdkContextImpl.js";
+import { EndpointDeclarationReferencer } from "./declaration-referencers/EndpointDeclarationReferencer.js";
+import { EnvironmentsDeclarationReferencer } from "./declaration-referencers/EnvironmentsDeclarationReferencer.js";
+import { GenericAPISdkErrorDeclarationReferencer } from "./declaration-referencers/GenericAPISdkErrorDeclarationReferencer.js";
+import { JsonDeclarationReferencer } from "./declaration-referencers/JsonDeclarationReferencer.js";
+import { RequestWrapperDeclarationReferencer } from "./declaration-referencers/RequestWrapperDeclarationReferencer.js";
+import { SdkClientClassDeclarationReferencer } from "./declaration-referencers/SdkClientClassDeclarationReferencer.js";
+import { SdkErrorDeclarationReferencer } from "./declaration-referencers/SdkErrorDeclarationReferencer.js";
+import { SdkInlinedRequestBodyDeclarationReferencer } from "./declaration-referencers/SdkInlinedRequestBodyDeclarationReferencer.js";
+import { TimeoutSdkErrorDeclarationReferencer } from "./declaration-referencers/TimeoutSdkErrorDeclarationReferencer.js";
+import { TypeDeclarationReferencer } from "./declaration-referencers/TypeDeclarationReferencer.js";
+import { VersionDeclarationReferencer } from "./declaration-referencers/VersionDeclarationReferencer.js";
+import { WebsocketSocketDeclarationReferencer } from "./declaration-referencers/WebsocketSocketDeclarationReferencer.js";
+import { WebsocketTypeSchemaDeclarationReferencer } from "./declaration-referencers/WebsocketTypeSchemaDeclarationReferencer.js";
+import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder.js";
+import { JestTestGenerator } from "./test-generator/JestTestGenerator.js";
+import { VersionFileGenerator } from "./version/VersionFileGenerator.js";
+import { VersionGenerator } from "./version/VersionGenerator.js";
 
 const FILE_HEADER = `/**
  * This file was auto-generated by Fern from our API Definition.

@@ -1,6 +1,6 @@
 import tmp from "tmp-promise";
 
-import { runFernCli } from "../../utils/runFernCli";
+import { runFernCli } from "../../utils/runFernCli.js";
 
 describe("help", () => {
     it("no arguments", async () => {

@@ -2,7 +2,7 @@ import path from "path";
 
 import { RelativeFilePath } from "@fern-api/fs-utils";
 
-import { ExportDeclaration } from "./ExportsManager";
+import { ExportDeclaration } from "./ExportsManager.js";
 
 export interface ExportedFilePath {
     directories: ExportedDirectory[];

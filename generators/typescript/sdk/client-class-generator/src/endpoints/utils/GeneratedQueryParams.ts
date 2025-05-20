@@ -3,7 +3,7 @@ import { ts } from "ts-morph";
 
 import { DeclaredTypeName, QueryParameter, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { RequestParameter } from "../../request-parameter/RequestParameter";
+import { RequestParameter } from "../../request-parameter/RequestParameter.js";
 
 export declare namespace GeneratedQueryParams {
     export interface Init {

@@ -1,4 +1,4 @@
-import { BearerToken } from "../BearerToken";
+import { BearerToken } from "../BearerToken.js";
 
 describe("BearerToken", () => {
     describe("toAuthorizationHeader", () => {

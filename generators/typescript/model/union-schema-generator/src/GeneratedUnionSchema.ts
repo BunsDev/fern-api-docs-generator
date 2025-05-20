@@ -5,7 +5,7 @@ import { ModuleDeclaration, VariableDeclarationKind, ts } from "ts-morph";
 
 import { NameAndWireValue, ObjectProperty } from "@fern-fern/ir-sdk/api";
 
-import { RawSingleUnionType } from "./RawSingleUnionType";
+import { RawSingleUnionType } from "./RawSingleUnionType.js";
 
 export declare namespace GeneratedUnionSchema {
     export interface Init<Context extends ModelContext> extends AbstractGeneratedSchema.Init {

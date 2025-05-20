@@ -21,31 +21,35 @@ import { RelativeFilePath, dirname, join } from "@fern-api/path-utils";
 import { SourceResolver } from "@fern-api/source-resolver";
 import { TaskContext } from "@fern-api/task-context";
 
-import { FernFileContext, constructFernFileContext, constructRootApiFileContext } from "./FernFileContext";
-import { PackageTreeGenerator } from "./PackageTreeGenerator";
-import { generateFernConstants } from "./converters/constants";
-import { convertApiAuth } from "./converters/convertApiAuth";
-import { convertApiVersionScheme } from "./converters/convertApiVersionScheme";
-import { convertChannel } from "./converters/convertChannel";
-import { getAudiences } from "./converters/convertDeclaration";
-import { convertErrorDeclaration } from "./converters/convertErrorDeclaration";
-import { convertErrorDiscriminationStrategy } from "./converters/convertErrorDiscriminationStrategy";
-import { convertReadmeConfig } from "./converters/convertReadmeConfig";
-import { convertWebhookGroup } from "./converters/convertWebhookGroup";
-import { convertHttpHeader, convertHttpService, convertPathParameters } from "./converters/services/convertHttpService";
-import { convertTypeDeclaration } from "./converters/type-declarations/convertTypeDeclaration";
-import { convertIrToDynamicSnippetsIr } from "./dynamic-snippets/convertIrToDynamicSnippetsIr";
-import { addExtendedPropertiesToIr } from "./extended-properties/addExtendedPropertiesToIr";
-import { formatDocs } from "./formatDocs";
-import { EndpointResolverImpl } from "./resolvers/EndpointResolver";
-import { ErrorResolverImpl } from "./resolvers/ErrorResolver";
-import { ExampleResolverImpl } from "./resolvers/ExampleResolver";
-import { PropertyResolverImpl } from "./resolvers/PropertyResolver";
-import { TypeResolverImpl } from "./resolvers/TypeResolver";
-import { VariableResolverImpl } from "./resolvers/VariableResolver";
-import { convertToFernFilepath } from "./utils/convertToFernFilepath";
-import { getAudienceForEnvironment } from "./utils/getEnvironmentsByAudience";
-import { parseErrorName } from "./utils/parseErrorName";
+import { FernFileContext, constructFernFileContext, constructRootApiFileContext } from "./FernFileContext.js";
+import { PackageTreeGenerator } from "./PackageTreeGenerator.js";
+import { generateFernConstants } from "./converters/constants.js";
+import { convertApiAuth } from "./converters/convertApiAuth.js";
+import { convertApiVersionScheme } from "./converters/convertApiVersionScheme.js";
+import { convertChannel } from "./converters/convertChannel.js";
+import { getAudiences } from "./converters/convertDeclaration.js";
+import { convertErrorDeclaration } from "./converters/convertErrorDeclaration.js";
+import { convertErrorDiscriminationStrategy } from "./converters/convertErrorDiscriminationStrategy.js";
+import { convertReadmeConfig } from "./converters/convertReadmeConfig.js";
+import { convertWebhookGroup } from "./converters/convertWebhookGroup.js";
+import {
+    convertHttpHeader,
+    convertHttpService,
+    convertPathParameters
+} from "./converters/services/convertHttpService.js";
+import { convertTypeDeclaration } from "./converters/type-declarations/convertTypeDeclaration.js";
+import { convertIrToDynamicSnippetsIr } from "./dynamic-snippets/convertIrToDynamicSnippetsIr.js";
+import { addExtendedPropertiesToIr } from "./extended-properties/addExtendedPropertiesToIr.js";
+import { formatDocs } from "./formatDocs.js";
+import { EndpointResolverImpl } from "./resolvers/EndpointResolver.js";
+import { ErrorResolverImpl } from "./resolvers/ErrorResolver.js";
+import { ExampleResolverImpl } from "./resolvers/ExampleResolver.js";
+import { PropertyResolverImpl } from "./resolvers/PropertyResolver.js";
+import { TypeResolverImpl } from "./resolvers/TypeResolver.js";
+import { VariableResolverImpl } from "./resolvers/VariableResolver.js";
+import { convertToFernFilepath } from "./utils/convertToFernFilepath.js";
+import { getAudienceForEnvironment } from "./utils/getEnvironmentsByAudience.js";
+import { parseErrorName } from "./utils/parseErrorName.js";
 
 export declare namespace generateIntermediateRepresentation {
     interface ExampleGenerationArgs {

@@ -4,8 +4,8 @@ import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 import * as IrSerialization from "@fern-fern/ir-sdk/serialization";
 
-import { AbstractPythonGeneratorContext } from "../context/AbstractPythonGeneratorContext";
-import { BasePythonCustomConfigSchema } from "../custom-config/BasePythonCustomConfigSchema";
+import { AbstractPythonGeneratorContext } from "../context/AbstractPythonGeneratorContext.js";
+import { BasePythonCustomConfigSchema } from "../custom-config/BasePythonCustomConfigSchema.js";
 
 export abstract class AbstractPythonGeneratorCli<
     CustomConfig extends BasePythonCustomConfigSchema,

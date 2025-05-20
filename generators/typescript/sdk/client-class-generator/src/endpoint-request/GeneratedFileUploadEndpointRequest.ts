@@ -20,14 +20,14 @@ import {
     IntermediateRepresentation
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "../GeneratedSdkClientClassImpl";
-import { GeneratedQueryParams } from "../endpoints/utils/GeneratedQueryParams";
-import { appendPropertyToFormData } from "../endpoints/utils/appendPropertyToFormData";
-import { generateHeaders } from "../endpoints/utils/generateHeaders";
-import { getParameterNameForFile } from "../endpoints/utils/getParameterNameForFile";
-import { getPathParametersForEndpointSignature } from "../endpoints/utils/getPathParametersForEndpointSignature";
-import { FileUploadRequestParameter } from "../request-parameter/FileUploadRequestParameter";
-import { GeneratedEndpointRequest } from "./GeneratedEndpointRequest";
+import { GeneratedSdkClientClassImpl } from "../GeneratedSdkClientClassImpl.js";
+import { GeneratedQueryParams } from "../endpoints/utils/GeneratedQueryParams.js";
+import { appendPropertyToFormData } from "../endpoints/utils/appendPropertyToFormData.js";
+import { generateHeaders } from "../endpoints/utils/generateHeaders.js";
+import { getParameterNameForFile } from "../endpoints/utils/getParameterNameForFile.js";
+import { getPathParametersForEndpointSignature } from "../endpoints/utils/getPathParametersForEndpointSignature.js";
+import { FileUploadRequestParameter } from "../request-parameter/FileUploadRequestParameter.js";
+import { GeneratedEndpointRequest } from "./GeneratedEndpointRequest.js";
 
 export declare namespace GeneratedFileUploadEndpointRequest {
     export interface Init {

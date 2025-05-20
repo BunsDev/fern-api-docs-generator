@@ -21,14 +21,14 @@ import {
     SdkRequestShape
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "../GeneratedSdkClientClassImpl";
-import { GeneratedQueryParams } from "../endpoints/utils/GeneratedQueryParams";
-import { generateHeaders } from "../endpoints/utils/generateHeaders";
-import { getPathParametersForEndpointSignature } from "../endpoints/utils/getPathParametersForEndpointSignature";
-import { RequestBodyParameter } from "../request-parameter/RequestBodyParameter";
-import { RequestParameter } from "../request-parameter/RequestParameter";
-import { RequestWrapperParameter } from "../request-parameter/RequestWrapperParameter";
-import { GeneratedEndpointRequest } from "./GeneratedEndpointRequest";
+import { GeneratedSdkClientClassImpl } from "../GeneratedSdkClientClassImpl.js";
+import { GeneratedQueryParams } from "../endpoints/utils/GeneratedQueryParams.js";
+import { generateHeaders } from "../endpoints/utils/generateHeaders.js";
+import { getPathParametersForEndpointSignature } from "../endpoints/utils/getPathParametersForEndpointSignature.js";
+import { RequestBodyParameter } from "../request-parameter/RequestBodyParameter.js";
+import { RequestParameter } from "../request-parameter/RequestParameter.js";
+import { RequestWrapperParameter } from "../request-parameter/RequestWrapperParameter.js";
+import { GeneratedEndpointRequest } from "./GeneratedEndpointRequest.js";
 
 export declare namespace GeneratedDefaultEndpointRequest {
     export interface Init {

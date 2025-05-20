@@ -3,8 +3,8 @@ import chalk from "chalk";
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { getUnionDiscriminantName } from "@fern-api/ir-generator";
 
-import { RuleViolation } from "../../Rule";
-import { VALID_NAME_REGEX } from "./regex";
+import { RuleViolation } from "../../Rule.js";
+import { VALID_NAME_REGEX } from "./regex.js";
 
 export function validateUnionNames(declaration: RawSchemas.DiscriminatedUnionSchema): RuleViolation[] {
     const violations: RuleViolation[] = [];

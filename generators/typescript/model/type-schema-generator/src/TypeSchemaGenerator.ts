@@ -19,11 +19,11 @@ import {
     UnionTypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedAliasTypeSchemaImpl } from "./alias/GeneratedAliasTypeSchemaImpl";
-import { GeneratedEnumTypeSchemaImpl } from "./enum/GeneratedEnumTypeSchemaImpl";
-import { GeneratedObjectTypeSchemaImpl } from "./object/GeneratedObjectTypeSchemaImpl";
-import { GeneratedUndiscriminatedUnionTypeSchemaImpl } from "./undiscriminated-union/GeneratedUndiscriminatedUnionTypeSchemaImpl";
-import { GeneratedUnionTypeSchemaImpl } from "./union/GeneratedUnionTypeSchemaImpl";
+import { GeneratedAliasTypeSchemaImpl } from "./alias/GeneratedAliasTypeSchemaImpl.js";
+import { GeneratedEnumTypeSchemaImpl } from "./enum/GeneratedEnumTypeSchemaImpl.js";
+import { GeneratedObjectTypeSchemaImpl } from "./object/GeneratedObjectTypeSchemaImpl.js";
+import { GeneratedUndiscriminatedUnionTypeSchemaImpl } from "./undiscriminated-union/GeneratedUndiscriminatedUnionTypeSchemaImpl.js";
+import { GeneratedUnionTypeSchemaImpl } from "./union/GeneratedUnionTypeSchemaImpl.js";
 
 export declare namespace TypeSchemaGenerator {
     export interface Init {

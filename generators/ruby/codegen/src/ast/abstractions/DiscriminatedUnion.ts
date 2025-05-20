@@ -1,8 +1,8 @@
 import { NameAndWireValue, SingleUnionTypeProperties, SingleUnionTypeProperty } from "@fern-fern/ir-sdk/api";
 
-import { Argument } from "../Argument";
-import { Parameter } from "../Parameter";
-import { Property } from "../Property";
+import { Argument } from "../Argument.js";
+import { Parameter } from "../Parameter.js";
+import { Property } from "../Property.js";
 import {
     BooleanClassReference,
     ClassReference,
@@ -11,13 +11,13 @@ import {
     JsonClassReference,
     StringClassReference,
     VoidClassReference
-} from "../classes/ClassReference";
-import { Class_ } from "../classes/Class_";
-import { AstNode } from "../core/AstNode";
-import { Expression } from "../expressions/Expression";
-import { FunctionInvocation } from "../functions/FunctionInvocation";
-import { Function_ } from "../functions/Function_";
-import { CaseStatement } from "./CaseStatement";
+} from "../classes/ClassReference.js";
+import { Class_ } from "../classes/Class_.js";
+import { AstNode } from "../core/AstNode.js";
+import { Expression } from "../expressions/Expression.js";
+import { FunctionInvocation } from "../functions/FunctionInvocation.js";
+import { Function_ } from "../functions/Function_.js";
+import { CaseStatement } from "./CaseStatement.js";
 
 export declare namespace DiscriminatedUnion {
     export interface Init extends Omit<Class_.Init, "functions" | "includeInitializer" | "expressions"> {

@@ -13,10 +13,10 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernRegistry as CjsFdrSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { extractAttributeValueLiteral, extractSingleLiteral } from "./extract-literals";
-import { isMdxExpression, isMdxJsxAttribute, isMdxJsxElement, isMdxJsxExpressionAttribute } from "./is-mdx-element";
-import { parseMarkdownToTree } from "./parseMarkdownToTree";
-import { walkEstreeJsxAttributes } from "./walk-estree-jsx-attributes";
+import { extractAttributeValueLiteral, extractSingleLiteral } from "./extract-literals.js";
+import { isMdxExpression, isMdxJsxAttribute, isMdxJsxElement, isMdxJsxExpressionAttribute } from "./is-mdx-element.js";
+import { parseMarkdownToTree } from "./parseMarkdownToTree.js";
+import { walkEstreeJsxAttributes } from "./walk-estree-jsx-attributes.js";
 
 interface AbsolutePathMetadata {
     absolutePathToMarkdownFile: AbsoluteFilePath;

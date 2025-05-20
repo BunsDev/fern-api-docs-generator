@@ -15,7 +15,7 @@ import {
 } from "@fern-api/lazy-fern-workspace";
 import { TaskContext } from "@fern-api/task-context";
 
-import { loadAPIChangelog } from "./loadAPIChangelog";
+import { loadAPIChangelog } from "./loadAPIChangelog.js";
 
 export async function loadSingleNamespaceAPIWorkspace({
     absolutePathToWorkspace,

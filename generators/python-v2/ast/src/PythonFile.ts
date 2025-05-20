@@ -1,14 +1,14 @@
-import { Class } from "./Class";
-import { Comment } from "./Comment";
-import { Field } from "./Field";
-import { Method } from "./Method";
-import { Reference } from "./Reference";
-import { StarImport } from "./StarImport";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
-import { ImportedName, ModulePath } from "./core/types";
-import { createPythonClassName } from "./core/utils";
+import { Class } from "./Class.js";
+import { Comment } from "./Comment.js";
+import { Field } from "./Field.js";
+import { Method } from "./Method.js";
+import { Reference } from "./Reference.js";
+import { StarImport } from "./StarImport.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
+import { ImportedName, ModulePath } from "./core/types.js";
+import { createPythonClassName } from "./core/utils.js";
 
 interface UniqueReferenceValue {
     modulePath: ModulePath;

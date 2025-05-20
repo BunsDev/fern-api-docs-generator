@@ -1,9 +1,9 @@
-import { Access } from "./Access";
-import { ClassReference } from "./ClassReference";
-import { Field } from "./Field";
-import { Method } from "./Method";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Access } from "./Access.js";
+import { ClassReference } from "./ClassReference.js";
+import { Field } from "./Field.js";
+import { Method } from "./Method.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Interface {
     interface Args {

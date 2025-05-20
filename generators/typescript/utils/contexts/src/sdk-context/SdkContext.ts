@@ -7,20 +7,20 @@ import { Logger } from "@fern-api/logger";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { BaseContext } from "../base-context";
-import { EndpointErrorUnionContext } from "./endpoint-error-union";
-import { EnvironmentsContext } from "./environments";
-import { GenericAPISdkErrorContext } from "./generic-api-sdk-error";
-import { RequestWrapperContext } from "./request-wrapper";
-import { SdkClientClassContext } from "./sdk-client-class";
-import { SdkEndpointTypeSchemasContext } from "./sdk-endpoint-type-schemas";
-import { SdkErrorContext } from "./sdk-error";
-import { SdkErrorSchemaContext } from "./sdk-error-schema";
-import { SdkInlinedRequestBodySchemaContext } from "./sdk-inlined-request-body-schema";
-import { TimeoutSdkErrorContext } from "./timeout-sdk-error";
-import { VersionContext } from "./version";
-import { WebsocketClassContext } from "./websocket-class";
-import { WebsocketTypeSchemaContext } from "./websocket-type-schema";
+import { BaseContext } from "../base-context/index.js";
+import { EndpointErrorUnionContext } from "./endpoint-error-union/index.js";
+import { EnvironmentsContext } from "./environments/index.js";
+import { GenericAPISdkErrorContext } from "./generic-api-sdk-error/index.js";
+import { RequestWrapperContext } from "./request-wrapper/index.js";
+import { SdkClientClassContext } from "./sdk-client-class/index.js";
+import { SdkEndpointTypeSchemasContext } from "./sdk-endpoint-type-schemas/index.js";
+import { SdkErrorSchemaContext } from "./sdk-error-schema/index.js";
+import { SdkErrorContext } from "./sdk-error/index.js";
+import { SdkInlinedRequestBodySchemaContext } from "./sdk-inlined-request-body-schema/index.js";
+import { TimeoutSdkErrorContext } from "./timeout-sdk-error/index.js";
+import { VersionContext } from "./version/index.js";
+import { WebsocketClassContext } from "./websocket-class/index.js";
+import { WebsocketTypeSchemaContext } from "./websocket-type-schema/index.js";
 
 export interface SdkContext extends BaseContext {
     logger: Logger;

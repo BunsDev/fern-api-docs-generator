@@ -2,7 +2,7 @@ import { FernIr as Ir, TypeReference } from "@fern-api/ir-sdk";
 
 import { FernRegistry as FdrCjsSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { convertIrAvailability } from "./convertPackage";
+import { convertIrAvailability } from "./convertPackage.js";
 
 export function convertTypeShape(irType: Ir.types.Type): FdrCjsSdk.api.v1.register.TypeShape {
     return irType._visit<FdrCjsSdk.api.v1.register.TypeShape>({

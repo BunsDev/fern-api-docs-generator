@@ -15,8 +15,8 @@ import { getNamespaceExport } from "@fern-api/typescript-base";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfig } from "./custom-config/SdkCustomConfig";
-import { SdkCustomConfigSchema } from "./custom-config/schema/SdkCustomConfigSchema";
+import { SdkCustomConfig } from "./custom-config/SdkCustomConfig.js";
+import { SdkCustomConfigSchema } from "./custom-config/schema/SdkCustomConfigSchema.js";
 
 export declare namespace SdkGeneratorCli {
     export interface Init {

@@ -1,11 +1,11 @@
-import { Access } from "./Access";
-import { Annotation } from "./Annotation";
-import { ClassReference } from "./ClassReference";
-import { CodeBlock } from "./CodeBlock";
-import { Type } from "./Type";
-import { XmlDocBlock } from "./XmlDocBlock";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Access } from "./Access.js";
+import { Annotation } from "./Annotation.js";
+import { ClassReference } from "./ClassReference.js";
+import { CodeBlock } from "./CodeBlock.js";
+import { Type } from "./Type.js";
+import { XmlDocBlock } from "./XmlDocBlock.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Field {
     interface Args {

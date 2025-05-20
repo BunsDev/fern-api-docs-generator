@@ -7,10 +7,10 @@ import { BaseCsharpCustomConfigSchema } from "@fern-api/csharp-codegen";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { loggingExeca } from "@fern-api/logging-execa";
 
-import { AsIsFiles } from "../AsIs";
-import { AbstractCsharpGeneratorContext } from "../context/AbstractCsharpGeneratorContext";
-import { findDotnetToolPath } from "../findDotNetToolPath";
-import { CSharpFile } from "./CSharpFile";
+import { AsIsFiles } from "../AsIs.js";
+import { AbstractCsharpGeneratorContext } from "../context/AbstractCsharpGeneratorContext.js";
+import { findDotnetToolPath } from "../findDotNetToolPath.js";
+import { CSharpFile } from "./CSharpFile.js";
 
 const SRC_DIRECTORY_NAME = "src";
 const PROTOBUF_DIRECTORY_NAME = "proto";

@@ -1,3 +1,5 @@
+import { ReadOnlyMemory } from "./ast/ReadOnlymemory.js";
+import { XmlDocBlock } from "./ast/XmlDocBlock.js";
 import {
     And,
     Annotation,
@@ -22,9 +24,7 @@ import {
     Ternary,
     TestClass,
     TypeParameter
-} from "./ast";
-import { ReadOnlyMemory } from "./ast/ReadOnlymemory";
-import { XmlDocBlock } from "./ast/XmlDocBlock";
+} from "./ast/index.js";
 
 export function class_(args: Class.Args): Class {
     return new Class(args);
@@ -153,6 +153,6 @@ export {
     Writer,
     VALID_READ_ONLY_MEMORY_TYPES,
     convertReadOnlyPrimitiveTypes
-} from "./ast";
-export { type ConstructorField } from "./ast/TypeLiteral";
-export { AstNode } from "./ast/core/AstNode";
+} from "./ast/index.js";
+export { type ConstructorField } from "./ast/TypeLiteral.js";
+export { AstNode } from "./ast/core/AstNode.js";

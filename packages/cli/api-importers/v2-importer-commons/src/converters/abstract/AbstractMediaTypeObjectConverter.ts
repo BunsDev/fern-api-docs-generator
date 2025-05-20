@@ -3,10 +3,10 @@ import { OpenAPIV3_1 } from "openapi-types";
 
 import { V2SchemaExamples } from "@fern-api/ir-sdk";
 
-import { AbstractConverter, AbstractConverterContext } from "../..";
-import { ExampleConverter } from "../ExampleConverter";
-import { SchemaOrReferenceConverter } from "../schema";
-import { SchemaConverter } from "../schema/SchemaConverter";
+import { AbstractConverter, AbstractConverterContext } from "../../index.js";
+import { ExampleConverter } from "../ExampleConverter.js";
+import { SchemaConverter } from "../schema/SchemaConverter.js";
+import { SchemaOrReferenceConverter } from "../schema/index.js";
 
 export declare namespace AbstractMediaTypeObjectConverter {
     export interface Args extends AbstractConverter.AbstractArgs {

@@ -4,9 +4,9 @@ import inquirer from "inquirer";
 import { addPrefixToString } from "@fern-api/core-utils";
 import { InteractiveTaskContext, Startable, TaskContext, TaskResult } from "@fern-api/task-context";
 
-import { getMigrationsToRun } from "./migrations/getMigrationsToRun";
-import { Migration } from "./types/Migration";
-import { VersionMigrations } from "./types/VersionMigrations";
+import { getMigrationsToRun } from "./migrations/getMigrationsToRun.js";
+import { Migration } from "./types/Migration.js";
+import { VersionMigrations } from "./types/VersionMigrations.js";
 
 interface MigrationWithTaskContext {
     migration: Migration;

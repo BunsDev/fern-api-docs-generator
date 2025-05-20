@@ -1,6 +1,6 @@
-import { date } from "../../builders/date";
-import { itSchema } from "../utils/itSchema";
-import { itValidateJson, itValidateParse } from "../utils/itValidate";
+import { date } from "../../builders/date/index.js";
+import { itSchema } from "../utils/itSchema.js";
+import { itValidateJson, itValidateParse } from "../utils/itValidate.js";
 
 describe("date", () => {
     itSchema("converts between raw ISO string and parsed Date", date(), {

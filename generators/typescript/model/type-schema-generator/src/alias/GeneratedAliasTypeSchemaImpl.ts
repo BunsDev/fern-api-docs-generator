@@ -5,7 +5,7 @@ import { ModuleDeclaration, ts } from "ts-morph";
 
 import { AliasTypeDeclaration, ShapeType } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema";
+import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema.js";
 
 export class GeneratedAliasTypeSchemaImpl<Context extends ModelContext>
     extends AbstractGeneratedTypeSchema<AliasTypeDeclaration, Context>

@@ -1,2 +1,2 @@
-export { parseGeneratorConfig } from "./parseGeneratorConfig";
-export { parseIR } from "./parseIR";
+export { parseGeneratorConfig } from "./parseGeneratorConfig.js";
+export { parseIR } from "./parseIR.js";

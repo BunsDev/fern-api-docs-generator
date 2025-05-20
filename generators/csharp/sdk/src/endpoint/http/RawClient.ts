@@ -5,9 +5,9 @@ import { csharp } from "@fern-api/csharp-codegen";
 import { FernIr } from "@fern-fern/ir-sdk";
 import { HttpEndpoint, HttpMethod } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../../SdkGeneratorContext";
-import { EndpointRequest } from "../request/EndpointRequest";
-import { getContentTypeFromRequestBody } from "../utils/getContentTypeFromRequestBody";
+import { SdkGeneratorContext } from "../../SdkGeneratorContext.js";
+import { EndpointRequest } from "../request/EndpointRequest.js";
+import { getContentTypeFromRequestBody } from "../utils/getContentTypeFromRequestBody.js";
 
 export declare namespace RawClient {
     export type RequestBodyType = "json" | "bytes" | "multipartform";

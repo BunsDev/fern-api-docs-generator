@@ -8,10 +8,10 @@ import {
     TypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { convertServices } from "./converters/servicesConverter";
-import { convertType } from "./converters/typeConverter";
-import { constructEndpointSecurity, constructSecuritySchemes } from "./security";
-import { Mode } from "./writeOpenApi";
+import { convertServices } from "./converters/servicesConverter.js";
+import { convertType } from "./converters/typeConverter.js";
+import { constructEndpointSecurity, constructSecuritySchemes } from "./security.js";
+import { Mode } from "./writeOpenApi.js";
 
 export function convertToOpenApi({
     apiName,

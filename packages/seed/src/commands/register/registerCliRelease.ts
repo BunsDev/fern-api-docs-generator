@@ -7,7 +7,7 @@ import { TaskContext } from "@fern-api/task-context";
 import { FernRegistryClient as FdrClient } from "@fern-fern/generators-sdk";
 import * as serializers from "@fern-fern/generators-sdk/serialization";
 
-import { loadCliWorkspace } from "../../loadGeneratorWorkspaces";
+import { loadCliWorkspace } from "../../loadGeneratorWorkspaces.js";
 
 export async function registerCliRelease({
     fdrClient,

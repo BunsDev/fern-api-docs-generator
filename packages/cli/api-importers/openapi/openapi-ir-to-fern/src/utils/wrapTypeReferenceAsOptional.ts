@@ -1,6 +1,6 @@
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 
-import { getTypeFromTypeReference } from "./getTypeFromTypeReference";
+import { getTypeFromTypeReference } from "./getTypeFromTypeReference.js";
 
 export function wrapTypeReferenceAsOptional(
     typeReference: RawSchemas.TypeReferenceSchema

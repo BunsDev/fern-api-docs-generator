@@ -10,9 +10,9 @@ import {
     Source
 } from "@fern-api/openapi-ir";
 
-import { SchemaParserContext } from "./SchemaParserContext";
-import { convertReferenceObject, convertSchema, convertSchemaObject } from "./convertSchemas";
-import { isReferenceObject } from "./utils/isReferenceObject";
+import { SchemaParserContext } from "./SchemaParserContext.js";
+import { convertReferenceObject, convertSchema, convertSchemaObject } from "./convertSchemas.js";
+import { isReferenceObject } from "./utils/isReferenceObject.js";
 
 export function convertDiscriminatedOneOf({
     nameOverride,

@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { NoExtensionsWithFileUploadRule } from "../no-extensions-with-file-upload";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { NoExtensionsWithFileUploadRule } from "../no-extensions-with-file-upload.js";
 
 describe("no-extensions-with-file-upload", () => {
     it("simple", async () => {

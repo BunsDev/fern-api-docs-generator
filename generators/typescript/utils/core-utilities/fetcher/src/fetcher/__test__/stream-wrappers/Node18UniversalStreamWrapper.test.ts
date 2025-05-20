@@ -1,4 +1,4 @@
-import { Node18UniversalStreamWrapper } from "../../stream-wrappers/Node18UniversalStreamWrapper";
+import { Node18UniversalStreamWrapper } from "../../stream-wrappers/Node18UniversalStreamWrapper.js";
 
 describe("Node18UniversalStreamWrapper", () => {
     it("should set encoding to utf-8", async () => {

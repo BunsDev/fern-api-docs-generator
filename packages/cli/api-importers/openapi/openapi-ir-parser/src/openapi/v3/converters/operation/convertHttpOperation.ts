@@ -2,19 +2,19 @@ import { OpenAPIV3 } from "openapi-types";
 
 import { EndpointWithExample, PrimitiveSchemaValueWithExample, SchemaWithExample, Source } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../../../getExtension";
-import { getGeneratedTypeName } from "../../../../schema/utils/getSchemaName";
-import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext";
-import { DummyOpenAPIV3ParserContext } from "../../DummyOpenAPIV3ParserContext";
-import { OpenAPIExtension } from "../../extensions/extensions";
-import { FernOpenAPIExtension } from "../../extensions/fernExtensions";
-import { getExamplesFromExtension } from "../../extensions/getExamplesFromExtension";
-import { getFernAvailability } from "../../extensions/getFernAvailability";
-import { OperationContext } from "../contexts";
-import { convertServer } from "../convertServer";
-import { ConvertedParameters, convertParameters } from "../endpoint/convertParameters";
-import { convertRequest } from "../endpoint/convertRequest";
-import { convertResponse } from "../endpoint/convertResponse";
+import { getExtension } from "../../../../getExtension.js";
+import { getGeneratedTypeName } from "../../../../schema/utils/getSchemaName.js";
+import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext.js";
+import { DummyOpenAPIV3ParserContext } from "../../DummyOpenAPIV3ParserContext.js";
+import { OpenAPIExtension } from "../../extensions/extensions.js";
+import { FernOpenAPIExtension } from "../../extensions/fernExtensions.js";
+import { getExamplesFromExtension } from "../../extensions/getExamplesFromExtension.js";
+import { getFernAvailability } from "../../extensions/getFernAvailability.js";
+import { OperationContext } from "../contexts.js";
+import { convertServer } from "../convertServer.js";
+import { ConvertedParameters, convertParameters } from "../endpoint/convertParameters.js";
+import { convertRequest } from "../endpoint/convertRequest.js";
+import { convertResponse } from "../endpoint/convertResponse.js";
 
 export function convertHttpOperation({
     operationContext,

@@ -1,8 +1,8 @@
 import { noop, visitObject } from "@fern-api/core-utils";
 import { RootApiFileSchema, isOAuthScheme } from "@fern-api/fern-definition-schema";
 
-import { RootApiFileAstVisitor } from "./RootApiFileAstVisitor";
-import { visitPathParameters } from "./visitors/services/visitHttpService";
+import { RootApiFileAstVisitor } from "./RootApiFileAstVisitor.js";
+import { visitPathParameters } from "./visitors/services/visitHttpService.js";
 
 export function visitRootApiFileYamlAst(contents: RootApiFileSchema, visitor: Partial<RootApiFileAstVisitor>): void {
     visitor.file?.(contents, []);

@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "fs/promises";
-import Dirent from "memfs/lib/Dirent";
-import { Volume } from "memfs/lib/volume";
+import { Volume } from "memfs";
+import type { Dirent } from "memfs/lib/Dirent.js";
 import path from "path";
 import tmp from "tmp-promise";
 import { Project } from "ts-morph";
@@ -8,8 +8,8 @@ import { Project } from "ts-morph";
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 import { NpmPackage } from "@fern-api/typescript-base";
 
-import { PackageDependencies } from "../dependency-manager/DependencyManager";
-import { PersistedTypescriptProject } from "./PersistedTypescriptProject";
+import { PackageDependencies } from "../dependency-manager/DependencyManager.js";
+import { PersistedTypescriptProject } from "./PersistedTypescriptProject.js";
 
 export declare namespace TypescriptProject {
     export interface Init {

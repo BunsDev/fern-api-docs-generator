@@ -1,6 +1,6 @@
-import Swift, { AccessLevel, ClassLevel, FunctionModifier } from "../..";
-import { SwiftFile } from "../../project/SwiftFile";
-import { VariableType } from "../VariableType";
+import Swift, { AccessLevel, ClassLevel, FunctionModifier } from "../../index.js";
+import { SwiftFile } from "../../project/SwiftFile.js";
+import { VariableType } from "../VariableType.js";
 
 describe("Swift Language", () => {
     it("makes file header", () => {

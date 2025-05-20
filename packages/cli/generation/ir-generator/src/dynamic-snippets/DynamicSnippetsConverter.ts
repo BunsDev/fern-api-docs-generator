@@ -40,7 +40,7 @@ import {
     dynamic
 } from "@fern-api/ir-sdk";
 
-import { Version } from "./version";
+import { Version } from "./version.js";
 
 interface EndpointWithFilepath extends HttpEndpoint {
     servicePathParameters: PathParameter[];

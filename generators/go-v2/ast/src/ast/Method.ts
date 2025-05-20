@@ -1,10 +1,10 @@
-import { CodeBlock } from "./CodeBlock";
-import { Comment } from "./Comment";
-import { GoTypeReference } from "./GoTypeReference";
-import { Parameter } from "./Parameter";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { CodeBlock } from "./CodeBlock.js";
+import { Comment } from "./Comment.js";
+import { GoTypeReference } from "./GoTypeReference.js";
+import { Parameter } from "./Parameter.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Method {
     interface Args {

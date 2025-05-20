@@ -1,11 +1,11 @@
 import { NamedArgument } from "@fern-api/browser-compatible-base-generator";
 
-import { csharp } from "..";
-import { AnonymousFunction } from "../csharp";
-import { ClassInstantiation } from "./ClassInstantiation";
-import { CodeBlock } from "./CodeBlock";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { AnonymousFunction } from "../csharp.js";
+import { csharp } from "../index.js";
+import { ClassInstantiation } from "./ClassInstantiation.js";
+import { CodeBlock } from "./CodeBlock.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace MethodInvocation {
     interface Args {

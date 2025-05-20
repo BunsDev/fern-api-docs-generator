@@ -3,7 +3,7 @@ import { GeneratedRequestWrapper } from "@fern-typescript/contexts";
 
 import { HttpEndpoint, HttpService } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedRequestWrapperImpl } from "./GeneratedRequestWrapperImpl";
+import { GeneratedRequestWrapperImpl } from "./GeneratedRequestWrapperImpl.js";
 
 export declare namespace RequestWrapperGenerator {
     export namespace generateRequestWrapper {

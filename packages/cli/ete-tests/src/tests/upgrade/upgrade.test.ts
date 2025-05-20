@@ -4,8 +4,8 @@ import yaml from "js-yaml";
 import { FERN_DIRECTORY, GENERATORS_CONFIGURATION_FILENAME, generatorsYml } from "@fern-api/configuration";
 import { RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { runFernCli } from "../../utils/runFernCli";
-import { init } from "../init/init";
+import { runFernCli } from "../../utils/runFernCli.js";
+import { init } from "../init/init.js";
 
 const GENERATORS_CONFIGURATION: generatorsYml.GeneratorsConfigurationSchema = {
     groups: {

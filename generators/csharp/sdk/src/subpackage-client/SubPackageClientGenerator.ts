@@ -4,10 +4,10 @@ import { RelativeFilePath, join } from "@fern-api/fs-utils";
 
 import { HttpService, ServiceId, Subpackage } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "../SdkCustomConfig";
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
-import { RawClient } from "../endpoint/http/RawClient";
-import { GrpcClientInfo } from "../grpc/GrpcClientInfo";
+import { SdkCustomConfigSchema } from "../SdkCustomConfig.js";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
+import { RawClient } from "../endpoint/http/RawClient.js";
+import { GrpcClientInfo } from "../grpc/GrpcClientInfo.js";
 
 export const CLIENT_MEMBER_NAME = "_client";
 export const GRPC_CLIENT_MEMBER_NAME = "_grpc";

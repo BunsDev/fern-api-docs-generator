@@ -1,4 +1,4 @@
-import { anySignal, getTimeoutSignal } from "../signals";
+import { anySignal, getTimeoutSignal } from "../signals.js";
 
 describe("Test getTimeoutSignal", () => {
     beforeEach(() => {

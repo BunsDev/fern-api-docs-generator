@@ -2,8 +2,8 @@
 import { FernWorkspace, visitAllDefinitionFiles } from "@fern-api/api-workspace-commons";
 import { NodePath, isGeneric, parseGeneric, visitRawTypeDeclaration } from "@fern-api/fern-definition-schema";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { visitDefinitionFileYamlAst } from "../../ast";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { visitDefinitionFileYamlAst } from "../../ast/index.js";
 
 type GenericDeclaration = string;
 type PropertyBasedTypeDeclaration = "object" | "discriminatedUnion";

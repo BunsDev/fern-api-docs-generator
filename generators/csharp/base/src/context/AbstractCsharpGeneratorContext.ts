@@ -29,13 +29,13 @@ import {
     ONE_OF_SERIALIZER_CLASS_NAME,
     STRING_ENUM_SERIALIZER_CLASS_NAME,
     VALUE_CONVERT_CLASS_NAME
-} from "../AsIs";
-import { CsharpProject } from "../project";
-import { Namespace } from "../project/CSharpFile";
-import { CORE_DIRECTORY_NAME, PUBLIC_CORE_DIRECTORY_NAME } from "../project/CsharpProject";
-import { CsharpProtobufTypeMapper } from "../proto/CsharpProtobufTypeMapper";
-import { ProtobufResolver } from "../proto/ProtobufResolver";
-import { CsharpTypeMapper } from "./CsharpTypeMapper";
+} from "../AsIs.js";
+import { Namespace } from "../project/CSharpFile.js";
+import { CORE_DIRECTORY_NAME, PUBLIC_CORE_DIRECTORY_NAME } from "../project/CsharpProject.js";
+import { CsharpProject } from "../project/index.js";
+import { CsharpProtobufTypeMapper } from "../proto/CsharpProtobufTypeMapper.js";
+import { ProtobufResolver } from "../proto/ProtobufResolver.js";
+import { CsharpTypeMapper } from "./CsharpTypeMapper.js";
 
 export abstract class AbstractCsharpGeneratorContext<
     CustomConfig extends BaseCsharpCustomConfigSchema

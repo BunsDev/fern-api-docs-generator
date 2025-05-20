@@ -8,9 +8,9 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernRegistry as CjsFdrSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { WithoutQuestionMarks } from "../commons/WithoutQuestionMarks";
-import { convertColorsConfiguration } from "./convertColorsConfiguration";
-import { getAllPages, loadAllPages } from "./getAllPages";
+import { WithoutQuestionMarks } from "../commons/WithoutQuestionMarks.js";
+import { convertColorsConfiguration } from "./convertColorsConfiguration.js";
+import { getAllPages, loadAllPages } from "./getAllPages.js";
 
 export async function parseDocsConfiguration({
     rawDocsConfiguration,

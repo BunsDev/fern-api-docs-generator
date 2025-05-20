@@ -1,7 +1,7 @@
-export { getMinimumVersionForGenerator } from "./getMinimumVersionForGenerator";
+export { getMinimumVersionForGenerator } from "./getMinimumVersionForGenerator.js";
 export {
     migrateIntermediateRepresentationForGenerator,
     migrateIntermediateRepresentationToVersionForGenerator
-} from "./migrateIntermediateRepresentationForGenerator";
-export { migrateIntermediateRepresentationThroughVersion } from "./migrateIntermediateRepresentationThroughVersion";
-export { INTERMEDIATE_REPRESENTATION_MIGRATOR } from "./IntermediateRepresentationMigrator";
+} from "./migrateIntermediateRepresentationForGenerator.js";
+export { migrateIntermediateRepresentationThroughVersion } from "./migrateIntermediateRepresentationThroughVersion.js";
+export { INTERMEDIATE_REPRESENTATION_MIGRATOR } from "./IntermediateRepresentationMigrator.js";

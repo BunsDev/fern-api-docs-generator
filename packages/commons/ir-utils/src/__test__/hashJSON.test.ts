@@ -1,4 +1,4 @@
-import { hashJSON } from "../hashJSON";
+import { hashJSON } from "../hashJSON.js";
 
 describe("hashJSON Function", () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

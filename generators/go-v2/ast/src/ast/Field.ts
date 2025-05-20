@@ -1,7 +1,7 @@
-import { Comment } from "./Comment";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Comment } from "./Comment.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Field {
     export interface Args {

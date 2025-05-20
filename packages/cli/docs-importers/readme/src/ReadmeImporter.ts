@@ -7,17 +7,17 @@ import { AbsoluteFilePath, RelativeFilePath, dirname, join as fsUtilsJoin, relat
 import { Logger } from "@fern-api/logger";
 import { TaskContext } from "@fern-api/task-context";
 
-import { getFavicon } from "./extract/favicon";
-import { getTitle } from "./extract/title";
-import { parsePage } from "./parse/parsePage";
-import { retrieveRootNavElement } from "./parse/parseRootNav";
-import { parseSidebar } from "./parse/parseSidebar";
-import { parseTabLinks } from "./parse/parseTabs";
-import { scrapedNavigationGroup, scrapedNavigationPage, scrapedNavigationSection } from "./types/scrapedNavigation";
-import { getColors } from "./utils/colors";
-import { getLogos } from "./utils/files/logo";
-import { htmlToHast } from "./utils/hast";
-import { fetchPageHtml, startPuppeteer } from "./utils/network";
+import { getFavicon } from "./extract/favicon.js";
+import { getTitle } from "./extract/title.js";
+import { parsePage } from "./parse/parsePage.js";
+import { retrieveRootNavElement } from "./parse/parseRootNav.js";
+import { parseSidebar } from "./parse/parseSidebar.js";
+import { parseTabLinks } from "./parse/parseTabs.js";
+import { scrapedNavigationGroup, scrapedNavigationPage, scrapedNavigationSection } from "./types/scrapedNavigation.js";
+import { getColors } from "./utils/colors.js";
+import { getLogos } from "./utils/files/logo.js";
+import { htmlToHast } from "./utils/hast.js";
+import { fetchPageHtml, startPuppeteer } from "./utils/network.js";
 
 export declare namespace ReadmeImporter {
     interface Args {

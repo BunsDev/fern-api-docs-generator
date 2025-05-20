@@ -19,22 +19,22 @@ import {
 } from "@fern-api/openapi-ir";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
 import {
     buildEnumTypeDeclaration,
     buildObjectTypeDeclaration,
     buildOneOfTypeDeclaration
-} from "./buildTypeDeclaration";
-import { convertAvailability } from "./utils/convertAvailability";
-import { convertSdkGroupNameToFile } from "./utils/convertSdkGroupName";
-import { convertToEncodingSchema } from "./utils/convertToEncodingSchema";
-import { getGroupNameForSchema } from "./utils/getGroupNameForSchema";
+} from "./buildTypeDeclaration.js";
+import { convertAvailability } from "./utils/convertAvailability.js";
+import { convertSdkGroupNameToFile } from "./utils/convertSdkGroupName.js";
+import { convertToEncodingSchema } from "./utils/convertToEncodingSchema.js";
+import { getGroupNameForSchema } from "./utils/getGroupNameForSchema.js";
 import {
     getDefaultFromTypeReference,
     getDocsFromTypeReference,
     getTypeFromTypeReference,
     getValidationFromTypeReference
-} from "./utils/getTypeFromTypeReference";
+} from "./utils/getTypeFromTypeReference.js";
 
 const MIN_INT_32 = -2147483648;
 const MAX_INT_32 = 2147483647;

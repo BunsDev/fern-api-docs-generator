@@ -8,8 +8,8 @@ import { docsYml } from "@fern-api/configuration-loader";
 import { RelativeFilePath, doesPathExist, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { titleCase } from "../../../commons/core-utils/src";
-import { createFernDirectoryAndWorkspace } from "./createFernDirectoryAndOrganization";
+import { titleCase } from "../../../commons/core-utils/src/index.js";
+import { createFernDirectoryAndWorkspace } from "./createFernDirectoryAndOrganization.js";
 
 export async function initializeDocs({
     organization,

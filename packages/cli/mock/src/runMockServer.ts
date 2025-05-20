@@ -8,8 +8,8 @@ import { isPlainObject } from "@fern-api/core-utils";
 import { HttpEndpoint, IntermediateRepresentation } from "@fern-api/ir-sdk";
 import { TaskContext } from "@fern-api/task-context";
 
-import { NotEqual } from "./equal/EqualRequestResponse";
-import { requestEqual } from "./equal/requestEqual";
+import { NotEqual } from "./equal/EqualRequestResponse.js";
+import { requestEqual } from "./equal/requestEqual.js";
 
 type RequestHandler = (req: Request, res: Response) => void;
 

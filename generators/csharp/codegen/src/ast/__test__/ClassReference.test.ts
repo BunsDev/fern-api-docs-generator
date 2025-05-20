@@ -1,4 +1,4 @@
-import { csharp } from "../..";
+import { csharp } from "../../index.js";
 
 describe("class reference", () => {
     it("generics", async () => {

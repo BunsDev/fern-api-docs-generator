@@ -6,12 +6,12 @@ import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { BasicLicense, CustomLicense } from "@fern-fern/generator-exec-sdk/api";
 import { FernFilepath } from "@fern-fern/ir-sdk/api";
 
-import { ExternalDependency } from "../ast/ExternalDependency";
-import { Module_ } from "../ast/Module_";
-import { Expression } from "../ast/expressions/Expression";
-import { Gemspec } from "../ast/gem/Gemspec";
-import { GeneratedFile } from "./GeneratedFile";
-import { GeneratedRubyFile } from "./GeneratedRubyFile";
+import { ExternalDependency } from "../ast/ExternalDependency.js";
+import { Module_ } from "../ast/Module_.js";
+import { Expression } from "../ast/expressions/Expression.js";
+import { Gemspec } from "../ast/gem/Gemspec.js";
+import { GeneratedFile } from "./GeneratedFile.js";
+import { GeneratedRubyFile } from "./GeneratedRubyFile.js";
 
 export const MINIMUM_RUBY_VERSION = "2.7";
 

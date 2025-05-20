@@ -12,7 +12,7 @@ import { Project } from "@fern-api/project-loader";
 
 import { FernFiddle } from "@fern-fern/fiddle-sdk";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export async function registerWorkspacesV1({
     project,

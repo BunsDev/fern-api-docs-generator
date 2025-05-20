@@ -1,6 +1,6 @@
-import { python } from "..";
-import { ClassMethodType } from "../Method";
-import { Writer } from "../core/Writer";
+import { ClassMethodType } from "../Method.js";
+import { Writer } from "../core/Writer.js";
+import { python } from "../index.js";
 
 describe("Method", () => {
     let writer: Writer;

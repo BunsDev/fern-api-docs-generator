@@ -1,5 +1,5 @@
-import { objectWithoutOptionalProperties, string, stringLiteral } from "../../builders";
-import { itSchema } from "../utils/itSchema";
+import { objectWithoutOptionalProperties, string, stringLiteral } from "../../builders/index.js";
+import { itSchema } from "../utils/itSchema.js";
 
 describe("objectWithoutOptionalProperties", () => {
     itSchema(

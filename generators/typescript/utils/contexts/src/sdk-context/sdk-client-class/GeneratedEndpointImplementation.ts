@@ -3,7 +3,7 @@ import { OptionalKind, ParameterDeclarationStructure, ts } from "ts-morph";
 
 import { ExampleEndpointCall, HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { SdkContext } from "../SdkContext";
+import { SdkContext } from "../SdkContext.js";
 
 export namespace GeneratedEndpointImplementation {
     export interface EndpointSignature {

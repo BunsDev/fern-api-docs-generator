@@ -10,8 +10,8 @@ import {
     HttpResponseBody
 } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedEndpointResponse, PaginationResponseInfo } from "./GeneratedEndpointResponse";
-import { getSuccessReturnType } from "./getSuccessReturnType";
+import { GeneratedEndpointResponse, PaginationResponseInfo } from "./GeneratedEndpointResponse.js";
+import { getSuccessReturnType } from "./getSuccessReturnType.js";
 
 export declare namespace GeneratedNonThrowingEndpointResponse {
     export interface Init {

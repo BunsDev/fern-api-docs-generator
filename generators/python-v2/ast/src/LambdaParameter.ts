@@ -1,5 +1,5 @@
-import { Parameter } from "./Parameter";
-import { AstNode } from "./core/AstNode";
+import { Parameter } from "./Parameter.js";
+import { AstNode } from "./core/AstNode.js";
 
 export declare namespace LambdaParameter {
     interface Args {

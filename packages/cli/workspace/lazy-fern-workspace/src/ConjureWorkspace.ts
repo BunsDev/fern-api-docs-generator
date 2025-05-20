@@ -6,7 +6,7 @@ import { ConjureImporter } from "@fern-api/conjure-to-fern";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { mapValues } from "./utils/mapValues";
+import { mapValues } from "./utils/mapValues.js";
 
 export declare namespace ConjureWorkspace {
     export interface Args extends AbstractAPIWorkspace.Args {

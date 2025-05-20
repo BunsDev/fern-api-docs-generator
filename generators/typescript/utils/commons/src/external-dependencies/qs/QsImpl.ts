@@ -1,7 +1,7 @@
 import { ts } from "ts-morph";
 
-import { ExternalDependency } from "../ExternalDependency";
-import { qs } from "./qs";
+import { ExternalDependency } from "../ExternalDependency.js";
+import { qs } from "./qs.js";
 
 export class QsImpl extends ExternalDependency implements qs {
     protected override PACKAGE = { name: "qs" };

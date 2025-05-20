@@ -6,8 +6,8 @@ import { SourceFile } from "ts-morph";
 
 import { Name } from "@fern-fern/ir-sdk/api";
 
-import { EndpointDeclarationReferencer } from "../../declaration-referencers/EndpointDeclarationReferencer";
-import { getSchemaImportStrategy } from "../getSchemaImportStrategy";
+import { EndpointDeclarationReferencer } from "../../declaration-referencers/EndpointDeclarationReferencer.js";
+import { getSchemaImportStrategy } from "../getSchemaImportStrategy.js";
 
 export declare namespace ExpressEndpointTypeSchemasContextImpl {
     export interface Init {

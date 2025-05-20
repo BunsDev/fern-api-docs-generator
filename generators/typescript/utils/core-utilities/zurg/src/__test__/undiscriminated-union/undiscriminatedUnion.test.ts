@@ -1,5 +1,5 @@
-import { number, object, property, string, undiscriminatedUnion } from "../../builders";
-import { itSchema, itSchemaIdentity } from "../utils/itSchema";
+import { number, object, property, string, undiscriminatedUnion } from "../../builders/index.js";
+import { itSchema, itSchemaIdentity } from "../utils/itSchema.js";
 
 describe("undiscriminatedUnion", () => {
     itSchemaIdentity(undiscriminatedUnion([string(), number()]), "hello world");

@@ -12,12 +12,12 @@ import {
 import { constructHttpPath } from "@fern-api/ir-utils";
 import { Converters } from "@fern-api/v2-importer-commons";
 
-import { AsyncAPIV2 } from "..";
-import { AsyncAPIConverterContext } from "../../AsyncAPIConverterContext";
-import { AbstractChannelConverter } from "../../converters/AbstractChannelConverter";
-import { ParameterConverter } from "../../converters/ParameterConverter";
-import { ChannelAddressExtension } from "../../extensions/x-fern-channel-address";
-import { DisplayNameExtension } from "../../extensions/x-fern-display-name";
+import { AsyncAPIConverterContext } from "../../AsyncAPIConverterContext.js";
+import { AbstractChannelConverter } from "../../converters/AbstractChannelConverter.js";
+import { ParameterConverter } from "../../converters/ParameterConverter.js";
+import { ChannelAddressExtension } from "../../extensions/x-fern-channel-address.js";
+import { DisplayNameExtension } from "../../extensions/x-fern-display-name.js";
+import { AsyncAPIV2 } from "../index.js";
 
 export declare namespace ChannelConverter2_X {
     export interface Args extends AbstractChannelConverter.Args<AsyncAPIV2.ChannelV2> {}

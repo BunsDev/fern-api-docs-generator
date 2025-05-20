@@ -1,5 +1,5 @@
-import { AstNode, Writer } from "../csharp";
-import { XmlDocWriter } from "./core/XmlDocWriter";
+import { AstNode, Writer } from "../csharp.js";
+import { XmlDocWriter } from "./core/XmlDocWriter.js";
 
 export declare namespace XmlDocBlock {
     type Like = XmlDocBlock | XmlDocBlock.Arg;

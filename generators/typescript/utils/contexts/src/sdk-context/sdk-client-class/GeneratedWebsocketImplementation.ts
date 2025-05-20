@@ -2,7 +2,7 @@ import { InterfaceDeclarationStructure, OptionalKind, ParameterDeclarationStruct
 
 import { WebSocketChannel } from "@fern-fern/ir-sdk/api";
 
-import { SdkContext } from "../SdkContext";
+import { SdkContext } from "../SdkContext.js";
 
 export interface ChannelSignature {
     parameters: OptionalKind<ParameterDeclarationStructure & { docs?: string }>[];

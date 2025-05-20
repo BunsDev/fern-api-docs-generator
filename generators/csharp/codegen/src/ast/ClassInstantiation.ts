@@ -5,9 +5,9 @@ import {
     isNamedArgument
 } from "@fern-api/browser-compatible-base-generator";
 
-import { ClassReference } from "./ClassReference";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { ClassReference } from "./ClassReference.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace ClassInstantiation {
     interface Args {

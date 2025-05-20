@@ -9,8 +9,8 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernRegistry as FdrCjsSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { PlaygroundConfig } from "./ir-to-fdr-converter/convertAuth";
-import { convertIrToFdrApi } from "./ir-to-fdr-converter/convertIrToFdrApi";
+import { PlaygroundConfig } from "./ir-to-fdr-converter/convertAuth.js";
+import { convertIrToFdrApi } from "./ir-to-fdr-converter/convertIrToFdrApi.js";
 
 export async function registerApi({
     organization,

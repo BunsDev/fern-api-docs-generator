@@ -23,7 +23,7 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { TypeDeclarationReferencer } from "../../declaration-referencers/TypeDeclarationReferencer";
+import { TypeDeclarationReferencer } from "../../declaration-referencers/TypeDeclarationReferencer.js";
 
 export declare namespace TypeContextImpl {
     export interface Init {

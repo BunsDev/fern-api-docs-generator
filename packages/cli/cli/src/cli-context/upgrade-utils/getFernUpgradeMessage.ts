@@ -3,9 +3,9 @@ import chalk from "chalk";
 
 import { FernRegistryClient } from "@fern-fern/generators-sdk";
 
-import { FernUpgradeInfo } from "../CliContext";
-import { CliEnvironment } from "../CliEnvironment";
-import { FernGeneratorUpgradeInfo } from "./getGeneratorVersions";
+import { FernUpgradeInfo } from "../CliContext.js";
+import { CliEnvironment } from "../CliEnvironment.js";
+import { FernGeneratorUpgradeInfo } from "./getGeneratorVersions.js";
 
 function hasGeneratorUpgrade(generatorUpgradeInfo: FernGeneratorUpgradeInfo[]): boolean {
     return generatorUpgradeInfo.filter((gui) => gui.isUpgradeAvailable).length > 0;

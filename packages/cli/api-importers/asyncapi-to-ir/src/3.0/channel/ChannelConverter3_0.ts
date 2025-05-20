@@ -4,10 +4,10 @@ import { HttpHeader, PathParameter, QueryParameter, WebSocketMessage, WebSocketM
 import { constructHttpPath } from "@fern-api/ir-utils";
 import { Converters } from "@fern-api/v2-importer-commons";
 
-import { AsyncAPIV3 } from "..";
-import { AbstractChannelConverter } from "../../converters/AbstractChannelConverter";
-import { ParameterConverter } from "../../converters/ParameterConverter";
-import { DisplayNameExtension } from "../../extensions/x-fern-display-name";
+import { AbstractChannelConverter } from "../../converters/AbstractChannelConverter.js";
+import { ParameterConverter } from "../../converters/ParameterConverter.js";
+import { DisplayNameExtension } from "../../extensions/x-fern-display-name.js";
+import { AsyncAPIV3 } from "../index.js";
 
 export declare namespace ChannelConverter3_0 {
     export interface Args extends AbstractChannelConverter.Args<AsyncAPIV3.ChannelV3> {

@@ -5,7 +5,7 @@ import { DocsDefinitionResolver, filterOssWorkspaces } from "@fern-api/docs-reso
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { Project } from "@fern-api/project-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export async function writeDocsDefinitionForProject({
     project,

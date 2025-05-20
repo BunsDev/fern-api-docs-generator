@@ -4,17 +4,17 @@ export {
     type DefinitionFileAstNodeVisitor,
     type DefinitionFileAstVisitor,
     type TypeDeclarationName
-} from "./DefinitionFileAstVisitor";
+} from "./DefinitionFileAstVisitor.js";
 export {
     type PackageMarkerAstNodeTypes,
     type PackageMarkerAstNodeVisitor,
     type PackageMarkerAstVisitor
-} from "./PackageMarkerAstVisitor";
+} from "./PackageMarkerAstVisitor.js";
 export {
     type RootApiFileAstNodeTypes,
     type RootApiFileAstNodeVisitor,
     type RootApiFileAstVisitor
-} from "./RootApiFileAstVisitor";
-export { visitDefinitionFileYamlAst } from "./visitDefinitionFileYamlAst";
-export { visitPackageMarkerYamlAst } from "./visitPackageMarkerYamlAst";
-export { visitRootApiFileYamlAst } from "./visitRootApiFileYamlAst";
+} from "./RootApiFileAstVisitor.js";
+export { visitDefinitionFileYamlAst } from "./visitDefinitionFileYamlAst.js";
+export { visitPackageMarkerYamlAst } from "./visitPackageMarkerYamlAst.js";
+export { visitRootApiFileYamlAst } from "./visitRootApiFileYamlAst.js";

@@ -15,7 +15,7 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { AbstractPhpGeneratorContext } from "./AbstractPhpGeneratorContext";
+import { AbstractPhpGeneratorContext } from "./AbstractPhpGeneratorContext.js";
 
 export declare namespace PhpTypeMapper {
     interface Args {

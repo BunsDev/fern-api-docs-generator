@@ -6,8 +6,8 @@ import { validateAgainstJsonSchema } from "@fern-api/core-utils";
 import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import * as DocsYmlJsonSchema from "./docs-yml.schema.json";
-import { DocsWorkspace } from "./types/Workspace";
+import DocsYmlJsonSchema from "./docs-yml.schema.json" with { type: "json" };
+import { DocsWorkspace } from "./types/Workspace.js";
 
 export async function loadDocsWorkspace({
     fernDirectory,

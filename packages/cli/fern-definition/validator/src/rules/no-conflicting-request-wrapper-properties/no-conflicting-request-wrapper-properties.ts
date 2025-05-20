@@ -16,8 +16,8 @@ import {
     getQueryParameterName
 } from "@fern-api/ir-generator";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { CASINGS_GENERATOR } from "../../utils/casingsGenerator";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { CASINGS_GENERATOR } from "../../utils/casingsGenerator.js";
 
 export const NoConflictingRequestWrapperPropertiesRule: Rule = {
     name: "no-conflicting-request-wrapper-properties",

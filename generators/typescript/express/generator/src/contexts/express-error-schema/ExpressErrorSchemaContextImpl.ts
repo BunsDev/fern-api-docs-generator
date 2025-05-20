@@ -1,5 +1,5 @@
 import { ImportsManager, Reference, Zurg } from "@fern-typescript/commons";
-import { CoreUtilities } from "@fern-typescript/commons/src/core-utilities/CoreUtilities";
+import { CoreUtilities } from "@fern-typescript/commons/src/core-utilities";
 import { ExpressErrorSchemaContext, GeneratedExpressErrorSchema } from "@fern-typescript/contexts";
 import { ExpressErrorSchemaGenerator } from "@fern-typescript/express-error-schema-generator";
 import { ErrorResolver } from "@fern-typescript/resolvers";
@@ -7,8 +7,8 @@ import { SourceFile } from "ts-morph";
 
 import { DeclaredErrorName } from "@fern-fern/ir-sdk/api";
 
-import { ExpressErrorDeclarationReferencer } from "../../declaration-referencers/ExpressErrorDeclarationReferencer";
-import { getSchemaImportStrategy } from "../getSchemaImportStrategy";
+import { ExpressErrorDeclarationReferencer } from "../../declaration-referencers/ExpressErrorDeclarationReferencer.js";
+import { getSchemaImportStrategy } from "../getSchemaImportStrategy.js";
 
 export declare namespace ExpressErrorSchemaContextImpl {
     export interface Init {

@@ -6,7 +6,7 @@ import { SourceFile } from "ts-morph";
 
 import { DeclaredErrorName, ErrorDeclaration } from "@fern-fern/ir-sdk/api";
 
-import { ExpressErrorDeclarationReferencer } from "../../declaration-referencers/ExpressErrorDeclarationReferencer";
+import { ExpressErrorDeclarationReferencer } from "../../declaration-referencers/ExpressErrorDeclarationReferencer.js";
 
 export declare namespace ExpressErrorContextImpl {
     export interface Init {

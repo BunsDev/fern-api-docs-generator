@@ -1,4 +1,4 @@
-import { UndiciStreamWrapper } from "../../stream-wrappers/UndiciStreamWrapper";
+import { UndiciStreamWrapper } from "../../stream-wrappers/UndiciStreamWrapper.js";
 
 describe("UndiciStreamWrapper", () => {
     it("should set encoding to utf-8", async () => {

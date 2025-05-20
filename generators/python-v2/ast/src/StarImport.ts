@@ -1,5 +1,5 @@
-import { Reference } from "./Reference";
-import { Writer } from "./core/Writer";
+import { Reference } from "./Reference.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace StarImport {
     interface Args extends Pick<Reference.Args, "modulePath"> {}

@@ -6,9 +6,9 @@ import { Source as OpenApiIrSource } from "@fern-api/openapi-ir";
 import { Document } from "@fern-api/openapi-ir-parser";
 import { TaskContext } from "@fern-api/task-context";
 
-import { convertOpenAPIV2ToV3 } from "../utils/convertOpenAPIV2ToV3";
-import { loadAsyncAPI } from "../utils/loadAsyncAPI";
-import { loadOpenAPI } from "../utils/loadOpenAPI";
+import { convertOpenAPIV2ToV3 } from "../utils/convertOpenAPIV2ToV3.js";
+import { loadAsyncAPI } from "../utils/loadAsyncAPI.js";
+import { loadOpenAPI } from "../utils/loadOpenAPI.js";
 
 export class OpenAPILoader {
     constructor(private readonly absoluteFilePath: AbsoluteFilePath) {}

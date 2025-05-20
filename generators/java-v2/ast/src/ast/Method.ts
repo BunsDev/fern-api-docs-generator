@@ -1,8 +1,8 @@
-import { Access } from "./Access";
-import { Parameter } from "./Parameter";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Access } from "./Access.js";
+import { Parameter } from "./Parameter.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Method {
     interface Args {

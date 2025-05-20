@@ -5,14 +5,14 @@ import { generateModels, generateTraits } from "@fern-api/php-model";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 import { HttpService, IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { SdkCustomConfigSchema } from "./SdkCustomConfig";
-import { SdkGeneratorContext } from "./SdkGeneratorContext";
-import { WrappedEndpointRequestGenerator } from "./endpoint/request/WrappedEndpointRequestGenerator";
-import { EnvironmentGenerator } from "./environment/EnvironmentGenerator";
-import { BaseApiExceptionGenerator } from "./error/BaseApiExceptionGenerator";
-import { BaseExceptionGenerator } from "./error/BaseExceptionGenerator";
-import { RootClientGenerator } from "./root-client/RootClientGenerator";
-import { SubPackageClientGenerator } from "./subpackage-client/SubPackageClientGenerator";
+import { SdkCustomConfigSchema } from "./SdkCustomConfig.js";
+import { SdkGeneratorContext } from "./SdkGeneratorContext.js";
+import { WrappedEndpointRequestGenerator } from "./endpoint/request/WrappedEndpointRequestGenerator.js";
+import { EnvironmentGenerator } from "./environment/EnvironmentGenerator.js";
+import { BaseApiExceptionGenerator } from "./error/BaseApiExceptionGenerator.js";
+import { BaseExceptionGenerator } from "./error/BaseExceptionGenerator.js";
+import { RootClientGenerator } from "./root-client/RootClientGenerator.js";
+import { SubPackageClientGenerator } from "./subpackage-client/SubPackageClientGenerator.js";
 
 export class SdkGeneratorCLI extends AbstractPhpGeneratorCli<SdkCustomConfigSchema, SdkGeneratorContext> {
     protected constructContext({

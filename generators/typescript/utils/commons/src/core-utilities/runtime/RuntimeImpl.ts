@@ -2,9 +2,9 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { DependencyManager } from "../../dependency-manager/DependencyManager";
-import { CoreUtility } from "../CoreUtility";
-import { Runtime } from "./Runtime";
+import { DependencyManager } from "../../dependency-manager/DependencyManager.js";
+import { CoreUtility } from "../CoreUtility.js";
+import { Runtime } from "./Runtime.js";
 
 export const MANIFEST: CoreUtility.Manifest = {
     name: "runtime",

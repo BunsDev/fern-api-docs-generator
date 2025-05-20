@@ -2,9 +2,9 @@ import { OpenAPIV3 } from "openapi-types";
 
 import { GlobalHeader } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../../getExtension";
-import { FernOpenAPIExtension } from "./fernExtensions";
-import { getSchemaFromFernType } from "./getFernTypeExtension";
+import { getExtension } from "../../../getExtension.js";
+import { FernOpenAPIExtension } from "./fernExtensions.js";
+import { getSchemaFromFernType } from "./getFernTypeExtension.js";
 
 interface GlobalHeaderExtension {
     header: string;

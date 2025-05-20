@@ -11,10 +11,10 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { go } from "../";
-import { GoTypeReference, Type } from "../ast";
-import { BaseGoCustomConfigSchema } from "../custom-config/BaseGoCustomConfigSchema";
-import { AbstractGoGeneratorContext } from "./AbstractGoGeneratorContext";
+import { go } from "..//index.js";
+import { GoTypeReference, Type } from "../ast/index.js";
+import { BaseGoCustomConfigSchema } from "../custom-config/BaseGoCustomConfigSchema.js";
+import { AbstractGoGeneratorContext } from "./AbstractGoGeneratorContext.js";
 
 export declare namespace GoTypeMapper {
     interface Args {

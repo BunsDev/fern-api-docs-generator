@@ -4,7 +4,7 @@ import { RelativeFilePath } from "@fern-api/path-utils";
 
 import { HttpEndpoint, ServiceId } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
 
 export class WireTestGenerator {
     private readonly context: SdkGeneratorContext;

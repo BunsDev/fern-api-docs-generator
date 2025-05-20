@@ -1,12 +1,12 @@
 import chalk from "chalk";
-import capitalize from "lodash-es/capitalize";
+import { capitalize } from "lodash-es";
 import urlJoin from "url-join";
 
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { getEndpointPathParameters } from "@fern-api/ir-generator";
 import { constructHttpPath } from "@fern-api/ir-utils";
 
-import { Rule, RuleViolation } from "../../Rule";
+import { Rule, RuleViolation } from "../../Rule.js";
 
 export const NoUndefinedPathParametersRule: Rule = {
     name: "no-undefined-path-parameters",

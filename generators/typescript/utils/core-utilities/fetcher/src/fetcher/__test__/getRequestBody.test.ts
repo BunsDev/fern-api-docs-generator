@@ -1,5 +1,5 @@
-import { RUNTIME } from "../../runtime";
-import { getRequestBody } from "../getRequestBody";
+import { RUNTIME } from "../../runtime/index.js";
+import { getRequestBody } from "../getRequestBody.js";
 
 describe("Test getRequestBody", () => {
     it("should return FormData as is in Node environment", async () => {

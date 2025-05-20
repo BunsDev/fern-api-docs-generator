@@ -15,7 +15,7 @@ import { RootApiFileSchema } from "@fern-api/fern-definition-schema";
 import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join, relative } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { SAMPLE_IMDB_API } from "./sampleImdbApi";
+import { SAMPLE_IMDB_API } from "./sampleImdbApi.js";
 
 export async function createFernWorkspace({
     directoryOfWorkspace,

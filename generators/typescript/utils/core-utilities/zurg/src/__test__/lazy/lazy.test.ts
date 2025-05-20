@@ -1,6 +1,6 @@
-import { Schema } from "../../Schema";
-import { lazy, list, object, string } from "../../builders";
-import { itSchemaIdentity } from "../utils/itSchema";
+import { Schema } from "../../Schema.js";
+import { lazy, list, object, string } from "../../builders/index.js";
+import { itSchemaIdentity } from "../utils/itSchema.js";
 
 describe("lazy", () => {
     it("doesn't run immediately", () => {

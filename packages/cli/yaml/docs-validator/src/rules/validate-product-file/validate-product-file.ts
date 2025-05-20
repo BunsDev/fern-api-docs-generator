@@ -1,5 +1,5 @@
-import { Rule } from "../../Rule";
-import { validateProductConfigFileSchema } from "../../docsAst/validateProductConfig";
+import { Rule } from "../../Rule.js";
+import { validateProductConfigFileSchema } from "../../docsAst/validateProductConfig.js";
 
 export const ValidateProductFileRule: Rule = {
     name: "validate-product-file",

@@ -6,7 +6,7 @@ import { resolve } from "path";
 import { AbsoluteFilePath, relative } from "@fern-api/fs-utils";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { parseImagePaths, replaceImagePathsAndUrls } from "../parseImagePaths";
+import { parseImagePaths, replaceImagePathsAndUrls } from "../parseImagePaths.js";
 
 const CONTEXT = createMockTaskContext();
 

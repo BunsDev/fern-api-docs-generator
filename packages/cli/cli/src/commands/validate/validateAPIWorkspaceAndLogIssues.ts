@@ -7,7 +7,7 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { validateOSSWorkspace } from "@fern-api/oss-validator";
 import { TaskContext } from "@fern-api/task-context";
 
-import { logViolations } from "./logViolations";
+import { logViolations } from "./logViolations.js";
 
 export async function validateAPIWorkspaceWithoutExiting({
     workspace,

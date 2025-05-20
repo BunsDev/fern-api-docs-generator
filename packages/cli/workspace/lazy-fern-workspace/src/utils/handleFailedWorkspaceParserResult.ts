@@ -8,7 +8,7 @@ import { assertNever, entries } from "@fern-api/core-utils";
 import { RelativeFilePath } from "@fern-api/fs-utils";
 import { Logger } from "@fern-api/logger";
 
-import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result";
+import { WorkspaceLoader, WorkspaceLoaderFailureType } from "./Result.js";
 
 export function handleFailedWorkspaceParserResult(result: WorkspaceLoader.FailedResult, logger: Logger): void {
     for (const [relativeFilepath, failure] of entries(result.failures)) {

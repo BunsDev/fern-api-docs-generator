@@ -4,7 +4,7 @@ import { SdkContext } from "@fern-typescript/contexts";
 import { FernGeneratorCli } from "@fern-fern/generator-cli-sdk";
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 
-import { ReadmeSnippetBuilder } from "./ReadmeSnippetBuilder";
+import { ReadmeSnippetBuilder } from "./ReadmeSnippetBuilder.js";
 
 export class ReadmeConfigBuilder {
     private endpointSnippets: FernGeneratorExec.Endpoint[];

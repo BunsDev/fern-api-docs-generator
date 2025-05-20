@@ -1,39 +1,44 @@
-export { EXAMPLE_REFERENCE_PREFIX, YAML_SCHEMA_VERSION } from "./constants";
-export { type NodePath, type NodePathItem } from "./NodePath";
-export * as RawSchemas from "./schemas";
-export { type DefinitionFileSchema, type RootApiFileSchema, type PackageMarkerFileSchema } from "./schemas";
-export * from "./utils/generics";
-export * from "./utils/auth";
-export { getRequestBody } from "./utils/getRequestBody";
-export { isInlineRequestBody } from "./utils/isInlineRequestBody";
-export { isRawProtobufSourceSchema } from "./utils/isRawProtobufSourceSchema";
-export { isOpenApiSourceSchema } from "./utils/isOpenApiSourceSchema";
-export { isRawTextType } from "./utils/isRawTextType";
-export { parseBytesRequest, type BytesRequest } from "./utils/parseBytesRequest";
-export { parseFileUploadRequest, type RawFileUploadRequest } from "./utils/parseFileUploadRequest";
-export { parseRawBytesType, type RawBytesType } from "./utils/parseRawBytesType";
-export { parseRawFileType, type RawFileType } from "./utils/parseRawFileType";
-export { parseRawTextType, type RawTextType } from "./utils/parseRawTextType";
-export { RawPrimitiveType } from "./utils/RawPrimitiveType";
-export { recursivelyVisitRawTypeReference } from "./utils/recursivelyVisitRawTypeReference";
-export { visitExampleCodeSampleSchema } from "./utils/visitExampleCodeSampleSchema";
-export { visitExampleResponseSchema, type ExampleResponseSchemaVisitor } from "./utils/visitExampleResponseSchema";
-export { isAnyAuthSchemes, isSingleAuthScheme, visitRawApiAuth, type RawApiAuthVisitor } from "./utils/visitRawApiAuth";
+export { EXAMPLE_REFERENCE_PREFIX, YAML_SCHEMA_VERSION } from "./constants.js";
+export { type NodePath, type NodePathItem } from "./NodePath.js";
+export * as RawSchemas from "./schemas/index.js";
+export { type DefinitionFileSchema, type RootApiFileSchema, type PackageMarkerFileSchema } from "./schemas/index.js";
+export * from "./utils/generics/index.js";
+export * from "./utils/auth/index.js";
+export { getRequestBody } from "./utils/getRequestBody.js";
+export { isInlineRequestBody } from "./utils/isInlineRequestBody.js";
+export { isRawProtobufSourceSchema } from "./utils/isRawProtobufSourceSchema.js";
+export { isOpenApiSourceSchema } from "./utils/isOpenApiSourceSchema.js";
+export { isRawTextType } from "./utils/isRawTextType.js";
+export { parseBytesRequest, type BytesRequest } from "./utils/parseBytesRequest.js";
+export { parseFileUploadRequest, type RawFileUploadRequest } from "./utils/parseFileUploadRequest.js";
+export { parseRawBytesType, type RawBytesType } from "./utils/parseRawBytesType.js";
+export { parseRawFileType, type RawFileType } from "./utils/parseRawFileType.js";
+export { parseRawTextType, type RawTextType } from "./utils/parseRawTextType.js";
+export { RawPrimitiveType } from "./utils/RawPrimitiveType.js";
+export { recursivelyVisitRawTypeReference } from "./utils/recursivelyVisitRawTypeReference.js";
+export { visitExampleCodeSampleSchema } from "./utils/visitExampleCodeSampleSchema.js";
+export { visitExampleResponseSchema, type ExampleResponseSchemaVisitor } from "./utils/visitExampleResponseSchema.js";
+export {
+    isAnyAuthSchemes,
+    isSingleAuthScheme,
+    visitRawApiAuth,
+    type RawApiAuthVisitor
+} from "./utils/visitRawApiAuth.js";
 export {
     isHeaderAuthScheme,
     visitRawAuthSchemeDeclaration,
     type AuthSchemeDeclarationVisitor
-} from "./utils/visitRawAuthSchemeDeclaration";
+} from "./utils/visitRawAuthSchemeDeclaration.js";
 export {
     isRawMultipleBaseUrlsEnvironment,
     isRawSingleBaseUrlEnvironment,
     visitRawEnvironmentDeclaration
-} from "./utils/visitRawEnvironmentDeclaration";
+} from "./utils/visitRawEnvironmentDeclaration.js";
 export {
     isVariablePathParameter,
     visitRawPathParameter,
     type PathParameterDeclarationVisitor
-} from "./utils/visitRawPathParameter";
+} from "./utils/visitRawPathParameter.js";
 export {
     isRawAliasDefinition,
     isRawDiscriminatedUnionDefinition,
@@ -42,6 +47,6 @@ export {
     isRawUndiscriminatedUnionDefinition,
     visitRawTypeDeclaration,
     type RawTypeDeclarationVisitor
-} from "./utils/visitRawTypeDeclaration";
-export { FernContainerRegex, visitRawTypeReference } from "./utils/visitRawTypeReference";
-export { HttpEndpointReferenceParser } from "./utils/HttpEndpointReferenceParser";
+} from "./utils/visitRawTypeDeclaration.js";
+export { FernContainerRegex, visitRawTypeReference } from "./utils/visitRawTypeReference.js";
+export { HttpEndpointReferenceParser } from "./utils/HttpEndpointReferenceParser.js";

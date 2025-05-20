@@ -6,8 +6,8 @@ import { AbsoluteFilePath, stringifyLargeObject } from "@fern-api/fs-utils";
 import { Project } from "@fern-api/project-loader";
 import { convertIrToFdrApi } from "@fern-api/register";
 
-import { CliContext } from "../../cli-context/CliContext";
-import { generateIrForFernWorkspace } from "../generate-ir/generateIrForFernWorkspace";
+import { CliContext } from "../../cli-context/CliContext.js";
+import { generateIrForFernWorkspace } from "../generate-ir/generateIrForFernWorkspace.js";
 
 export async function generateFdrApiDefinitionForWorkspaces({
     project,

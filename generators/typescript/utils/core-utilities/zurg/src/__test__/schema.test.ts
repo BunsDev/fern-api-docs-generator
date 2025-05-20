@@ -1,7 +1,7 @@
-import { boolean, discriminant, list, number, object, string, stringLiteral, union } from "../builders";
-import { booleanLiteral } from "../builders/literals/booleanLiteral";
-import { property } from "../builders/object/property";
-import { itSchema } from "./utils/itSchema";
+import { boolean, discriminant, list, number, object, string, stringLiteral, union } from "../builders/index.js";
+import { booleanLiteral } from "../builders/literals/booleanLiteral.js";
+import { property } from "../builders/object/property.js";
+import { itSchema } from "./utils/itSchema.js";
 
 describe("Schema", () => {
     itSchema(

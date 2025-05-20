@@ -4,7 +4,7 @@ import { ErrorResolver } from "@fern-typescript/resolvers";
 
 import { HttpEndpoint, HttpService, IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkEndpointTypeSchemasImpl } from "./GeneratedSdkEndpointTypeSchemasImpl";
+import { GeneratedSdkEndpointTypeSchemasImpl } from "./GeneratedSdkEndpointTypeSchemasImpl.js";
 
 export declare namespace SdkEndpointTypeSchemasGenerator {
     export interface Init {

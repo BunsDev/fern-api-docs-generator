@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-disabled-tests */
 import { FdrAPI, FernNavigation } from "@fern-api/fdr-sdk";
 
-import { getApiLatestToNavigationNodeUrlSlug } from "../utils/getApiLatestToNavigationNodeUrlSlug";
+import { getApiLatestToNavigationNodeUrlSlug } from "../utils/getApiLatestToNavigationNodeUrlSlug.js";
 
 it.skip("generates slug for endpoint", () => {
     const endpoint: FdrAPI.api.latest.endpoint.EndpointDefinition = {

@@ -5,10 +5,10 @@ import { CompilerOptions, ModuleKind, ModuleResolutionKind, ScriptTarget } from 
 
 import { RelativeFilePath } from "@fern-api/fs-utils";
 
-import { DependencyType } from "../dependency-manager/DependencyManager";
-import { JSR } from "./JSR";
-import { TypescriptProject } from "./TypescriptProject";
-import { mergeExtraConfigs } from "./mergeExtraConfigs";
+import { DependencyType } from "../dependency-manager/DependencyManager.js";
+import { JSR } from "./JSR.js";
+import { TypescriptProject } from "./TypescriptProject.js";
+import { mergeExtraConfigs } from "./mergeExtraConfigs.js";
 
 export declare namespace BundledTypescriptProject {
     export interface Init extends TypescriptProject.Init {}

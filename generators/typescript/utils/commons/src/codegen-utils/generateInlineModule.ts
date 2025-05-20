@@ -11,7 +11,7 @@ import { assertNever } from "@fern-api/core-utils";
 
 import { DeclaredTypeName, MapType, NamedType, TypeDeclaration, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { InlineConsts } from "./inlineConsts";
+import { InlineConsts } from "./inlineConsts.js";
 
 export function generateInlinePropertiesModule({
     generateStatements,

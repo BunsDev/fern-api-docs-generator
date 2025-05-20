@@ -13,7 +13,7 @@ import { createLoggingExecutable } from "@fern-api/logging-execa";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { loadIntermediateRepresentation } from "./loadIntermediateRepresentation";
+import { loadIntermediateRepresentation } from "./loadIntermediateRepresentation.js";
 
 export abstract class AbstractGeneratorCli<CustomConfig> {
     public async runCli(): Promise<void> {

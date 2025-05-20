@@ -1,5 +1,5 @@
-import { RUNTIME } from "../../runtime";
-import { getFetchFn } from "../getFetchFn";
+import { RUNTIME } from "../../runtime/index.js";
+import { getFetchFn } from "../getFetchFn.js";
 
 describe("Test for getFetchFn", () => {
     it("should get node-fetch function", async () => {

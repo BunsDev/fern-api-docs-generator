@@ -4,7 +4,7 @@ import { SdkContext } from "@fern-typescript/contexts";
 
 import { HttpEndpoint, HttpService } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedEndpointTypeSchema } from "./GeneratedEndpointTypeSchema";
+import { GeneratedEndpointTypeSchema } from "./GeneratedEndpointTypeSchema.js";
 
 export declare namespace AbstractGeneratedEndpointTypeSchema {
     export interface Init extends AbstractGeneratedSchema.Init {

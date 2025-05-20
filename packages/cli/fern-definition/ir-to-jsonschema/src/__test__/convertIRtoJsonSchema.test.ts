@@ -1,5 +1,5 @@
-import Ajv from "ajv";
-import addFormats from "ajv-formats";
+import { Ajv } from "ajv";
+import addFormatsModule from "ajv-formats";
 import { describe, expect, it } from "vitest";
 
 import { SourceResolverImpl } from "@fern-api/cli-source-resolver";
@@ -8,7 +8,9 @@ import { generateIntermediateRepresentation } from "@fern-api/ir-generator";
 import { loadApis } from "@fern-api/project-loader";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { convertIRtoJsonSchema } from "../convertIRtoJsonSchema";
+import { convertIRtoJsonSchema } from "../convertIRtoJsonSchema.js";
+
+const addFormats = addFormatsModule.default;
 
 describe("convertIRtoJsonSchema", async () => {
     const TEST_DEFINITIONS_DIR = join(

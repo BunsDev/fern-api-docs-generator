@@ -6,7 +6,7 @@ import { promisify } from "util";
 import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-api/fs-utils";
 import { CONSOLE_LOGGER } from "@fern-api/logger";
 
-import { runDocker } from "../runDocker";
+import { runDocker } from "../runDocker.js";
 
 const promisifiedExec = promisify(exec);
 

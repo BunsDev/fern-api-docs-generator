@@ -8,7 +8,7 @@ import { FernUserToken, getUserIdFromToken } from "@fern-api/auth";
 import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-api/fs-utils";
 import { PosthogEvent } from "@fern-api/task-context";
 
-import { PosthogManager } from "./PosthogManager";
+import { PosthogManager } from "./PosthogManager.js";
 
 const DISTINCT_ID_FILENAME = "id";
 const LOCAL_STORAGE_FOLDER = process.env.LOCAL_STORAGE_FOLDER ?? ".fern";

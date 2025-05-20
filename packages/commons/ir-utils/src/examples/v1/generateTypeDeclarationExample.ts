@@ -8,9 +8,9 @@ import {
     TypeId
 } from "@fern-api/ir-sdk";
 
-import { isTypeReferenceOptional } from "../../utils/isTypeReferenceOptional";
-import { ExampleGenerationResult } from "./ExampleGenerationResult";
-import { generateTypeReferenceExample } from "./generateTypeReferenceExample";
+import { isTypeReferenceOptional } from "../../utils/isTypeReferenceOptional.js";
+import { ExampleGenerationResult } from "./ExampleGenerationResult.js";
+import { generateTypeReferenceExample } from "./generateTypeReferenceExample.js";
 
 export declare namespace generateTypeDeclarationExample {
     interface Args {

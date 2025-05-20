@@ -3,14 +3,14 @@ import chalk from "chalk";
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { FernFileContext, ResolvedType, TypeResolver } from "@fern-api/ir-generator";
 
-import { RuleViolation } from "../../Rule";
+import { RuleViolation } from "../../Rule.js";
 import {
     maybeFileFromResolvedType,
     maybePrimitiveType,
     resolveResponseType,
     resolvedTypeHasProperty
-} from "../../utils/propertyValidatorUtils";
-import { validateRequestProperty, validateResponseProperty, validateResultsProperty } from "./validateUtils";
+} from "../../utils/propertyValidatorUtils.js";
+import { validateRequestProperty, validateResponseProperty, validateResultsProperty } from "./validateUtils.js";
 
 export function validateCursorPagination({
     endpointId,

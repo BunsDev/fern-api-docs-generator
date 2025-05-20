@@ -4,13 +4,13 @@ import { MediaType, assertNever } from "@fern-api/core-utils";
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { EndpointExample, EndpointWithExample } from "@fern-api/openapi-ir";
 
-import { getSchemaIdFromReference } from "../../../../schema/convertSchemas";
-import { isReferenceObject } from "../../../../schema/utils/isReferenceObject";
-import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext";
-import { FernStreamingExtension, StreamConditionEndpoint } from "../../extensions/getFernStreamingExtension";
-import { OperationContext } from "../contexts";
-import { getApplicationJsonSchemaMediaObject } from "../endpoint/getApplicationJsonSchema";
-import { convertHttpOperation } from "./convertHttpOperation";
+import { getSchemaIdFromReference } from "../../../../schema/convertSchemas.js";
+import { isReferenceObject } from "../../../../schema/utils/isReferenceObject.js";
+import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext.js";
+import { FernStreamingExtension, StreamConditionEndpoint } from "../../extensions/getFernStreamingExtension.js";
+import { OperationContext } from "../contexts.js";
+import { getApplicationJsonSchemaMediaObject } from "../endpoint/getApplicationJsonSchema.js";
+import { convertHttpOperation } from "./convertHttpOperation.js";
 
 const STREAM_SUFFIX = "stream";
 

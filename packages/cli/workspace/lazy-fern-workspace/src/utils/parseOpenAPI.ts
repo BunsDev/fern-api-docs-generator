@@ -4,7 +4,7 @@ import { OpenAPI } from "openapi-types";
 import { DEFAULT_OPENAPI_BUNDLE_OPTIONS } from "@fern-api/api-workspace-commons";
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 
-import { OpenAPIRefResolver } from "../loaders/OpenAPIRefResolver";
+import { OpenAPIRefResolver } from "../loaders/OpenAPIRefResolver.js";
 
 export async function parseOpenAPI({
     absolutePathToOpenAPI,

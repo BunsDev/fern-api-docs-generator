@@ -3,9 +3,9 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { Reference } from "../../referencing";
-import { CoreUtility } from "../CoreUtility";
-import { Zurg } from "./Zurg";
+import { Reference } from "../../referencing/index.js";
+import { CoreUtility } from "../CoreUtility.js";
+import { Zurg } from "./Zurg.js";
 
 export class ZurgImpl extends CoreUtility implements Zurg {
     public readonly MANIFEST = {

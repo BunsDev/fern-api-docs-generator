@@ -16,9 +16,9 @@ import { IntermediateRepresentation } from "@fern-api/ir-sdk";
 import { Fern, Template } from "@fern-api/sdk";
 import { TaskContext } from "@fern-api/task-context";
 
-import { generateDynamicSnippetTests } from "./dynamic-snippets/generateDynamicSnippetTests";
-import { writeFilesToDiskAndRunGenerator } from "./runGenerator";
-import { getWorkspaceTempDir } from "./runLocalGenerationForWorkspace";
+import { generateDynamicSnippetTests } from "./dynamic-snippets/generateDynamicSnippetTests.js";
+import { writeFilesToDiskAndRunGenerator } from "./runGenerator.js";
+import { getWorkspaceTempDir } from "./runLocalGenerationForWorkspace.js";
 
 export async function runLocalGenerationForSeed({
     organization,

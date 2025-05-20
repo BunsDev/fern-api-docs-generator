@@ -8,23 +8,23 @@ import { askToLogin } from "@fern-api/login";
 
 import { FernRegistryClient as FdrClient } from "@fern-fern/generators-sdk";
 
-import { Semaphore } from "./Semaphore";
-import { generateCliChangelog } from "./commands/generate/generateCliChangelog";
-import { generateGeneratorChangelog } from "./commands/generate/generateGeneratorChangelog";
-import { getLatestCli } from "./commands/latest/getLatestCli";
-import { getLatestGenerator } from "./commands/latest/getLatestGenerator";
-import { publishCli } from "./commands/publish/publishCli";
-import { publishGenerator } from "./commands/publish/publishGenerator";
-import { registerCliRelease } from "./commands/register/registerCliRelease";
-import { registerGenerator } from "./commands/register/registerGenerator";
-import { runWithCustomFixture } from "./commands/run/runWithCustomFixture";
-import { ScriptRunner } from "./commands/test/ScriptRunner";
-import { TaskContextFactory } from "./commands/test/TaskContextFactory";
-import { DockerTestRunner, LocalTestRunner } from "./commands/test/test-runner";
-import { FIXTURES, testGenerator } from "./commands/test/testWorkspaceFixtures";
-import { validateCliRelease } from "./commands/validate/validateCliChangelog";
-import { validateGenerator } from "./commands/validate/validateGeneratorChangelog";
-import { GeneratorWorkspace, loadGeneratorWorkspaces } from "./loadGeneratorWorkspaces";
+import { Semaphore } from "./Semaphore.js";
+import { generateCliChangelog } from "./commands/generate/generateCliChangelog.js";
+import { generateGeneratorChangelog } from "./commands/generate/generateGeneratorChangelog.js";
+import { getLatestCli } from "./commands/latest/getLatestCli.js";
+import { getLatestGenerator } from "./commands/latest/getLatestGenerator.js";
+import { publishCli } from "./commands/publish/publishCli.js";
+import { publishGenerator } from "./commands/publish/publishGenerator.js";
+import { registerCliRelease } from "./commands/register/registerCliRelease.js";
+import { registerGenerator } from "./commands/register/registerGenerator.js";
+import { runWithCustomFixture } from "./commands/run/runWithCustomFixture.js";
+import { ScriptRunner } from "./commands/test/ScriptRunner.js";
+import { TaskContextFactory } from "./commands/test/TaskContextFactory.js";
+import { DockerTestRunner, LocalTestRunner } from "./commands/test/test-runner/index.js";
+import { FIXTURES, testGenerator } from "./commands/test/testWorkspaceFixtures.js";
+import { validateCliRelease } from "./commands/validate/validateCliChangelog.js";
+import { validateGenerator } from "./commands/validate/validateGeneratorChangelog.js";
+import { GeneratorWorkspace, loadGeneratorWorkspaces } from "./loadGeneratorWorkspaces.js";
 
 void tryRunCli();
 

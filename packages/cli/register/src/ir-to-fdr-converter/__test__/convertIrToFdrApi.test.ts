@@ -11,8 +11,8 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { loadApis } from "@fern-api/project-loader";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { loadAPIWorkspace } from "../../../../workspace/loader/src/loadAPIWorkspace";
-import { convertIrToFdrApi } from "../convertIrToFdrApi";
+import { loadAPIWorkspace } from "../../../../workspace/loader/src/loadAPIWorkspace.js";
+import { convertIrToFdrApi } from "../convertIrToFdrApi.js";
 
 describe("fdr", async () => {
     const TEST_DEFINITIONS_DIR = path.join(__dirname, "../../../../../../test-definitions");

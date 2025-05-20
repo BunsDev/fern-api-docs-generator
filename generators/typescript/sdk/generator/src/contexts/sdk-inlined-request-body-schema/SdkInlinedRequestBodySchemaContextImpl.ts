@@ -6,8 +6,8 @@ import { SourceFile } from "ts-morph";
 
 import { Name } from "@fern-fern/ir-sdk/api";
 
-import { SdkInlinedRequestBodyDeclarationReferencer } from "../../declaration-referencers/SdkInlinedRequestBodyDeclarationReferencer";
-import { getSchemaImportStrategy } from "../getSchemaImportStrategy";
+import { SdkInlinedRequestBodyDeclarationReferencer } from "../../declaration-referencers/SdkInlinedRequestBodyDeclarationReferencer.js";
+import { getSchemaImportStrategy } from "../getSchemaImportStrategy.js";
 
 export declare namespace SdkInlinedRequestBodySchemaContextImpl {
     export interface Init {

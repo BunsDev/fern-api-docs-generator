@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { NoUndefinedVariableReferenceRule } from "../no-undefined-variable-reference";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { NoUndefinedVariableReferenceRule } from "../no-undefined-variable-reference.js";
 
 describe("no-undefined-variable-reference", () => {
     it("simple", async () => {

@@ -1,2 +1,2 @@
-export { constructNpmPackage } from "./constructNpmPackage";
-export { getNamespaceExport } from "./getNamespaceExport";
+export { constructNpmPackage } from "./constructNpmPackage.js";
+export { getNamespaceExport } from "./getNamespaceExport.js";

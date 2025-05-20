@@ -3,7 +3,7 @@ import { GeneratedExpressInlinedRequestBodySchema } from "@fern-typescript/conte
 
 import { HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedExpressInlinedRequestBodySchemaImpl } from "./GeneratedExpressInlinedRequestBodySchemaImpl";
+import { GeneratedExpressInlinedRequestBodySchemaImpl } from "./GeneratedExpressInlinedRequestBodySchemaImpl.js";
 
 export declare namespace ExpressInlinedRequestBodySchemaGenerator {
     export interface Init {

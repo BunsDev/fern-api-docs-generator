@@ -6,8 +6,8 @@ import { SetRequired } from "@fern-api/core-utils";
 
 import { Subpackage, SubpackageId } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedSdkClientClassImpl } from "./GeneratedSdkClientClassImpl";
-import { OAuthTokenProviderGenerator } from "./oauth-generator/OAuthTokenProviderGenerator";
+import { GeneratedSdkClientClassImpl } from "./GeneratedSdkClientClassImpl.js";
+import { OAuthTokenProviderGenerator } from "./oauth-generator/OAuthTokenProviderGenerator.js";
 
 export declare namespace GeneratedWrappedService {
     interface Init {

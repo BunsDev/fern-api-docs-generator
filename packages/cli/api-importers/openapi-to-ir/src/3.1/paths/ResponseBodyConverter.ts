@@ -4,7 +4,7 @@ import { MediaType } from "@fern-api/core-utils";
 import { HttpResponseBody, JsonResponse, StreamingResponse } from "@fern-api/ir-sdk";
 import { Converters, SchemaOrReferenceConverter } from "@fern-api/v2-importer-commons";
 
-import { FernStreamingExtension } from "../../extensions/x-fern-streaming";
+import { FernStreamingExtension } from "../../extensions/x-fern-streaming.js";
 
 export declare namespace ResponseBodyConverter {
     export interface Args extends Converters.AbstractConverters.AbstractMediaTypeObjectConverter.Args {

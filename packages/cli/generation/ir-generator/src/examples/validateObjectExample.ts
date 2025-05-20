@@ -4,13 +4,13 @@ import { FernWorkspace, getDefinitionFile } from "@fern-api/api-workspace-common
 import { isPlainObject } from "@fern-api/core-utils";
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 
-import { FernFileContext, constructFernFileContext } from "../FernFileContext";
-import { ExampleResolver } from "../resolvers/ExampleResolver";
-import { TypeResolver } from "../resolvers/TypeResolver";
-import { getAllPropertiesForObject } from "../utils/getAllPropertiesForObject";
-import { ExampleViolation } from "./exampleViolation";
-import { getViolationsForMisshapenExample } from "./getViolationsForMisshapenExample";
-import { validateTypeReferenceExample } from "./validateTypeReferenceExample";
+import { FernFileContext, constructFernFileContext } from "../FernFileContext.js";
+import { ExampleResolver } from "../resolvers/ExampleResolver.js";
+import { TypeResolver } from "../resolvers/TypeResolver.js";
+import { getAllPropertiesForObject } from "../utils/getAllPropertiesForObject.js";
+import { ExampleViolation } from "./exampleViolation.js";
+import { getViolationsForMisshapenExample } from "./getViolationsForMisshapenExample.js";
+import { validateTypeReferenceExample } from "./validateTypeReferenceExample.js";
 
 export function validateObjectExample({
     typeName,

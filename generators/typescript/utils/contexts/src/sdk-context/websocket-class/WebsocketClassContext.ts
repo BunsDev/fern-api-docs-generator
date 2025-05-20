@@ -2,7 +2,7 @@ import { NpmPackage, PackageId, Reference } from "@fern-typescript/commons";
 
 import { WebSocketChannel, WebSocketChannelId } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedWebsocketSocketClass } from "./GeneratedWebsocketSocketClass";
+import { GeneratedWebsocketSocketClass } from "./GeneratedWebsocketSocketClass.js";
 
 export interface WebsocketClassContext {
     getGeneratedWebsocketSocketClass: (

@@ -4,7 +4,7 @@ import { FERN_PACKAGE_MARKER_FILENAME, ROOT_API_FILENAME } from "@fern-api/confi
 import { RawSchemas, RootApiFileSchema, visitRawEnvironmentDeclaration } from "@fern-api/fern-definition-schema";
 import { AbsoluteFilePath, RelativeFilePath, basename, dirname, join, relative } from "@fern-api/path-utils";
 
-import { FernDefinitionDirectory } from "./utils/FernDefinitionDirectory";
+import { FernDefinitionDirectory } from "./utils/FernDefinitionDirectory.js";
 
 const BASE_MULTI_URL_ENVIRONMENT_NAME = "Production";
 

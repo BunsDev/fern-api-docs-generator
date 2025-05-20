@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-disabled-tests */
 import { FdrAPI } from "@fern-api/fdr-sdk";
 
-import { ApiDefinitionHolderLatest } from "../ApiDefinitionHolderLatest";
+import { ApiDefinitionHolderLatest } from "../ApiDefinitionHolderLatest.js";
 
 it.skip("finds subpackage by exact match", () => {
     const apiDefinitionHolder = new ApiDefinitionHolderLatest({

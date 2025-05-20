@@ -4,8 +4,8 @@ import { SourceFile } from "ts-morph";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { VersionDeclarationReferencer } from "../../declaration-referencers/VersionDeclarationReferencer";
-import { VersionGenerator } from "../../version/VersionGenerator";
+import { VersionDeclarationReferencer } from "../../declaration-referencers/VersionDeclarationReferencer.js";
+import { VersionGenerator } from "../../version/VersionGenerator.js";
 
 export declare namespace VersionContextImpl {
     export interface Init {

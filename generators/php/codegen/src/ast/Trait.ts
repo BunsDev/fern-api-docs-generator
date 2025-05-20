@@ -1,10 +1,10 @@
-import { ClassReference } from "./ClassReference";
-import { Comment } from "./Comment";
-import { Field } from "./Field";
-import { Method } from "./Method";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
-import { orderByAccess } from "./utils/orderByAccess";
+import { ClassReference } from "./ClassReference.js";
+import { Comment } from "./Comment.js";
+import { Field } from "./Field.js";
+import { Method } from "./Method.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
+import { orderByAccess } from "./utils/orderByAccess.js";
 
 export declare namespace Trait {
     interface Args {

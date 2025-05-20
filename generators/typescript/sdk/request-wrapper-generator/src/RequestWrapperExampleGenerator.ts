@@ -3,7 +3,7 @@ import { GeneratedRequestWrapperExample } from "@fern-typescript/contexts";
 
 import { ExampleEndpointCall, HttpRequestBody, Name } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedRequestWrapperExampleImpl } from "./GeneratedRequestWrapperExampleImpl";
+import { GeneratedRequestWrapperExampleImpl } from "./GeneratedRequestWrapperExampleImpl.js";
 
 export class RequestWrapperExampleGenerator {
     public generateExample({

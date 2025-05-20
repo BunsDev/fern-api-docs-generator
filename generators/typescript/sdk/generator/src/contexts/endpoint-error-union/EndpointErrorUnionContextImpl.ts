@@ -6,7 +6,7 @@ import { SourceFile } from "ts-morph";
 
 import { Name } from "@fern-fern/ir-sdk/api";
 
-import { EndpointDeclarationReferencer } from "../../declaration-referencers/EndpointDeclarationReferencer";
+import { EndpointDeclarationReferencer } from "../../declaration-referencers/EndpointDeclarationReferencer.js";
 
 export declare namespace EndpointErrorUnionContextImpl {
     export interface Init {

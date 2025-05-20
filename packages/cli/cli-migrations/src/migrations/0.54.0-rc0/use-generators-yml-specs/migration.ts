@@ -15,7 +15,7 @@ import {
 } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { Migration } from "../../../types/Migration";
+import { Migration } from "../../../types/Migration.js";
 
 export const migration: Migration = {
     name: "generators-yml-use-api-specs",

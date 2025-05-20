@@ -6,7 +6,7 @@ import {
     getTextOfTsNode
 } from "@fern-typescript/commons";
 import { GeneratedSdkClientClass, SdkContext } from "@fern-typescript/contexts";
-import { OAuthTokenProviderGenerator } from "@fern-typescript/sdk-client-class-generator/src/oauth-generator/OAuthTokenProviderGenerator";
+import { OAuthTokenProviderGenerator } from "@fern-typescript/sdk-client-class-generator/src/oauth-generator/OAuthTokenProviderGenerator.js";
 import path from "path";
 import { Directory, ts } from "ts-morph";
 import { Code, arrayOf, code, conditionalOutput, literalOf } from "ts-poet";

@@ -1,6 +1,6 @@
 import { TaskContext } from "@fern-api/task-context";
 
-import { GeneratorName } from "./GeneratorName";
+import { GeneratorName } from "./GeneratorName.js";
 
 export function getGeneratorNameOrThrow(generatorName: string, context: TaskContext): GeneratorName {
     const normalizedGeneratorName = normalizeGeneratorName(generatorName);

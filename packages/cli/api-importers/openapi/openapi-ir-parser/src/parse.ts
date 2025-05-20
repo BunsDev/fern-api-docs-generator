@@ -4,12 +4,12 @@ import { assertNever } from "@fern-api/core-utils";
 import { OpenApiIntermediateRepresentation, Source as OpenApiIrSource, Schemas } from "@fern-api/openapi-ir";
 import { TaskContext } from "@fern-api/task-context";
 
-import { DEFAULT_PARSE_ASYNCAPI_SETTINGS, ParseAsyncAPIOptions } from "./asyncapi/options";
-import { parseAsyncAPI } from "./asyncapi/parse";
-import { AsyncAPIV2 } from "./asyncapi/v2";
-import { AsyncAPIV3 } from "./asyncapi/v3";
-import { generateIr as generateIrFromV3 } from "./openapi/v3/generateIr";
-import { ParseOpenAPIOptions, getParseOptions } from "./options";
+import { DEFAULT_PARSE_ASYNCAPI_SETTINGS, ParseAsyncAPIOptions } from "./asyncapi/options.js";
+import { parseAsyncAPI } from "./asyncapi/parse.js";
+import { AsyncAPIV2 } from "./asyncapi/v2/index.js";
+import { AsyncAPIV3 } from "./asyncapi/v3/index.js";
+import { generateIr as generateIrFromV3 } from "./openapi/v3/generateIr.js";
+import { ParseOpenAPIOptions, getParseOptions } from "./options.js";
 
 export type Document = OpenAPIDocument | AsyncAPIDocument;
 

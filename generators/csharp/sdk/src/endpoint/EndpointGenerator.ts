@@ -2,12 +2,12 @@ import { csharp } from "@fern-api/csharp-codegen";
 
 import { HttpEndpoint, ServiceId } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
-import { GrpcClientInfo } from "../grpc/GrpcClientInfo";
-import { AbstractEndpointGenerator } from "./AbstractEndpointGenerator";
-import { GrpcEndpointGenerator } from "./grpc/GrpcEndpointGenerator";
-import { HttpEndpointGenerator } from "./http/HttpEndpointGenerator";
-import { RawClient } from "./http/RawClient";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
+import { GrpcClientInfo } from "../grpc/GrpcClientInfo.js";
+import { AbstractEndpointGenerator } from "./AbstractEndpointGenerator.js";
+import { GrpcEndpointGenerator } from "./grpc/GrpcEndpointGenerator.js";
+import { HttpEndpointGenerator } from "./http/HttpEndpointGenerator.js";
+import { RawClient } from "./http/RawClient.js";
 
 export class EndpointGenerator extends AbstractEndpointGenerator {
     private http: HttpEndpointGenerator;

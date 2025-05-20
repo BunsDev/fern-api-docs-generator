@@ -1,3 +1,3 @@
-export * from "./GithubLicenseSchema";
-export * from "./GithubLicenseType";
-export * from "./GithubLicenseCustomSchema";
+export * from "./GithubLicenseSchema.js";
+export * from "./GithubLicenseType.js";
+export * from "./GithubLicenseCustomSchema.js";

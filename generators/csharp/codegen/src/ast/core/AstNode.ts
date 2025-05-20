@@ -1,7 +1,7 @@
 import { AbstractAstNode, AbstractFormatter } from "@fern-api/browser-compatible-base-generator";
 
-import { BaseCsharpCustomConfigSchema } from "../../custom-config";
-import { Writer } from "./Writer";
+import { BaseCsharpCustomConfigSchema } from "../../custom-config/index.js";
+import { Writer } from "./Writer.js";
 
 type Namespace = string;
 

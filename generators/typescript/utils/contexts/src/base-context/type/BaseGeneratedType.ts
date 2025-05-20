@@ -3,10 +3,10 @@ import { ts } from "ts-morph";
 
 import { ExampleTypeShape } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedFile } from "../../commons";
-import { GeneratedModule } from "../../commons/GeneratedModule";
-import { GeneratedStatements } from "../../commons/GeneratedStatements";
-import { GeneratedUnionInlineMemberNode } from "../../commons/GeneratedUnionInlineMemberNode";
+import { GeneratedModule } from "../../commons/GeneratedModule.js";
+import { GeneratedStatements } from "../../commons/GeneratedStatements.js";
+import { GeneratedUnionInlineMemberNode } from "../../commons/GeneratedUnionInlineMemberNode.js";
+import { GeneratedFile } from "../../commons/index.js";
 
 export interface BaseGeneratedType<Context>
     extends GeneratedFile<Context>,

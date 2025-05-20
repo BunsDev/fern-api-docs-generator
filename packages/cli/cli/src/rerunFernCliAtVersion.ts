@@ -2,8 +2,8 @@ import chalk from "chalk";
 
 import { loggingExeca } from "@fern-api/logging-execa";
 
-import { CliContext } from "./cli-context/CliContext";
-import { FERN_CWD_ENV_VAR } from "./cwd";
+import { CliContext } from "./cli-context/CliContext.js";
+import { FERN_CWD_ENV_VAR } from "./cwd.js";
 
 export async function rerunFernCliAtVersion({
     version,

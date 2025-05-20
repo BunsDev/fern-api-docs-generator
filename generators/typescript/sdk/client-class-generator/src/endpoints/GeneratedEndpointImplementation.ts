@@ -4,7 +4,7 @@ import { OptionalKind, ParameterDeclarationStructure, ts } from "ts-morph";
 
 import { ExampleEndpointCall, HttpEndpoint } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedEndpointResponse } from "./default/endpoint-response/GeneratedEndpointResponse";
+import { GeneratedEndpointResponse } from "./default/endpoint-response/GeneratedEndpointResponse.js";
 
 export interface EndpointSignature {
     parameters: OptionalKind<ParameterDeclarationStructure>[];

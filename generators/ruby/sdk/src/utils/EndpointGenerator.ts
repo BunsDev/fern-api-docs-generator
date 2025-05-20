@@ -44,10 +44,10 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { FileUploadUtility } from "./FileUploadUtility";
-import { IdempotencyRequestOptions } from "./IdempotencyRequestOptionsClass";
-import { RequestOptions } from "./RequestOptionsClass";
-import { isTypeOptional } from "./TypeUtilities";
+import { FileUploadUtility } from "./FileUploadUtility.js";
+import { IdempotencyRequestOptions } from "./IdempotencyRequestOptionsClass.js";
+import { RequestOptions } from "./RequestOptionsClass.js";
+import { isTypeOptional } from "./TypeUtilities.js";
 
 export class EndpointGenerator {
     public endpointHasExamples: boolean;

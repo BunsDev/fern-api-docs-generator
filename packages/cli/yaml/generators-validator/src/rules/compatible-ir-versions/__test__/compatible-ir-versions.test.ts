@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { CompatibleIrVersionsRule } from "../compatible-ir-versions";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { CompatibleIrVersionsRule } from "../compatible-ir-versions.js";
 
 describe("compatible-ir-versions", () => {
     it("simple failure", async () => {

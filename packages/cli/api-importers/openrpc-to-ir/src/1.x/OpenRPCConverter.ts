@@ -3,10 +3,10 @@ import { MethodObject, OpenrpcDocument, ServerObject } from "@open-rpc/meta-sche
 import { HttpHeader, IntermediateRepresentation, PathParameter, QueryParameter } from "@fern-api/ir-sdk";
 import { AbstractSpecConverter, Converters, ServersConverter } from "@fern-api/v2-importer-commons";
 
-import { OpenRPCConverterContext3_1 } from "./OpenRPCConverterContext3_1";
-import { ParameterConverter } from "./ParameterConverter";
-import { FernParametersExtension } from "./extensions/x-fern-parameters";
-import { MethodConverter } from "./methods/MethodConverter";
+import { OpenRPCConverterContext3_1 } from "./OpenRPCConverterContext3_1.js";
+import { ParameterConverter } from "./ParameterConverter.js";
+import { FernParametersExtension } from "./extensions/x-fern-parameters.js";
+import { MethodConverter } from "./methods/MethodConverter.js";
 
 export type BaseIntermediateRepresentation = Omit<IntermediateRepresentation, "apiName" | "constants">;
 

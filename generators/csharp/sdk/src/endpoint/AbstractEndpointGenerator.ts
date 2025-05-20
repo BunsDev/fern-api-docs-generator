@@ -4,11 +4,11 @@ import { ExampleGenerator } from "@fern-api/fern-csharp-model";
 
 import { ExampleEndpointCall, ExampleRequestBody, HttpEndpoint, PathParameter, ServiceId } from "@fern-fern/ir-sdk/api";
 
-import { SdkGeneratorContext } from "../SdkGeneratorContext";
-import { WrappedRequestGenerator } from "../wrapped-request/WrappedRequestGenerator";
-import { EndpointSignatureInfo } from "./EndpointSignatureInfo";
-import { getEndpointRequest } from "./utils/getEndpointRequest";
-import { getEndpointReturnType } from "./utils/getEndpointReturnType";
+import { SdkGeneratorContext } from "../SdkGeneratorContext.js";
+import { WrappedRequestGenerator } from "../wrapped-request/WrappedRequestGenerator.js";
+import { EndpointSignatureInfo } from "./EndpointSignatureInfo.js";
+import { getEndpointRequest } from "./utils/getEndpointRequest.js";
+import { getEndpointReturnType } from "./utils/getEndpointReturnType.js";
 
 type PagingEndpoint = HttpEndpoint & { pagination: NonNullable<HttpEndpoint["pagination"]> };
 

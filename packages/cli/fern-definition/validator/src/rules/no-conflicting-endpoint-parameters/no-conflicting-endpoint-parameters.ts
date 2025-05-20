@@ -2,7 +2,7 @@ import chalk from "chalk";
 
 import { DEFAULT_REQUEST_PARAMETER_NAME } from "@fern-api/ir-generator";
 
-import { Rule } from "../../Rule";
+import { Rule } from "../../Rule.js";
 
 export const NoConflictingEndpointParametersRule: Rule = {
     name: "no-conflicting-endpoint-parameters",

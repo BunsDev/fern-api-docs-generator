@@ -16,8 +16,8 @@ import {
     PostmanUrlVariable
 } from "@fern-fern/postman-sdk/api";
 
-import { ORIGIN_VARIABLE_NAME, getReferenceToVariable } from "../utils";
-import { GeneratedRequest } from "./GeneratedRequest";
+import { ORIGIN_VARIABLE_NAME, getReferenceToVariable } from "../utils.js";
+import { GeneratedRequest } from "./GeneratedRequest.js";
 
 export declare namespace AbstractGeneratedRequest {
     export interface Init {

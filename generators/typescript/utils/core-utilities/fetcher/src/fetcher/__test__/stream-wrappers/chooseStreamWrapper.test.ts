@@ -1,8 +1,8 @@
-import { RUNTIME } from "../../../runtime";
-import { Node18UniversalStreamWrapper } from "../../stream-wrappers/Node18UniversalStreamWrapper";
-import { NodePre18StreamWrapper } from "../../stream-wrappers/NodePre18StreamWrapper";
-import { UndiciStreamWrapper } from "../../stream-wrappers/UndiciStreamWrapper";
-import { chooseStreamWrapper } from "../../stream-wrappers/chooseStreamWrapper";
+import { RUNTIME } from "../../../runtime/index.js";
+import { Node18UniversalStreamWrapper } from "../../stream-wrappers/Node18UniversalStreamWrapper.js";
+import { NodePre18StreamWrapper } from "../../stream-wrappers/NodePre18StreamWrapper.js";
+import { UndiciStreamWrapper } from "../../stream-wrappers/UndiciStreamWrapper.js";
+import { chooseStreamWrapper } from "../../stream-wrappers/chooseStreamWrapper.js";
 
 describe("chooseStreamWrapper", () => {
     beforeEach(() => {

@@ -1,6 +1,6 @@
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
-import { AttrPath, ModulePath } from "./core/types";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
+import { AttrPath, ModulePath } from "./core/types.js";
 
 export declare namespace Reference {
     interface Args {

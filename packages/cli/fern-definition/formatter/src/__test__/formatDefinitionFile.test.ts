@@ -2,7 +2,7 @@ import { readFile } from "fs/promises";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { formatDefinitionFile } from "../formatDefinitionFile";
+import { formatDefinitionFile } from "../formatDefinitionFile.js";
 
 const FIXTURES = [
     "lang-server/without-lang-server.yml",

@@ -1,6 +1,6 @@
-import { string } from "../../builders";
-import { itSchemaIdentity } from "../utils/itSchema";
-import { itValidate } from "../utils/itValidate";
+import { string } from "../../builders/index.js";
+import { itSchemaIdentity } from "../utils/itSchema.js";
+import { itValidate } from "../utils/itValidate.js";
 
 describe("string", () => {
     itSchemaIdentity(string(), "hello");

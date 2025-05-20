@@ -1,6 +1,6 @@
 import { EndpointId, dynamic } from "@fern-api/ir-sdk";
 
-import { Endpoint, convertEndpoints } from "./convertEndpoints";
+import { Endpoint, convertEndpoints } from "./convertEndpoints.js";
 
 export type DynamicIntermediateRepresentation = Omit<dynamic.DynamicIntermediateRepresentation, "endpoints"> & {
     endpoints: Record<EndpointId, Endpoint>;

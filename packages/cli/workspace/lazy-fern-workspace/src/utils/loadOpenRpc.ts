@@ -5,7 +5,7 @@ import yaml from "js-yaml";
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { mergeWithOverrides } from "../loaders/mergeWithOverrides";
+import { mergeWithOverrides } from "../loaders/mergeWithOverrides.js";
 
 export async function loadOpenRpc({
     context,

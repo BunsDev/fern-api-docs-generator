@@ -5,7 +5,7 @@ import path from "path";
 
 import { doesPathExist } from "@fern-api/fs-utils";
 
-import { Rule, RuleViolation } from "../../Rule";
+import { Rule, RuleViolation } from "../../Rule.js";
 
 const ALLOWED_FILE_TYPES = new Set<MimeType>([
     // image files

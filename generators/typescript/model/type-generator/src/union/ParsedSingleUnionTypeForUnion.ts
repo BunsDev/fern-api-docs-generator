@@ -14,7 +14,7 @@ import {
     UnionTypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { SamePropertiesAsObjectSingleUnionTypeGenerator } from "./SamePropertiesAsObjectSingleUnionTypeGenerator";
+import { SamePropertiesAsObjectSingleUnionTypeGenerator } from "./SamePropertiesAsObjectSingleUnionTypeGenerator.js";
 
 export declare namespace ParsedSingleUnionTypeForUnion {
     export interface Init {

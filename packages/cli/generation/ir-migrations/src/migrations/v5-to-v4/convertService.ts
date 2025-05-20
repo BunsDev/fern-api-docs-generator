@@ -1,16 +1,16 @@
-import { IrVersions } from "../../ir-versions";
-import { ErrorResolver } from "./ErrorResolver";
-import { convertDeclaredTypeName } from "./convertDeclaredTypeName";
-import { convertExampleTypeReference } from "./convertExampleTypeReference";
-import { convertFernFilepathV1, convertFernFilepathV2 } from "./convertFernFilepath";
-import { convertHeader } from "./convertHeader";
+import { IrVersions } from "../../ir-versions/index.js";
+import { ErrorResolver } from "./ErrorResolver.js";
+import { convertDeclaredTypeName } from "./convertDeclaredTypeName.js";
+import { convertExampleTypeReference } from "./convertExampleTypeReference.js";
+import { convertFernFilepathV1, convertFernFilepathV2 } from "./convertFernFilepath.js";
+import { convertHeader } from "./convertHeader.js";
 import {
     convertNameAndWireValueToV1,
     convertNameAndWireValueToV2,
     convertNameToV1,
     convertNameToV2
-} from "./convertName";
-import { convertTypeReference } from "./convertTypeReference";
+} from "./convertName.js";
+import { convertTypeReference } from "./convertTypeReference.js";
 
 export function convertService({
     service,

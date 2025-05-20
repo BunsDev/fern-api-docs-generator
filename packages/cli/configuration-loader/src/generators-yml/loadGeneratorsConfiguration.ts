@@ -6,7 +6,7 @@ import { generatorsYml } from "@fern-api/configuration";
 import { AbsoluteFilePath, RelativeFilePath, doesPathExist, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { convertGeneratorsConfiguration } from "./convertGeneratorsConfiguration";
+import { convertGeneratorsConfiguration } from "./convertGeneratorsConfiguration.js";
 
 export async function loadRawGeneratorsConfiguration({
     absolutePathToWorkspace,

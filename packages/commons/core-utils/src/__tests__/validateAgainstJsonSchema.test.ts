@@ -1,6 +1,6 @@
 import { JSONSchema4 } from "json-schema";
 
-import { validateAgainstJsonSchema } from "../validateAgainstJsonSchema";
+import { validateAgainstJsonSchema } from "../validateAgainstJsonSchema.js";
 
 describe("validateAgainstJsonSchema", () => {
     const schema: JSONSchema4 = {

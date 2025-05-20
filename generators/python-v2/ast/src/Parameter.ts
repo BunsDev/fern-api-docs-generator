@@ -1,7 +1,7 @@
-import { CodeBlock } from "./CodeBlock";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { CodeBlock } from "./CodeBlock.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Parameter {
     interface Args {

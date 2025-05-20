@@ -1,13 +1,13 @@
 import { NodePath } from "@fern-api/fern-definition-schema";
 import { RelativeFilePath } from "@fern-api/fs-utils";
 
-import { RuleVisitor } from "./Rule";
-import { ValidationViolation } from "./ValidationViolation";
+import { RuleVisitor } from "./Rule.js";
+import { ValidationViolation } from "./ValidationViolation.js";
 import {
     DocsConfigFileAstNodeTypes,
     DocsConfigFileAstNodeVisitor,
     DocsConfigFileAstVisitor
-} from "./docsAst/DocsConfigFileAstVisitor";
+} from "./docsAst/DocsConfigFileAstVisitor.js";
 
 export function createDocsConfigFileAstVisitorForRules({
     relativeFilepath,

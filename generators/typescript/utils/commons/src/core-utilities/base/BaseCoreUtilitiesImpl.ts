@@ -2,8 +2,8 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { CoreUtility } from "../CoreUtility";
-import { BaseCoreUtilities } from "./BaseCoreUtilities";
+import { CoreUtility } from "../CoreUtility.js";
+import { BaseCoreUtilities } from "./BaseCoreUtilities.js";
 
 export class BaseCoreUtilitiesImpl extends CoreUtility implements BaseCoreUtilities {
     public readonly MANIFEST = {

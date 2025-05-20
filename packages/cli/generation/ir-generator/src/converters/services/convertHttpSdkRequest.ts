@@ -3,11 +3,11 @@ import { size } from "lodash-es";
 import { RawSchemas, isInlineRequestBody, parseRawBytesType } from "@fern-api/fern-definition-schema";
 import { SdkRequest, SdkRequestBodyType, SdkRequestShape } from "@fern-api/ir-sdk";
 
-import { FernFileContext } from "../../FernFileContext";
-import { PropertyResolver } from "../../resolvers/PropertyResolver";
-import { TypeResolver } from "../../resolvers/TypeResolver";
-import { convertReferenceHttpRequestBody } from "./convertHttpRequestBody";
-import { getRequestPropertyComponents } from "./convertProperty";
+import { FernFileContext } from "../../FernFileContext.js";
+import { PropertyResolver } from "../../resolvers/PropertyResolver.js";
+import { TypeResolver } from "../../resolvers/TypeResolver.js";
+import { convertReferenceHttpRequestBody } from "./convertHttpRequestBody.js";
+import { getRequestPropertyComponents } from "./convertProperty.js";
 
 export const DEFAULT_REQUEST_PARAMETER_NAME = "request";
 export const DEFAULT_BODY_PROPERTY_KEY_IN_WRAPPER = "body";

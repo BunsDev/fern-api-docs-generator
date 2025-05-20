@@ -4,8 +4,8 @@ import { FernUserToken, storeToken } from "@fern-api/auth";
 import { getPosthogManager } from "@fern-api/posthog-manager";
 import { TaskContext } from "@fern-api/task-context";
 
-import { doAuth0DeviceAuthorizationFlow } from "./auth0-login/doAuth0DeviceAuthorizationFlow";
-import { doAuth0LoginFlow } from "./auth0-login/doAuth0LoginFlow";
+import { doAuth0DeviceAuthorizationFlow } from "./auth0-login/doAuth0DeviceAuthorizationFlow.js";
+import { doAuth0LoginFlow } from "./auth0-login/doAuth0LoginFlow.js";
 
 // these are client-side safe values
 const AUTH0_DOMAIN = process.env.AUTH0_DOMAIN ?? "fern-prod.us.auth0.com";

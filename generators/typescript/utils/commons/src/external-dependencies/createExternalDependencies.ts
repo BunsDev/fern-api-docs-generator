@@ -1,12 +1,12 @@
-import { DependencyManager } from "../dependency-manager/DependencyManager";
-import { ImportsManager } from "../imports-manager";
-import { ExternalDependencies } from "./ExternalDependencies";
-import { BlobImpl } from "./blob/BlobImpl";
-import { ExpressImpl } from "./express/ExpressImpl";
-import { FsImpl } from "./fs/FsImpl";
-import { QsImpl } from "./qs/QsImpl";
-import { StreamImpl } from "./stream/StreamImpl";
-import { UrlJoinImpl } from "./url-join/UrlJoinImpl";
+import { DependencyManager } from "../dependency-manager/DependencyManager.js";
+import { ImportsManager } from "../imports-manager/index.js";
+import { ExternalDependencies } from "./ExternalDependencies.js";
+import { BlobImpl } from "./blob/BlobImpl.js";
+import { ExpressImpl } from "./express/ExpressImpl.js";
+import { FsImpl } from "./fs/FsImpl.js";
+import { QsImpl } from "./qs/QsImpl.js";
+import { StreamImpl } from "./stream/StreamImpl.js";
+import { UrlJoinImpl } from "./url-join/UrlJoinImpl.js";
 
 export declare namespace createExternalDependencies {
     export interface Args {

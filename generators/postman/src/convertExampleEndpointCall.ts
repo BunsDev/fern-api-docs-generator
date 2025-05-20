@@ -10,7 +10,7 @@ import {
 } from "@fern-fern/ir-sdk/api";
 import { PostmanExampleResponse, PostmanHeader } from "@fern-fern/postman-sdk/api";
 
-import { GeneratedExampleRequest } from "./request/GeneratedExampleRequest";
+import { GeneratedExampleRequest } from "./request/GeneratedExampleRequest.js";
 
 export function convertExampleEndpointCall({
     ir,

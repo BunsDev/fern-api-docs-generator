@@ -1,6 +1,6 @@
 import { RawSchemas, isRawMultipleBaseUrlsEnvironment } from "@fern-api/fern-definition-schema";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
 
 const DEFAULT_URL_NAME = "Base";
 const DEFAULT_ENVIRONMENT_NAME = "Default";

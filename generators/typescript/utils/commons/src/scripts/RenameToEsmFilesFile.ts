@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 
-import { ScriptFile } from "./ScriptFile";
+import { ScriptFile } from "./ScriptFile.js";
 
 const fileName = "rename-to-esm-files.js";
 const filePathOnDockerContainer = `/assets/scripts/${fileName}`;

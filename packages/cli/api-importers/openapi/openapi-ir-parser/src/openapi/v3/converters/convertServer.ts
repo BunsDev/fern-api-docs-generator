@@ -2,8 +2,8 @@ import { OpenAPIV3 } from "openapi-types";
 
 import { Server } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../../../getExtension";
-import { FernOpenAPIExtension } from "../extensions/fernExtensions";
+import { getExtension } from "../../../getExtension.js";
+import { FernOpenAPIExtension } from "../extensions/fernExtensions.js";
 
 export function convertServer(server: OpenAPIV3.ServerObject): Server {
     return {

@@ -1,17 +1,17 @@
-import { Access } from "./Access";
-import { Annotation } from "./Annotation";
-import { ClassInstantiation } from "./ClassInstantiation";
-import { ClassReference } from "./ClassReference";
-import { CodeBlock } from "./CodeBlock";
-import { Field } from "./Field";
-import { Interface } from "./Interface";
-import { Method, MethodType } from "./Method";
-import { MethodInvocation } from "./MethodInvocation";
-import { Parameter } from "./Parameter";
-import { Type } from "./Type";
-import { XmlDocBlock } from "./XmlDocBlock";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Access } from "./Access.js";
+import { Annotation } from "./Annotation.js";
+import { ClassInstantiation } from "./ClassInstantiation.js";
+import { ClassReference } from "./ClassReference.js";
+import { CodeBlock } from "./CodeBlock.js";
+import { Field } from "./Field.js";
+import { Interface } from "./Interface.js";
+import { Method, MethodType } from "./Method.js";
+import { MethodInvocation } from "./MethodInvocation.js";
+import { Parameter } from "./Parameter.js";
+import { Type } from "./Type.js";
+import { XmlDocBlock } from "./XmlDocBlock.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export class Class extends AstNode {
     public static readonly ClassType = {

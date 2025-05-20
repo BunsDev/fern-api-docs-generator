@@ -9,14 +9,14 @@ import { isVersionAhead } from "@fern-api/semver-utils";
 import { FernCliError, Finishable, PosthogEvent, Startable, TaskContext, TaskResult } from "@fern-api/task-context";
 import { Workspace } from "@fern-api/workspace-loader";
 
-import { CliEnvironment } from "./CliEnvironment";
-import { Log } from "./Log";
-import { TaskContextImpl } from "./TaskContextImpl";
-import { TtyAwareLogger } from "./TtyAwareLogger";
-import { logErrorMessage } from "./logErrorMessage";
-import { getFernUpgradeMessage } from "./upgrade-utils/getFernUpgradeMessage";
-import { FernGeneratorUpgradeInfo, getProjectGeneratorUpgrades } from "./upgrade-utils/getGeneratorVersions";
-import { getLatestVersionOfCli } from "./upgrade-utils/getLatestVersionOfCli";
+import { CliEnvironment } from "./CliEnvironment.js";
+import { Log } from "./Log.js";
+import { TaskContextImpl } from "./TaskContextImpl.js";
+import { TtyAwareLogger } from "./TtyAwareLogger.js";
+import { logErrorMessage } from "./logErrorMessage.js";
+import { getFernUpgradeMessage } from "./upgrade-utils/getFernUpgradeMessage.js";
+import { FernGeneratorUpgradeInfo, getProjectGeneratorUpgrades } from "./upgrade-utils/getGeneratorVersions.js";
+import { getLatestVersionOfCli } from "./upgrade-utils/getLatestVersionOfCli.js";
 
 const WORKSPACE_NAME_COLORS = ["#2E86AB", "#A23B72", "#F18F01", "#C73E1D", "#CCE2A3"];
 

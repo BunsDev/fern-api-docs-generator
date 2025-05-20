@@ -5,7 +5,7 @@ import { visit } from "unist-util-visit";
 import { getReplacedHref, parseMarkdownToTree, trimAnchor } from "@fern-api/docs-markdown-utils";
 import { AbsoluteFilePath, doesPathExistSync } from "@fern-api/fs-utils";
 
-import { Rule, RuleViolation } from "../../Rule";
+import { Rule, RuleViolation } from "../../Rule.js";
 
 export const ValidMarkdownFileReferences: Rule = {
     name: "valid-markdown-file-references",

@@ -1,11 +1,11 @@
-import { Access } from "./Access";
-import { Attribute } from "./Attribute";
-import { CodeBlock } from "./CodeBlock";
-import { Comment } from "./Comment";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
-import { convertToPhpVariableName } from "./utils/convertToPhpVariableName";
+import { Access } from "./Access.js";
+import { Attribute } from "./Attribute.js";
+import { CodeBlock } from "./CodeBlock.js";
+import { Comment } from "./Comment.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
+import { convertToPhpVariableName } from "./utils/convertToPhpVariableName.js";
 
 export declare namespace Field {
     export interface Args {

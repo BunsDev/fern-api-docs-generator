@@ -1,8 +1,8 @@
 import { assertNever } from "@fern-api/core-utils";
 
-import { GoTypeReference } from "./GoTypeReference";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { GoTypeReference } from "./GoTypeReference.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 type InternalType =
     | Any_

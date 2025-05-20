@@ -2,7 +2,7 @@ import path from "path";
 
 import { keys } from "@fern-api/core-utils";
 
-import { ExportedDirectory, convertExportedDirectoryPathToFilePath } from "../exports-manager/ExportedFilePath";
+import { ExportedDirectory, convertExportedDirectoryPathToFilePath } from "../exports-manager/ExportedFilePath.js";
 
 export declare namespace getQualifiedNameOfDirectory {
     export interface Args<QualifiedName> {

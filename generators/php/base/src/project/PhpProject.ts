@@ -7,9 +7,9 @@ import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { loggingExeca } from "@fern-api/logging-execa";
 import { BasePhpCustomConfigSchema } from "@fern-api/php-codegen";
 
-import { AsIsFiles } from "../AsIs";
-import { AbstractPhpGeneratorContext } from "../context/AbstractPhpGeneratorContext";
-import { PhpFile } from "./PhpFile";
+import { AsIsFiles } from "../AsIs.js";
+import { AbstractPhpGeneratorContext } from "../context/AbstractPhpGeneratorContext.js";
+import { PhpFile } from "./PhpFile.js";
 
 const AS_IS_DIRECTORY = path.join(__dirname, "asIs");
 const CORE_DIRECTORY_NAME = "Core";

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 
-import { toRawResponse } from "../RawResponse";
+import { toRawResponse } from "../RawResponse.js";
 
 describe("RawResponse", () => {
     describe("toRawResponse", () => {

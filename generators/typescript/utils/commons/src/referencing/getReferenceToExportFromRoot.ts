@@ -5,14 +5,14 @@ import {
     ExportedFilePath,
     convertExportedDirectoryPathToFilePath,
     convertExportedFilePathToFilePath
-} from "../exports-manager/ExportedFilePath";
-import { ImportsManager } from "../imports-manager/ImportsManager";
-import { ModuleSpecifier } from "./ModuleSpecifier";
-import { GetReferenceOpts, Reference } from "./Reference";
-import { getDirectReferenceToExport } from "./getDirectReferenceToExport";
-import { getEntityNameOfDirectory } from "./getEntityNameOfDirectory";
-import { getExpressionToDirectory } from "./getExpressionToDirectory";
-import { getRelativePathAsModuleSpecifierTo } from "./getRelativePathAsModuleSpecifierTo";
+} from "../exports-manager/ExportedFilePath.js";
+import { ImportsManager } from "../imports-manager/ImportsManager.js";
+import { ModuleSpecifier } from "./ModuleSpecifier.js";
+import { GetReferenceOpts, Reference } from "./Reference.js";
+import { getDirectReferenceToExport } from "./getDirectReferenceToExport.js";
+import { getEntityNameOfDirectory } from "./getEntityNameOfDirectory.js";
+import { getExpressionToDirectory } from "./getExpressionToDirectory.js";
+import { getRelativePathAsModuleSpecifierTo } from "./getRelativePathAsModuleSpecifierTo.js";
 
 export declare namespace getReferenceToExportFromRoot {
     export interface Args {

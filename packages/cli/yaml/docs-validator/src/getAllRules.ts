@@ -1,14 +1,14 @@
-import { Rule } from "./Rule";
-import { AccentColorContrastRule } from "./rules/accent-color-contrast";
-import { AllRolesMustBeDeclaredRule } from "./rules/all-roles-must-be-declared";
-import { FilepathsExistRule } from "./rules/filepaths-exist";
-import { OnlyVersionedNavigation } from "./rules/only-versioned-navigation";
-import { ValidDocsEndpoints } from "./rules/valid-docs-endpoints";
-import { ValidFileTypes } from "./rules/valid-file-types";
-import { ValidFrontmatter } from "./rules/valid-frontmatter";
-import { ValidMarkdownLinks } from "./rules/valid-markdown-link";
-import { ValidateProductFileRule } from "./rules/validate-product-file";
-import { ValidateVersionFileRule } from "./rules/validate-version-file";
+import { Rule } from "./Rule.js";
+import { AccentColorContrastRule } from "./rules/accent-color-contrast/index.js";
+import { AllRolesMustBeDeclaredRule } from "./rules/all-roles-must-be-declared/index.js";
+import { FilepathsExistRule } from "./rules/filepaths-exist/index.js";
+import { OnlyVersionedNavigation } from "./rules/only-versioned-navigation/index.js";
+import { ValidDocsEndpoints } from "./rules/valid-docs-endpoints/index.js";
+import { ValidFileTypes } from "./rules/valid-file-types/index.js";
+import { ValidFrontmatter } from "./rules/valid-frontmatter/index.js";
+import { ValidMarkdownLinks } from "./rules/valid-markdown-link/index.js";
+import { ValidateProductFileRule } from "./rules/validate-product-file/index.js";
+import { ValidateVersionFileRule } from "./rules/validate-version-file/index.js";
 
 const allRules = [
     FilepathsExistRule,

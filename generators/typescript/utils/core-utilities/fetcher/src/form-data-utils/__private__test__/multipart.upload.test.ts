@@ -4,9 +4,9 @@ import fs from "fs";
 import { Server } from "http";
 import multer from "multer";
 
-import { newFormData } from "../..";
-import { getFetchFn } from "../../fetcher/getFetchFn";
-import { RUNTIME } from "../../runtime";
+import { getFetchFn } from "../../fetcher/getFetchFn.js";
+import { newFormData } from "../../index.js";
+import { RUNTIME } from "../../runtime/index.js";
 
 describe("Multipart Form Data Tests", () => {
     const app = express();

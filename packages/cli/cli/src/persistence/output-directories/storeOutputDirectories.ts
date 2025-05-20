@@ -3,7 +3,7 @@ import path from "path";
 
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 
-import { getPathToOutputDirectoriesFile } from "./getPathToOutputDirectoriesFile";
+import { getPathToOutputDirectoriesFile } from "./getPathToOutputDirectoriesFile.js";
 
 export async function storeOutputDirectories(outputDirectories: AbsoluteFilePath[]): Promise<void> {
     await mkdir(path.dirname(getPathToOutputDirectoriesFile()), { recursive: true });

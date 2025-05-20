@@ -1,6 +1,6 @@
-export * from "./blob";
-export { createExternalDependencies } from "./createExternalDependencies";
-export * from "./express";
-export { type ExternalDependencies } from "./ExternalDependencies";
-export * from "./fs";
-export * from "./url-join";
+export * from "./blob/index.js";
+export { createExternalDependencies } from "./createExternalDependencies.js";
+export * from "./express/index.js";
+export { type ExternalDependencies } from "./ExternalDependencies.js";
+export * from "./fs/index.js";
+export * from "./url-join/index.js";

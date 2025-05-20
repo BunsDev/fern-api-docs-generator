@@ -2,10 +2,10 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { DependencyManager, DependencyType } from "../../dependency-manager/DependencyManager";
-import { CoreUtility } from "../CoreUtility";
-import { MANIFEST as RuntimeManifest } from "../runtime/RuntimeImpl";
-import { Websocket } from "./Websocket";
+import { DependencyManager, DependencyType } from "../../dependency-manager/DependencyManager.js";
+import { CoreUtility } from "../CoreUtility.js";
+import { MANIFEST as RuntimeManifest } from "../runtime/RuntimeImpl.js";
+import { Websocket } from "./Websocket.js";
 
 export class WebsocketImpl extends CoreUtility implements Websocket {
     public readonly MANIFEST = {

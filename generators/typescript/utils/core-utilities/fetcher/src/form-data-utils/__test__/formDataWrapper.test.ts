@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import fs from "fs";
 
-import { Node18FormData, WebFormData } from "../FormDataWrapper";
+import { Node18FormData, WebFormData } from "../FormDataWrapper.js";
 
 describe("CrossPlatformFormData", () => {
     describe("Node18FormData", () => {

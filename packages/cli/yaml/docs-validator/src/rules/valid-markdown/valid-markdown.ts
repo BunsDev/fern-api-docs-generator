@@ -8,7 +8,7 @@ import { getMarkdownFormat, parseImagePaths, parseMarkdownToTree } from "@fern-a
 import { AbsoluteFilePath, dirname } from "@fern-api/fs-utils";
 import { Logger } from "@fern-api/logger";
 
-import { Rule } from "../../Rule";
+import { Rule } from "../../Rule.js";
 
 export const ValidMarkdownRule: Rule = {
     name: "valid-markdown",

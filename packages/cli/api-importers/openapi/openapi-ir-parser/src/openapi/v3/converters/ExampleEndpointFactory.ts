@@ -18,12 +18,12 @@ import {
     SupportedSdkLanguage
 } from "@fern-api/openapi-ir";
 
-import { ExampleTypeFactory } from "../../../schema/examples/ExampleTypeFactory";
-import { convertSchemaToSchemaWithExample } from "../../../schema/utils/convertSchemaToSchemaWithExample";
-import { isSchemaRequired } from "../../../schema/utils/isSchemaRequired";
-import { shouldSkipReadOnly } from "../../../utils/shouldSkipReadOnly";
-import { OpenAPIV3ParserContext } from "../OpenAPIV3ParserContext";
-import { hasIncompleteExample } from "../hasIncompleteExample";
+import { ExampleTypeFactory } from "../../../schema/examples/ExampleTypeFactory.js";
+import { convertSchemaToSchemaWithExample } from "../../../schema/utils/convertSchemaToSchemaWithExample.js";
+import { isSchemaRequired } from "../../../schema/utils/isSchemaRequired.js";
+import { shouldSkipReadOnly } from "../../../utils/shouldSkipReadOnly.js";
+import { OpenAPIV3ParserContext } from "../OpenAPIV3ParserContext.js";
+import { hasIncompleteExample } from "../hasIncompleteExample.js";
 
 export class ExampleEndpointFactory {
     private exampleTypeFactory: ExampleTypeFactory;

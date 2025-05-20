@@ -2,7 +2,7 @@ import { OpenAPISpec, ProtobufSpec, Spec } from "@fern-api/api-workspace-commons
 import { RelativeFilePath, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { ProtobufOpenAPIGenerator } from "../protobuf/ProtobufOpenAPIGenerator";
+import { ProtobufOpenAPIGenerator } from "../protobuf/ProtobufOpenAPIGenerator.js";
 
 export async function getAllOpenAPISpecs({
     context,

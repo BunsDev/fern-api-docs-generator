@@ -13,23 +13,23 @@ import {
     join
 } from "@fern-api/fs-utils";
 
-import { DependencyManager } from "../dependency-manager/DependencyManager";
-import { ExportedDirectory, ExportsManager } from "../exports-manager";
-import { ImportsManager } from "../imports-manager";
-import { getReferenceToExportViaNamespaceImport } from "../referencing";
-import { CoreUtilities } from "./CoreUtilities";
-import { CoreUtility, CoreUtilityName } from "./CoreUtility";
-import { AuthImpl } from "./auth/AuthImpl";
-import { BaseCoreUtilitiesImpl } from "./base/BaseCoreUtilitiesImpl";
-import { CallbackQueueImpl } from "./callback-queue/CallbackQueueImpl";
-import { FetcherImpl } from "./fetcher/FetcherImpl";
-import { FormDataUtilsImpl } from "./form-data-utils/FormDataUtilsImpl";
-import { PaginationImpl } from "./pagination/PaginationImpl";
-import { RuntimeImpl } from "./runtime/RuntimeImpl";
-import { StreamingUtilsImpl } from "./stream-utils/StreamUtilsImpl";
-import { UtilsImpl } from "./utils/UtilsImpl";
-import { WebsocketImpl } from "./websocket/WebsocketImpl";
-import { ZurgImpl } from "./zurg/ZurgImpl";
+import { DependencyManager } from "../dependency-manager/DependencyManager.js";
+import { ExportedDirectory, ExportsManager } from "../exports-manager/index.js";
+import { ImportsManager } from "../imports-manager/index.js";
+import { getReferenceToExportViaNamespaceImport } from "../referencing/index.js";
+import { CoreUtilities } from "./CoreUtilities.js";
+import { CoreUtility, CoreUtilityName } from "./CoreUtility.js";
+import { AuthImpl } from "./auth/AuthImpl.js";
+import { BaseCoreUtilitiesImpl } from "./base/BaseCoreUtilitiesImpl.js";
+import { CallbackQueueImpl } from "./callback-queue/CallbackQueueImpl.js";
+import { FetcherImpl } from "./fetcher/FetcherImpl.js";
+import { FormDataUtilsImpl } from "./form-data-utils/FormDataUtilsImpl.js";
+import { PaginationImpl } from "./pagination/PaginationImpl.js";
+import { RuntimeImpl } from "./runtime/RuntimeImpl.js";
+import { StreamingUtilsImpl } from "./stream-utils/StreamUtilsImpl.js";
+import { UtilsImpl } from "./utils/UtilsImpl.js";
+import { WebsocketImpl } from "./websocket/WebsocketImpl.js";
+import { ZurgImpl } from "./zurg/ZurgImpl.js";
 
 export declare namespace CoreUtilitiesManager {
     namespace getCoreUtilities {

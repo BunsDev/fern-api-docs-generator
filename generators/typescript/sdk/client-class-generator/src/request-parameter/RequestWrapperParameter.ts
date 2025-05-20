@@ -4,7 +4,7 @@ import { ts } from "ts-morph";
 
 import { ExampleEndpointCall, HttpHeader, QueryParameter } from "@fern-fern/ir-sdk/api";
 
-import { AbstractRequestParameter } from "./AbstractRequestParameter";
+import { AbstractRequestParameter } from "./AbstractRequestParameter.js";
 
 type DefaultNonBodyKeyName = string & {
     __DefaultNonBodyKeyName: void;

@@ -1,15 +1,15 @@
 import { RawSchemas, isInlineRequestBody } from "@fern-api/fern-definition-schema";
 import { Name, ObjectProperty, RequestProperty, RequestPropertyValue, ResponseProperty } from "@fern-api/ir-sdk";
 
-import { FernFileContext } from "../FernFileContext";
+import { FernFileContext } from "../FernFileContext.js";
 import {
     getNestedObjectPropertyFromObjectSchema,
     getNestedObjectPropertyFromResolvedType,
     maybeFileFromResolvedType
-} from "../converters/services/convertProperty";
-import { convertQueryParameter } from "../converters/services/convertQueryParameter";
-import { EndpointResolver } from "./EndpointResolver";
-import { TypeResolver } from "./TypeResolver";
+} from "../converters/services/convertProperty.js";
+import { convertQueryParameter } from "../converters/services/convertQueryParameter.js";
+import { EndpointResolver } from "./EndpointResolver.js";
+import { TypeResolver } from "./TypeResolver.js";
 
 export interface PropertyResolver {
     resolveRequestProperty: (args: {

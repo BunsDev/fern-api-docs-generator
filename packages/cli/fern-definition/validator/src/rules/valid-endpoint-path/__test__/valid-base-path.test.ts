@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { ValidEndpointPathRule } from "../valid-endpoint-path";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { ValidEndpointPathRule } from "../valid-endpoint-path.js";
 
 describe("valid-endpoint-path", () => {
     it("simple", async () => {

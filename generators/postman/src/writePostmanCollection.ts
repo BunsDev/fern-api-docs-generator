@@ -17,10 +17,10 @@ import * as IrSerialization from "@fern-fern/ir-sdk/serialization";
 import { FernPostmanClient } from "@fern-fern/postman-sdk";
 import * as PostmanParsing from "@fern-fern/postman-sdk/serialization";
 
-import { PostmanGeneratorConfigSchema } from "./config/schemas/PostmanGeneratorConfigSchema";
-import { PublishConfigSchema } from "./config/schemas/PublishConfigSchema";
-import { convertToPostmanCollection } from "./convertToPostmanCollection";
-import { writePostmanGithubWorkflows } from "./writePostmanGithubWorkflows";
+import { PostmanGeneratorConfigSchema } from "./config/schemas/PostmanGeneratorConfigSchema.js";
+import { PublishConfigSchema } from "./config/schemas/PublishConfigSchema.js";
+import { convertToPostmanCollection } from "./convertToPostmanCollection.js";
+import { writePostmanGithubWorkflows } from "./writePostmanGithubWorkflows.js";
 
 const DEFAULT_COLLECTION_OUTPUT_FILENAME = "collection.json";
 

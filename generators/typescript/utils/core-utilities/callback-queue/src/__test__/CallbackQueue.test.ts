@@ -1,4 +1,4 @@
-import { CallbackQueue } from "../CallbackQueue";
+import { CallbackQueue } from "../CallbackQueue.js";
 
 describe("CallbackQueue", () => {
     it("correctly queues functions", async () => {

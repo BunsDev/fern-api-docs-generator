@@ -13,8 +13,8 @@ import {
 import { isSchemaEqual } from "@fern-api/openapi-ir";
 import { TaskContext } from "@fern-api/task-context";
 
-import { ConvertOpenAPIOptions } from "./ConvertOpenAPIOptions";
-import { State } from "./State";
+import { ConvertOpenAPIOptions } from "./ConvertOpenAPIOptions.js";
+import { State } from "./State.js";
 
 export interface OpenApiIrConverterContextOpts {
     taskContext: TaskContext;

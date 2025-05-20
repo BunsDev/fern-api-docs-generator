@@ -5,7 +5,7 @@ import { ModuleDeclaration, ts } from "ts-morph";
 
 import { EnumTypeDeclaration } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema";
+import { AbstractGeneratedTypeSchema } from "../AbstractGeneratedTypeSchema.js";
 
 export class GeneratedEnumTypeSchemaImpl<Context extends BaseContext>
     extends AbstractGeneratedTypeSchema<EnumTypeDeclaration, Context>

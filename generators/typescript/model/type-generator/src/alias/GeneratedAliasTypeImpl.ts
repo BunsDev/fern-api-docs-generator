@@ -16,7 +16,7 @@ import {
 
 import { ExampleTypeShape, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedType } from "../AbstractGeneratedType";
+import { AbstractGeneratedType } from "../AbstractGeneratedType.js";
 
 export class GeneratedAliasTypeImpl<Context extends BaseContext>
     extends AbstractGeneratedType<TypeReference, Context>

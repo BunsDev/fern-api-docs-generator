@@ -3,8 +3,8 @@ import path from "path";
 import { FernWorkspace, visitAllDefinitionFiles } from "@fern-api/api-workspace-commons";
 import { RelativeFilePath } from "@fern-api/fs-utils";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { visitDefinitionFileYamlAst } from "../../ast";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { visitDefinitionFileYamlAst } from "../../ast/index.js";
 
 type RelativeDirectoryPath = string;
 type DeclaredName = string;

@@ -4,8 +4,8 @@ import { RelativeFilePath } from "@fern-api/fs-utils";
 
 import { DeclaredErrorName } from "@fern-fern/ir-sdk/api";
 
-import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer";
-import { DeclarationReferencer } from "./DeclarationReferencer";
+import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer.js";
+import { DeclarationReferencer } from "./DeclarationReferencer.js";
 
 export const ERRORS_DIRECTORY_NAME = "errors";
 

@@ -5,7 +5,7 @@ import { generatorsYml, loadGeneratorsConfiguration } from "@fern-api/configurat
 import { Values, assertNever } from "@fern-api/core-utils";
 import { Project } from "@fern-api/project-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export const GenerationModeFilter = {
     GitHub: "github",

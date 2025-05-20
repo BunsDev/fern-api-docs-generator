@@ -8,7 +8,7 @@ import { assertNever } from "@fern-api/core-utils";
 
 import { Name, SdkRequest } from "@fern-fern/ir-sdk/api";
 
-import { RequestWrapperDeclarationReferencer } from "../../declaration-referencers/RequestWrapperDeclarationReferencer";
+import { RequestWrapperDeclarationReferencer } from "../../declaration-referencers/RequestWrapperDeclarationReferencer.js";
 
 export declare namespace RequestWrapperContextImpl {
     export interface Init {

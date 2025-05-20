@@ -6,8 +6,8 @@ import ora, { Ora } from "ora";
 import { addPrefixToString, assertNever, noop } from "@fern-api/core-utils";
 import { LOG_LEVELS, LogLevel } from "@fern-api/logger";
 
-import { Log } from "./Log";
-import { TaskContextImpl } from "./TaskContextImpl";
+import { Log } from "./Log.js";
+import { TaskContextImpl } from "./TaskContextImpl.js";
 
 export class TtyAwareLogger {
     private tasks: TaskContextImpl[] = [];

@@ -2,10 +2,10 @@ import chalk from "chalk";
 
 import { visitAllDefinitionFiles } from "@fern-api/api-workspace-commons";
 
-import { Rule } from "../../Rule";
-import { visitDefinitionFileYamlAst } from "../../ast";
-import { EndpointPathRegistry } from "./EndpointPathRegistry";
-import { getFullEndpointPath } from "./getFullEndpointPath";
+import { Rule } from "../../Rule.js";
+import { visitDefinitionFileYamlAst } from "../../ast/index.js";
+import { EndpointPathRegistry } from "./EndpointPathRegistry.js";
+import { getFullEndpointPath } from "./getFullEndpointPath.js";
 
 export const NoConflictingEndpointPathsRule: Rule = {
     name: "no-conflicting-endpoint-paths",

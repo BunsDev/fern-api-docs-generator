@@ -9,7 +9,7 @@ import { getEndpointLocation } from "@fern-api/openapi-ir-to-fern";
 import { Project } from "@fern-api/project-loader";
 import { TaskContext } from "@fern-api/task-context";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 export async function writeOverridesForWorkspaces({
     project,

@@ -1,1 +1,1 @@
-export * from "./ScriptsManager";
+export * from "./ScriptsManager.js";

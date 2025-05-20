@@ -8,8 +8,8 @@ import {
     SingleBaseUrlEnvironment
 } from "@fern-api/ir-sdk";
 
-import { AbstractConverter, AbstractConverterContext } from "../..";
-import { ServerNameExtension } from "../../extensions/x-fern-server-name";
+import { ServerNameExtension } from "../../extensions/x-fern-server-name.js";
+import { AbstractConverter, AbstractConverterContext } from "../../index.js";
 
 const DEFAULT_BASE_URL_ID = "Base";
 

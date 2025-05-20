@@ -12,9 +12,9 @@ import {
     getUnionDiscriminantName
 } from "@fern-api/ir-generator";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { CASINGS_GENERATOR } from "../../utils/casingsGenerator";
-import { getTypeDeclarationNameAsString } from "../../utils/getTypeDeclarationNameAsString";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { CASINGS_GENERATOR } from "../../utils/casingsGenerator.js";
+import { getTypeDeclarationNameAsString } from "../../utils/getTypeDeclarationNameAsString.js";
 
 export const NoDuplicateFieldNamesRule: Rule = {
     name: "no-duplicate-field-names",

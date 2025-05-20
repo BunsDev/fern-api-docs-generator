@@ -27,23 +27,23 @@ import {
     WellKnownProtobufType
 } from "@fern-fern/ir-sdk/api";
 
-import { CsharpGeneratorAgent } from "./CsharpGeneratorAgent";
-import { SdkCustomConfigSchema } from "./SdkCustomConfig";
-import { EndpointGenerator } from "./endpoint/EndpointGenerator";
-import { EndpointSnippetsGenerator } from "./endpoint/snippets/EndpointSnippetsGenerator";
-import { GrpcClientInfo } from "./grpc/GrpcClientInfo";
-import { CLIENT_OPTIONS_CLASS_NAME } from "./options/ClientOptionsGenerator";
-import { IDEMPOTENT_REQUEST_OPTIONS_CLASS_NAME } from "./options/IdempotentRequestOptionsGenerator";
+import { CsharpGeneratorAgent } from "./CsharpGeneratorAgent.js";
+import { SdkCustomConfigSchema } from "./SdkCustomConfig.js";
+import { EndpointGenerator } from "./endpoint/EndpointGenerator.js";
+import { EndpointSnippetsGenerator } from "./endpoint/snippets/EndpointSnippetsGenerator.js";
+import { GrpcClientInfo } from "./grpc/GrpcClientInfo.js";
+import { CLIENT_OPTIONS_CLASS_NAME } from "./options/ClientOptionsGenerator.js";
+import { IDEMPOTENT_REQUEST_OPTIONS_CLASS_NAME } from "./options/IdempotentRequestOptionsGenerator.js";
 import {
     IDEMPOTENT_REQUEST_OPTIONS_INTERFACE_NAME,
     IDEMPOTENT_REQUEST_OPTIONS_PARAMETER_NAME
-} from "./options/IdempotentRequestOptionsInterfaceGenerator";
-import { REQUEST_OPTIONS_CLASS_NAME } from "./options/RequestOptionsGenerator";
+} from "./options/IdempotentRequestOptionsInterfaceGenerator.js";
+import { REQUEST_OPTIONS_CLASS_NAME } from "./options/RequestOptionsGenerator.js";
 import {
     REQUEST_OPTIONS_INTERFACE_NAME,
     REQUEST_OPTIONS_PARAMETER_NAME
-} from "./options/RequestOptionsInterfaceGenerator";
-import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder";
+} from "./options/RequestOptionsInterfaceGenerator.js";
+import { ReadmeConfigBuilder } from "./readme/ReadmeConfigBuilder.js";
 
 const TYPES_FOLDER_NAME = "Types";
 const EXCEPTIONS_FOLDER_NAME = "Exceptions";

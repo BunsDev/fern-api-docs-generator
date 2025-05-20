@@ -1,9 +1,9 @@
 import { assertNever } from "@fern-api/core-utils";
 
-import { Reference } from "./Reference";
-import { Type } from "./Type";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Reference } from "./Reference.js";
+import { Type } from "./Type.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export interface NamedValue {
     name: string;

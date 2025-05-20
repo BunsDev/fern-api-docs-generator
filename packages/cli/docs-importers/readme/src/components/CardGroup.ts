@@ -1,6 +1,6 @@
 import type { Element } from "hast";
 
-import type { HastNode, HastNodeIndex, HastNodeParent } from "../types/hastTypes.ts";
+import type { HastNode, HastNodeIndex, HastNodeParent } from "../types/hastTypes.js";
 
 export function scrapeCardGroup(node: HastNode, _: HastNodeIndex, parent: HastNodeParent): Element | undefined {
     if (node.tagName !== "Card") {

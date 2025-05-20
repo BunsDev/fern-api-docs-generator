@@ -6,9 +6,9 @@ import { LazyFernWorkspace } from "@fern-api/lazy-fern-workspace";
 import { CONSOLE_LOGGER } from "@fern-api/logger";
 import { createMockTaskContext } from "@fern-api/task-context";
 
-import { Rule } from "../Rule";
-import { ValidationViolation } from "../ValidationViolation";
-import { runRulesOnWorkspace } from "../validateGeneratorsWorkspace";
+import { Rule } from "../Rule.js";
+import { ValidationViolation } from "../ValidationViolation.js";
+import { runRulesOnWorkspace } from "../validateGeneratorsWorkspace.js";
 
 export declare namespace getViolationsForRule {
     export interface Args {

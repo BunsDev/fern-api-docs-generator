@@ -3,8 +3,8 @@ import { JSONSchema4 } from "json-schema";
 import { assertNever } from "@fern-api/core-utils";
 import { ContainerType } from "@fern-api/ir-sdk";
 
-import { JsonSchemaConverterContext } from "../JsonSchemaConverterContext";
-import { convertTypeReferenceToJsonSchema } from "./typeReferenceToJsonSchema";
+import { JsonSchemaConverterContext } from "../JsonSchemaConverterContext.js";
+import { convertTypeReferenceToJsonSchema } from "./typeReferenceToJsonSchema.js";
 
 export function convertContainerToJsonSchema({
     container,

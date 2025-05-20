@@ -1,5 +1,5 @@
-import { Rule } from "./Rule";
-import { CompatibleIrVersionsRule } from "./rules/compatible-ir-versions";
+import { Rule } from "./Rule.js";
+import { CompatibleIrVersionsRule } from "./rules/compatible-ir-versions/index.js";
 
 export function getAllRules(): Rule[] {
     return [CompatibleIrVersionsRule];

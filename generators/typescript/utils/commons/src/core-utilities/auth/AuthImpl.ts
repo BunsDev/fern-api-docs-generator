@@ -2,9 +2,9 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { DependencyManager } from "../../dependency-manager/DependencyManager";
-import { CoreUtility } from "../CoreUtility";
-import { Auth } from "./Auth";
+import { DependencyManager } from "../../dependency-manager/DependencyManager.js";
+import { CoreUtility } from "../CoreUtility.js";
+import { Auth } from "./Auth.js";
 
 export class AuthImpl extends CoreUtility implements Auth {
     public readonly MANIFEST = {
@@ -17,8 +17,8 @@ export class AuthImpl extends CoreUtility implements Auth {
         unitTests: {
             fromDirectory: RelativeFilePath.of("__test__"),
             findAndReplace: {
-                "../BasicAuth": "../../../src/core/auth/BasicAuth",
-                "../BearerToken": "../../../src/core/auth/BearerToken"
+                "../BasicAuth.js": "../../../src/core/auth/BasicAuth.js",
+                "../BearerToken.js": "../../../src/core/auth/BearerToken.js"
             }
         },
         pathInCoreUtilities: [{ nameOnDisk: "auth", exportDeclaration: { exportAll: true } }],

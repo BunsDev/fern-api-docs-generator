@@ -1,11 +1,11 @@
 import { RawSchemas, visitRawApiAuth, visitRawAuthSchemeDeclaration } from "@fern-api/fern-definition-schema";
 import { ApiAuth, AuthScheme, AuthSchemesRequirement, OAuthConfiguration } from "@fern-api/ir-sdk";
 
-import { FernFileContext } from "../FernFileContext";
-import { EndpointResolver } from "../resolvers/EndpointResolver";
-import { PropertyResolver } from "../resolvers/PropertyResolver";
-import { convertOAuthClientCredentials } from "./convertOAuthClientCredentials";
-import { getRefreshTokenEndpoint, getTokenEndpoint } from "./convertOAuthUtils";
+import { FernFileContext } from "../FernFileContext.js";
+import { EndpointResolver } from "../resolvers/EndpointResolver.js";
+import { PropertyResolver } from "../resolvers/PropertyResolver.js";
+import { convertOAuthClientCredentials } from "./convertOAuthClientCredentials.js";
+import { getRefreshTokenEndpoint, getTokenEndpoint } from "./convertOAuthUtils.js";
 
 export function convertApiAuth({
     rawApiFileSchema,

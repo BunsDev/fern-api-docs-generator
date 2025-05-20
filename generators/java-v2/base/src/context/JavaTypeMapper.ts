@@ -2,8 +2,8 @@ import { BaseJavaCustomConfigSchema, java } from "@fern-api/java-ast";
 
 import { ContainerType, Literal, PrimitiveType, PrimitiveTypeV1, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { assertNever } from "../../../../../packages/commons/core-utils/src";
-import { AbstractJavaGeneratorContext } from "./AbstractJavaGeneratorContext";
+import { assertNever } from "../../../../../packages/commons/core-utils/src/index.js";
+import { AbstractJavaGeneratorContext } from "./AbstractJavaGeneratorContext.js";
 
 export declare namespace JavaTypeMapper {
     interface Args {

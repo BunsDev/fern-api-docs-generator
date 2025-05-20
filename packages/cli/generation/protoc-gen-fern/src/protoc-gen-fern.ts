@@ -4,13 +4,13 @@ import type { CodeGeneratorRequest, CodeGeneratorResponse } from "@bufbuild/prot
 import { CodeGeneratorResponseSchema, CodeGeneratorResponse_Feature } from "@bufbuild/protobuf/wkt";
 import { FileInfo, Plugin } from "@bufbuild/protoplugin";
 
-import { version } from "../package.json";
-import { generateIr } from "./generateIr";
-import { Options, parseOptions } from "./parseOptions";
+import packageJson from "../package.json" with { type: "json" };
+import { generateIr } from "./generateIr.js";
+import { Options, parseOptions } from "./parseOptions.js";
 
 export const protocGenFern = createPlugin({
     name: "protoc-gen-fern",
-    version: `v${String(version)}`,
+    version: `v${String(packageJson.version)}`,
     run: generateIr
 });
 

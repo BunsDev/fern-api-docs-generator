@@ -8,7 +8,7 @@ import { SourceFile, ts } from "ts-morph";
 
 import { ApiVersionScheme } from "@fern-fern/ir-sdk/api";
 
-import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer";
+import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer.js";
 
 export declare namespace VersionDeclarationReferencer {
     export interface Init extends AbstractDeclarationReferencer.Init {
@@ -38,7 +38,7 @@ export class VersionDeclarationReferencer extends AbstractDeclarationReferencer 
     }
 
     public getFilename(): string {
-        return "version.ts";
+        return "version.js";
     }
 
     public getExportedNameOfVersionEnum(): string {

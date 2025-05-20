@@ -4,7 +4,7 @@ import { FERN_PACKAGE_MARKER_FILENAME } from "@fern-api/configuration";
 import { Endpoint, HttpMethod } from "@fern-api/openapi-ir";
 import { RelativeFilePath, join } from "@fern-api/path-utils";
 
-import { convertEndpointSdkNameToFileWithoutExtension } from "./convertSdkGroupName";
+import { convertEndpointSdkNameToFileWithoutExtension } from "./convertSdkGroupName.js";
 
 export interface EndpointLocation {
     file: RelativeFilePath;

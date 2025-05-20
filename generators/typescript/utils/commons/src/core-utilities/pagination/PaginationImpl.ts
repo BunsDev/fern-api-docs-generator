@@ -2,9 +2,9 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { CoreUtility } from "../CoreUtility";
-import { MANIFEST as FetcherManifest } from "../fetcher/FetcherImpl";
-import { Pagination } from "./Pagination";
+import { CoreUtility } from "../CoreUtility.js";
+import { MANIFEST as FetcherManifest } from "../fetcher/FetcherImpl.js";
+import { Pagination } from "./Pagination.js";
 
 export class PaginationImpl extends CoreUtility implements Pagination {
     public readonly MANIFEST = {

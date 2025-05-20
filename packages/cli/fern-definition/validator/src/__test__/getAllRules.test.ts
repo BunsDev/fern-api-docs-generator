@@ -3,8 +3,8 @@ import { camelCase, upperFirst } from "lodash-es";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { Rule } from "../Rule";
-import { getAllRules } from "../getAllRules";
+import { Rule } from "../Rule.js";
+import { getAllRules } from "../getAllRules.js";
 
 const RULES_DIRECTORY = join(AbsoluteFilePath.of(__dirname), RelativeFilePath.of("../rules"));
 

@@ -1,7 +1,7 @@
 import { lstatSync } from "fs";
 import { lstat } from "fs/promises";
 
-import { AbsoluteFilePath } from "./AbsoluteFilePath";
+import { AbsoluteFilePath } from "./AbsoluteFilePath.js";
 
 export async function doesPathExist(filepath: AbsoluteFilePath, mode?: "file" | "directory"): Promise<boolean> {
     try {

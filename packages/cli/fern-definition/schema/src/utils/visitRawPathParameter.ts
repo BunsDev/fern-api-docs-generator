@@ -1,6 +1,6 @@
-import { HttpPathParameterSchema } from "../schemas";
-import { TypeReferenceSchema } from "../schemas";
-import { VariableReferenceSchema } from "../schemas";
+import { HttpPathParameterSchema } from "../schemas/index.js";
+import { TypeReferenceSchema } from "../schemas/index.js";
+import { VariableReferenceSchema } from "../schemas/index.js";
 
 export interface PathParameterDeclarationVisitor<R> {
     nonVariable: (pathParameter: TypeReferenceSchema) => R;

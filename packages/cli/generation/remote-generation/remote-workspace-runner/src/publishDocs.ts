@@ -17,8 +17,8 @@ import { AbstractAPIWorkspace, DocsWorkspace } from "@fern-api/workspace-loader"
 
 import { FernRegistry as CjsFdrSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { OSSWorkspace } from "../../../../workspace/lazy-fern-workspace/src";
-import { measureImageSizes } from "./measureImageSizes";
+import { OSSWorkspace } from "../../../../workspace/lazy-fern-workspace/src/index.js";
+import { measureImageSizes } from "./measureImageSizes.js";
 
 const MEASURE_IMAGE_BATCH_SIZE = 10;
 const UPLOAD_FILE_BATCH_SIZE = 10;

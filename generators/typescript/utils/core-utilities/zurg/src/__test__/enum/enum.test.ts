@@ -1,6 +1,6 @@
-import { enum_ } from "../../builders/enum";
-import { itSchemaIdentity } from "../utils/itSchema";
-import { itValidate } from "../utils/itValidate";
+import { enum_ } from "../../builders/enum/index.js";
+import { itSchemaIdentity } from "../utils/itSchema.js";
+import { itValidate } from "../utils/itValidate.js";
 
 describe("enum", () => {
     itSchemaIdentity(enum_(["A", "B", "C"]), "A");

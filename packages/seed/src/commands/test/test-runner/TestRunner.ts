@@ -6,15 +6,15 @@ import { APIS_DIRECTORY, FERN_DIRECTORY, generatorsYml } from "@fern-api/configu
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { Semaphore } from "../../../Semaphore";
-import { Stopwatch } from "../../../Stopwatch";
-import { FixtureConfigurations, OutputMode } from "../../../config/api";
-import { GeneratorWorkspace } from "../../../loadGeneratorWorkspaces";
-import { convertGeneratorWorkspaceToFernWorkspace } from "../../../utils/convertSeedWorkspaceToFernWorkspace";
-import { ParsedDockerName, parseDockerOrThrow } from "../../../utils/parseDockerOrThrow";
-import { workspaceShouldGenerateDynamicSnippetTests } from "../../../workspaceShouldGenerateDynamicSnippetTests";
-import { ScriptRunner } from "../ScriptRunner";
-import { TaskContextFactory } from "../TaskContextFactory";
+import { Semaphore } from "../../../Semaphore.js";
+import { Stopwatch } from "../../../Stopwatch.js";
+import { FixtureConfigurations, OutputMode } from "../../../config/api/index.js";
+import { GeneratorWorkspace } from "../../../loadGeneratorWorkspaces.js";
+import { convertGeneratorWorkspaceToFernWorkspace } from "../../../utils/convertSeedWorkspaceToFernWorkspace.js";
+import { ParsedDockerName, parseDockerOrThrow } from "../../../utils/parseDockerOrThrow.js";
+import { workspaceShouldGenerateDynamicSnippetTests } from "../../../workspaceShouldGenerateDynamicSnippetTests.js";
+import { ScriptRunner } from "../ScriptRunner.js";
+import { TaskContextFactory } from "../TaskContextFactory.js";
 
 export declare namespace TestRunner {
     interface Args {

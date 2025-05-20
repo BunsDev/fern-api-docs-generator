@@ -13,11 +13,11 @@ import {
     isSchemaEqual
 } from "@fern-api/openapi-ir";
 
-import { SchemaParserContext } from "./SchemaParserContext";
-import { convertEnum } from "./convertEnum";
-import { convertReferenceObject, convertSchema } from "./convertSchemas";
-import { getGeneratedTypeName } from "./utils/getSchemaName";
-import { isReferenceObject } from "./utils/isReferenceObject";
+import { SchemaParserContext } from "./SchemaParserContext.js";
+import { convertEnum } from "./convertEnum.js";
+import { convertReferenceObject, convertSchema } from "./convertSchemas.js";
+import { getGeneratedTypeName } from "./utils/getSchemaName.js";
+import { isReferenceObject } from "./utils/isReferenceObject.js";
 
 export interface UndiscriminatedOneOfPrefixNotFound {
     type: "notFound";

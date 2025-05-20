@@ -1,8 +1,8 @@
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { ValidationViolation } from "../../../ValidationViolation";
-import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule";
-import { NoConflictingEndpointPathsRule } from "../no-conflicting-endpoint-paths";
+import { ValidationViolation } from "../../../ValidationViolation.js";
+import { getViolationsForRule } from "../../../testing-utils/getViolationsForRule.js";
+import { NoConflictingEndpointPathsRule } from "../no-conflicting-endpoint-paths.js";
 
 describe("no-conflicting-endpoint-paths", () => {
     it("simple", async () => {

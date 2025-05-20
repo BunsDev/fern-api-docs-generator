@@ -2,9 +2,9 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { CoreUtility } from "../CoreUtility";
-import { MANIFEST as RuntimeManifest } from "../runtime/RuntimeImpl";
-import { StreamUtils, StreamingFetcher } from "./StreamUtils";
+import { CoreUtility } from "../CoreUtility.js";
+import { MANIFEST as RuntimeManifest } from "../runtime/RuntimeImpl.js";
+import { StreamUtils, StreamingFetcher } from "./StreamUtils.js";
 
 export class StreamingUtilsImpl extends CoreUtility implements StreamUtils {
     public readonly MANIFEST = {

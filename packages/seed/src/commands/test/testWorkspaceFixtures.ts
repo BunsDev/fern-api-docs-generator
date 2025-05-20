@@ -5,9 +5,9 @@ import path from "path";
 import { APIS_DIRECTORY, FERN_DIRECTORY } from "@fern-api/configuration";
 import { CONSOLE_LOGGER } from "@fern-api/logger";
 
-import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces";
-import { printTestCases } from "./printTestCases";
-import { TestRunner } from "./test-runner";
+import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces.js";
+import { printTestCases } from "./printTestCases.js";
+import { TestRunner } from "./test-runner/index.js";
 
 export const LANGUAGE_SPECIFIC_FIXTURE_PREFIXES = ["csharp", "go", "java", "python", "ruby", "ts"];
 

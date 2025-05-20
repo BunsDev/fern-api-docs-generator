@@ -7,8 +7,8 @@ import { Logger } from "@fern-api/logger";
 
 import { FernGeneratorCli } from "@fern-fern/generator-cli-sdk";
 
-import { GeneratorAgentClient } from "./GeneratorAgentClient";
-import { ReferenceConfigBuilder } from "./reference";
+import { GeneratorAgentClient } from "./GeneratorAgentClient.js";
+import { ReferenceConfigBuilder } from "./reference/index.js";
 
 const DOCKER_FEATURES_CONFIG_PATH = "/assets/features.yml";
 

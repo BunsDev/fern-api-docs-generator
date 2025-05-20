@@ -1,3 +1,3 @@
-export { DockerTestRunner } from "./DockerTestRunner";
-export { LocalTestRunner } from "./LocalTestRunner";
-export { TestRunner } from "./TestRunner";
+export { DockerTestRunner } from "./DockerTestRunner.js";
+export { LocalTestRunner } from "./LocalTestRunner.js";
+export { TestRunner } from "./TestRunner.js";

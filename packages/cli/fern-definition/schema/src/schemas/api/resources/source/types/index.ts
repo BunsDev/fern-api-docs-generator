@@ -1,3 +1,3 @@
-export * from "./SourceSchema";
-export * from "./OpenApiSourceSchema";
-export * from "./ProtobufSourceSchema";
+export * from "./SourceSchema.js";
+export * from "./OpenApiSourceSchema.js";
+export * from "./ProtobufSourceSchema.js";

@@ -5,9 +5,9 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernRegistryClient } from "@fern-fern/generators-sdk";
 
-import { loadCliWorkspace } from "../../loadGeneratorWorkspaces";
-import { parseCliReleasesFile } from "../../utils/convertVersionsFileToReleases";
-import { writeChangelogEntries, writeChangelogsToFile } from "./writeChangelogEntries";
+import { loadCliWorkspace } from "../../loadGeneratorWorkspaces.js";
+import { parseCliReleasesFile } from "../../utils/convertVersionsFileToReleases.js";
+import { writeChangelogEntries, writeChangelogsToFile } from "./writeChangelogEntries.js";
 
 export async function generateCliChangelog({
     context,

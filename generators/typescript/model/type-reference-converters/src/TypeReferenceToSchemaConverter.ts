@@ -2,7 +2,7 @@ import { Zurg } from "@fern-typescript/commons";
 
 import { DeclaredTypeName, Literal, MapType, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { AbstractTypeReferenceConverter, ConvertTypeReferenceParams } from "./AbstractTypeReferenceConverter";
+import { AbstractTypeReferenceConverter, ConvertTypeReferenceParams } from "./AbstractTypeReferenceConverter.js";
 
 export declare namespace TypeReferenceToSchemaConverter {
     export interface Init extends AbstractTypeReferenceConverter.Init {

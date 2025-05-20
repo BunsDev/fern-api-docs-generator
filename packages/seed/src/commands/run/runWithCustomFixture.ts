@@ -9,14 +9,14 @@ import {
     getBaseOpenAPIWorkspaceSettingsFromGeneratorInvocation
 } from "@fern-api/workspace-loader";
 
-import { Semaphore } from "../../Semaphore";
-import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces";
-import { convertGeneratorWorkspaceToFernWorkspace } from "../../utils/convertSeedWorkspaceToFernWorkspace";
-import { workspaceShouldGenerateDynamicSnippetTests } from "../../workspaceShouldGenerateDynamicSnippetTests";
-import { ScriptRunner } from "../test/ScriptRunner";
-import { TaskContextFactory } from "../test/TaskContextFactory";
-import { DockerTestRunner } from "../test/test-runner";
-import { writeDotMock } from "../test/test-runner/TestRunner";
+import { Semaphore } from "../../Semaphore.js";
+import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces.js";
+import { convertGeneratorWorkspaceToFernWorkspace } from "../../utils/convertSeedWorkspaceToFernWorkspace.js";
+import { workspaceShouldGenerateDynamicSnippetTests } from "../../workspaceShouldGenerateDynamicSnippetTests.js";
+import { ScriptRunner } from "../test/ScriptRunner.js";
+import { TaskContextFactory } from "../test/TaskContextFactory.js";
+import { writeDotMock } from "../test/test-runner/TestRunner.js";
+import { DockerTestRunner } from "../test/test-runner/index.js";
 
 export async function runWithCustomFixture({
     pathToFixture,

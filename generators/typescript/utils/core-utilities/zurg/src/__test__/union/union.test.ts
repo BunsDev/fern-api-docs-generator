@@ -1,6 +1,6 @@
-import { boolean, discriminant, number, object, string, union } from "../../builders";
-import { itSchema, itSchemaIdentity } from "../utils/itSchema";
-import { itValidate } from "../utils/itValidate";
+import { boolean, discriminant, number, object, string, union } from "../../builders/index.js";
+import { itSchema, itSchemaIdentity } from "../utils/itSchema.js";
+import { itValidate } from "../utils/itValidate.js";
 
 describe("union", () => {
     itSchemaIdentity(

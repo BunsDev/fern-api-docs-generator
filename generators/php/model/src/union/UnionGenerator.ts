@@ -11,9 +11,9 @@ import {
     UnionTypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { assertNever } from "../../../../../packages/commons/core-utils/src";
-import { ModelCustomConfigSchema } from "../ModelCustomConfig";
-import { ModelGeneratorContext } from "../ModelGeneratorContext";
+import { assertNever } from "../../../../../packages/commons/core-utils/src/index.js";
+import { ModelCustomConfigSchema } from "../ModelCustomConfig.js";
+import { ModelGeneratorContext } from "../ModelGeneratorContext.js";
 
 export class UnionGenerator extends FileGenerator<PhpFile, ModelCustomConfigSchema, ModelGeneratorContext> {
     private readonly typeDeclaration: TypeDeclaration;

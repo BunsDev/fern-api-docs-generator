@@ -7,9 +7,9 @@ import { FERN_DIRECTORY, fernConfigJson, getFernDirectory, loadProjectConfig } f
 import { loggingExeca } from "@fern-api/logging-execa";
 import { isVersionAhead } from "@fern-api/semver-utils";
 
-import { CliContext } from "../../cli-context/CliContext";
-import { doesVersionOfCliExist } from "../../cli-context/upgrade-utils/doesVersionOfCliExist";
-import { rerunFernCliAtVersion } from "../../rerunFernCliAtVersion";
+import { CliContext } from "../../cli-context/CliContext.js";
+import { doesVersionOfCliExist } from "../../cli-context/upgrade-utils/doesVersionOfCliExist.js";
+import { rerunFernCliAtVersion } from "../../rerunFernCliAtVersion.js";
 
 export const PREVIOUS_VERSION_ENV_VAR = "FERN_PRE_UPGRADE_VERSION";
 

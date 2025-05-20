@@ -7,7 +7,7 @@ import { TaskContext } from "@fern-api/task-context";
 
 import * as serializers from "@fern-fern/generators-sdk/serialization";
 
-import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces";
+import { GeneratorWorkspace } from "../../loadGeneratorWorkspaces.js";
 
 // TODO: we should share the language and generator type with the FDR definition
 export async function validateGenerator({

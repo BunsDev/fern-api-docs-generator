@@ -5,8 +5,8 @@ import { fernConfigJson } from "@fern-api/configuration";
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { validateSchema } from "../commons/validateSchema";
-import { ProjectConfigSchema } from "./schema/ProjectConfigSchema";
+import { validateSchema } from "../commons/validateSchema.js";
+import { ProjectConfigSchema } from "./schema/ProjectConfigSchema.js";
 
 export async function loadProjectConfig({
     directory,

@@ -23,10 +23,10 @@ import { OpenRPCConverter, OpenRPCConverterContext3_1 } from "@fern-api/openrpc-
 import { TaskContext } from "@fern-api/task-context";
 import { ErrorCollector } from "@fern-api/v2-importer-commons";
 
-import { constructCasingsGenerator } from "../../../../commons/casings-generator/src/CasingsGenerator";
-import { loadOpenRpc } from "./loaders";
-import { OpenAPILoader } from "./loaders/OpenAPILoader";
-import { getAllOpenAPISpecs } from "./utils/getAllOpenAPISpecs";
+import { constructCasingsGenerator } from "../../../../commons/casings-generator/src/CasingsGenerator.js";
+import { OpenAPILoader } from "./loaders/OpenAPILoader.js";
+import { loadOpenRpc } from "./loaders/index.js";
+import { getAllOpenAPISpecs } from "./utils/getAllOpenAPISpecs.js";
 
 export declare namespace OSSWorkspace {
     export interface Args extends AbstractAPIWorkspace.Args {

@@ -1,5 +1,5 @@
-export * from "./api";
-export * as serialization from "./serialization";
+export * from "./api/index.js";
+export * as serialization from "./serialization/index.js";
 
 export const API_ORIGIN_LOCATION_KEY = "spec-origin";
 export const ASYNC_API_LOCATION_KEY = "async-api";

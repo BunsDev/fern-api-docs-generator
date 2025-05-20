@@ -1,9 +1,9 @@
 import { readFile, readdir } from "fs/promises";
 import path from "path";
 
-import { AbsoluteFilePath } from "./AbsoluteFilePath";
-import { RelativeFilePath } from "./RelativeFilePath";
-import { join } from "./join";
+import { AbsoluteFilePath } from "./AbsoluteFilePath.js";
+import { RelativeFilePath } from "./RelativeFilePath.js";
+import { join } from "./join.js";
 
 export type FileOrDirectory = File | Directory;
 

@@ -2,7 +2,7 @@ import { TypeReferenceNode, getPropertyKey, getTextOfTsNode } from "@fern-typesc
 import { ModelContext } from "@fern-typescript/contexts";
 import { ModuleDeclarationStructure, OptionalKind, PropertySignatureStructure, ts } from "ts-morph";
 
-import { SingleUnionTypeGenerator } from "../SingleUnionTypeGenerator";
+import { SingleUnionTypeGenerator } from "../SingleUnionTypeGenerator.js";
 
 export declare namespace SinglePropertySingleUnionTypeGenerator {
     export interface Init<Context> {

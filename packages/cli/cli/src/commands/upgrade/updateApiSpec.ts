@@ -11,7 +11,7 @@ import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 import { Logger } from "@fern-api/logger";
 import { Project } from "@fern-api/project-loader";
 
-import { CliContext } from "../../cli-context/CliContext";
+import { CliContext } from "../../cli-context/CliContext.js";
 
 async function fetchAndWriteFile(url: string, path: string, logger: Logger): Promise<void> {
     const resp = await fetch(url);

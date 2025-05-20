@@ -1,9 +1,9 @@
 import { assertNever } from "@fern-api/core-utils";
 
-import { ClassInstantiation } from "./ClassInstantiation";
-import { ClassReference } from "./ClassReference";
-import { Type } from "./Type";
-import { AstNode, Writer } from "./core";
+import { ClassInstantiation } from "./ClassInstantiation.js";
+import { ClassReference } from "./ClassReference.js";
+import { Type } from "./Type.js";
+import { AstNode, Writer } from "./core/index.js";
 
 type InternalTypeLiteral =
     | Boolean_

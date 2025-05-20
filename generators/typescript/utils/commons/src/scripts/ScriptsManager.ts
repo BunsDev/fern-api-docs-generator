@@ -3,7 +3,7 @@ import path from "path";
 
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 
-import { renameToEsmFilesFile } from "./RenameToEsmFilesFile";
+import { renameToEsmFilesFile } from "./RenameToEsmFilesFile.js";
 
 export class ScriptsManager {
     public async copyScripts({ pathToRoot }: { pathToRoot: AbsoluteFilePath }): Promise<void> {

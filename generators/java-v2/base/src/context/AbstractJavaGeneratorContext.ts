@@ -3,7 +3,7 @@ import { BaseJavaCustomConfigSchema, java } from "@fern-api/java-ast";
 
 import { FernFilepath, IntermediateRepresentation, Name, TypeDeclaration, TypeId } from "@fern-fern/ir-sdk/api";
 
-import { JavaTypeMapper } from "./JavaTypeMapper";
+import { JavaTypeMapper } from "./JavaTypeMapper.js";
 
 export abstract class AbstractJavaGeneratorContext<
     CustomConfig extends BaseJavaCustomConfigSchema

@@ -2,8 +2,8 @@ import { ts } from "ts-morph";
 
 import { AbsoluteFilePath, RelativeFilePath } from "@fern-api/fs-utils";
 
-import { CoreUtility } from "../CoreUtility";
-import { Utils } from "./Utils";
+import { CoreUtility } from "../CoreUtility.js";
+import { Utils } from "./Utils.js";
 
 export class UtilsImpl extends CoreUtility implements Utils {
     public readonly MANIFEST = {

@@ -5,13 +5,13 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { Webhook } from "@fern-api/openapi-ir";
 import { RelativeFilePath, join } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
-import { buildHeader } from "./buildHeader";
-import { buildTypeReference } from "./buildTypeReference";
-import { convertFullExample } from "./utils/convertFullExample";
-import { convertEndpointSdkNameToFile } from "./utils/convertSdkGroupName";
-import { tokenizeString } from "./utils/getEndpointLocation";
-import { getEndpointNamespace } from "./utils/getNamespaceFromGroup";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
+import { buildHeader } from "./buildHeader.js";
+import { buildTypeReference } from "./buildTypeReference.js";
+import { convertFullExample } from "./utils/convertFullExample.js";
+import { convertEndpointSdkNameToFile } from "./utils/convertSdkGroupName.js";
+import { tokenizeString } from "./utils/getEndpointLocation.js";
+import { getEndpointNamespace } from "./utils/getNamespaceFromGroup.js";
 
 export function buildWebhooks(context: OpenApiIrConverterContext): void {
     for (const webhook of context.ir.webhooks) {

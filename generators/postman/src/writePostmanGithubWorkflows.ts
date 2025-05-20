@@ -1,11 +1,13 @@
-import endent from "endent";
+import endentModule from "endent";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 
 import { GeneratorConfig, GithubOutputMode } from "@fern-api/base-generator";
 
-import { PostmanGeneratorConfigSchema } from "./config/schemas/PostmanGeneratorConfigSchema";
-import { getCollectionOutputFilename } from "./writePostmanCollection";
+import { PostmanGeneratorConfigSchema } from "./config/schemas/PostmanGeneratorConfigSchema.js";
+import { getCollectionOutputFilename } from "./writePostmanCollection.js";
+
+const endent = endentModule.default;
 
 export async function writePostmanGithubWorkflows({
     config,

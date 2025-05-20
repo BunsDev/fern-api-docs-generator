@@ -37,7 +37,7 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { RequestWrapperExampleGenerator } from "./RequestWrapperExampleGenerator";
+import { RequestWrapperExampleGenerator } from "./RequestWrapperExampleGenerator.js";
 
 export declare namespace GeneratedRequestWrapperImpl {
     export interface Init {

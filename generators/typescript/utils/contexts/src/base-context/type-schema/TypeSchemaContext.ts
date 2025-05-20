@@ -2,7 +2,7 @@ import { Reference, TypeReferenceNode, Zurg } from "@fern-typescript/commons";
 
 import { DeclaredTypeName, TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedTypeSchema } from "./GeneratedTypeSchema";
+import { GeneratedTypeSchema } from "./GeneratedTypeSchema.js";
 
 export interface TypeSchemaContext {
     getGeneratedTypeSchema: (typeName: DeclaredTypeName) => GeneratedTypeSchema;

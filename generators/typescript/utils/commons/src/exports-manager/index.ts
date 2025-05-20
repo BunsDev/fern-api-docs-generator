@@ -4,5 +4,5 @@ export {
     type ExportedDirectory,
     type ExportedFilePath,
     type ExportedFilePathPart
-} from "./ExportedFilePath";
-export { ExportsManager, type ExportDeclaration } from "./ExportsManager";
+} from "./ExportedFilePath.js";
+export { ExportsManager, type ExportDeclaration } from "./ExportsManager.js";

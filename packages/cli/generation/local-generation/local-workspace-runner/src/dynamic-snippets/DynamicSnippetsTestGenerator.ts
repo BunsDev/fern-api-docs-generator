@@ -5,13 +5,13 @@ import { TaskContext } from "@fern-api/task-context";
 
 import { FernGeneratorExec } from "@fern-fern/generator-exec-sdk";
 
-import { DynamicSnippetsTestSuite } from "./DynamicSnippetsTestSuite";
-import { DynamicSnippetsCsharpTestGenerator } from "./csharp/DynamicSnippetsCsharpTestGenerator";
-import { DynamicSnippetsGoTestGenerator } from "./go/DynamicSnippetsGoTestGenerator";
-import { DynamicSnippetsJavaTestGenerator } from "./java/DynamicSnippetsJavaTestGenerator";
-import { DynamicSnippetsPhpTestGenerator } from "./php/DynamicSnippetsPhpTestGenerator";
-import { DynamicSnippetsPythonTestGenerator } from "./python/DynamicSnippetsPythonTestGenerator";
-import { DynamicSnippetsTypeScriptTestGenerator } from "./typescript/DynamicSnippetsTypeScriptTestGenerator";
+import { DynamicSnippetsTestSuite } from "./DynamicSnippetsTestSuite.js";
+import { DynamicSnippetsCsharpTestGenerator } from "./csharp/DynamicSnippetsCsharpTestGenerator.js";
+import { DynamicSnippetsGoTestGenerator } from "./go/DynamicSnippetsGoTestGenerator.js";
+import { DynamicSnippetsJavaTestGenerator } from "./java/DynamicSnippetsJavaTestGenerator.js";
+import { DynamicSnippetsPhpTestGenerator } from "./php/DynamicSnippetsPhpTestGenerator.js";
+import { DynamicSnippetsPythonTestGenerator } from "./python/DynamicSnippetsPythonTestGenerator.js";
+import { DynamicSnippetsTypeScriptTestGenerator } from "./typescript/DynamicSnippetsTypeScriptTestGenerator.js";
 
 interface DynamicSnippetsGenerator {
     new (

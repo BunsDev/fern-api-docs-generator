@@ -5,12 +5,12 @@ import { DocsImporter, FernDocsBuilder, FernDocsNavigationBuilder, TabInfo } fro
 import { DEFAULT_LAYOUT } from "@fern-api/docs-importer-commons";
 import { AbsoluteFilePath, RelativeFilePath, dirname, join } from "@fern-api/fs-utils";
 
-import { convertColors } from "./convertColors";
-import { convertLogo } from "./convertLogo";
-import { convertNavigationItem } from "./convertNavigationItem";
-import { MintJsonSchema, MintNavigationItem } from "./mintlify";
-import { convertInstanceName } from "./utils/convertInstanceName";
-import { getTabForMintItem } from "./utils/getTabForMintItem";
+import { convertColors } from "./convertColors.js";
+import { convertLogo } from "./convertLogo.js";
+import { convertNavigationItem } from "./convertNavigationItem.js";
+import { MintJsonSchema, MintNavigationItem } from "./mintlify.js";
+import { convertInstanceName } from "./utils/convertInstanceName.js";
+import { getTabForMintItem } from "./utils/getTabForMintItem.js";
 
 export declare namespace MintlifyImporter {
     interface Args {

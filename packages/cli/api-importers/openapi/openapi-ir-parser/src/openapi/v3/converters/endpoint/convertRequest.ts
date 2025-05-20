@@ -10,11 +10,11 @@ import {
     Source
 } from "@fern-api/openapi-ir";
 
-import { isAdditionalPropertiesAny } from "../../../../schema/convertAdditionalProperties";
-import { SCHEMA_REFERENCE_PREFIX, convertSchema, getSchemaIdFromReference } from "../../../../schema/convertSchemas";
-import { isReferenceObject } from "../../../../schema/utils/isReferenceObject";
-import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext";
-import { getApplicationJsonSchemaMediaObject, getExamples } from "./getApplicationJsonSchema";
+import { isAdditionalPropertiesAny } from "../../../../schema/convertAdditionalProperties.js";
+import { SCHEMA_REFERENCE_PREFIX, convertSchema, getSchemaIdFromReference } from "../../../../schema/convertSchemas.js";
+import { isReferenceObject } from "../../../../schema/utils/isReferenceObject.js";
+import { AbstractOpenAPIV3ParserContext } from "../../AbstractOpenAPIV3ParserContext.js";
+import { getApplicationJsonSchemaMediaObject, getExamples } from "./getApplicationJsonSchema.js";
 
 function getApplicationUrlFormEncodedRequest(
     requestBody: OpenAPIV3.RequestBodyObject,

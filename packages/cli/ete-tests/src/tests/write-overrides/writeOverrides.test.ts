@@ -3,7 +3,7 @@ import path from "path";
 
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 
-import { runFernCli } from "../../utils/runFernCli";
+import { runFernCli } from "../../utils/runFernCli.js";
 
 const FIXTURES_DIR = path.join(__dirname, "fixtures");
 

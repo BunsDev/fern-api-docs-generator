@@ -2,8 +2,8 @@ import chalk from "chalk";
 
 import { visitRawEnvironmentDeclaration } from "@fern-api/fern-definition-schema";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { getAllEnvironmentUrlIds } from "../../utils/getAllEnvironmentUriIds";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { getAllEnvironmentUrlIds } from "../../utils/getAllEnvironmentUriIds.js";
 
 export const MatchingEnvironmentUrlsRule: Rule = {
     name: "matching-environment-urls",

@@ -3,7 +3,7 @@ import chalk from "chalk";
 import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { FernFileContext, ResolvedType, TypeResolver } from "@fern-api/ir-generator";
 
-import { RuleViolation } from "../../Rule";
+import { RuleViolation } from "../../Rule.js";
 import {
     REQUEST_PREFIX,
     RESPONSE_PREFIX,
@@ -14,7 +14,7 @@ import {
     maybePrimitiveType,
     requestTypeHasProperty,
     resolvedTypeHasProperty
-} from "../../utils/propertyValidatorUtils";
+} from "../../utils/propertyValidatorUtils.js";
 
 export const DEFAULT_CLIENT_ID = `${REQUEST_PREFIX}client_id`;
 export const DEFAULT_CLIENT_SECRET = `${REQUEST_PREFIX}client_secret`;

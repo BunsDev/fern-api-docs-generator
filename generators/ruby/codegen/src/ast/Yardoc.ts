@@ -1,16 +1,16 @@
 import { ObjectProperty, TypeId } from "@fern-fern/ir-sdk/api";
 
-import { ExampleGenerator } from "./ExampleGenerator";
-import { Parameter } from "./Parameter";
-import { Property } from "./Property";
+import { ExampleGenerator } from "./ExampleGenerator.js";
+import { Parameter } from "./Parameter.js";
+import { Property } from "./Property.js";
 import {
     ArrayReference,
     ClassReference,
     ClassReferenceFactory,
     DiscriminatedUnionClassReference
-} from "./classes/ClassReference";
-import { AstNode } from "./core/AstNode";
-import { Function_ } from "./functions/Function_";
+} from "./classes/ClassReference.js";
+import { AstNode } from "./core/AstNode.js";
+import { Function_ } from "./functions/Function_.js";
 
 export interface YardocDocString {
     readonly name: "docString";

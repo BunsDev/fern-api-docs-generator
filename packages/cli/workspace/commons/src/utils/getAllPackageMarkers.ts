@@ -4,8 +4,8 @@ import { entries } from "@fern-api/core-utils";
 import { PackageMarkerFileSchema } from "@fern-api/fern-definition-schema";
 import { RelativeFilePath, join } from "@fern-api/path-utils";
 
-import { FernDefinition } from "../AbstractAPIWorkspace";
-import { ParsedFernFile } from "../FernFile";
+import { FernDefinition } from "../AbstractAPIWorkspace.js";
+import { ParsedFernFile } from "../FernFile.js";
 
 export declare namespace getAllPackageMarkers {
     interface Opts {

@@ -4,22 +4,22 @@ import { RawSchemas } from "@fern-api/fern-definition-schema";
 import { Endpoint, EndpointExample, Request, Schema, SchemaId } from "@fern-api/openapi-ir";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext";
-import { State } from "./State";
-import { buildEndpointExample } from "./buildEndpointExample";
-import { ERROR_DECLARATIONS_FILENAME, EXTERNAL_AUDIENCE } from "./buildFernDefinition";
-import { buildHeader } from "./buildHeader";
-import { buildPathParameter } from "./buildPathParameter";
-import { buildQueryParameter } from "./buildQueryParameter";
-import { buildTypeReference } from "./buildTypeReference";
-import { convertAvailability } from "./utils/convertAvailability";
-import { convertFullExample } from "./utils/convertFullExample";
-import { resolveLocationWithNamespace } from "./utils/convertSdkGroupName";
-import { convertToHttpMethod } from "./utils/convertToHttpMethod";
-import { convertToSourceSchema } from "./utils/convertToSourceSchema";
-import { getEndpointNamespace } from "./utils/getNamespaceFromGroup";
-import { getDocsFromTypeReference, getTypeFromTypeReference } from "./utils/getTypeFromTypeReference";
-import { isWriteMethod } from "./utils/isWriteMethod";
+import { OpenApiIrConverterContext } from "./OpenApiIrConverterContext.js";
+import { State } from "./State.js";
+import { buildEndpointExample } from "./buildEndpointExample.js";
+import { ERROR_DECLARATIONS_FILENAME, EXTERNAL_AUDIENCE } from "./buildFernDefinition.js";
+import { buildHeader } from "./buildHeader.js";
+import { buildPathParameter } from "./buildPathParameter.js";
+import { buildQueryParameter } from "./buildQueryParameter.js";
+import { buildTypeReference } from "./buildTypeReference.js";
+import { convertAvailability } from "./utils/convertAvailability.js";
+import { convertFullExample } from "./utils/convertFullExample.js";
+import { resolveLocationWithNamespace } from "./utils/convertSdkGroupName.js";
+import { convertToHttpMethod } from "./utils/convertToHttpMethod.js";
+import { convertToSourceSchema } from "./utils/convertToSourceSchema.js";
+import { getEndpointNamespace } from "./utils/getNamespaceFromGroup.js";
+import { getDocsFromTypeReference, getTypeFromTypeReference } from "./utils/getTypeFromTypeReference.js";
+import { isWriteMethod } from "./utils/isWriteMethod.js";
 
 export interface ConvertedEndpoint {
     value: RawSchemas.HttpEndpointSchema;

@@ -21,7 +21,7 @@ import {
 
 import { EnumTypeDeclaration, EnumValue, ExampleTypeShape } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedType } from "../AbstractGeneratedType";
+import { AbstractGeneratedType } from "../AbstractGeneratedType.js";
 
 export declare namespace GeneratedEnumTypeImpl {
     export interface Init<Context> extends AbstractGeneratedType.Init<EnumTypeDeclaration, Context> {

@@ -1,7 +1,7 @@
-import Swift from "..";
-import { AccessLevel } from "./AccessLevel";
-import { Type } from "./Type";
-import { AstNode, Writer } from "./core";
+import Swift from "../index.js";
+import { AccessLevel } from "./AccessLevel.js";
+import { Type } from "./Type.js";
+import { AstNode, Writer } from "./core/index.js";
 
 export declare namespace TypeAlias {
     interface Args {

@@ -1,4 +1,4 @@
-import * as AST from "./ast";
+import * as AST from "./ast/index.js";
 
 export function codeblock(arg: AST.CodeBlock.Args): AST.CodeBlock {
     return new AST.CodeBlock(arg);
@@ -32,6 +32,6 @@ export function variable(arg: AST.Variable.Args): AST.Variable {
     return new AST.Variable(arg);
 }
 
-export * from "./ast";
-export { Type as Types, TypeLiteral, Reference } from "./ast";
-export * from "./ast/core";
+export * from "./ast/index.js";
+export { Type as Types, TypeLiteral, Reference } from "./ast/index.js";
+export * from "./ast/core/index.js";

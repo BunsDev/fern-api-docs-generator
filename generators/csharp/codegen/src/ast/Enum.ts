@@ -1,9 +1,9 @@
-import { Access } from "./Access";
-import { Annotation } from "./Annotation";
-import { ClassReference } from "./ClassReference";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
-import { ENUM_MEMBER } from "./dependencies/System";
+import { Access } from "./Access.js";
+import { Annotation } from "./Annotation.js";
+import { ClassReference } from "./ClassReference.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
+import { ENUM_MEMBER } from "./dependencies/System.js";
 
 export declare namespace Enum {
     interface Args {

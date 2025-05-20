@@ -1,8 +1,8 @@
-import { IrVersions } from "../../ir-versions";
-import { TypeReferenceResolver } from "./TypeReferenceResolver";
-import { convertFernFilepathV1, convertFernFilepathV2 } from "./convertFernFilepath";
-import { convertNameAndWireValueToV2, convertNameToV1, convertNameToV2 } from "./convertName";
-import { convertTypeReference } from "./convertTypeReference";
+import { IrVersions } from "../../ir-versions/index.js";
+import { TypeReferenceResolver } from "./TypeReferenceResolver.js";
+import { convertFernFilepathV1, convertFernFilepathV2 } from "./convertFernFilepath.js";
+import { convertNameAndWireValueToV2, convertNameToV1, convertNameToV2 } from "./convertName.js";
+import { convertTypeReference } from "./convertTypeReference.js";
 
 export function convertErrorDeclaration({
     errorDeclaration,

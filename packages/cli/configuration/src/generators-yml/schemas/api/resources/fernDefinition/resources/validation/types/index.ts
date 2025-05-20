@@ -1,3 +1,3 @@
-export * from "./ValidationSchema";
-export * from "./StringValidationSchema";
-export * from "./NumberValidationSchema";
+export * from "./ValidationSchema.js";
+export * from "./StringValidationSchema.js";
+export * from "./NumberValidationSchema.js";

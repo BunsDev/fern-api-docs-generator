@@ -21,11 +21,11 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { go } from "..";
-import { TimeTypeReference, UuidTypeReference } from "../ast/Type";
-import { BaseGoCustomConfigSchema } from "../custom-config/BaseGoCustomConfigSchema";
-import { resolveRootImportPath } from "../custom-config/resolveRootImportPath";
-import { GoTypeMapper } from "./GoTypeMapper";
+import { TimeTypeReference, UuidTypeReference } from "../ast/Type.js";
+import { BaseGoCustomConfigSchema } from "../custom-config/BaseGoCustomConfigSchema.js";
+import { resolveRootImportPath } from "../custom-config/resolveRootImportPath.js";
+import { go } from "../index.js";
+import { GoTypeMapper } from "./GoTypeMapper.js";
 
 export interface FileLocation {
     importPath: string;

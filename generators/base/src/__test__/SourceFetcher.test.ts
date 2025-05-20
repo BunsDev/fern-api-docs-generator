@@ -3,7 +3,7 @@ import path from "path";
 import { AbstractGeneratorContext } from "@fern-api/browser-compatible-base-generator";
 import { AbsoluteFilePath, getDirectoryContents, getDirectoryContentsForSnapshot } from "@fern-api/fs-utils";
 
-import { SourceFetcher } from "../SourceFetcher";
+import { SourceFetcher } from "../SourceFetcher.js";
 
 const AWS_BUCKET_NAME = "fdr-api-definition-source-test";
 const AWS_OBJECT_KEY = "fern/fern/2024-08-11T22:35:49.980Z/f6ea473b-1884-4ccc-b386-113cbff139d1";

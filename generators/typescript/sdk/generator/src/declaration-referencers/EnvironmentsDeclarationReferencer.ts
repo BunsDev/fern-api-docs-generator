@@ -10,7 +10,7 @@ import { SourceFile } from "ts-morph";
 
 import { EnvironmentsConfig, MultipleBaseUrlsEnvironments, SingleBaseUrlEnvironments } from "@fern-fern/ir-sdk/api";
 
-import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer";
+import { AbstractDeclarationReferencer } from "./AbstractDeclarationReferencer.js";
 
 export declare namespace EnvironmentsDeclarationReferencer {
     export interface Init extends AbstractDeclarationReferencer.Init {
@@ -47,7 +47,7 @@ export class EnvironmentsDeclarationReferencer extends AbstractDeclarationRefere
     }
 
     public getFilename(): string {
-        return "environments.ts";
+        return "environments.js";
     }
 
     public getExportedNameOfEnvironmentsEnum(): string {

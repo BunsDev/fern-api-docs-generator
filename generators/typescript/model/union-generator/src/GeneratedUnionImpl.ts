@@ -24,8 +24,8 @@ import {
 
 import { ObjectProperty } from "@fern-fern/ir-sdk/api";
 
-import { KnownSingleUnionType } from "./known-single-union-type/KnownSingleUnionType";
-import { ParsedSingleUnionType } from "./parsed-single-union-type/ParsedSingleUnionType";
+import { KnownSingleUnionType } from "./known-single-union-type/KnownSingleUnionType.js";
+import { ParsedSingleUnionType } from "./parsed-single-union-type/ParsedSingleUnionType.js";
 
 export declare namespace GeneratedUnionImpl {
     export interface Init<Context extends ModelContext> {

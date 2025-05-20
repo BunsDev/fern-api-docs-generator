@@ -1,7 +1,7 @@
 import { WebSocket as NodeWebSocket } from "ws";
 
-import { RUNTIME } from "../runtime";
-import * as Events from "./events";
+import { RUNTIME } from "../runtime/index.js";
+import * as Events from "./events.js";
 
 const getGlobalWebSocket = (): WebSocket | undefined => {
     if (typeof WebSocket !== "undefined") {

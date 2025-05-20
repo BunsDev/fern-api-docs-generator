@@ -1,4 +1,4 @@
-import isEqual from "lodash-es/isEqual";
+import { isEqual } from "lodash-es";
 import { OpenAPIV3 } from "openapi-types";
 
 import {
@@ -22,7 +22,7 @@ import {
     UnionTypeDeclaration
 } from "@fern-fern/ir-sdk/api";
 
-import { convertObject } from "./convertObject";
+import { convertObject } from "./convertObject.js";
 
 export interface ConvertedType {
     openApiSchema: OpenApiComponentSchema;

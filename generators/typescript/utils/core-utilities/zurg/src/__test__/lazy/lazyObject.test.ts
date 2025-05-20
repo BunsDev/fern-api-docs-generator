@@ -1,5 +1,5 @@
-import { lazyObject, number, object, string } from "../../builders";
-import { itSchemaIdentity } from "../utils/itSchema";
+import { lazyObject, number, object, string } from "../../builders/index.js";
+import { itSchemaIdentity } from "../utils/itSchema.js";
 
 describe("lazy", () => {
     itSchemaIdentity(

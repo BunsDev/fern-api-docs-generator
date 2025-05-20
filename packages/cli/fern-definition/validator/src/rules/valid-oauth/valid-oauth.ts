@@ -3,10 +3,10 @@ import terminalLink from "terminal-link";
 import { DocsLinks } from "@fern-api/configuration-loader";
 import { EndpointResolverImpl, TypeResolverImpl, constructRootApiFileContext } from "@fern-api/ir-generator";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { CASINGS_GENERATOR } from "../../utils/casingsGenerator";
-import { validateRefreshTokenEndpoint } from "./validateRefreshTokenEndpoint";
-import { validateTokenEndpoint } from "./validateTokenEndpoint";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { CASINGS_GENERATOR } from "../../utils/casingsGenerator.js";
+import { validateRefreshTokenEndpoint } from "./validateRefreshTokenEndpoint.js";
+import { validateTokenEndpoint } from "./validateTokenEndpoint.js";
 
 export const ValidOauthRule: Rule = {
     name: "valid-oauth",

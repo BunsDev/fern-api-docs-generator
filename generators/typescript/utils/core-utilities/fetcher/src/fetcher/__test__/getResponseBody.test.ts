@@ -1,6 +1,6 @@
-import { RUNTIME } from "../../runtime";
-import { getResponseBody } from "../getResponseBody";
-import { chooseStreamWrapper } from "../stream-wrappers/chooseStreamWrapper";
+import { RUNTIME } from "../../runtime/index.js";
+import { getResponseBody } from "../getResponseBody.js";
+import { chooseStreamWrapper } from "../stream-wrappers/chooseStreamWrapper.js";
 
 describe("Test getResponseBody", () => {
     it("should handle blob response type", async () => {

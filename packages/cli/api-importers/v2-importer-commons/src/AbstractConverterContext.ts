@@ -19,9 +19,9 @@ import {
 import { ExampleGenerationArgs } from "@fern-api/ir-utils";
 import { Logger } from "@fern-api/logger";
 
-import { Extensions } from ".";
-import { APIErrorLevel, ErrorCollector } from "./ErrorCollector";
-import { SchemaConverter } from "./converters/schema/SchemaConverter";
+import { APIErrorLevel, ErrorCollector } from "./ErrorCollector.js";
+import { SchemaConverter } from "./converters/schema/SchemaConverter.js";
+import { Extensions } from "./index.js";
 
 export declare namespace Spec {
     export interface Args<T> {

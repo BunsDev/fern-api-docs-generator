@@ -14,16 +14,16 @@ import {
     Source
 } from "@fern-api/openapi-ir";
 
-import { getExtension } from "../getExtension";
-import { FernOpenAPIExtension } from "../openapi/v3/extensions/fernExtensions";
-import { SchemaParserContext } from "./SchemaParserContext";
-import { isAdditionalPropertiesAny } from "./convertAdditionalProperties";
-import { convertAvailability } from "./convertAvailability";
-import { convertSchema, convertToReferencedSchema, getSchemaIdFromReference } from "./convertSchemas";
-import { getBreadcrumbsFromReference } from "./utils/getBreadcrumbsFromReference";
-import { getGeneratedPropertyName } from "./utils/getSchemaName";
-import { isReferenceObject } from "./utils/isReferenceObject";
-import { isSchemaWithExampleEqual } from "./utils/isSchemaWithExampleEqual";
+import { getExtension } from "../getExtension.js";
+import { FernOpenAPIExtension } from "../openapi/v3/extensions/fernExtensions.js";
+import { SchemaParserContext } from "./SchemaParserContext.js";
+import { isAdditionalPropertiesAny } from "./convertAdditionalProperties.js";
+import { convertAvailability } from "./convertAvailability.js";
+import { convertSchema, convertToReferencedSchema, getSchemaIdFromReference } from "./convertSchemas.js";
+import { getBreadcrumbsFromReference } from "./utils/getBreadcrumbsFromReference.js";
+import { getGeneratedPropertyName } from "./utils/getSchemaName.js";
+import { isReferenceObject } from "./utils/isReferenceObject.js";
+import { isSchemaWithExampleEqual } from "./utils/isSchemaWithExampleEqual.js";
 
 interface ReferencedAllOfInfo {
     schemaId: SchemaId;

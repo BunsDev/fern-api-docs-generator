@@ -10,7 +10,7 @@ import {
     TypeResolver
 } from "@fern-api/ir-generator";
 
-import { RuleViolation } from "../../Rule";
+import { RuleViolation } from "../../Rule.js";
 
 export function validateResponse({
     example,

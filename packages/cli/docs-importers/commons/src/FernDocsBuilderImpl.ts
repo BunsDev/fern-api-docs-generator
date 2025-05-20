@@ -12,7 +12,7 @@ import { AbsoluteFilePath, RelativeFilePath, dirname, join } from "@fern-api/fs-
 
 import { FernRegistry as CjsFdrSdk } from "@fern-fern/fdr-cjs-sdk";
 
-import { FernDocsBuilder, FernDocsNavigationBuilder } from "./FernDocsBuilder";
+import { FernDocsBuilder, FernDocsNavigationBuilder } from "./FernDocsBuilder.js";
 
 interface MarkdownPage {
     frontmatter: CjsFdrSdk.docs.latest.Frontmatter;

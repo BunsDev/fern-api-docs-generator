@@ -8,7 +8,7 @@ import {
     TypeReference
 } from "@fern-fern/ir-sdk/api";
 
-import { OpenApiComponentSchema, convertTypeReference, getReferenceFromDeclaredTypeName } from "./typeConverter";
+import { OpenApiComponentSchema, convertTypeReference, getReferenceFromDeclaredTypeName } from "./typeConverter.js";
 
 export interface ObjectProperty {
     docs: string | undefined;

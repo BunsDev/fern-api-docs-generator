@@ -8,7 +8,7 @@ import path from "path";
 import { AbsoluteFilePath } from "@fern-api/fs-utils";
 import { IntermediateRepresentationChangeDetector } from "@fern-api/ir-utils";
 
-import { generateIRFromPath } from "./generateAndSnapshotIR";
+import { generateIRFromPath } from "./generateAndSnapshotIR.js";
 
 const CHANGES_DIR = path.join(__dirname, "changes");
 

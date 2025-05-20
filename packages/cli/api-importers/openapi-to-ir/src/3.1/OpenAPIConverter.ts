@@ -4,10 +4,10 @@ import { AuthScheme, FernIr, IntermediateRepresentation } from "@fern-api/ir-sdk
 import { convertApiAuth, convertEnvironments } from "@fern-api/ir-utils";
 import { AbstractSpecConverter, Converters, ServersConverter } from "@fern-api/v2-importer-commons";
 
-import { OpenAPIConverterContext3_1 } from "./OpenAPIConverterContext3_1";
-import { PathConverter } from "./paths/PathConverter";
-import { WebhookConverter } from "./paths/operations/WebhookConverter";
-import { SecuritySchemeConverter } from "./securitySchemes/SecuritySchemeConverter";
+import { OpenAPIConverterContext3_1 } from "./OpenAPIConverterContext3_1.js";
+import { PathConverter } from "./paths/PathConverter.js";
+import { WebhookConverter } from "./paths/operations/WebhookConverter.js";
+import { SecuritySchemeConverter } from "./securitySchemes/SecuritySchemeConverter.js";
 
 export type BaseIntermediateRepresentation = Omit<IntermediateRepresentation, "apiName" | "constants">;
 

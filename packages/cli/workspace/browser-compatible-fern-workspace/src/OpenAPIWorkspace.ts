@@ -7,7 +7,7 @@ import { parse } from "@fern-api/openapi-ir-parser";
 import { AbsoluteFilePath } from "@fern-api/path-utils";
 import { TaskContext } from "@fern-api/task-context";
 
-import { InMemoryOpenAPILoader } from "./InMemoryOpenAPILoader";
+import { InMemoryOpenAPILoader } from "./InMemoryOpenAPILoader.js";
 
 const IN_MEMORY_ABSOLUTE_FILEPATH = AbsoluteFilePath.of("/<memory>");
 

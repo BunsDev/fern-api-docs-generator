@@ -4,8 +4,8 @@ import tmp from "tmp-promise";
 
 import { AbsoluteFilePath, getDirectoryContentsForSnapshot } from "@fern-api/fs-utils";
 
-import { runFernCli } from "../../utils/runFernCli";
-import { setupOpenAPIServer } from "../../utils/setupOpenAPIServer";
+import { runFernCli } from "../../utils/runFernCli.js";
+import { setupOpenAPIServer } from "../../utils/setupOpenAPIServer.js";
 
 const FIXTURES_DIR = path.join(__dirname, "fixtures");
 

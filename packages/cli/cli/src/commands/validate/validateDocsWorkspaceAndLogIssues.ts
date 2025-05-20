@@ -3,7 +3,7 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { TaskContext } from "@fern-api/task-context";
 import { AbstractAPIWorkspace, DocsWorkspace, FernWorkspace } from "@fern-api/workspace-loader";
 
-import { logViolations } from "./logViolations";
+import { logViolations } from "./logViolations.js";
 
 export async function validateDocsWorkspaceWithoutExiting({
     workspace,

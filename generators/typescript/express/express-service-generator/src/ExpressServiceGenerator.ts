@@ -4,7 +4,7 @@ import { PackageResolver } from "@fern-typescript/resolvers";
 
 import { HttpService } from "@fern-fern/ir-sdk/api";
 
-import { GeneratedExpressServiceImpl } from "./GeneratedExpressServiceImpl";
+import { GeneratedExpressServiceImpl } from "./GeneratedExpressServiceImpl.js";
 
 export declare namespace ExpressServiceGenerator {
     export interface Init {

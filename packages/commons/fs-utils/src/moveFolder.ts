@@ -1,11 +1,11 @@
 import { mkdir, rename } from "fs/promises";
 
-import { AbsoluteFilePath } from "./AbsoluteFilePath";
-import { RelativeFilePath } from "./RelativeFilePath";
-import { dirname } from "./dirname";
-import { doesPathExist } from "./doesPathExist";
-import { FileOrDirectory, getDirectoryContents } from "./getDirectoryContents";
-import { join } from "./join";
+import { AbsoluteFilePath } from "./AbsoluteFilePath.js";
+import { RelativeFilePath } from "./RelativeFilePath.js";
+import { dirname } from "./dirname.js";
+import { doesPathExist } from "./doesPathExist.js";
+import { FileOrDirectory, getDirectoryContents } from "./getDirectoryContents.js";
+import { join } from "./join.js";
 
 export async function moveFolder({ src, dest }: { src: AbsoluteFilePath; dest: AbsoluteFilePath }): Promise<void> {
     const contents = await getDirectoryContents(src);

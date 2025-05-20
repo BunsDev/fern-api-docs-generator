@@ -5,9 +5,9 @@ import { OSSWorkspace } from "@fern-api/lazy-fern-workspace";
 import { createMockTaskContext } from "@fern-api/task-context";
 import { loadAPIWorkspace, loadDocsWorkspace } from "@fern-api/workspace-loader";
 
-import { ApiReferenceNodeConverterLatest } from "../ApiReferenceNodeConverterLatest";
-import { NodeIdGenerator } from "../NodeIdGenerator";
-import { generateFdrFromOpenApiWorkspace } from "../utils/generateFdrFromOpenApiWorkspace";
+import { ApiReferenceNodeConverterLatest } from "../ApiReferenceNodeConverterLatest.js";
+import { NodeIdGenerator } from "../NodeIdGenerator.js";
+import { generateFdrFromOpenApiWorkspace } from "../utils/generateFdrFromOpenApiWorkspace.js";
 
 const context = createMockTaskContext();
 

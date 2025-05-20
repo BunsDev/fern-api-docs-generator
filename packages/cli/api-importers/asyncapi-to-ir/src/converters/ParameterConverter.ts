@@ -3,7 +3,7 @@ import { OpenAPIV3_1 } from "openapi-types";
 import { TypeId, TypeReference } from "@fern-api/ir-sdk";
 import { Converters, Extensions } from "@fern-api/v2-importer-commons";
 
-import { AsyncAPIParameter } from "../sharedTypes";
+import { AsyncAPIParameter } from "../sharedTypes.js";
 
 export class ParameterConverter extends Converters.AbstractConverters.AbstractParameterConverter<AsyncAPIParameter> {
     private readonly parameterNamePrefix?: string;

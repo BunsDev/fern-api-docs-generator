@@ -2,9 +2,9 @@ import path from "path";
 
 import { AbsoluteFilePath, RelativeFilePath, join } from "@fern-api/fs-utils";
 
-import { AstNode } from "../ast/core/AstNode";
-import { GeneratedFile } from "./GeneratedFile";
-import { FROZEN_STRING_PREFIX } from "./RubyConstants";
+import { AstNode } from "../ast/core/AstNode.js";
+import { GeneratedFile } from "./GeneratedFile.js";
+import { FROZEN_STRING_PREFIX } from "./RubyConstants.js";
 
 export declare namespace GeneratedRubyFile {
     export interface Init {

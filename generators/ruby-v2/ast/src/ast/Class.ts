@@ -1,7 +1,7 @@
-import { Comment } from "./Comment";
-import { Module } from "./Module";
-import { AstNode } from "./core/AstNode";
-import { Writer } from "./core/Writer";
+import { Comment } from "./Comment.js";
+import { Module } from "./Module.js";
+import { AstNode } from "./core/AstNode.js";
+import { Writer } from "./core/Writer.js";
 
 export declare namespace Class_ {
     export interface Args extends Module.Args {

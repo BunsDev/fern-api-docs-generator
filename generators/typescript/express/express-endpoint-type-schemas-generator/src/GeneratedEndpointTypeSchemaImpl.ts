@@ -5,7 +5,7 @@ import { ModuleDeclaration, ts } from "ts-morph";
 
 import { TypeReference } from "@fern-fern/ir-sdk/api";
 
-import { AbstractGeneratedEndpointTypeSchema } from "./AbstractGeneratedEndpointTypeSchema";
+import { AbstractGeneratedEndpointTypeSchema } from "./AbstractGeneratedEndpointTypeSchema.js";
 
 export declare namespace GeneratedEndpointTypeSchemaImpl {
     export interface Init extends AbstractGeneratedEndpointTypeSchema.Init {

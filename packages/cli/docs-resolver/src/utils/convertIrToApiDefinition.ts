@@ -2,7 +2,7 @@ import { APIV1Read, SDKSnippetHolder, convertAPIDefinitionToDb, convertDbAPIDefi
 import { IntermediateRepresentation } from "@fern-api/ir-sdk";
 import { convertIrToFdrApi } from "@fern-api/register";
 
-import { PlaygroundConfig } from "../DocsDefinitionResolver";
+import { PlaygroundConfig } from "../DocsDefinitionResolver.js";
 
 const EMPTY_SNIPPET_HOLDER = new SDKSnippetHolder({
     snippetsBySdkId: {},

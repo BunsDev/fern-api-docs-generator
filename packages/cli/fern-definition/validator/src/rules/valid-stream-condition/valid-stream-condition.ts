@@ -7,14 +7,14 @@ import {
     constructFernFileContext
 } from "@fern-api/ir-generator";
 
-import { Rule, RuleViolation } from "../../Rule";
-import { CASINGS_GENERATOR } from "../../utils/casingsGenerator";
+import { Rule, RuleViolation } from "../../Rule.js";
+import { CASINGS_GENERATOR } from "../../utils/casingsGenerator.js";
 import {
     RequestPropertyValidator,
     getRequestPropertyComponents,
     maybePrimitiveType,
     requestTypeHasProperty
-} from "../../utils/propertyValidatorUtils";
+} from "../../utils/propertyValidatorUtils.js";
 
 export const ValidStreamConditionRule: Rule = {
     name: "valid-stream-condition",

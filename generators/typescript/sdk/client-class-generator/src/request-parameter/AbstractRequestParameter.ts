@@ -11,7 +11,7 @@ import {
     SdkRequest
 } from "@fern-fern/ir-sdk/api";
 
-import { RequestParameter } from "./RequestParameter";
+import { RequestParameter } from "./RequestParameter.js";
 
 export declare namespace AbstractRequestParameter {
     export interface Init {

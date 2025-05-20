@@ -5,8 +5,8 @@ import { DefinitionFileSchema, RawSchemas, RootApiFileSchema } from "@fern-api/f
 import { FernFilepath, TypeReference } from "@fern-api/ir-sdk";
 import { RelativeFilePath } from "@fern-api/path-utils";
 
-import { convertToFernFilepath } from "./utils/convertToFernFilepath";
-import { parseInlineType } from "./utils/parseInlineType";
+import { convertToFernFilepath } from "./utils/convertToFernFilepath.js";
+import { parseInlineType } from "./utils/parseInlineType.js";
 
 /**
  * here is a description

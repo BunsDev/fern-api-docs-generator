@@ -5,8 +5,8 @@ import {
     BasicAuthSchemeSchema,
     BearerAuthSchemeSchema,
     HeaderAuthSchemeSchema
-} from "../schemas";
-import { OAuthSchemeSchema } from "../schemas";
+} from "../schemas/index.js";
+import { OAuthSchemeSchema } from "../schemas/index.js";
 
 export interface AuthSchemeDeclarationVisitor<R> {
     header: (authScheme: HeaderAuthSchemeSchema) => R;

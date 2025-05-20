@@ -5,7 +5,7 @@ import { SourceFile } from "ts-morph";
 
 import { IntermediateRepresentation } from "@fern-fern/ir-sdk/api";
 
-import { EnvironmentsDeclarationReferencer } from "../../declaration-referencers/EnvironmentsDeclarationReferencer";
+import { EnvironmentsDeclarationReferencer } from "../../declaration-referencers/EnvironmentsDeclarationReferencer.js";
 
 export declare namespace EnvironmentsContextImpl {
     export interface Init {
