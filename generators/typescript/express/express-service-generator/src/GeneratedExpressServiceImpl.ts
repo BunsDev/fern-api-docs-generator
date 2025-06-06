@@ -548,12 +548,15 @@ export class GeneratedExpressServiceImpl implements GeneratedExpressService {
                                                                     [ts.factory.createStringLiteral(" -> ")]
                                                                 ),
                                                                 ts.factory.createToken(ts.SyntaxKind.PlusToken),
-                                                                ts.factory.createStringLiteral(": ")
+                                                                ts.factory.createPropertyAccessExpression(
+                                                                    ts.factory.createIdentifier(ERROR_VARIABLE_NAME),
+                                                                    context.coreUtilities.zurg.ValidationError.message
+                                                                )
                                                             ),
                                                             ts.factory.createToken(ts.SyntaxKind.PlusToken),
                                                             ts.factory.createPropertyAccessExpression(
                                                                 ts.factory.createIdentifier(ERROR_VARIABLE_NAME),
-                                                                context.coreUtilities.zurg.ValidationError.message
+                                                                context.coreUtilities.zurg.ValidationError.path
                                                             )
                                                         )
                                                     )
@@ -701,7 +704,10 @@ export class GeneratedExpressServiceImpl implements GeneratedExpressService {
 
         statements.push(
             ts.factory.createIfStatement(
-                ts.factory.createPropertyAccessExpression(expressResponse, "writableEnded"),
+                ts.factory.createPrefixUnaryExpression(
+                    ts.SyntaxKind.ExclamationToken,
+                    ts.factory.createPropertyAccessExpression(expressResponse, "writableEnded")
+                ),
                 ts.factory.createBlock(
                     [ts.factory.createExpressionStatement(ts.factory.createCallExpression(next, undefined, undefined))],
                     true
