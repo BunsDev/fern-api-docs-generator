@@ -68,7 +68,4 @@ class TestGetMovie:
             assert exc_info.value.status_code == 500
             assert exc_info.value.body == error_response
 
-
-class TestCreateMovie:
-    # Removed problematic test cases to sidestep pytest-httpserver issues
-    pass
+# TODO: add TestCreateMovie tests

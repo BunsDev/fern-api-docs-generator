@@ -38,4 +38,4 @@ def server(httpserver, request: Request, response: Response):
         matcher.respond_with_json(response.json_body, status=response.status, headers=response.headers)
     else:
         matcher.respond_with_data(response.body or "", status=response.status, headers=response.headers)
-    yield httpserver 
+    yield httpserver
